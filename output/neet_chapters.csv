@@ -1,0 +1,57 @@
+id,name,order_index,subject_id
+e06658d4-165d-5844-8ba7-86b08d55297c,Physics and Measurement,1,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+983eba87-9d79-5060-83a3-84c3dd39e67f,Kinematics,2,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+9651a966-fb91-5fbf-afc7-c18caf752028,Laws of Motion,3,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+27a4ec69-1240-5d01-90ed-41409d964984,"Work, Energy and Power",4,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,Rotational Motion,5,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+f80e7d14-21cb-55ab-9403-111e0d2571cb,Gravitation,7,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+3cda4b40-3de4-5a8d-acb1-766364d4614e,Properties of Solids and Liquids,8,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+d2f1102a-a697-5b18-9715-5997f46b5e59,Thermodynamics,9,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+4a942e9e-6865-52b9-a319-3a6218e167dd,Kinetic Theory of Gases,10,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+61c99e94-c5dd-5d78-a355-e866b85b9b7b,Oscillations and Waves,11,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+5ec06949-b728-586d-8a34-1dddca495f9a,Electrostatics,13,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,Current Electricity,14,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+b81b0eef-d784-5f9e-bfd0-74b6b38431c0,Magnetic Effects of Current and Magnetism,15,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+100d949d-4d18-52a9-a43c-04d8570fa15a,Electromagnetic Induction and Alternating Current,16,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+21b6e4b1-2b7b-568e-9caf-7baade213104,Electromagnetic Waves,17,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+39438dc5-80b4-5c3a-9bf4-722a49bc22c0,Optics,18,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+3426833e-68b5-5706-85c0-4ffaf1336e21,Geometrical Optics,19,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+e01d6131-f960-5c6a-b023-873c821383ea,Wave Optics,20,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,Dual Nature of Matter and Radiation,21,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+4245de9e-78a6-501c-8fbe-0c29dfedede7,Atoms and Nuclei,22,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+445b8754-3097-5cb2-8b14-7759a2609579,Atoms,23,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,Nuclei,24,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+188c6b36-194c-5d05-8803-4d1728df32f1,Electronic Devices,25,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+cbaa10c2-1648-5be1-abd9-22318b93c4a8,Experimental Skill,26,a1a54f5e-5cba-4bf7-bbca-90649c379d78
+4f0ddf9c-27e1-59d1-949f-b5e21bb58f1c,Diversity in Living World,1,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+c7137fd1-a9a5-5bee-bbe8-b8489233c56f,Structural Organisation in Plants,2,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+4e953e2e-cb42-5769-ab2e-f242cb8bdeed,Cell Structure and Function,3,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+c3d4d16d-36d7-5890-980b-203d153cf5a6,Plant Physiology,4,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+0d5aadc2-7812-5eae-9e13-498d9cf85a51,Structural Organisation in Animals,5,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+55971ad5-7616-5dff-8adf-7326a144ce2d,Human Physiology,6,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,Reproduction,7,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+272516ca-087c-5380-87a6-e1dc1d4d8e57,Genetics and Evolution,8,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+144a46ea-ddc0-509b-8e7b-e2f130626a5e,Biology and Human Welfare,9,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+ad32e7fb-5ac7-5748-aae2-4235a7eec037,Microbes in Human Welfare,10,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+f09eb987-14d8-5020-bc24-fa7b7ac5fe8a,Biotechnology,11,a42ab87b-7f24-48a3-9dc0-ab1e354ac308
+78e5c3b5-172f-525a-b22d-0535a57fa09c,Ecology and Environment,12,f4d26d48-df2e-4be6-9a82-299e6bfb6ebe
+72636ff4-60d5-5168-b3ea-153ea49a54b2,Classification of Elements and Periodicity,1,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+f9230487-9011-5f00-a997-c068cac1a57d,p-Block Elements,2,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+027bc9dd-98b6-5800-8676-da4de6a87a6b,d- and f-Block Elements,3,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+502b1766-24b5-53f0-b399-af3a81586e97,Coordination Compounds,4,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+33a7fc38-92a6-57b5-aaa0-d925a3f68dc5,Purification and Characterization of Organic Compounds,5,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+8940d394-59f5-55cf-8aca-06d08f2b3f21,Basic Principles of Organic Chemistry,6,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+b5354a7a-d950-59d2-853c-18ca480110d0,Hydrocarbons,7,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+e74f12f5-c007-5137-8e25-c8f460a42eb5,Organic Compounds Containing Halogens,8,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,Organic Compounds Containing Oxygen,9,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+bea1a628-74f7-590f-a3ea-1ad319c79dc9,Organic Compounds Containing Nitrogen,10,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+f5c44698-0ef3-5051-8294-036f8101dbd9,Biomolecules,11,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+70d35d68-2eff-5754-b6aa-1f2a9ec5f61c,Practical Chemistry,12,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+b84cafe8-12ae-595f-a091-c38920c6559e,Some Basic Concepts in Chemistry,13,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+b4e602d5-3e9d-56c3-ad60-bc931341133d,Atomic Structure,14,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+e04c50ed-8cdb-57d3-9178-79b17608a087,Chemical Bonding and Molecular Structure,15,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+11dc090f-1ba4-5740-90cd-a3ff60fffc92,Chemical Thermodynamics,16,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+d5f602bc-192a-58b5-b7a9-c9850dbcd851,Solutions,17,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+6c842985-88ec-5cab-9323-2cf327881663,Equilibrium,18,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,Redox Reactions and Electrochemistry,21,56fe22e7-af9b-45b3-a7f2-a67082c4ce56
+b2600b03-19cf-5b70-a2c6-0c8dc46945e2,Chemical Kinetics,22,56fe22e7-af9b-45b3-a7f2-a67082c4ce56

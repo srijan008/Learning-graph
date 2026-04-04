@@ -1,0 +1,403 @@
+id,title,chapter_id,order_index
+cedb88a9-b533-51a6-806a-5df0b0b13a87,Physical Quantities,e06658d4-165d-5844-8ba7-86b08d55297c,1
+6611061c-fd0e-5f92-8ac2-501924b7015c,Systems of Units,e06658d4-165d-5844-8ba7-86b08d55297c,2
+83cfe713-837d-50d3-86d7-6bf2e4e16050,SI Units,e06658d4-165d-5844-8ba7-86b08d55297c,3
+8373de0c-7ac8-54fc-8130-8cf91ea8c501,Measurement of Physical Quantities,e06658d4-165d-5844-8ba7-86b08d55297c,4
+c0ab06d4-373c-559c-963d-af6c65543f62,Least Count,e06658d4-165d-5844-8ba7-86b08d55297c,5
+ed1f0fb7-70aa-5d6c-be5b-c65f4d15229e,Significant Figures,e06658d4-165d-5844-8ba7-86b08d55297c,6
+3d3e71bf-37f7-5e9b-af4b-4e7b6c38efb2,Errors in Measurement,e06658d4-165d-5844-8ba7-86b08d55297c,7
+1be823ea-afb9-57c5-bf69-f13b7c205323,Dimensions of Physical Quantities,e06658d4-165d-5844-8ba7-86b08d55297c,8
+cee41e43-087c-5e27-9dfe-0fb6faabbefa,Dimensional Analysis,e06658d4-165d-5844-8ba7-86b08d55297c,9
+ac31ff51-117f-5247-8943-cb664fcbc2dc,Frame of Reference,983eba87-9d79-5060-83a3-84c3dd39e67f,1
+c000ee4f-d27b-5ce7-af53-74624c3d92e7,Motion in a Straight Line,983eba87-9d79-5060-83a3-84c3dd39e67f,2
+2b4cde85-ad9f-522e-beae-2a7a8b9e6852,Acceleration,983eba87-9d79-5060-83a3-84c3dd39e67f,3
+e66bdf59-a5f3-5143-a89d-2b343ec54b5b,Graphical Representation of Motion,983eba87-9d79-5060-83a3-84c3dd39e67f,4
+b46106db-37e9-54c2-9e5a-b2cd65c5f9a2,Equations of Uniformly Accelerated Motion,983eba87-9d79-5060-83a3-84c3dd39e67f,5
+1be7e5b9-1a21-5c18-bbe7-36c66a2133b5,Motion Under Gravity,983eba87-9d79-5060-83a3-84c3dd39e67f,6
+32d38464-b3e4-5609-8690-4176e2e2c12d,Scalars and Vectors,983eba87-9d79-5060-83a3-84c3dd39e67f,7
+d430dc57-96e8-5064-9009-e7836aaa2eed,Vector Operations,983eba87-9d79-5060-83a3-84c3dd39e67f,8
+bf55b7cf-0a5d-5288-a31f-031e8a3434c1,Relative Velocity,983eba87-9d79-5060-83a3-84c3dd39e67f,9
+b6cb2d76-41e4-5779-9cdd-83bd5ae9ec03,Motion in a Plane,983eba87-9d79-5060-83a3-84c3dd39e67f,10
+012e350d-915c-5965-bc3b-d3659bdecbbd,Uniform Circular Motion,983eba87-9d79-5060-83a3-84c3dd39e67f,11
+ccc06e8d-df28-5138-ab69-be0ac563ae88,Force,9651a966-fb91-5fbf-afc7-c18caf752028,1
+de946990-4dd7-5982-b334-b2495bd54a51,Inertia,9651a966-fb91-5fbf-afc7-c18caf752028,2
+92b14c8f-e3ff-5368-be7a-b0c7f34c2d19,Newton’s Laws of Motion,9651a966-fb91-5fbf-afc7-c18caf752028,3
+5ab8362a-c3cf-5afb-a749-c491fc1e1da2,Linear Momentum,9651a966-fb91-5fbf-afc7-c18caf752028,4
+97780688-3f05-5aea-976e-515bc54a083c,Impulse,9651a966-fb91-5fbf-afc7-c18caf752028,5
+d3b1f4a4-1c6b-58c5-acb2-d709bcf800e3,Conservation of Linear Momentum,9651a966-fb91-5fbf-afc7-c18caf752028,6
+057ab4c8-4960-53f9-b394-7d8fecda5cfd,Friction,9651a966-fb91-5fbf-afc7-c18caf752028,7
+feb83949-4579-5c31-923f-3305b86386d4,Dynamics of Circular Motion,9651a966-fb91-5fbf-afc7-c18caf752028,8
+69917fcd-d1d2-5d79-adbd-21fe239d4177,Work,27a4ec69-1240-5d01-90ed-41409d964984,1
+5c078e96-29c4-5b8b-871e-6796e2210749,Kinetic Energy,27a4ec69-1240-5d01-90ed-41409d964984,2
+00d23440-51e2-5b3c-9b13-6ca606456e2c,Potential Energy,27a4ec69-1240-5d01-90ed-41409d964984,3
+6dc7b6f9-295f-535c-9c4c-f6552d821f66,Work Energy Theorem,27a4ec69-1240-5d01-90ed-41409d964984,4
+3580eae5-ba4c-52bc-a7d9-77505b05c5c6,Conservation of Mechanical Energy,27a4ec69-1240-5d01-90ed-41409d964984,5
+1610f8ad-86ca-5a17-ac12-ab6f2cafbbdc,Power,27a4ec69-1240-5d01-90ed-41409d964984,6
+9bbde96d-f1c0-559c-8cf3-aec1246bc401,Collisions,27a4ec69-1240-5d01-90ed-41409d964984,7
+c6afbff5-e33b-57b5-86ed-f21843a613a7,Rigid Body,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,1
+1b8747a3-d8dc-55f7-96a2-13afc8d8f2e3,Centre of Mass,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,2
+7920dd58-d19e-5c23-a86c-68f5338f0c6f,Torque,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,3
+5861673d-2fbe-5086-9c23-4f2094c3c8aa,Angular Momentum,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,4
+952673ab-4ec4-5532-a9ff-a0bf7c86c943,Moment of Inertia,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,5
+55134a8d-3cd4-58cc-8a4c-366b854de2a8,Axis Theorems,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,6
+f794c984-1a2a-5005-9647-05f56aea438b,Rotational Motion Equations,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,7
+6dc743a4-638e-5e8f-a9d1-e659c39c629d,Rolling Motion,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,8
+593b9bcf-5469-58ab-ac7c-926750a7c376,Rigid Body Motion,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,1
+f918d04f-5e7b-5b2a-9d69-1a7854518455,Moment of Force (Torque),0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,3
+4dd6af19-8bbf-5202-a992-0be54a5bc5c4,Theorems of Moment of Inertia,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,6
+148572b7-d9f9-5aec-b8ae-1172012eb001,Rotational Kinematics,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,7
+f8320fd9-0fe9-5f1f-841a-5c48680c2559,Rotational Dynamics,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,8
+b62f1c75-6045-5b76-8466-e27f103312f8,Rolling Motion,0fbbfd5c-e55f-521d-8ce6-3133f3ec78b0,9
+aa215f57-bb7a-5408-aa7c-781f61234df2,Universal Law of Gravitation,f80e7d14-21cb-55ab-9403-111e0d2571cb,1
+723a825e-4d6d-52de-9358-1f5ab130e4f9,Gravitational Field,f80e7d14-21cb-55ab-9403-111e0d2571cb,2
+4249308d-beb4-59e0-be82-d320e16d0804,Acceleration Due to Gravity,f80e7d14-21cb-55ab-9403-111e0d2571cb,3
+99c78cc6-993d-5adc-8e1c-790b69719730,Gravitational Potential,f80e7d14-21cb-55ab-9403-111e0d2571cb,4
+e9755c56-9719-593e-b40f-a0830aa90662,Escape Velocity,f80e7d14-21cb-55ab-9403-111e0d2571cb,5
+942f2c53-2ac2-558b-a0dd-eea2d0369429,Satellites,f80e7d14-21cb-55ab-9403-111e0d2571cb,6
+0e7f3adb-7f42-5f39-8157-372c772b0337,Kepler’s Laws of Planetary Motion,f80e7d14-21cb-55ab-9403-111e0d2571cb,7
+5c32f6d0-bd99-5482-9d43-449504b07d83,Elasticity,3cda4b40-3de4-5a8d-acb1-766364d4614e,1
+70f5d987-3a9e-5844-8425-78470cc6c662,Elastic Moduli,3cda4b40-3de4-5a8d-acb1-766364d4614e,2
+9bde3078-714e-5eee-a749-0fec42e14199,Fluid Pressure,3cda4b40-3de4-5a8d-acb1-766364d4614e,3
+d5cd2aa5-77b6-5fb5-bc33-defb3a3f5b54,Viscosity,3cda4b40-3de4-5a8d-acb1-766364d4614e,4
+28447f79-8b03-514e-b202-095207378941,Stokes’ Law,3cda4b40-3de4-5a8d-acb1-766364d4614e,5
+48f26f26-b9a7-53eb-b734-d84db48f9022,Bernoulli’s Principle,3cda4b40-3de4-5a8d-acb1-766364d4614e,6
+d3c55272-d80f-55d5-9bb5-17be35781a5b,Surface Tension,3cda4b40-3de4-5a8d-acb1-766364d4614e,7
+78290ac0-a871-5aae-b961-2504e5b6fe81,Heat and Temperature,3cda4b40-3de4-5a8d-acb1-766364d4614e,8
+c58796ce-cd0b-5420-bda1-6130f3be6d7f,Calorimetry,3cda4b40-3de4-5a8d-acb1-766364d4614e,9
+2d0b8560-8edb-5aa5-a447-d70c1af4b6c1,Heat Transfer,3cda4b40-3de4-5a8d-acb1-766364d4614e,10
+733d97db-bfae-56bf-8acc-618c93251540,Thermal Equilibrium,d2f1102a-a697-5b18-9715-5997f46b5e59,1
+ea9bb0a1-08f4-5a1a-b347-c778e961fe7d,Heat and Work,d2f1102a-a697-5b18-9715-5997f46b5e59,2
+81bb2c85-4f3c-5a62-9ce3-7b32666a8b3a,Internal Energy,d2f1102a-a697-5b18-9715-5997f46b5e59,3
+77e421bc-a2b1-5d62-ba1a-d268aad468d5,First Law of Thermodynamics,d2f1102a-a697-5b18-9715-5997f46b5e59,4
+75d8b358-1a79-50e1-8357-83de698fe5dc,Second Law of Thermodynamics,d2f1102a-a697-5b18-9715-5997f46b5e59,5
+81158172-0235-567f-b124-31273f983fc0,Ideal Gas Equation,4a942e9e-6865-52b9-a319-3a6218e167dd,1
+8b500a94-bf2d-57ad-a17e-0dadeb792710,Assumptions of Kinetic Theory,4a942e9e-6865-52b9-a319-3a6218e167dd,2
+a62506c3-0a85-5f82-9719-12867ff27f06,Pressure of Gas,4a942e9e-6865-52b9-a319-3a6218e167dd,3
+ece92f1c-dd19-54e1-8053-3acc430650f6,RMS Speed of Gas Molecules,4a942e9e-6865-52b9-a319-3a6218e167dd,4
+fe19d718-5d33-5031-aea3-491ab569175f,Degrees of Freedom,4a942e9e-6865-52b9-a319-3a6218e167dd,5
+f0099310-2f2c-5c25-ae57-08d63552d350,Equipartition of Energy,4a942e9e-6865-52b9-a319-3a6218e167dd,6
+b72ed373-d8f6-5eeb-98c2-347e3b515e6e,Mean Free Path,4a942e9e-6865-52b9-a319-3a6218e167dd,7
+5dbe2aa6-bba0-53db-9085-94ea5fcafc83,Periodic Motion,61c99e94-c5dd-5d78-a355-e866b85b9b7b,1
+2bfa2873-d0a6-5512-bd70-d3494facf722,Simple Harmonic Motion,61c99e94-c5dd-5d78-a355-e866b85b9b7b,2
+52bf1271-8384-5e63-9eb7-625f72021e60,Energy in SHM,61c99e94-c5dd-5d78-a355-e866b85b9b7b,3
+cc8b8cd3-465b-5fe2-a5b9-0d62eb783713,Oscillation of Spring,61c99e94-c5dd-5d78-a355-e866b85b9b7b,4
+056597f6-3a45-581d-8448-a359f265a104,Simple Pendulum,61c99e94-c5dd-5d78-a355-e866b85b9b7b,5
+a70464e6-28ed-5ea9-ba0a-d151f9264742,Wave Motion,61c99e94-c5dd-5d78-a355-e866b85b9b7b,6
+647ff9ed-908e-5a91-a9f9-5a81156255a0,Wave Properties,61c99e94-c5dd-5d78-a355-e866b85b9b7b,7
+91203b23-0065-5fda-9586-41724ae08b26,Superposition of Waves,61c99e94-c5dd-5d78-a355-e866b85b9b7b,8
+f93e108b-ecf5-51be-8ab0-9925a65e3785,Standing Waves,61c99e94-c5dd-5d78-a355-e866b85b9b7b,9
+7e3fcc5e-c437-58b1-b73b-4f8eed4c4928,Beats,61c99e94-c5dd-5d78-a355-e866b85b9b7b,10
+7b18b170-3dc7-5312-b5fe-324b25c157b3,Simple Harmonic Motion (SHM),61c99e94-c5dd-5d78-a355-e866b85b9b7b,2
+03e13f3e-76bf-556a-977e-0c34f95a3718,Kinematics of SHM,61c99e94-c5dd-5d78-a355-e866b85b9b7b,3
+42dee949-29b2-5f6d-b82d-4477695b6c7a,Energy in SHM,61c99e94-c5dd-5d78-a355-e866b85b9b7b,4
+0fd7bafa-5bbe-5c71-8544-502061432001,Oscillation of Spring,61c99e94-c5dd-5d78-a355-e866b85b9b7b,5
+d7f4859c-8d3d-58ce-8a1a-d105e391120b,Simple Pendulum,61c99e94-c5dd-5d78-a355-e866b85b9b7b,6
+1e1b23d2-ca5f-5a9d-be31-360b0c0f1e12,Wave Motion,61c99e94-c5dd-5d78-a355-e866b85b9b7b,7
+ba1ed4f9-c6a3-5b15-abbc-b50a771acaed,Wave Properties,61c99e94-c5dd-5d78-a355-e866b85b9b7b,8
+aea18f66-0656-5486-b51a-1e0ae3caa8b4,Superposition of Waves,61c99e94-c5dd-5d78-a355-e866b85b9b7b,9
+7428965c-23f1-51e2-8ad7-7ccd6c598079,Standing Waves,61c99e94-c5dd-5d78-a355-e866b85b9b7b,10
+ad936d33-fbb4-5dfb-bc8c-82c378c2f258,Beats,61c99e94-c5dd-5d78-a355-e866b85b9b7b,11
+79d30bc1-2dcc-5d70-972c-b3bfe431b6e0,Electric Charge,5ec06949-b728-586d-8a34-1dddca495f9a,1
+e8ad83d2-38e9-507a-926f-74f6e1c8c7d7,Coulomb’s Law,5ec06949-b728-586d-8a34-1dddca495f9a,2
+0921ca81-c4ac-507f-9d7a-e95cdd67390e,Electric Field,5ec06949-b728-586d-8a34-1dddca495f9a,3
+e28442eb-2c82-553a-9eb4-e6fc2a8a0416,Electric Dipole,5ec06949-b728-586d-8a34-1dddca495f9a,4
+3bd75759-288f-5155-979b-c355d394653c,Electric Flux,5ec06949-b728-586d-8a34-1dddca495f9a,5
+aa89f3b2-f800-5bc9-83d8-8663b9b11e4f,Gauss’s Law,5ec06949-b728-586d-8a34-1dddca495f9a,6
+08e20002-88d9-532e-a5d7-4cac05c1ab75,Electric Potential,5ec06949-b728-586d-8a34-1dddca495f9a,7
+2dc8b42e-4f09-5f50-9d88-349605046935,Equipotential Surfaces,5ec06949-b728-586d-8a34-1dddca495f9a,8
+6220dbd5-c229-55b6-ad61-1d8672d4a6f6,Electrostatic Potential Energy,5ec06949-b728-586d-8a34-1dddca495f9a,9
+4eae7293-de37-56cd-8fc0-5d6c791776fa,Capacitors,5ec06949-b728-586d-8a34-1dddca495f9a,10
+d38aca1a-3197-5572-9a18-4b4a00325a9a,Electric Current,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,1
+991bfa17-4b5f-5e3b-8215-cf009d3f3f4f,Drift Velocity,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,2
+45682eca-9432-5983-8faf-a716b3219941,Ohm’s Law,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,3
+8c8cd94e-6e96-52be-b0eb-c64b1c8d8787,Resistance,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,4
+726bb5cf-75e4-5c33-b7f5-2c846eadf431,Resistivity and Conductivity,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,5
+43ee5ab9-ce27-597d-b6c2-8ece462dba98,Combination of Resistors,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,6
+7fe29f53-0968-54e6-8725-76aa1580ecff,Electrical Energy and Power,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,7
+d15d0e20-9f06-52dd-b868-5c5ce005e743,EMF and Internal Resistance,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,8
+b4c7720c-5ce1-5ef8-b4e5-54889c5bdb6a,Kirchhoff’s Laws,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,9
+7f43a57d-7379-5cb4-bd67-fc0635c38da6,Wheatstone Bridge,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,10
+d2864599-694f-50a4-9121-08c7e8963251,Metre Bridge,0f3adfb6-84e6-5838-a0c5-f5ba7734ca2e,11
+2515219c-c091-55df-8509-6938e50e0555,Magnetic Field,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,1
+a991181e-2042-5368-b71d-8a66f822f48b,Biot-Savart Law,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,2
+771c90da-89ee-5d59-93ba-7a5d74711b75,Ampere’s Law,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,3
+f84e158f-2126-5333-811a-9b22a2a6294d,Force on Moving Charge,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,4
+657a49e4-1f84-58dc-b5c6-a6fcdf579415,Force on Current Carrying Conductor,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,5
+feef917b-5c91-52c8-acae-cbd144845be1,Torque on Current Loop,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,6
+c2ca3ca1-36e3-5d2c-a814-cf044cae972f,Moving Coil Galvanometer,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,7
+b72359b2-e32f-5473-998c-65c26d3947c0,Magnetism,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,8
+6c3c8a67-aef0-5998-ba92-8bdc7e4980e3,Magnetic Materials,b81b0eef-d784-5f9e-bfd0-74b6b38431c0,9
+f2cfa9a7-101b-5dec-b59a-03d1b438caee,Electromagnetic Induction,100d949d-4d18-52a9-a43c-04d8570fa15a,1
+75b7d5f3-60c6-5a79-ac51-cf8bc952e6cd,Lenz’s Law,100d949d-4d18-52a9-a43c-04d8570fa15a,2
+f44bc6ad-45b8-5145-8a0b-c756e3bc5187,Eddy Currents,100d949d-4d18-52a9-a43c-04d8570fa15a,3
+4abb7503-0395-5cea-888b-9300af18a1b5,Inductance,100d949d-4d18-52a9-a43c-04d8570fa15a,4
+dad7d2e3-3d83-5ae6-b3e1-96aedb41da3b,Alternating Current,100d949d-4d18-52a9-a43c-04d8570fa15a,5
+331587ad-eba4-5cf5-8058-503f3ac13011,LCR Circuit,100d949d-4d18-52a9-a43c-04d8570fa15a,6
+5a9df5ad-d776-5396-ad54-beaaa76f3b61,Power in AC Circuits,100d949d-4d18-52a9-a43c-04d8570fa15a,7
+e56040bf-a8c1-5165-b102-7fb9747ddd66,AC Generator,100d949d-4d18-52a9-a43c-04d8570fa15a,8
+b0f33495-ce3c-5dce-9e08-39f3dbb5c239,Transformer,100d949d-4d18-52a9-a43c-04d8570fa15a,9
+4761926f-5b4f-5ba9-bf94-65a9a5675e2e,Displacement Current,21b6e4b1-2b7b-568e-9caf-7baade213104,1
+10753e2f-2167-5737-af26-3192d31cada8,Electromagnetic Waves,21b6e4b1-2b7b-568e-9caf-7baade213104,2
+ada32f48-5804-5f12-83f4-310ba7a05916,Electromagnetic Spectrum,21b6e4b1-2b7b-568e-9caf-7baade213104,3
+b2fd7acd-7a09-5258-9ff1-e7a54c2c27c7,Applications of EM Waves,21b6e4b1-2b7b-568e-9caf-7baade213104,4
+83b39b3d-795f-5a62-8774-faeb4bc33ba1,Nature of Light,39438dc5-80b4-5c3a-9bf4-722a49bc22c0,1
+725e4e10-2e1d-5f85-bccd-14dd9ed526b3,Reflection of Light,3426833e-68b5-5706-85c0-4ffaf1336e21,1
+7f6dc63d-b66b-5378-a742-97f782212ff3,Spherical Mirrors,3426833e-68b5-5706-85c0-4ffaf1336e21,2
+5061ce0e-ea8b-5d74-aa2e-37f3dc9ec78b,Mirror Formula,3426833e-68b5-5706-85c0-4ffaf1336e21,3
+1fab7314-4c79-5df7-8acb-9def9af16525,Refraction of Light,3426833e-68b5-5706-85c0-4ffaf1336e21,4
+a337de53-17ac-5484-84a0-17bf5543eead,Refraction at Spherical Surfaces,3426833e-68b5-5706-85c0-4ffaf1336e21,5
+6db10096-ea32-58bf-8858-aeb464fed5bf,Lenses,3426833e-68b5-5706-85c0-4ffaf1336e21,6
+984cae51-a3b6-52f4-b3ae-51453b85fecd,Lens Formula,3426833e-68b5-5706-85c0-4ffaf1336e21,7
+5e791c6d-d862-51f4-94c7-dd9955bb86b8,Magnification by Lens,3426833e-68b5-5706-85c0-4ffaf1336e21,8
+d729c661-3557-5c5c-833a-95e113855a89,Lens Maker Formula,3426833e-68b5-5706-85c0-4ffaf1336e21,9
+45ba5cbd-3769-5d61-8cdb-9d45a4345877,Total Internal Reflection,3426833e-68b5-5706-85c0-4ffaf1336e21,10
+654e8b3c-e74e-5d00-b47b-5627ff6be87b,Prism,3426833e-68b5-5706-85c0-4ffaf1336e21,11
+cd537bb9-d728-5782-9b2f-7b9b02a705f1,Wavefront and Huygens Principle,e01d6131-f960-5c6a-b023-873c821383ea,1
+ce7b7af4-96e3-5648-abf0-8dc752982bd8,Interference of Light,e01d6131-f960-5c6a-b023-873c821383ea,2
+374e8260-a237-5da4-884e-ee1f24832d4d,Young’s Double Slit Experiment,e01d6131-f960-5c6a-b023-873c821383ea,3
+9da4c94d-e394-56ee-a142-c9abae47207b,Diffraction,e01d6131-f960-5c6a-b023-873c821383ea,4
+c86007d6-2392-5d63-8c3a-ccbb51300e27,Polarization,e01d6131-f960-5c6a-b023-873c821383ea,5
+a8d650ac-11cf-55ed-985b-944f3a2ecefb,Dual Nature of Radiation,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,1
+d7f841ec-35a5-57e1-acfb-9f773c9b0003,Photoelectric Effect,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,2
+cd46a144-c491-578c-8806-aae16304132e,Observations of Photoelectric Effect,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,3
+b25265be-852e-5426-8d1b-ceb337155743,Einstein’s Photoelectric Equation,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,4
+076f838e-d314-5db2-8c01-9b3e4a356626,Particle Nature of Light,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,5
+b678b10f-4555-5b36-ad2f-bf1333fa29bb,Wave Nature of Matter,9ce1ebf1-2134-5d15-b9a3-02da1d0c4d8e,6
+9ce72267-6c18-54e9-ae74-a83a75169cfd,Thomson Model of Atom,445b8754-3097-5cb2-8b14-7759a2609579,1
+a22043c5-af77-53bd-9ff8-aaef48d0b3d5,Rutherford Atomic Model,445b8754-3097-5cb2-8b14-7759a2609579,2
+0339b4bf-520e-5f5d-b04c-0341a413ea1c,Bohr Model,445b8754-3097-5cb2-8b14-7759a2609579,3
+ba83923d-53de-53d9-be22-a07cdaee0819,Hydrogen Spectrum,445b8754-3097-5cb2-8b14-7759a2609579,4
+3014de2d-0057-5586-b20f-c7c624163de5,Nuclear Composition,ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,1
+5d9fbddd-1f24-50a2-bcbc-afcb5d84dfef,Nuclear Size,ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,2
+63da7081-4b55-5631-90e7-c85dae4a6666,Mass Defect,ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,3
+f44fda90-6d97-54b8-a0aa-f31ed0fcb99e,Binding Energy,ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,4
+33f3f3fd-d9a2-551c-b292-b12e731168c6,Nuclear Reactions,ee3bf0dd-e01a-5d6b-a128-c1d19a9b850e,5
+58ee67ea-adcb-5d58-8141-b2f0f5114020,Semiconductors,188c6b36-194c-5d05-8803-4d1728df32f1,1
+d48db1c2-6221-50bf-91f7-2c33c7beeee7,Semiconductor Doping,188c6b36-194c-5d05-8803-4d1728df32f1,2
+997a0f6a-12ca-59ce-800c-ae1299574b3d,p-n Junction,188c6b36-194c-5d05-8803-4d1728df32f1,3
+c7a16fd3-eae1-5110-8ead-3a5e75355b6b,Diode Characteristics,188c6b36-194c-5d05-8803-4d1728df32f1,4
+8b4ea479-f0d5-53e1-8ab5-23723270c9e1,Diode Applications,188c6b36-194c-5d05-8803-4d1728df32f1,5
+ba345786-3f31-51ed-8bb1-2eba9a098420,Special Diodes,188c6b36-194c-5d05-8803-4d1728df32f1,6
+35181835-96c5-5060-ad9b-d51cd2b15710,Logic Gates,188c6b36-194c-5d05-8803-4d1728df32f1,7
+124065b2-d972-54fc-b94a-46cbb8c35aea,Basic Measurement and Experimental Skills,cbaa10c2-1648-5be1-abd9-22318b93c4a8,1
+8d6a1ec0-6880-5f87-a175-6b9439acfe86,Vernier Calipers,cbaa10c2-1648-5be1-abd9-22318b93c4a8,2
+0bfd47c7-c0f2-5ee0-93c8-31c41f8bffae,Screw Gauge,cbaa10c2-1648-5be1-abd9-22318b93c4a8,3
+4d3871ba-4887-57cd-aa0e-552485c06944,Simple Pendulum Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,4
+5829e237-1060-569e-893b-615d2fba8d2c,Metre Scale Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,5
+ea6b699b-8a6b-5777-9f97-bc44e57ea300,Young’s Modulus Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,6
+6befbf1e-1d26-576c-8aaa-0ca13d1c73e8,Surface Tension Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,7
+e4fac1fe-c678-58e2-8bcb-0dee04293157,Viscosity Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,8
+3d196524-6554-505b-b822-33e11c8e20f9,Speed of Sound Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,9
+87bb8bf4-594b-50dd-aab3-4a3ff0cbc5a5,Calorimetry Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,10
+41d88cc0-eca5-5e37-be1e-fb6ade60db1e,Electrical Experiments,cbaa10c2-1648-5be1-abd9-22318b93c4a8,11
+600d7f7a-a618-5c8d-a485-f459972fe1d4,Optics Experiments,cbaa10c2-1648-5be1-abd9-22318b93c4a8,12
+65a3bcc7-7680-5ef4-a992-fe8a4fa8967d,Prism Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,13
+dc6906bd-d728-59d9-9c79-657f3e52012c,Refractive Index Experiment,cbaa10c2-1648-5be1-abd9-22318b93c4a8,14
+b16760b4-3c32-5448-a289-b02324ba711b,Semiconductor Experiments,cbaa10c2-1648-5be1-abd9-22318b93c4a8,15
+76c9f71b-fc29-51c7-9eaa-1f07328810e9,Identification of Electronic Components,cbaa10c2-1648-5be1-abd9-22318b93c4a8,16
+22d3519d-2e8d-5ea3-b183-f18ddb9701b3,The Living World,4f0ddf9c-27e1-59d1-949f-b5e21bb58f1c,1
+bf217cba-9b28-5dd2-b183-fcf112ff66fa,Biological Classification,4f0ddf9c-27e1-59d1-949f-b5e21bb58f1c,2
+0a3a5bbb-8251-5e3b-a287-b466ed2393ad,Plant Kingdom,4f0ddf9c-27e1-59d1-949f-b5e21bb58f1c,3
+bcffbc9f-abc7-5b15-beb4-dc65fdad2bb4,Morphology of Flowering Plants,c7137fd1-a9a5-5bee-bbe8-b8489233c56f,1
+7fb8e435-cd6e-56c5-9f9c-a8821bcc837a,Plant Families,c7137fd1-a9a5-5bee-bbe8-b8489233c56f,2
+126862c8-0e6e-5181-b083-4a86edd55b6b,Plant Tissues,c7137fd1-a9a5-5bee-bbe8-b8489233c56f,3
+fdd96c31-ce95-5071-833d-5e0dd2971ce5,Plant Anatomy,c7137fd1-a9a5-5bee-bbe8-b8489233c56f,4
+9faaedc2-6f1a-5d68-8631-d09974e67b6d,Cell Theory,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,1
+8ddf2824-be64-561e-97b8-25edb3dc730f,Prokaryotic and Eukaryotic Cells,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,2
+7433060a-fa48-5428-ace8-40a81a6b8fd5,Cell Organelles,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,3
+964a3a72-d20d-5e07-99a0-3ab97a8db1cc,Cell Envelope,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,4
+f39df97d-7f99-5e50-87e2-b86c63857aec,Cytoskeleton and Cell Structures,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,5
+3e28a447-d352-56c1-8acb-947baf00617d,Nucleus,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,6
+e273efa5-dbff-54ec-82f9-7e930c3cf4b9,Biomolecules,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,7
+7035cb1c-e666-5e8a-8867-dd06faf19342,Enzymes,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,8
+3fdc49ff-e870-57ad-b4af-cdc711b0dbd2,Cell Division,4e953e2e-cb42-5769-ab2e-f242cb8bdeed,9
+54f3087c-84e9-58cb-a2f9-94749707404e,Photosynthesis,c3d4d16d-36d7-5890-980b-203d153cf5a6,1
+8d05a48d-f16b-5832-8b12-93cad0fd9b9d,Respiration in Plants,c3d4d16d-36d7-5890-980b-203d153cf5a6,2
+905988ce-48db-5b5f-be17-c9409978f088,Plant Growth and Development,c3d4d16d-36d7-5890-980b-203d153cf5a6,3
+905e0d20-c8a8-52eb-bb5e-c3c9d681e691,Plant Growth Regulators,c3d4d16d-36d7-5890-980b-203d153cf5a6,4
+f46e2bb5-aed7-539a-a01b-14edd43a8624,Animal Tissues,0d5aadc2-7812-5eae-9e13-498d9cf85a51,1
+5579df59-661c-5d1f-9c75-9727efc94282,Frog Anatomy (Brief),0d5aadc2-7812-5eae-9e13-498d9cf85a51,2
+bd8a35c0-4e5e-5d1a-9018-2e33f82926b1,Breathing and Respiration,55971ad5-7616-5dff-8adf-7326a144ce2d,1
+73378ef9-a922-55d4-9997-3611240a6c4a,Disorders,55971ad5-7616-5dff-8adf-7326a144ce2d,2
+bfd88470-4b45-58c4-858e-827908b96656,Body Fluids and Circulation,55971ad5-7616-5dff-8adf-7326a144ce2d,3
+5a80ea64-38da-5050-8cb3-74df4c7d40c6,Human Circulatory System,55971ad5-7616-5dff-8adf-7326a144ce2d,4
+116fe37c-0a40-5169-9098-8841d6a72be6,Excretory System,55971ad5-7616-5dff-8adf-7326a144ce2d,6
+e98fc928-2152-5488-97cb-a09a4ac9f0e6,Hormonal Regulation,55971ad5-7616-5dff-8adf-7326a144ce2d,7
+24139ca6-7657-55b3-b9ec-8c8d69e452c0,Locomotion and Movement,55971ad5-7616-5dff-8adf-7326a144ce2d,9
+f60f50c2-786c-54f3-9a8e-22e9233096c0,Neural Control and Coordination,55971ad5-7616-5dff-8adf-7326a144ce2d,11
+7c5a20ff-373a-5246-872a-17c3c9e5f7e9,Chemical Coordination and Regulation,55971ad5-7616-5dff-8adf-7326a144ce2d,12
+4abfbe44-62f1-502c-a831-6d17aa10a757,Human Endocrine System,55971ad5-7616-5dff-8adf-7326a144ce2d,13
+f141a0bd-c836-5f1f-b307-b70bf74e2c08,Sexual Reproduction in Flowering Plants,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,1
+ae13972b-141b-58f2-a889-d6a8f98737dc,Special Reproductive Processes,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,2
+c01a4aa7-8f8d-514f-9f68-a8965a3ecdde,Human Reproduction,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,3
+6f566c58-f09c-599d-ad7d-b63b3b14a691,Fertilization,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,4
+99eb352d-5447-5eb4-894a-83a8e6c9aa3d,Pregnancy,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,5
+0b218a43-2e05-567b-abdf-b3259b3a74dc,Reproductive Health,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,6
+153a0e04-6ebe-5bf4-9e40-1dcef26d52f2,Assisted Reproductive Technologies,b016f4c0-5266-5ccb-a8bd-5aa5c0f07859,7
+70145338-2345-5be9-abe3-fc4d3fc96f69,Principles of Inheritance,272516ca-087c-5380-87a6-e1dc1d4d8e57,1
+b7d8169e-4680-52ad-9bdb-7dc016fb2ea8,Chromosomal Theory,272516ca-087c-5380-87a6-e1dc1d4d8e57,2
+22471c1a-6a45-595d-a343-8a53cbd264ee,Genetic Disorders,272516ca-087c-5380-87a6-e1dc1d4d8e57,3
+52bb611d-694c-5d16-9e40-44c36c11634d,Molecular Basis of Inheritance,272516ca-087c-5380-87a6-e1dc1d4d8e57,4
+59d7ce1b-0e3a-5cd8-a451-fa662f959136,Gene Regulation,272516ca-087c-5380-87a6-e1dc1d4d8e57,5
+dd0658f3-94e6-5253-b220-3db8bf632b44,Genome Studies,272516ca-087c-5380-87a6-e1dc1d4d8e57,6
+21a0d6a5-d6f9-5b2a-816b-c0c2c1389cd0,Evolution,272516ca-087c-5380-87a6-e1dc1d4d8e57,7
+664c5d4f-ef4a-50dd-bc25-c968917b570a,Darwinism,272516ca-087c-5380-87a6-e1dc1d4d8e57,8
+26269f96-e113-59da-a37c-8449ded015dc,Mechanism of Evolution,272516ca-087c-5380-87a6-e1dc1d4d8e57,9
+3a04874c-1539-5d0b-99f5-f03aaeb459f4,Hardy Weinberg Principle,272516ca-087c-5380-87a6-e1dc1d4d8e57,10
+4e9eb032-336e-5e62-90b3-3b7a597f247b,Human Evolution,272516ca-087c-5380-87a6-e1dc1d4d8e57,11
+a12bb3e2-1bed-5402-9164-605cba042a84,Human Diseases,144a46ea-ddc0-509b-8e7b-e2f130626a5e,1
+227b9cdf-1b58-55bb-a54d-03cb00e0a8f6,Immunology,144a46ea-ddc0-509b-8e7b-e2f130626a5e,2
+80f5c3b0-d67f-5c6a-8774-4195c8bfca5b,Cancer,144a46ea-ddc0-509b-8e7b-e2f130626a5e,3
+9dbb9903-e048-5657-8924-22f00e05c316,HIV and AIDS,144a46ea-ddc0-509b-8e7b-e2f130626a5e,4
+d92743de-6d5e-5bf1-b088-779c4c8c628f,Drug and Alcohol Abuse,144a46ea-ddc0-509b-8e7b-e2f130626a5e,5
+444b4e73-d26a-5a08-8ea9-0dc9ec2713bb,Principles of Biotechnology,f09eb987-14d8-5020-bc24-fa7b7ac5fe8a,1
+a449fbcb-5bf7-5296-ae6e-f0ca5af9d039,Biotechnology Applications,f09eb987-14d8-5020-bc24-fa7b7ac5fe8a,2
+e58cf294-eabc-5231-8017-29b8f98657ae,Biosafety,f09eb987-14d8-5020-bc24-fa7b7ac5fe8a,3
+a828b03e-f928-5d33-8360-c357b3eff1a9,Organisms and Environment,78e5c3b5-172f-525a-b22d-0535a57fa09c,1
+ad109fae-db04-52b2-b22f-f9781430ec0d,Population Attributes,78e5c3b5-172f-525a-b22d-0535a57fa09c,2
+561719a2-0685-5aa4-a359-9f847949b7bd,Ecosystem,78e5c3b5-172f-525a-b22d-0535a57fa09c,3
+e3d12c01-b89c-53b2-96c3-c475487cda37,Biodiversity and Conservation,78e5c3b5-172f-525a-b22d-0535a57fa09c,4
+8bde7b3b-2433-5939-bf6b-c710bb7b3115,Conservation Methods,78e5c3b5-172f-525a-b22d-0535a57fa09c,5
+e6920a9b-81c1-596f-9508-8c1a1653b0ad,Modern Periodic Law,72636ff4-60d5-5168-b3ea-153ea49a54b2,1
+a7c4ac61-2612-5edf-84dd-18527df36714,Periodic Table Structure,72636ff4-60d5-5168-b3ea-153ea49a54b2,2
+84e5925d-3656-53df-ba8e-75405f52532a,Periodic Trends,72636ff4-60d5-5168-b3ea-153ea49a54b2,3
+271bec75-89fa-5d9d-9c6f-89ece7eb93a4,General Trends,f9230487-9011-5f00-a997-c068cac1a57d,1
+18b7dad1-dc53-5ced-ac12-b7782744982e,Group 13 Elements,f9230487-9011-5f00-a997-c068cac1a57d,2
+f76f071d-491b-5630-adb8-f3aa4467756a,Group 14 Elements,f9230487-9011-5f00-a997-c068cac1a57d,3
+a3fe08d5-93f5-51b7-b8da-689d61d5119a,Group 15 Elements,f9230487-9011-5f00-a997-c068cac1a57d,4
+23aa2b2a-0227-5cb5-9823-eee8fdf4cbe5,Group 16 Elements,f9230487-9011-5f00-a997-c068cac1a57d,5
+c7d20722-13c9-5c73-bde1-b80777967f72,Group 17 Elements,f9230487-9011-5f00-a997-c068cac1a57d,6
+da230181-17de-50ae-a4f8-31ef5a55bfb8,Group 18 Elements,f9230487-9011-5f00-a997-c068cac1a57d,7
+17098260-fb59-54c1-890b-159217b0b513,Transition Elements,027bc9dd-98b6-5800-8676-da4de6a87a6b,1
+9a6e3b97-b582-577b-8b09-e82f6fc8a6e4,Lanthanides,027bc9dd-98b6-5800-8676-da4de6a87a6b,2
+186b8a98-769c-5b38-aaa4-34f7ddc7bb17,Actinides,027bc9dd-98b6-5800-8676-da4de6a87a6b,3
+4db43b19-405e-5a82-96e2-a56df76c1971,Werner’s Theory,502b1766-24b5-53f0-b399-af3a81586e97,1
+6ae48a67-c481-55fc-8e89-065f0656c9e2,Ligands,502b1766-24b5-53f0-b399-af3a81586e97,2
+73dd18a2-b815-565c-aa97-13230aa4aab9,Nomenclature,502b1766-24b5-53f0-b399-af3a81586e97,3
+d3240ebe-59c2-5601-a5df-3d9b5979464a,Isomerism,502b1766-24b5-53f0-b399-af3a81586e97,4
+435d3ceb-1d1f-5769-889b-24b0c3a7d91a,Bonding in Coordination Compounds,502b1766-24b5-53f0-b399-af3a81586e97,5
+a35f4429-2cb3-5573-8038-e0e432f96901,Purification Methods,33a7fc38-92a6-57b5-aaa0-d925a3f68dc5,1
+f3ce2f38-e78e-5d35-ae8e-d278d6bd9823,Qualitative Analysis,33a7fc38-92a6-57b5-aaa0-d925a3f68dc5,2
+fad4a79b-1a07-50f6-aecf-cee01be3eb42,Quantitative Analysis,33a7fc38-92a6-57b5-aaa0-d925a3f68dc5,3
+fbe1089f-9147-5409-8d9d-80dbd50fb2c4,Tetravalency of Carbon,8940d394-59f5-55cf-8aca-06d08f2b3f21,1
+16fe52cb-12da-5768-b8fe-5b9575f6b5ad,Functional Groups,8940d394-59f5-55cf-8aca-06d08f2b3f21,2
+57b5bb3e-0d26-5ed5-87f5-09f60bec99c4,Homologous Series,8940d394-59f5-55cf-8aca-06d08f2b3f21,3
+3893315d-bebb-585f-aea9-4e5a1cb76f58,Isomerism,8940d394-59f5-55cf-8aca-06d08f2b3f21,4
+4e809ee5-2326-58fc-b313-eb2bcedb1bce,Electronic Effects,8940d394-59f5-55cf-8aca-06d08f2b3f21,5
+c65ed4c1-222c-55bc-bc2c-3a9c3fd42ce8,Reaction Intermediates,8940d394-59f5-55cf-8aca-06d08f2b3f21,6
+fc556a2b-a714-5ea2-ade3-09ba3fe23ef2,Alkanes,b5354a7a-d950-59d2-853c-18ca480110d0,1
+e09a7995-eef7-58ba-ab18-be0d64f0de79,Alkenes,b5354a7a-d950-59d2-853c-18ca480110d0,2
+8f860fe9-135b-5f49-8052-00d5af98f0f7,Alkynes,b5354a7a-d950-59d2-853c-18ca480110d0,3
+bd0b3b25-bb32-5489-ba35-71f7c5940954,Aromatic Hydrocarbons,b5354a7a-d950-59d2-853c-18ca480110d0,4
+bce6903c-59ab-5f6b-9601-1db696c8eaa0,Haloalkanes,e74f12f5-c007-5137-8e25-c8f460a42eb5,1
+04f28a45-d8d1-5ba8-a01b-d3a24b68812f,Haloarenes,e74f12f5-c007-5137-8e25-c8f460a42eb5,2
+19935136-25f5-5c3c-8c0a-f352700fbf9b,Nucleophilic Substitution,e74f12f5-c007-5137-8e25-c8f460a42eb5,3
+46699419-6975-593e-b7dd-b7d6e230fc3b,Alcohols,e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,1
+b7376499-b18f-5bfc-83a2-ccb137053b53,Phenols,e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,2
+10924d38-750b-5f0c-9b33-53c6d219371c,Ethers,e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,3
+b03f9dc2-fdbc-54dd-92b4-24fa895307c9,Aldehydes and Ketones,e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,4
+e6ebc1a5-b67c-5eeb-982e-f9d6fe906610,Carboxylic Acids,e9b4c2f9-bf62-554e-b3eb-ecaf811422aa,5
+46c2019e-7749-5686-82dd-9576de6f6fe4,Amines,bea1a628-74f7-590f-a3ea-1ad319c79dc9,1
+5cdcc0f4-bb68-5c3f-8f3e-9222b59d6405,Diazonium Salts,bea1a628-74f7-590f-a3ea-1ad319c79dc9,2
+6dc6bff8-4a3f-52a6-98f9-d7836a73e864,Carbohydrates,f5c44698-0ef3-5051-8294-036f8101dbd9,1
+0defeae3-8892-52bc-a5e8-3277512780fb,Proteins,f5c44698-0ef3-5051-8294-036f8101dbd9,2
+cb435b11-9eac-5755-83a9-8dcdc58be8cb,Enzymes,f5c44698-0ef3-5051-8294-036f8101dbd9,3
+8457474d-dcbf-5cc0-bd1a-d892206a5fd1,Vitamins,f5c44698-0ef3-5051-8294-036f8101dbd9,4
+76a7acca-04a1-5a34-aef6-dd714fda3918,Nucleic Acids,f5c44698-0ef3-5051-8294-036f8101dbd9,5
+5f4fe3ac-1be0-504f-adab-5caca0468fab,Detection of Functional Groups,70d35d68-2eff-5754-b6aa-1f2a9ec5f61c,1
+9cfb9219-211f-5df5-9b34-aa909f4744cc,Preparation of Organic Compounds,70d35d68-2eff-5754-b6aa-1f2a9ec5f61c,2
+cceaf522-351a-5d51-baee-e465261e46a0,Titration Experiments,70d35d68-2eff-5754-b6aa-1f2a9ec5f61c,3
+c593b257-b730-5c23-9347-2027174e27e4,Salt Analysis,70d35d68-2eff-5754-b6aa-1f2a9ec5f61c,4
+84a3626f-8bbd-5b5a-aeb9-92f8c8ff1708,Matter and Its Nature,b84cafe8-12ae-595f-a091-c38920c6559e,1
+73aa4965-815c-5df6-a76c-40c63e399180,Atomic Theory,b84cafe8-12ae-595f-a091-c38920c6559e,2
+83361d69-f8bf-5b41-aaa9-cd0cd981ab8e,Laws of Chemical Combination,b84cafe8-12ae-595f-a091-c38920c6559e,3
+ec375faf-4c3c-547c-992a-4d7171a31de1,Atomic and Molecular Mass,b84cafe8-12ae-595f-a091-c38920c6559e,4
+78363a71-4502-5845-9f10-b4ad2ec46374,Mole Concept,b84cafe8-12ae-595f-a091-c38920c6559e,5
+059692ed-0e27-5664-a9fa-0c5d4fcb4e3f,Stoichiometry,b84cafe8-12ae-595f-a091-c38920c6559e,6
+5bcb3776-ddd4-5ddf-bba3-c3b0fdba75ab,Nature of Electromagnetic Radiation,b4e602d5-3e9d-56c3-ad60-bc931341133d,1
+9e3a4184-8c8c-51a7-af9a-dddff914a977,Planck’s Quantum Theory,b4e602d5-3e9d-56c3-ad60-bc931341133d,2
+2fd56985-c32a-5487-9ac5-b397762d4eab,Photoelectric Effect,b4e602d5-3e9d-56c3-ad60-bc931341133d,3
+eda12e0a-e669-5493-9893-0b9dbbdfb5cf,Atomic Spectra,b4e602d5-3e9d-56c3-ad60-bc931341133d,4
+fd5ec3bd-c82f-5a72-8b21-b76ed990ac13,Bohr Model of Hydrogen Atom,b4e602d5-3e9d-56c3-ad60-bc931341133d,5
+2482c988-0b4e-5d4c-a3da-f5ac36a0bb9a,Limitations of Bohr Model,b4e602d5-3e9d-56c3-ad60-bc931341133d,6
+3c3eb0a4-cd13-5cb8-9f04-ac7a454db9ca,Dual Nature of Matter,b4e602d5-3e9d-56c3-ad60-bc931341133d,7
+d825f351-ac21-5c92-b417-a2495a55d73b,Heisenberg Uncertainty Principle,b4e602d5-3e9d-56c3-ad60-bc931341133d,8
+9c88bb02-5993-5829-b035-fe82f887f0b2,Quantum Mechanical Model of Atom,b4e602d5-3e9d-56c3-ad60-bc931341133d,9
+5344e5d0-0f8e-5943-a54e-2d4b2679b50c,Atomic Orbitals,b4e602d5-3e9d-56c3-ad60-bc931341133d,10
+9ef8687f-8d2c-5c99-8ac1-8a9fb924707a,Quantum Numbers,b4e602d5-3e9d-56c3-ad60-bc931341133d,11
+bde613df-2a16-538b-82fa-2b708769286d,Shapes of Orbitals,b4e602d5-3e9d-56c3-ad60-bc931341133d,12
+76e319b7-bc69-591d-a70f-00ff0594892b,Electronic Configuration,b4e602d5-3e9d-56c3-ad60-bc931341133d,13
+b0a1f971-2513-593d-80e2-e5f1270db4c2,Kossel–Lewis Approach,e04c50ed-8cdb-57d3-9178-79b17608a087,1
+5a88c431-8adf-56d3-a060-98a12ebf9c66,Ionic Bonding,e04c50ed-8cdb-57d3-9178-79b17608a087,2
+71a163b9-87fb-5231-ac48-1b58c7714af9,Covalent Bonding,e04c50ed-8cdb-57d3-9178-79b17608a087,3
+db89951d-8a98-591e-abba-1961c6a2e99e,Electronegativity,e04c50ed-8cdb-57d3-9178-79b17608a087,4
+ae74f2bc-1657-5eb9-9b2d-8e27eaa80e3c,Fajan’s Rule,e04c50ed-8cdb-57d3-9178-79b17608a087,5
+53eeacbc-5b0e-5f72-ac24-a9087b13cd02,Dipole Moment,e04c50ed-8cdb-57d3-9178-79b17608a087,6
+ccd00b14-6508-5a9e-9e1a-7c8fb29e3781,VSEPR Theory,e04c50ed-8cdb-57d3-9178-79b17608a087,7
+a3a57edd-ad31-509c-ac0f-301103138bd9,Hybridization,e04c50ed-8cdb-57d3-9178-79b17608a087,8
+accf0937-dbdf-5af3-93f2-23706c783d2b,Resonance,e04c50ed-8cdb-57d3-9178-79b17608a087,9
+e71753c4-3724-528d-84f1-b043809382ff,Molecular Orbital Theory,e04c50ed-8cdb-57d3-9178-79b17608a087,10
+fc43e3a9-b4f0-5a1b-ba5b-6053b95766db,Molecular Orbital Configuration,e04c50ed-8cdb-57d3-9178-79b17608a087,11
+8c11dfac-99b0-590c-aa67-e14036312696,Metallic Bonding,e04c50ed-8cdb-57d3-9178-79b17608a087,12
+788b94ca-9cbc-59a0-a94c-532ab919e321,Hydrogen Bonding,e04c50ed-8cdb-57d3-9178-79b17608a087,13
+4aeaa6b8-be8e-554e-859a-ede69e24c0be,Basic Thermodynamic Concepts,11dc090f-1ba4-5740-90cd-a3ff60fffc92,1
+7b86d6a7-e804-5980-9fff-33deb43aa085,Types of Thermodynamic Processes,11dc090f-1ba4-5740-90cd-a3ff60fffc92,2
+e3cbe132-0871-5fab-a4a6-74796dd9bc98,First Law of Thermodynamics,11dc090f-1ba4-5740-90cd-a3ff60fffc92,3
+22ebea9c-f41d-54f6-b35c-4cce609a0e04,Enthalpy,11dc090f-1ba4-5740-90cd-a3ff60fffc92,4
+e7462d66-cf1a-5877-a88c-b9ec9d865729,Thermochemistry,11dc090f-1ba4-5740-90cd-a3ff60fffc92,5
+b6e6a470-4112-58a1-870b-93605f8b30a5,Hess’s Law,11dc090f-1ba4-5740-90cd-a3ff60fffc92,6
+2a064c11-f96a-5cad-b0f2-7fbdf69311dc,Second Law of Thermodynamics,11dc090f-1ba4-5740-90cd-a3ff60fffc92,7
+f2de9909-3a47-555f-9f8b-d95d1e0d37d4,Gibbs Free Energy,11dc090f-1ba4-5740-90cd-a3ff60fffc92,8
+eec57c41-a5de-5459-946b-2cc8247eb980,Types of Solutions,d5f602bc-192a-58b5-b7a9-c9850dbcd851,1
+55f7acf8-df8b-57ff-bcd3-f407ff89a589,Concentration Terms,d5f602bc-192a-58b5-b7a9-c9850dbcd851,2
+68af91ab-eef2-5165-8b9e-51ad76bc2c2f,Vapour Pressure of Solutions,d5f602bc-192a-58b5-b7a9-c9850dbcd851,3
+0aee7bf2-67ba-5f8f-ad52-c8a829ce3c43,Colligative Properties,d5f602bc-192a-58b5-b7a9-c9850dbcd851,4
+55b3e5d2-830b-5974-84dc-b78f840190e9,Abnormal Molecular Mass,d5f602bc-192a-58b5-b7a9-c9850dbcd851,5
+50c54547-6ed2-557e-909f-afaab898abe6,Chemical Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,1
+fda77a36-f25e-5594-afa7-3b0a0e7b1e56,Factors Affecting Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,2
+41f5fd87-cc0c-51c5-99f3-0b50c83b1d77,Le Chatelier Principle,6c842985-88ec-5cab-9323-2cf327881663,3
+a1c395c2-3042-5b0c-b289-c966e7a3250e,Ionic Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,4
+f9501c90-7ca9-53e2-ac54-50bf9fc9d48a,Acid Base Theories,6c842985-88ec-5cab-9323-2cf327881663,5
+98b040de-2d66-59b8-bd4f-0cf8973bc269,Ionization of Water,6c842985-88ec-5cab-9323-2cf327881663,6
+4b09a035-21b8-5f24-9099-c7c60b974fe5,Hydrolysis of Salts,6c842985-88ec-5cab-9323-2cf327881663,7
+79240a07-e7bd-5156-9755-94f946602128,Solubility Product,6c842985-88ec-5cab-9323-2cf327881663,8
+b0f848db-27f5-5971-ae5f-c570790a4823,Buffer Solutions,6c842985-88ec-5cab-9323-2cf327881663,9
+b5cfc3a5-2883-570b-adb0-7ad4062f9e5a,Expressing Concentration of Solutions,d5f602bc-192a-58b5-b7a9-c9850dbcd851,2
+20595b84-a742-503a-9674-c6f80f0dc788,Vapour Pressure of Liquid Solutions,d5f602bc-192a-58b5-b7a9-c9850dbcd851,3
+951fea09-9f11-5923-88e3-391b27c05ae3,Ideal and Non-Ideal Solutions,d5f602bc-192a-58b5-b7a9-c9850dbcd851,4
+acecd846-15fe-572e-ac9b-8d779d2923a4,Colligative Properties,d5f602bc-192a-58b5-b7a9-c9850dbcd851,5
+b524d287-cfb8-5fef-9045-945f254a2f9c,Osmosis and Osmotic Pressure,d5f602bc-192a-58b5-b7a9-c9850dbcd851,6
+1108774d-4cd1-50eb-b797-e9353cada15d,Abnormal Molecular Mass,d5f602bc-192a-58b5-b7a9-c9850dbcd851,7
+dd541e5e-6bbf-5993-9579-9dbcd8b2d5ab,Equilibrium in Physical Processes,6c842985-88ec-5cab-9323-2cf327881663,1
+263565d3-f098-5577-8551-f74ab05cbc1f,Vapour Pressure and Liquid–Gas Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,2
+654bc589-1515-5504-987f-fb58b1c52578,Henry’s Law,6c842985-88ec-5cab-9323-2cf327881663,3
+d0a0f642-0326-50d3-b771-bcab902980f7,Chemical Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,4
+69c5890f-dd13-57b6-a53e-98553b92cf06,Applications of Equilibrium Constant,6c842985-88ec-5cab-9323-2cf327881663,5
+cd622a7e-6291-585c-8451-2ea6a87a8927,Factors Affecting Chemical Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,6
+9815c3b2-bb33-5b41-b8a1-b610dd6153e7,Le Chatelier’s Principle,6c842985-88ec-5cab-9323-2cf327881663,7
+a876e329-9fa9-57b0-939c-12e4fc6d7b17,Ionic Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,8
+e6bebf94-478e-56b7-8004-339ad11ca78e,Acid–Base Theories,6c842985-88ec-5cab-9323-2cf327881663,9
+97fc4825-b1c2-5799-8703-82bc9ebcad42,Ionization of Water,6c842985-88ec-5cab-9323-2cf327881663,10
+d260a953-5365-56b7-af9f-0063c515418b,pH Scale,6c842985-88ec-5cab-9323-2cf327881663,11
+635cd270-1e9d-55c1-8277-32d85f0fda0d,Hydrolysis of Salts,6c842985-88ec-5cab-9323-2cf327881663,12
+0883b8e4-2c87-5f1b-bd23-ef27632b3cf6,Solubility Equilibrium,6c842985-88ec-5cab-9323-2cf327881663,13
+615aae19-0470-5df3-88ae-1bb55a6b8dcb,Buffer Solutions,6c842985-88ec-5cab-9323-2cf327881663,14
+56a5d755-a1f4-55e2-8b31-c893110c25ff,Oxidation and Reduction,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,1
+72e08ac7-16d9-5d88-8408-b0d5e87caabc,Oxidation Number,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,2
+ec1f50cb-3228-5617-a49e-1600eaaa566c,Balancing Redox Reactions,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,3
+69dbeab9-f2d7-5ce6-a563-bdd7202a8ed6,Electrolytic and Metallic Conduction,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,4
+6d55f475-b711-58f2-a1d4-7cb602724e10,Conductance in Electrolytic Solutions,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,5
+1d150d32-de74-59bc-901c-bb6682a09215,Kohlrausch’s Law,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,6
+f8cd94e1-1308-552a-8457-4755902bfc40,Electrochemical Cells,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,7
+61d373fe-4da5-5feb-814d-876e7c308695,Electrode Potential,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,8
+1204964d-2726-5126-bbac-38888e237215,EMF of a Cell,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,9
+bd5d85ac-030b-5abd-8c08-cd6106a59657,Nernst Equation,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,10
+743021b7-2738-5f2b-b0e5-dd1c09504867,Applications of Electrochemistry,2b2b9b82-4adc-5fec-8f81-0f7c81bcd400,11
+f4ab15f8-b44e-5d6b-a514-cf90fb2e2a57,Rate of Chemical Reaction,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,1
+8c35b275-6af9-5713-96a4-a42081915278,Factors Affecting Rate of Reaction,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,2
+37a1fbe6-a245-5fa5-8dd1-feddfa777a87,Rate Law,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,3
+43cfcfac-d5bc-51ba-b7ad-8937534a9e02,Order of Reaction,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,4
+473d55cd-7e91-584e-b637-2a097205991a,Integrated Rate Equations,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,5
+43517d3e-6bcb-5123-a1f7-ac105e698a3c,Half-Life of Reactions,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,6
+3b630edd-38b4-5f8c-bbec-cbefebe00986,Temperature Dependence of Rate,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,7
+d790e5a3-e25d-529a-a5bc-5becf3cfe860,Collision Theory,b2600b03-19cf-5b70-a2c6-0c8dc46945e2,8

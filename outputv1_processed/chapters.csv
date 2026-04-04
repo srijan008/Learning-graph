@@ -1,0 +1,55 @@
+id,name,order_index,subject_id
+d0faf1c5-3e0a-4603-b769-f036613c74f2,Some Basic Concepts in Chemistry,1,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+473c096e-e3a0-402d-b7f1-2de0243f82e7,Atomic Structure,2,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+8699c0d8-cc59-422b-bd66-04e4d1d8cc0c,Chemical Bonding and Molecular Structure,3,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+b825bbd8-1e95-426a-9058-598e10850a40,Chemical Thermodynamics,4,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+71b58b17-02b6-4b2c-9f8d-41870debbbf9,Solutions,5,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+9911e93d-0a80-4cf7-81a4-f98a06f4f087,Equilibrium,6,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+379cea46-077d-4f8e-a35f-82bdbf6b1d17,Redox Reactions and Electrochemistry,7,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+70d8f312-778f-4a78-b4a0-423d2000fe32,Chemical Kinetics,8,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+f4aa6709-9952-4644-ad0b-5cc86203c67e,Classification of Elements and Periodicity in Properties,9,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+0fe2b57e-6442-4cfb-a04f-36783a73c293,p-Block Elements (Group 13–18),10,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+bb9673a5-65cd-421c-8ccd-1929c6690a36,d- and f- Block Elements,11,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+f07a2eaf-b588-4464-9fc7-a7e92446bfb3,Coordination Compounds,12,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+5c5e9e2e-b461-4916-a0df-ad42b3d953cd,Purification and Characterisation of Organic Compounds,13,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+243e24ea-56ce-40de-a277-638f97caa437,Some Basic Principles of Organic Chemistry,14,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+f2dac3d0-a0e0-41c3-bd86-4d35c2bf84c9,Hydrocarbons,15,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+327d515d-bfe5-471a-8747-8b3346e078f4,Organic Compounds Containing Halogens (Haloalkanes and Haloarenes),16,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+e4d4b74d-2dba-431e-b3e8-0708085c6147,Organic Compounds Containing Oxygen,17,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+df83fc2f-bd02-470e-8b51-02fbecd31b91,Organic Compounds Containing Nitrogen,18,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+70637303-392a-4101-9310-e6b3a36eed23,Biomolecules,19,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+df4844ad-33b5-4272-bca4-8d7b26bec84a,Principles Related to Practical Chemistry,20,305592df-3f1d-40b1-9b17-6c447e9d1a0a
+a1507718-01dc-48f1-b41c-4c497d14a50a,"Sets, Relations and Functions",1,822faabf-3579-4737-a0b2-8c17716f7f6b
+1ef42b83-323a-4925-af55-9ddbf6d778e2,Complex Numbers and Quadratic Equations,2,822faabf-3579-4737-a0b2-8c17716f7f6b
+883c9323-3c8f-4a0e-bfaf-bc4ecc16f828,Matrices and Determinants,3,822faabf-3579-4737-a0b2-8c17716f7f6b
+3b3478e9-a4e2-46bd-bbfd-614a1d8a8c63,Permutations and Combinations,4,822faabf-3579-4737-a0b2-8c17716f7f6b
+d85a5d26-5825-432d-998c-a403b918f709,Binomial Theorem and Its Applications,5,822faabf-3579-4737-a0b2-8c17716f7f6b
+4d9ddae3-486b-4bd5-9b9a-dd47a7ed9736,Sequence and Series,6,822faabf-3579-4737-a0b2-8c17716f7f6b
+98240739-d772-462d-a63a-8d9660f37ff5,"Limits, Continuity and Differentiability",7,822faabf-3579-4737-a0b2-8c17716f7f6b
+f1b83528-344d-4dd9-a4d0-c0a47ed87e97,Integral Calculus,8,822faabf-3579-4737-a0b2-8c17716f7f6b
+3fd3405e-c849-4b94-af25-6627feca62f5,Differential Equations,9,822faabf-3579-4737-a0b2-8c17716f7f6b
+66cb7b6c-e989-4e06-a9d3-232a66f40431,Coordinate Geometry,10,822faabf-3579-4737-a0b2-8c17716f7f6b
+4773b709-fd89-4745-8af0-2488efc90c82,Coordinate Geometry,11,822faabf-3579-4737-a0b2-8c17716f7f6b
+712f3a66-42cc-4bf0-99dd-d6d1008ef162,Three Dimensional Geometry (3D Geometry),12,822faabf-3579-4737-a0b2-8c17716f7f6b
+d26c7cf9-8490-449e-bec0-bbff9291fba9,Vector Algebra,13,822faabf-3579-4737-a0b2-8c17716f7f6b
+63fc3b47-2c8f-4b6f-92d2-167b990b5577,Statistics and Probability,14,822faabf-3579-4737-a0b2-8c17716f7f6b
+3dbf7f79-44d6-4318-ad0b-a3d2edcdfa23,Units and Measurements,1,bb222757-b6b9-408a-855c-4242223be76d
+7446d37f-e298-4c3f-8b3f-e18ef81b61ee,Kinematics,2,bb222757-b6b9-408a-855c-4242223be76d
+ce3e0606-32d8-4a3c-a5dc-86ee910ddd8b,Laws of Motion,3,bb222757-b6b9-408a-855c-4242223be76d
+75c13a4b-e581-408c-985c-c87d1bf562ee,"Work, Energy and Power",4,bb222757-b6b9-408a-855c-4242223be76d
+1627855e-ae09-4041-8b0f-c9e437985711,Rotational Motion,5,bb222757-b6b9-408a-855c-4242223be76d
+16e92b29-8c42-43fb-b028-800a819beb3a,Gravitation,6,bb222757-b6b9-408a-855c-4242223be76d
+39d3d4af-8a6f-4980-b476-1672fd2ab1a6,Properties of Solids and Liquids,7,bb222757-b6b9-408a-855c-4242223be76d
+30bea76a-6c0e-418e-8de4-0a78f3446e19,Thermodynamics,8,bb222757-b6b9-408a-855c-4242223be76d
+296e8224-b55c-49d4-9cfe-000d51f8f4eb,Kinetic Theory of Gases,9,bb222757-b6b9-408a-855c-4242223be76d
+554a81fa-82ac-4015-8e0c-28bbebfda4f4,Oscillations and Waves,10,bb222757-b6b9-408a-855c-4242223be76d
+96978fbf-7732-4040-af8b-e3d674291daf,Electrostatics,11,bb222757-b6b9-408a-855c-4242223be76d
+df5fa64e-3020-4b00-aea0-5a1a9fa7c8f3,Current Electricity,12,bb222757-b6b9-408a-855c-4242223be76d
+fbe29b4f-c2b3-4afc-9253-65ade3585386,Magnetic Effects of Current and Magnetism,13,bb222757-b6b9-408a-855c-4242223be76d
+de18bfeb-8814-4db1-9829-9ec9e5bb0e8d,Electromagnetic Induction and Alternating Current,14,bb222757-b6b9-408a-855c-4242223be76d
+406d19e4-9347-4b77-873b-4e0440a0bdce,Electromagnetic Waves,15,bb222757-b6b9-408a-855c-4242223be76d
+9f4378f3-a42c-45b4-9140-926d69aabca7,Optics,16,bb222757-b6b9-408a-855c-4242223be76d
+96007816-9029-4ba4-9c5f-e385f8613942,Dual Nature of Matter and Radiation,17,bb222757-b6b9-408a-855c-4242223be76d
+5b458746-ec26-4faf-8a80-4d6b1e59dfed,Atoms and Nuclei,18,bb222757-b6b9-408a-855c-4242223be76d
+fc9fbc3b-ac1f-444b-aeab-ec0b06c5c834,Electronic Devices,19,bb222757-b6b9-408a-855c-4242223be76d
+5851317b-e184-4a17-b851-eb5e67468680,Experimental Skills,20,bb222757-b6b9-408a-855c-4242223be76d

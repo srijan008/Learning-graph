@@ -1,0 +1,1364 @@
+id,title,topic_id,order_index
+3b33cd83-7fb5-4eda-bbdf-a111a758ce56,Matter and its classification,80e3b7ff-3344-45e1-8dee-d6d8542d7491,1
+5ea7cc56-8f37-4015-927e-b0f3942cf6fb,Physical and chemical properties of matter,80e3b7ff-3344-45e1-8dee-d6d8542d7491,2
+99e27d9e-b676-488b-8346-b6a296ff1202,Physical and chemical changes,80e3b7ff-3344-45e1-8dee-d6d8542d7491,3
+b16176d8-3351-4535-94b3-e7d28200035d,States of matter,80e3b7ff-3344-45e1-8dee-d6d8542d7491,4
+27cd180d-cf81-4f4d-93ac-9855dad317b2,Interconversion of states,80e3b7ff-3344-45e1-8dee-d6d8542d7491,5
+7e6c4cbe-d4b4-4e22-88b4-ed39391ec4eb,Particle nature of matter,80e3b7ff-3344-45e1-8dee-d6d8542d7491,6
+4a197dae-8c87-43f5-93d5-9ea012208133,Law of conservation of mass,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,1
+7c5b9649-b6b8-4705-af59-0849f48fdbe9,Law of definite proportions,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,2
+3a1196df-6683-4905-90d6-8cb2a804d6d9,Law of multiple proportions,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,3
+c60a5205-a6d4-453c-b060-2eb6080efcbd,Gay-Lussac’s law of gaseous volumes,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,4
+fd4f951f-8300-4b63-89bb-de7b93e9611f,Avogadro’s law,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,5
+1222678d-7feb-4231-a45b-f974e05346c8,Dalton’s atomic theory,10380809-e8a3-4a7f-a4ec-b7f3ae4fefbd,6
+27d1ddbd-3ecd-4d00-bc4f-819a6ef45724,Atomic mass,5ec427c8-7ff2-4177-a495-f8e2f6d783c0,1
+c8894e5e-1507-46a1-8ddd-3e335f19ffa8,Molecular mass,5ec427c8-7ff2-4177-a495-f8e2f6d783c0,2
+827f64b3-a87e-4cd8-973f-78b8676c1988,Formula mass,5ec427c8-7ff2-4177-a495-f8e2f6d783c0,3
+6a087081-350b-45ce-8edf-36a47c9f0c4c,Average atomic mass,5ec427c8-7ff2-4177-a495-f8e2f6d783c0,4
+114551f8-f4aa-46a1-99dc-e9dda15e83e2,Relative atomic mass,5ec427c8-7ff2-4177-a495-f8e2f6d783c0,5
+0124ce79-7ab2-4fae-9159-554ed273f878,Mole definition,3bd83c8b-6249-48cd-8ff6-9d84774daf9e,1
+43e52a98-2399-4b18-9b41-932e774826af,Avogadro number,3bd83c8b-6249-48cd-8ff6-9d84774daf9e,2
+8c28f6a5-e313-487c-ba18-8134b60853f0,Mole-mass relationship,3bd83c8b-6249-48cd-8ff6-9d84774daf9e,3
+64b4fd3b-6379-4cf1-a6fd-6f8a36c8c778,Mole-volume relationship,3bd83c8b-6249-48cd-8ff6-9d84774daf9e,4
+41895cf3-6d5b-4b52-ab36-ff14b9c4c318,Mole-particle relationship,3bd83c8b-6249-48cd-8ff6-9d84774daf9e,5
+afb612db-0742-4818-9b99-1372f5e80f76,Writing chemical equations,fe725d2b-90e7-4ad7-82b3-12261e2a9149,1
+8e4cf2a2-ea9a-4fbd-87c9-ded2bed7f784,Balanced chemical equations,fe725d2b-90e7-4ad7-82b3-12261e2a9149,2
+7ed958ca-7f38-4965-9ad1-beb0936c9f08,Limiting reagent,fe725d2b-90e7-4ad7-82b3-12261e2a9149,3
+c88e0a7c-1138-48db-b987-65e73680d124,Excess reagent,fe725d2b-90e7-4ad7-82b3-12261e2a9149,4
+7d591fb4-3ed6-487c-829c-ad1808610df8,Percentage yield,fe725d2b-90e7-4ad7-82b3-12261e2a9149,5
+8830ada3-1242-4c2a-9ee4-f6ad434acc8a,Empirical formula determination,d8a6e1c0-b117-4f5c-b157-929cadd0e7a3,1
+4d2b687b-ef43-4a34-9a6d-b0b772af097f,Molecular formula calculation,d8a6e1c0-b117-4f5c-b157-929cadd0e7a3,2
+05bb5483-d964-43c0-9d37-01fa72f8f4bf,Percentage composition,d8a6e1c0-b117-4f5c-b157-929cadd0e7a3,3
+e54783e8-86b2-4d84-b2f4-b1669b2e665f,Nature of electromagnetic radiation,c183eb56-f835-45fc-84da-c8c3a8ab62fc,1
+8e0b246e-375a-4a0d-837a-447ba783a0c7,Wave theory of light,c183eb56-f835-45fc-84da-c8c3a8ab62fc,2
+c5936420-a5a4-470f-8715-2d12a97da9e6,Frequency,c183eb56-f835-45fc-84da-c8c3a8ab62fc,3
+6d80b1f0-d127-4437-bfa0-28892cc9bd6b,Wavelength,c183eb56-f835-45fc-84da-c8c3a8ab62fc,4
+f0ab206d-b581-4891-9431-90915425b6b9,Speed of light,c183eb56-f835-45fc-84da-c8c3a8ab62fc,5
+5c329fe8-6b86-42d4-a30c-438f4f567835,Experimental observations,481a27c5-7a29-4db6-bff9-f55458477840,1
+1bc233b3-9686-4eb7-96c3-08122338ce73,Threshold frequency,481a27c5-7a29-4db6-bff9-f55458477840,2
+6fac8e9c-20e3-416f-8102-1b3a4d5b5d26,Einstein explanation,481a27c5-7a29-4db6-bff9-f55458477840,3
+36218182-50ca-4cf0-a654-47bf769f4d49,Postulates of Bohr theory,b74e042f-29ba-44c3-b377-6621b28a84be,1
+0f7315bd-d843-41ba-9998-6260c812aea3,Radius of orbit,b74e042f-29ba-44c3-b377-6621b28a84be,2
+1b24fe66-90bf-48be-9429-a81e57890c80,Energy of electron,b74e042f-29ba-44c3-b377-6621b28a84be,3
+d9293c9f-c497-4e9d-8d0f-01f4c8f3f767,Hydrogen spectrum,b74e042f-29ba-44c3-b377-6621b28a84be,4
+c9875f45-8cea-4f96-a1f2-f0d495179cdc,Failure for multi-electron atoms,a53ed20b-d7a9-4f74-a5ab-f5fb0fabca3d,1
+68f850a8-b0de-4ada-8f51-589559533691,de Broglie hypothesis,04111f66-1e15-44e4-a55d-b27021d80b72,1
+0679d60e-ec4d-4cba-8d3d-ad8304358aaf,Matter waves,04111f66-1e15-44e4-a55d-b27021d80b72,2
+ded15f3c-0a96-4913-99c3-1691ed6612b8,Statement of principle,fbf40d7b-d689-4f3c-897e-115698b1aa8a,1
+da4ecf5e-0c9a-4477-89a4-daad57a81607,Position-momentum uncertainty,fbf40d7b-d689-4f3c-897e-115698b1aa8a,2
+ee13cbef-39a7-40ff-b42c-ce919e6dc612,Schrödinger wave equation (conceptual),e6009104-836e-4cd8-8ddd-3ec9bd092c46,1
+c9974d6c-cf2f-4540-8203-149f2413e4d5,Probability density,e6009104-836e-4cd8-8ddd-3ec9bd092c46,2
+a20f7eec-910e-4ae9-85c3-da2137ba1a89,s orbitals,c05a3f41-0b18-40db-8105-ce16bc4ddbe7,1
+e4e48833-297a-4437-a693-78f5848b4009,p orbitals,c05a3f41-0b18-40db-8105-ce16bc4ddbe7,2
+9cfa78fa-46c3-4482-a2c4-4e13d3c008a4,d orbitals,c05a3f41-0b18-40db-8105-ce16bc4ddbe7,3
+067ad5c9-634e-43d0-9b96-068d0460b509,Shapes of orbitals,c05a3f41-0b18-40db-8105-ce16bc4ddbe7,4
+707adf03-e0f6-4e89-b1cc-41b599e287d4,Radial probability distribution,c05a3f41-0b18-40db-8105-ce16bc4ddbe7,5
+8beec5e6-6b8e-44dd-b55a-f9af017c8c40,Principal quantum number,e03dce25-b516-4601-9a52-0d2ed4198f07,1
+1d153625-9bb2-4ca9-bdd8-e3843fb1ce0b,Azimuthal quantum number,e03dce25-b516-4601-9a52-0d2ed4198f07,2
+6553e210-f111-4f7c-a34c-b627361f5385,Magnetic quantum number,e03dce25-b516-4601-9a52-0d2ed4198f07,3
+1d2be997-5360-4d42-8062-79220af8b034,Spin quantum number,e03dce25-b516-4601-9a52-0d2ed4198f07,4
+1a6ac56b-cc0d-49a6-b444-0f34fdbfd1b6,Aufbau principle,b9197872-4d1d-4e15-a69f-479cfb519597,1
+0c4ea838-5093-4e4c-8efc-5f83fac45d29,Pauli exclusion principle,b9197872-4d1d-4e15-a69f-479cfb519597,2
+ee707289-8f90-4a82-ab68-4efc1ede29ea,Hund’s rule,b9197872-4d1d-4e15-a69f-479cfb519597,3
+944a3d37-c295-40e2-94bb-8a921309b70a,Stability of half-filled orbitals,b9197872-4d1d-4e15-a69f-479cfb519597,4
+807f8383-4d9e-4f2a-ab56-3b62a46776b2,Stability of fully-filled orbitals,b9197872-4d1d-4e15-a69f-479cfb519597,5
+ff6caace-4577-4179-be80-c961b0a6400b,Octet rule,6ad6c8b6-ff23-408d-9c60-f37273240d78,1
+e315906c-ce50-488b-9196-fea0d949dfa5,Lewis symbols of elements,6ad6c8b6-ff23-408d-9c60-f37273240d78,2
+aafbe6ea-8784-4cde-932b-366b033fab72,Lewis structures of molecules and ions,6ad6c8b6-ff23-408d-9c60-f37273240d78,3
+f6ab7e81-f702-4edc-8914-9dd7bd0f5192,Limitations of octet rule,6ad6c8b6-ff23-408d-9c60-f37273240d78,4
+9785636e-2733-42f1-b7be-da971c0a39f1,Formation of ionic bonds,8e52d9e5-6477-4919-873d-331c5c392fac,1
+76e9a7c6-68cf-45b1-8e96-d2865fcf796d,Factors affecting the formation of ionic bonds,8e52d9e5-6477-4919-873d-331c5c392fac,2
+898d3985-fffa-47ae-a5dc-05d49ab69e65,Lattice enthalpy,8e52d9e5-6477-4919-873d-331c5c392fac,3
+ee78c12a-a1ba-4063-8dcc-1049d9b3d43e,Born–Haber cycle,8e52d9e5-6477-4919-873d-331c5c392fac,4
+7e4a50f3-5083-43d7-9886-e10d07076d28,Properties of ionic compounds,8e52d9e5-6477-4919-873d-331c5c392fac,5
+f291a206-8092-46df-901b-a0628d6a3a8f,Formation of covalent bonds,b1d62818-562a-4ea1-8f4f-6cc9e9d6a4a0,1
+a2a13c5c-890a-4f66-aebb-8a7c103fe755,Concept of electronegativity,b1d62818-562a-4ea1-8f4f-6cc9e9d6a4a0,2
+4ba0d888-3604-4600-ac60-79e1756ef083,Fajan’s rule,b1d62818-562a-4ea1-8f4f-6cc9e9d6a4a0,3
+10072d42-3655-4d29-8b4d-c915bbba7f0f,Dipole moment,b1d62818-562a-4ea1-8f4f-6cc9e9d6a4a0,4
+128b1a6a-0f59-4a68-b3e8-4acf86a3bd4d,Postulates of VSEPR theory,7b6a5ff2-7b0e-4979-ba2f-54b9c1b41373,1
+56e7f851-51ef-4c5a-8df4-aee276fc7086,Shapes of simple molecules,7b6a5ff2-7b0e-4979-ba2f-54b9c1b41373,2
+3bad6243-3d0b-4daf-af23-ed348d73aab3,Molecular geometries,7b6a5ff2-7b0e-4979-ba2f-54b9c1b41373,3
+4c41b9cd-e659-4fc8-b7f9-d1c53e402cdf,Basic concepts of valence bond theory,a396f9e8-7109-4c08-b95c-21dd5885e140,1
+97feeb24-b60b-4384-8f02-2c2bc9676571,Overlapping of atomic orbitals,a396f9e8-7109-4c08-b95c-21dd5885e140,2
+7314d7df-706e-4c4d-9cfd-56780b20cddd,Sigma bonds,a396f9e8-7109-4c08-b95c-21dd5885e140,3
+511047a3-3ea7-422e-83fd-f00f775bae11,Pi bonds,a396f9e8-7109-4c08-b95c-21dd5885e140,4
+9d16d083-a45f-440b-b920-1701807ea4c0,sp hybridization,672f156e-1eca-407d-8394-ba8170ba8a9b,1
+b58aec42-5e26-476d-b0ef-01119bda994a,sp² hybridization,672f156e-1eca-407d-8394-ba8170ba8a9b,2
+5d6be4de-32dc-4065-a638-723f8e99002b,sp³ hybridization,672f156e-1eca-407d-8394-ba8170ba8a9b,3
+1b874757-7ea9-43e1-b1ca-711b92ea73de,sp³d hybridization,672f156e-1eca-407d-8394-ba8170ba8a9b,4
+12d15983-6c74-408b-80f1-b56ae20d9bec,sp³d² hybridization,672f156e-1eca-407d-8394-ba8170ba8a9b,5
+cc7b2bde-fcad-4a93-8444-831996cd1f9d,Resonance structures,179afab6-d6cb-4699-9b10-6416399a7da8,1
+7d579292-a6a4-4fa9-9d61-6a6ad6a07817,Resonance hybrid,179afab6-d6cb-4699-9b10-6416399a7da8,2
+6244a182-c44e-4fbc-ad5b-780aad918dc1,Resonance energy,179afab6-d6cb-4699-9b10-6416399a7da8,3
+cc02769a-fba8-4ba4-be8f-718211108421,Linear combination of atomic orbitals (LCAO),a2c4c674-a117-4d69-8342-c173b49b0f5d,1
+971416dd-658e-401d-b52e-13c2bb6cc16e,Bonding molecular orbitals,a2c4c674-a117-4d69-8342-c173b49b0f5d,2
+5ff24a98-7869-4f6c-ab9c-dc1498667843,Antibonding molecular orbitals,a2c4c674-a117-4d69-8342-c173b49b0f5d,3
+9acb43f1-b672-488f-9924-8f2b204f0224,Molecular orbital electronic configuration,a2c4c674-a117-4d69-8342-c173b49b0f5d,4
+ce28f162-eccc-40bf-95d5-e5f0af89a136,Calculation of bond order,9c471fca-d27c-4926-8cdf-9923b550aa22,1
+b8f12113-f7c8-46ac-ad38-ec94fc56584e,Relationship between bond order and bond stability,9c471fca-d27c-4926-8cdf-9923b550aa22,2
+325a6197-08a5-4979-ba31-7499690f17d2,Diamagnetic molecules,fed455df-c701-4bb7-9dcb-76882924073b,1
+240ae8d8-b233-42a8-8505-d3932fc07887,Paramagnetic molecules,fed455df-c701-4bb7-9dcb-76882924073b,2
+e1e42b5e-8c9e-41f4-80eb-d8b1d9248974,Bond length,a03d0d2a-ffe6-49c6-b282-78d40ee45a85,1
+7380fea1-b6a7-4ba2-a9ec-11cc112aa63e,Bond energy,a03d0d2a-ffe6-49c6-b282-78d40ee45a85,2
+9c385f5b-4b85-463a-8082-98a72bf513ab,"Relationship between bond order, bond length and bond energy",a03d0d2a-ffe6-49c6-b282-78d40ee45a85,3
+5a729871-f216-4e8e-8c71-67a51512a55e,Electron sea model of metallic bonding,be9a483b-9b65-4bee-b335-87b0b85250ce,1
+3e8ff6a0-7d40-4a87-a271-d38375f3ad06,Properties of metals,be9a483b-9b65-4bee-b335-87b0b85250ce,2
+a91a0353-0d14-4e4f-a27c-0a9e42758238,Intermolecular hydrogen bonding,3d44b43c-4a45-46fa-8a7a-4ff7f6269a74,1
+ec70eec5-25a6-4072-a0e0-de0dbee750d0,Intramolecular hydrogen bonding,3d44b43c-4a45-46fa-8a7a-4ff7f6269a74,2
+ed9c7ad5-e6df-448f-b23e-e94d29407eb3,Applications of hydrogen bonding,3d44b43c-4a45-46fa-8a7a-4ff7f6269a74,3
+71e563c2-542e-4b5c-92e4-0eb83ca0f7a3,System and surroundings,6893b2a0-bc58-4896-aa5a-22bdae5865b6,1
+24975740-de53-484d-aa07-dda022b73334,Types of systems,6893b2a0-bc58-4896-aa5a-22bdae5865b6,2
+281af0ad-62b4-4657-ac2f-072dbfa6e7e6,Open system,6893b2a0-bc58-4896-aa5a-22bdae5865b6,3
+3c070eaa-568e-4d37-be91-16659d6a003f,Closed system,6893b2a0-bc58-4896-aa5a-22bdae5865b6,4
+f2f10012-3682-4410-8a4e-aacfb8639355,Isolated system,6893b2a0-bc58-4896-aa5a-22bdae5865b6,5
+13c31510-79bb-426e-9190-d0ddcfe40138,Isothermal process,31936af6-5450-4c6a-8ac5-33ab73b7fd08,1
+53cc80ee-46da-4cd6-b458-08f627b1c29d,Adiabatic process,31936af6-5450-4c6a-8ac5-33ab73b7fd08,2
+661924cb-3c9c-4aec-a8e7-02c2ddbe83d2,Isobaric process,31936af6-5450-4c6a-8ac5-33ab73b7fd08,3
+46451384-5bd8-4fa3-af98-0ce4653f7a80,Isochoric process,31936af6-5450-4c6a-8ac5-33ab73b7fd08,4
+02e475b5-df6e-48f9-9047-791b0dda7f1e,Internal energy,a7144327-1094-4db7-99f8-0e7dc7e0ced0,1
+8ed42688-0cbd-400c-9fe6-f1a9e2ee2e6e,Work,a7144327-1094-4db7-99f8-0e7dc7e0ced0,2
+2901ef13-51d0-4804-bc73-5a8db481338a,Heat,a7144327-1094-4db7-99f8-0e7dc7e0ced0,3
+cbfb3e4f-e733-4cb6-a5a1-07947cccdf39,Mathematical expression,a7144327-1094-4db7-99f8-0e7dc7e0ced0,4
+b836a51b-1200-4408-80f5-12e1cf6490fc,Enthalpy of reaction,0db2f406-1680-409c-ad05-d47610a2ee00,1
+c7a6323f-8efc-4391-9ca9-d6e15d682a03,Enthalpy of formation,0db2f406-1680-409c-ad05-d47610a2ee00,2
+485b0592-14b6-46bf-a81c-937d6b0a035b,Enthalpy of combustion,0db2f406-1680-409c-ad05-d47610a2ee00,3
+23db2cf9-ad01-470c-80de-44c6055f0da8,Bond enthalpy,0db2f406-1680-409c-ad05-d47610a2ee00,4
+5a599a6a-1183-45f4-8576-e23bfdeea132,Atomization enthalpy,0db2f406-1680-409c-ad05-d47610a2ee00,5
+7a71f785-7fc5-4b56-b3ad-ac706206a8bc,Law of constant heat summation,426e55fe-4bf0-49c3-a714-ff7ce808c106,1
+d0a128cc-f5ba-401d-9c8d-462ccecf1ed6,Entropy,105be2d9-b295-4604-9165-531f81503fcf,1
+c9aa11b2-1d09-444c-add8-2057cdaccaff,Entropy change,105be2d9-b295-4604-9165-531f81503fcf,2
+66545909-f40d-4330-a543-0e5d645c18e8,Gibbs free energy change,817d1d04-8e9e-4d43-978c-96130e8b7c92,1
+8d7f1b39-c682-4189-bd36-f7b7e0db0241,Relationship between ΔG and spontaneity,817d1d04-8e9e-4d43-978c-96130e8b7c92,2
+114e2517-7918-4244-9a8a-f7f79c98e3c3,Definition of solution,7c632300-c719-42b6-8251-f7e025996dc0,1
+a365e8fc-bd2d-40b4-81e3-19354d90693e,Solute and solvent,7c632300-c719-42b6-8251-f7e025996dc0,2
+0ae6f21c-9af7-4daa-a43d-21d52febaef9,Types of solutions based on physical states,7c632300-c719-42b6-8251-f7e025996dc0,3
+934ce41c-3d30-4a1e-a6f0-1f9e5fb986e1,Mass percentage (w/w),38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,1
+db2eacf4-f763-41f6-9e1f-6b406aed9415,Volume percentage (v/v),38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,2
+29aedb8f-26cb-4193-969c-56633f0722a7,Mass by volume percentage (w/v),38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,3
+11c39dd2-94f6-4845-a1cd-3b138ac86449,Mole fraction,38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,4
+06480c49-b817-4b3a-9b7c-bd319817b3df,Molarity,38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,5
+afedd6eb-ead0-4b0e-8b75-af5e556f36d9,Molality,38d1b54b-4fd6-41cd-94fc-9a4b80474ba9,6
+9cada16d-82b7-4280-8fc8-b1a678838b1b,Factors affecting solubility of gases in liquids,c102f1e0-57ab-4383-a518-dbf62bb2a793,1
+856110da-1fe4-4778-82f5-53320f5e3224,Henry’s Law,c102f1e0-57ab-4383-a518-dbf62bb2a793,2
+b8d0e8ff-34a7-40c4-bca8-a29e1f48113b,Applications of Henry’s Law,c102f1e0-57ab-4383-a518-dbf62bb2a793,3
+cb1e4651-5acf-4031-8729-bdee78fabf29,Vapour pressure of pure liquids,105c7616-aeb8-4dce-a88d-cd5eddcc3ac0,1
+d6a52d9c-7cc6-41d3-bedc-9563f06a89cf,Vapour pressure of solutions,105c7616-aeb8-4dce-a88d-cd5eddcc3ac0,2
+db55913e-d011-45f9-98f3-9be178bac575,Raoult’s Law,105c7616-aeb8-4dce-a88d-cd5eddcc3ac0,3
+db57b56e-1669-4e9c-a3f0-60a3d924d9cb,Ideal solutions,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,1
+132d7fa0-f04d-42d9-85c4-33cce086e4af,Properties of ideal solutions,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,2
+b20245f4-598d-47d3-a00f-429e0f763be1,Non-ideal solutions,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,3
+cf896e7d-4b35-4efb-baf8-3853c447a5f9,Positive deviation from Raoult’s Law,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,4
+aa82d5bb-9e1d-49a2-8050-be7ccf21db75,Negative deviation from Raoult’s Law,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,5
+0b791079-e9d8-4376-ab23-99898444eb0a,Azeotropes,4e2bbe11-ee3a-4681-80b3-7dd6b9a25c11,6
+fbcf8a1e-9b96-45df-b9c5-f29614597e91,Relative lowering of vapour pressure,18c8e0cf-4fdc-4d36-abbe-069013a032a0,1
+c50832d0-ef82-40d6-b7f2-dc073b252683,Elevation of boiling point,18c8e0cf-4fdc-4d36-abbe-069013a032a0,2
+059cbcea-f0cb-4221-974d-8be729a95285,Depression of freezing point,18c8e0cf-4fdc-4d36-abbe-069013a032a0,3
+c5a8507c-90c9-4dec-8161-dfa5286672fa,Osmotic pressure,18c8e0cf-4fdc-4d36-abbe-069013a032a0,4
+1320d30e-8061-417d-8066-39de78fd0bb3,Determination of molar mass using colligative properties,6566e3e0-a3e0-49a4-85c5-5dbaf1f60884,1
+158a941d-d229-4e43-899c-4cbac168e4c9,van’t Hoff factor,ba99e876-9629-47c4-899b-8f7500400485,1
+060876a2-ca9a-48bd-848c-025f8d48d97c,Association of solute particles,ba99e876-9629-47c4-899b-8f7500400485,2
+4e8fedbc-7f6e-4985-8f4a-cde61ab8e387,Dissociation of solute particles,ba99e876-9629-47c4-899b-8f7500400485,3
+61deaeb5-bb64-4aaf-a8a4-04675178e3ff,Dynamic nature of equilibrium,3b5bd709-941e-4b89-bb0e-7f5807444818,1
+96ac756b-e520-4f9c-a277-664987250ade,Characteristics of equilibrium,3b5bd709-941e-4b89-bb0e-7f5807444818,2
+7352276e-4cc9-4461-ace1-040e08640158,Solid–liquid equilibrium,f1a6920b-01e1-4c03-839b-198cfdb09fad,1
+0cfefd63-0638-4f60-a868-0b437ab9ee30,Liquid–gas equilibrium,f1a6920b-01e1-4c03-839b-198cfdb09fad,2
+d0efd495-7ce6-418f-bddc-e7ffd6ebd2ce,Solid–gas equilibrium,f1a6920b-01e1-4c03-839b-198cfdb09fad,3
+4c787c1b-4e84-4f5c-ad27-3b8df3981a98,Henry’s Law,f1a6920b-01e1-4c03-839b-198cfdb09fad,4
+e02945fb-ea5c-41b9-8c92-044dbbfe2255,Law of chemical equilibrium,9ad64dbd-0145-48ac-b613-a2828f34abf1,1
+4857664d-f2a1-4f55-8c7c-b7586ccf450c,Law of mass action,9ad64dbd-0145-48ac-b613-a2828f34abf1,2
+779f492a-6d63-441e-b09b-32d35e6472df,Equilibrium constant,9ad64dbd-0145-48ac-b613-a2828f34abf1,3
+9f74fc3a-9a70-43b6-ac22-e87bf08c6f06,Equilibrium constant in terms of concentration (Kc),94f3dc4f-b8a2-4549-b244-4a358d2e7d03,1
+f2d7c5be-3855-44a4-aad0-3be3c0dfe8d5,Equilibrium constant in terms of pressure (Kp),94f3dc4f-b8a2-4549-b244-4a358d2e7d03,2
+7b23fe91-3b31-441b-a08c-3966b7ff994e,Relation between Kp and Kc,94f3dc4f-b8a2-4549-b244-4a358d2e7d03,3
+0737bdd2-2d90-4a82-8f75-7096c8715f81,Effect of concentration,8807b23d-5715-45b0-b65f-62c3736af327,1
+946a2182-33bd-4616-8b7c-4f1bca25957a,Effect of pressure,8807b23d-5715-45b0-b65f-62c3736af327,2
+2c573b7a-035d-4874-a34b-ca25d0b2099f,Effect of temperature,8807b23d-5715-45b0-b65f-62c3736af327,3
+81201a08-42b0-4d72-be2a-195beabadff1,Effect of catalyst,8807b23d-5715-45b0-b65f-62c3736af327,4
+90bca050-8f66-4e24-a6a4-0f7b3e3ab26e,Statement of Le Chatelier’s Principle,89986ff4-a1a3-4d35-be85-465601850a9a,1
+3c062d88-d7da-43e6-b8b2-86ebabb1046b,Applications of Le Chatelier’s Principle,89986ff4-a1a3-4d35-be85-465601850a9a,2
+cc28caa8-90b9-4531-866d-49b831103ac2,Electrolytes and non-electrolytes,32470cf8-ec49-43a0-b24a-0e0e3cba6a5d,1
+11ce7b46-6183-4ecc-96d6-cce1d97e1985,Strong and weak electrolytes,32470cf8-ec49-43a0-b24a-0e0e3cba6a5d,2
+327966c0-79aa-42a4-9d32-80b44fee4de1,Arrhenius concept of acids and bases,e0d2d95b-511a-4012-941f-415366e2d44e,1
+21ac0de5-1ac7-43a0-9d9d-818341674103,Bronsted–Lowry concept of acids and bases,e0d2d95b-511a-4012-941f-415366e2d44e,2
+442ae118-1061-4aab-a25d-511e962b29f4,Lewis concept of acids and bases,e0d2d95b-511a-4012-941f-415366e2d44e,3
+94e423af-39f5-4dd0-8f81-e5d10f519e03,Ionization constant of acids,39bd0515-98ec-4fdc-bfa2-63317f94099e,1
+d8c66827-1dfd-403a-b02b-06493fb41f25,Ionization constant of bases,39bd0515-98ec-4fdc-bfa2-63317f94099e,2
+e35f0e47-6710-4199-b56d-1f55c72d3144,pH scale,63d17665-082d-4511-bd7f-0284811b26ab,1
+8db26aa7-d78f-43ea-a5c5-406bc7b84b2b,Calculation of pH,63d17665-082d-4511-bd7f-0284811b26ab,2
+5b956a6c-0132-4d72-a399-68a20557859d,Hydrolysis of salts of weak acids and strong bases,bcf43229-6767-46d1-94ee-b12ab8a131c7,1
+0c388e99-6d02-4485-9005-b761963ad7de,Hydrolysis of salts of strong acids and weak bases,bcf43229-6767-46d1-94ee-b12ab8a131c7,2
+886073a6-80d4-4429-93e1-a301ed306ada,Acidic buffer solutions,fba378a1-fae4-4e82-b2b4-75b63166bfc7,1
+9a9ec91d-d7bb-43e3-86ab-c42f77f0ede0,Basic buffer solutions,fba378a1-fae4-4e82-b2b4-75b63166bfc7,2
+8e4172b9-3ce3-44f3-81af-2f073bbe28e6,Solubility of sparingly soluble salts,33dd74b0-31da-4914-ac4a-0e7435844ccc,1
+ec6d3c1e-cc55-4093-8b0b-5e916e7904e0,Solubility product constant,33dd74b0-31da-4914-ac4a-0e7435844ccc,2
+a92f4125-deb5-4902-a51d-8a977cd6257e,Concept of oxidation and reduction,6f794310-a835-4d8e-9f64-75b73728676e,1
+eb772068-c450-4065-98c8-89935e5c9f6b,Oxidizing agents and reducing agents,6f794310-a835-4d8e-9f64-75b73728676e,2
+3f994ffc-1a48-459e-b5c3-c5ff87ff3d77,Rules for assigning oxidation number,9e9ea31e-f3b2-41a1-9f65-bb090c791313,1
+e00adc16-eedc-419a-93b7-371137d1edf9,Calculation of oxidation numbers,9e9ea31e-f3b2-41a1-9f65-bb090c791313,2
+8f3b43ae-b126-4dc7-aa94-27cb69c44510,Oxidation number method,53330570-9f31-43fd-827f-2e860e197eb7,1
+71f8c064-d58e-4f97-8147-36285e1667ec,Ion-electron method,53330570-9f31-43fd-827f-2e860e197eb7,2
+a00eeb07-f979-45ae-8277-6141ccb63502,Conductance,34241e63-7f45-4edd-8a88-32fb9ab3a90e,1
+1583a155-b350-49ad-9f4a-789682330cea,Specific conductance,34241e63-7f45-4edd-8a88-32fb9ab3a90e,2
+bf67d088-2c9e-405d-9c5e-0325d0269d7f,Molar conductivity,34241e63-7f45-4edd-8a88-32fb9ab3a90e,3
+dc63d508-ddf4-45b2-95c8-6f5d04fb5d49,Strong electrolytes,ca6099ef-213b-49c5-8015-ea55547b3813,1
+48c6ed8e-a997-444a-aa41-17529f4760f6,Weak electrolytes,ca6099ef-213b-49c5-8015-ea55547b3813,2
+66a0f161-ab2d-4668-8027-55bbe31d2e5a,Law of independent migration of ions,6763b869-737e-45ae-858b-12ebc666df50,1
+feefbe35-1e7f-439e-9b4a-58bfac6d6863,Applications of Kohlrausch’s Law,6763b869-737e-45ae-858b-12ebc666df50,2
+8f7cb124-4f77-4887-bef1-394ec91d39b0,Galvanic cells,46372c40-9768-45b3-8a71-baff9d22c454,1
+cfc70f2f-ef5d-4858-8edd-dea1c725e8db,Electrolytic cells,46372c40-9768-45b3-8a71-baff9d22c454,2
+37aad7d4-70c2-41f4-b958-307cb43ae020,Standard electrode potential,eb527099-91b5-4250-90f1-4c749c237858,1
+e91ca4ff-8dfe-436d-9acc-814057fa0af6,Reference electrode,eb527099-91b5-4250-90f1-4c749c237858,2
+d028bb9b-e77d-45ba-a6f6-6e1b55a389a8,Calculation of cell potential,919c8710-3a75-49c2-bae6-f99a02bc1a4f,1
+305d2601-3bcf-4b1a-adb4-d877ba05d324,Applications of Nernst equation,919c8710-3a75-49c2-bae6-f99a02bc1a4f,2
+55db4197-007a-46aa-bb2a-a9918f61af0e,Primary batteries,92bfef2e-1bf1-440b-ac04-810589eae9cd,1
+c9b3b19f-7568-4014-a5e3-ed2aa6e3061b,Secondary batteries,92bfef2e-1bf1-440b-ac04-810589eae9cd,2
+81f21b61-864d-44fb-ad54-f9f1846b0220,Lead-acid battery,92bfef2e-1bf1-440b-ac04-810589eae9cd,3
+577e0d8b-482a-4645-a88e-cd7764caec0f,Hydrogen-oxygen fuel cell,17be553a-182e-4ca2-a3f8-d833f62b224b,1
+143a75cd-4b73-4fcb-af3b-dba3d607a7ac,Average rate of reaction,cd49f849-22a3-4ae2-a11d-e62447021d7f,1
+df606cfe-7bf8-4b09-9a98-952fab57df96,Instantaneous rate of reaction,cd49f849-22a3-4ae2-a11d-e62447021d7f,2
+9e57273c-56cd-46ff-b8da-79f643ae1b98,Effect of concentration,3b9e9404-c6cc-4189-b5c1-fd3e7de2fa93,1
+d9620d26-77c6-46a0-9c51-cfed658c56dd,Effect of temperature,3b9e9404-c6cc-4189-b5c1-fd3e7de2fa93,2
+84d73ede-c7e9-4357-b000-60aebae3cc7a,Effect of pressure,3b9e9404-c6cc-4189-b5c1-fd3e7de2fa93,3
+8ccb6726-466a-479d-be81-172da4ed523a,Effect of catalyst,3b9e9404-c6cc-4189-b5c1-fd3e7de2fa93,4
+4685dd4f-6003-49c1-98d8-e7c655f9877a,Rate equation,0d12d821-6da7-4807-ab06-36df928df1d8,1
+1105986c-9df3-42f4-a094-650148bc9cf7,Rate constant,0d12d821-6da7-4807-ab06-36df928df1d8,2
+36139ae8-929d-4aaa-adc5-bce6720e9bf4,Zero order reactions,29ff5378-0428-42fd-8c8a-2473c50e702f,1
+ff02705c-485e-485b-a220-e1ddc913dac3,First order reactions,29ff5378-0428-42fd-8c8a-2473c50e702f,2
+7a210158-8e3c-4efd-a657-def493f7fc26,Integrated rate law for zero order reaction,d618e58b-db20-4993-b391-71c0456cf328,1
+ae3c172b-090a-4c9c-a070-85d21e58cbf3,Integrated rate law for first order reaction,d618e58b-db20-4993-b391-71c0456cf328,2
+6bd5a1d2-a895-4a14-a644-7421fed6bc23,Half life of zero order reaction,71bbc104-b20d-4f8b-974a-835b75391363,1
+4af94456-7cdc-424b-9d9f-1499d83c866d,Half life of first order reaction,71bbc104-b20d-4f8b-974a-835b75391363,2
+5f40799f-893f-431c-ae0d-990ff04fa4ed,Arrhenius equation,ed6759fa-402f-40e5-90f7-db4a70483b3d,1
+c5894612-5e22-4c66-89ca-42750d460c2f,Activation energy,ed6759fa-402f-40e5-90f7-db4a70483b3d,2
+68568d89-a616-4178-8609-2e835598aac0,Effective collisions,794ec280-7421-400c-a547-04f345a0d8a4,1
+5690daaf-7176-4f93-895b-703c042cc556,Energy barrier,794ec280-7421-400c-a547-04f345a0d8a4,2
+1a9e4059-996c-49e0-b231-7b07a953384f,Modern periodic law,74cf7440-8634-4a8a-9fe0-1fd0e6775e16,1
+bb8ec400-9292-4989-9338-0d114b8977ed,Long form of periodic table,74cf7440-8634-4a8a-9fe0-1fd0e6775e16,2
+09afd99b-93b9-4196-a95c-7c81c4426061,Periods and groups in the periodic table,74cf7440-8634-4a8a-9fe0-1fd0e6775e16,3
+f4764424-12d9-45e1-8358-7942dc6c1f65,"Classification of elements into s, p, d and f blocks",74cf7440-8634-4a8a-9fe0-1fd0e6775e16,4
+fbfc84d5-25a0-4bf7-8a4b-9c208bafd62f,Atomic radius,aaf83481-0d98-4e25-bc40-fb2da39bb44f,1
+eb315289-e7e5-4fb8-94c4-023f70dcccd7,Ionic radius,aaf83481-0d98-4e25-bc40-fb2da39bb44f,2
+4ed3d741-600c-49f2-bf64-b16d5ba0768e,Factors affecting atomic and ionic radii,aaf83481-0d98-4e25-bc40-fb2da39bb44f,3
+436077ec-85cd-412c-a99d-ac5d396dfe84,Definition of ionization enthalpy,89549704-c76b-4985-986a-d03b2205556b,1
+85919717-bc43-471a-ba81-6ca3d7842746,Factors affecting ionization enthalpy,89549704-c76b-4985-986a-d03b2205556b,2
+34642abc-4f4c-4e82-8b7e-c8cdb0bce7f9,Periodic trends in ionization enthalpy,89549704-c76b-4985-986a-d03b2205556b,3
+b5505d94-69b1-48dd-9aea-34845ab72a66,Definition of electron gain enthalpy,93a57d04-761e-4511-b1bf-ded517ae2f9e,1
+9ac94a6f-5c60-4ec5-b70a-c393597a493d,Factors affecting electron gain enthalpy,93a57d04-761e-4511-b1bf-ded517ae2f9e,2
+95654d67-a4cc-4bf1-9908-419b72e0dbad,Periodic trends in electron gain enthalpy,93a57d04-761e-4511-b1bf-ded517ae2f9e,3
+8c922f41-a21f-46d0-b365-006382a168d2,Concept of electronegativity,cdc84f21-9514-47b9-9f45-6f68cbbaeaab,1
+ccae04ee-c416-449d-ac43-591003d9b6ae,Factors affecting electronegativity,cdc84f21-9514-47b9-9f45-6f68cbbaeaab,2
+bf916418-f6db-47a3-ab73-d4acdfb9e7ff,Periodic trends in electronegativity,cdc84f21-9514-47b9-9f45-6f68cbbaeaab,3
+673d62cd-9f24-4c3a-8a81-4e463b940879,Valence and valency,a19debcc-4b54-43a3-b131-df39b5feae9a,1
+317165c2-38e3-4a9d-88d1-824f645ce1da,Oxidation states of elements,a19debcc-4b54-43a3-b131-df39b5feae9a,2
+66a52637-8be9-47cc-a06e-7c7cffa6a05b,Chemical reactivity trends in periodic table,a19debcc-4b54-43a3-b131-df39b5feae9a,3
+2cb69aa2-3861-41d2-b242-70bafa62d3eb,Electronic configuration of p-block elements,cb47bed7-2a3d-43f0-945c-6744fb23c6a3,1
+7150f867-3710-4585-9b94-38f3c85f2cb9,Position of p-block elements in periodic table,cb47bed7-2a3d-43f0-945c-6744fb23c6a3,2
+d5c64925-eff0-4be2-baae-896b5a36bd01,General trends in physical properties,cb47bed7-2a3d-43f0-945c-6744fb23c6a3,3
+a517e3da-045f-4aa9-98c7-72f9b5115a19,General trends in chemical properties,cb47bed7-2a3d-43f0-945c-6744fb23c6a3,4
+ff243c66-a4b8-4cb4-964f-82181b0d1b79,Diagonal relationship,d71321d7-aae7-4a38-97b6-eebf85e32fd3,1
+2ae3671c-37c1-421d-8e15-4ac9e71feb10,Anomalous behaviour of first element,d71321d7-aae7-4a38-97b6-eebf85e32fd3,2
+58681b6d-1e49-45a7-b928-af25b569c7cf,Electronic configuration and oxidation states,123b4dad-bde8-49fd-a651-e6636ddb0674,1
+d6f314a5-e3a1-4a82-a460-5f9be8aeed35,Trends in physical properties,123b4dad-bde8-49fd-a651-e6636ddb0674,2
+45e37450-c86c-40e4-ae63-0ba0ae9eefc2,Trends in chemical properties,123b4dad-bde8-49fd-a651-e6636ddb0674,3
+003f7168-5e7d-48fc-982b-d300f191ef51,Important compounds of boron and aluminium,123b4dad-bde8-49fd-a651-e6636ddb0674,4
+5a0eeaea-e8a2-4838-bf1e-c8970089df3b,Electronic configuration and oxidation states,031fa887-de5c-4fcd-9340-465cafb7ebd7,1
+2746af39-364a-4457-b052-5384968b292b,Trends in physical properties,031fa887-de5c-4fcd-9340-465cafb7ebd7,2
+a2edfb80-7564-4829-8d7f-07d1208ec3b0,Trends in chemical properties,031fa887-de5c-4fcd-9340-465cafb7ebd7,3
+21e306ff-d7fe-4575-9432-be6a8d2446a1,Important compounds of carbon and silicon,031fa887-de5c-4fcd-9340-465cafb7ebd7,4
+5abd330d-34f6-4ae4-8ab3-5279db642a7a,Electronic configuration and oxidation states,fdaba051-a8a1-4ad6-8efd-229c3c97ff81,1
+538147fc-0580-4957-b745-f7e30ddc6a11,Trends in physical properties,fdaba051-a8a1-4ad6-8efd-229c3c97ff81,2
+a83ea560-2d0c-4a7b-a9a1-f457d0f93277,Trends in chemical properties,fdaba051-a8a1-4ad6-8efd-229c3c97ff81,3
+2563b451-bb88-46a7-b392-079be2ef807c,Important compounds of nitrogen and phosphorus,fdaba051-a8a1-4ad6-8efd-229c3c97ff81,4
+edceb3aa-f32f-4e36-a66c-56c8114669ff,Electronic configuration and oxidation states,ced165b2-a469-4f9f-bc14-aff0cd1e5f4f,1
+ce77ad71-2e27-412d-808b-8e7ddd62070d,Trends in physical properties,ced165b2-a469-4f9f-bc14-aff0cd1e5f4f,2
+b315d3f2-24ab-4767-903d-8ff365797858,Trends in chemical properties,ced165b2-a469-4f9f-bc14-aff0cd1e5f4f,3
+b6a07796-01ee-4be7-b66e-aba9814dd9d2,Important compounds of oxygen and sulphur,ced165b2-a469-4f9f-bc14-aff0cd1e5f4f,4
+ed3c6efb-70e4-4c98-9aea-a8202c56b7fa,Electronic configuration and oxidation states,dd615203-6d66-4ecc-86ee-ae9a30010fcf,1
+180d5f4d-fa5b-4b3a-a769-86e0430a4dce,Trends in physical properties,dd615203-6d66-4ecc-86ee-ae9a30010fcf,2
+16898fa4-d663-4e16-8f51-171b39ba5bfc,Trends in chemical properties,dd615203-6d66-4ecc-86ee-ae9a30010fcf,3
+67be2f55-71fe-46c4-b383-5dbdb282a271,Important compounds of halogens,dd615203-6d66-4ecc-86ee-ae9a30010fcf,4
+87c01161-7dbe-413c-a03a-b0ff52dc5396,Electronic configuration,03291a87-c98f-4146-929c-b13b5896f4fa,1
+4cf7aec0-5475-4cfc-8059-66b8610e7af8,Occurrence and properties,03291a87-c98f-4146-929c-b13b5896f4fa,2
+8c8b0674-511b-4f68-96d7-c334ae52b894,Chemical reactivity of noble gases,03291a87-c98f-4146-929c-b13b5896f4fa,3
+3a5ab33e-4237-413f-9dd5-1e40b14cbd7f,General introduction to transition elements,96c7d6d6-9903-470a-baba-6266644ad218,1
+8088ecff-7f4f-43d4-bdd4-47ce8730172a,Electronic configuration of transition elements,96c7d6d6-9903-470a-baba-6266644ad218,2
+fecc7915-ca7a-4d15-b078-1094d9c0565e,Occurrence of transition metals,96c7d6d6-9903-470a-baba-6266644ad218,3
+ebc9609b-25c2-4aa9-b093-5b1e274015ba,Physical properties of transition elements,f802f4b6-e435-4cc1-9ef1-58c06f2ada34,1
+b0fe03e9-96b3-416b-b830-68d371b52c62,Ionization enthalpy trends,f802f4b6-e435-4cc1-9ef1-58c06f2ada34,2
+1fe9f01a-099f-44dd-b825-f45222adfadf,Oxidation states of transition metals,f802f4b6-e435-4cc1-9ef1-58c06f2ada34,3
+28da8bd9-14bb-493a-86bd-ee9cc73cb905,Atomic and ionic radii trends,f802f4b6-e435-4cc1-9ef1-58c06f2ada34,4
+a2f4ac07-4c67-4449-a7d1-3f7155b77b39,Colour of transition metal compounds,aa4e1b1f-b61e-4487-b9ab-bd132495142f,1
+5c8bca67-57ba-413f-8cf8-b771e81fa4e9,Magnetic properties of transition metals,aa4e1b1f-b61e-4487-b9ab-bd132495142f,2
+0c8e8a0e-8800-4231-b004-3fe1a2a3d3e1,Catalytic properties of transition metals,aa4e1b1f-b61e-4487-b9ab-bd132495142f,3
+ca5a9a0b-1c6a-4656-ab3d-3f3406cec5d5,Complex formation tendency,aa4e1b1f-b61e-4487-b9ab-bd132495142f,4
+4345d87f-e862-4ecf-b921-3125d781bf8f,Formation of interstitial compounds,aa4e1b1f-b61e-4487-b9ab-bd132495142f,5
+9192fb4c-49c0-4151-b395-b3f1ed0d5b92,Alloy formation,aa4e1b1f-b61e-4487-b9ab-bd132495142f,6
+66a56c3b-a2fd-4040-bb2b-27618338d3e6,Potassium dichromate (K₂Cr₂O₇),f5cf8b2e-8036-4dc2-8519-0912fde5c737,1
+a42d65ef-1075-4bff-b42f-73be34bfc511,Potassium permanganate (KMnO₄),f5cf8b2e-8036-4dc2-8519-0912fde5c737,2
+6fac5599-d060-4b10-87a3-46d61f15ea09,Introduction to inner transition elements,bada2bfa-2a49-4fe6-8560-bdeb08a3cc16,1
+c483bc93-e23f-46f4-8a94-1fb6f237cd61,Electronic configuration of lanthanoids,adfe9ca5-327f-461d-86ad-2fb94ccb1132,1
+0a6f288f-c93e-4373-be3b-88b88d6edb96,Oxidation states of lanthanoids,adfe9ca5-327f-461d-86ad-2fb94ccb1132,2
+15ee0a89-fd27-4d07-9da2-9e12b977a15d,Lanthanoid contraction,adfe9ca5-327f-461d-86ad-2fb94ccb1132,3
+833dc4d3-5bf4-45bf-bd0a-7909f8ce08ff,Electronic configuration of actinoids,596e3357-dd93-49a3-ba94-7cdd9762ae0d,1
+0ce8e0a5-65d2-4f97-8273-1cb3cb0461f8,Oxidation states of actinoids,596e3357-dd93-49a3-ba94-7cdd9762ae0d,2
+346ea6e4-8d30-49a4-ad9c-07e593491b75,Definition of coordination compounds,f8edb2b9-7a20-4e4e-aed9-fc6b1ef73bea,1
+f2d73ea4-1a35-40ff-8ee9-d3a8d6372307,Components of coordination compounds,f8edb2b9-7a20-4e4e-aed9-fc6b1ef73bea,2
+3aeb5a1f-7a2a-44db-be51-7331b70e033b,Postulates of Werner’s theory,7f46a778-8324-4e91-aa3a-29a053551897,1
+0d9f7255-3297-472a-a5da-e76493c891e0,Primary and secondary valency,7f46a778-8324-4e91-aa3a-29a053551897,2
+7d999028-2562-49c5-a035-2109877108d8,Types of ligands,a16559c5-6805-47aa-a54e-c8a895e177c0,1
+7001ef13-f825-41cd-9f0b-872852fc69d3,Denticity of ligands,a16559c5-6805-47aa-a54e-c8a895e177c0,2
+2599e250-9da6-4400-90bf-69c9feaec37d,Chelation,a16559c5-6805-47aa-a54e-c8a895e177c0,3
+01f96e1d-d3fd-4e94-8c4f-adc43793c80c,Coordination number and geometry,4f907e3f-949d-4301-8454-6533723e4ad7,1
+3c747aa2-0ec9-43f5-9a28-576dffad1e2c,IUPAC rules for naming coordination compounds,10c274ab-9699-4696-9aa8-70814107b1f5,1
+f3dbe238-13ca-4233-bd82-e9bfccf78552,Nomenclature of mononuclear coordination compounds,10c274ab-9699-4696-9aa8-70814107b1f5,2
+c0c1f53e-8e3c-4b9e-9286-8239251ffe29,Structural isomerism,316d2d11-f955-4b4e-a4a0-124009d943a9,1
+e0281e2a-367a-451d-a0a0-c0bdcb42989d,Stereoisomerism,316d2d11-f955-4b4e-a4a0-124009d943a9,2
+fb6c8726-888e-457c-81ce-dce1d4c91873,Valence bond theory of coordination compounds,442f149d-1aa6-4f6e-b631-e08ba79cb63b,1
+3d8dbda3-af9f-413d-8cad-cbf9e46aa9bd,Crystal field theory (basic idea),442f149d-1aa6-4f6e-b631-e08ba79cb63b,2
+00606d3b-849b-4ebe-8731-d5b3937d08fe,Colour of coordination compounds,7c244925-b78b-4caa-bd9f-e3e0745ece8f,1
+98d6bcc6-7ad1-4c5e-9ac5-2c48bb02883e,Magnetic properties of coordination compounds,7c244925-b78b-4caa-bd9f-e3e0745ece8f,2
+422331d7-3947-4151-b48e-9f2f18496936,Role in qualitative analysis,e64c9f52-fbbf-40a1-b515-27e3d54df602,1
+a1b1a0db-e04b-4f93-afa4-8c107f12c932,Role in extraction of metals,e64c9f52-fbbf-40a1-b515-27e3d54df602,2
+7b1e117f-4c9b-492d-88bb-2371db32edb9,Role in biological systems,e64c9f52-fbbf-40a1-b515-27e3d54df602,3
+8c7c88a5-ba9a-4c2b-92ef-0e1ed8c4d43f,Principles of purification of organic compounds,87af62cc-2a52-4389-b620-629ce887139c,1
+fd5e738a-aebe-4e4b-82d4-9fe4b592f6c5,Crystallization,87af62cc-2a52-4389-b620-629ce887139c,2
+a16ee3ad-618d-4342-a3fe-a2c1dcacaf88,Sublimation,87af62cc-2a52-4389-b620-629ce887139c,3
+212c9f1f-065a-48ca-abb4-19792c50221b,Distillation,87af62cc-2a52-4389-b620-629ce887139c,4
+d034b42a-a6e3-4ea8-9489-cab67b57cf9e,Fractional distillation,87af62cc-2a52-4389-b620-629ce887139c,5
+83fc9b28-822a-4e42-8a37-d9251beb8cd0,Steam distillation,87af62cc-2a52-4389-b620-629ce887139c,6
+81ac56e3-588c-4bf2-9ce3-54d8ca758e03,Differential extraction,87af62cc-2a52-4389-b620-629ce887139c,7
+19315e17-22a9-4637-ad7c-40e42a5cfb64,Chromatography,87af62cc-2a52-4389-b620-629ce887139c,8
+f8247672-0355-4cf7-9c9b-baabfdf6b96d,Column chromatography,81929d48-478a-46b1-9fa7-b72e15198c41,1
+2811ce83-92b4-4453-9c4d-e21686c6637d,Thin layer chromatography (TLC),81929d48-478a-46b1-9fa7-b72e15198c41,2
+c810e964-6e34-4ca7-a85c-202a02366ec6,Paper chromatography,81929d48-478a-46b1-9fa7-b72e15198c41,3
+014ba057-02df-4e81-a290-4c5148de4d1e,Gas chromatography,81929d48-478a-46b1-9fa7-b72e15198c41,4
+bbd89c67-bbab-46cf-b1df-b0fbc6fc9a58,Detection of nitrogen,7a6521bb-fba6-45e7-bb19-710c0b7ef0ed,1
+f09904ff-b8ec-4181-8376-534aca826ba7,Detection of sulphur,7a6521bb-fba6-45e7-bb19-710c0b7ef0ed,2
+362a2d8a-5b4b-4b2d-a802-8e4c88ff4f6c,Detection of phosphorus,7a6521bb-fba6-45e7-bb19-710c0b7ef0ed,3
+dca5ed8c-441c-455b-9aee-bfb95f7bdfe2,Detection of halogens,7a6521bb-fba6-45e7-bb19-710c0b7ef0ed,4
+9bfee7fb-dc6f-43f1-86d6-ac6cc3bc6ca2,Estimation of carbon and hydrogen,40141c9e-4021-4f24-aeb2-9a835ba3c625,1
+ed556bc2-552a-4547-890e-47cda3533a44,Estimation of nitrogen,40141c9e-4021-4f24-aeb2-9a835ba3c625,2
+417415ac-dc31-431f-943f-0f2f8049a470,Estimation of halogens,40141c9e-4021-4f24-aeb2-9a835ba3c625,3
+22ee996f-2915-416e-be92-9324bc49ca48,Estimation of sulphur,40141c9e-4021-4f24-aeb2-9a835ba3c625,4
+6dc5a3ad-abbc-4579-a0d2-a0561986fabb,Estimation of phosphorus,40141c9e-4021-4f24-aeb2-9a835ba3c625,5
+bd74028b-711b-4862-bd63-657b46434cd7,Empirical formula determination,14f87995-6d60-4ab6-a05f-c901d15459a7,1
+d35a7f8b-4d50-4dec-82b9-64b83b9641b3,Molecular formula determination,14f87995-6d60-4ab6-a05f-c901d15459a7,2
+b127033e-4ad1-4aa9-81a7-776a385cf2b7,Numerical problems in organic quantitative analysis,14f87995-6d60-4ab6-a05f-c901d15459a7,3
+407b55f9-ff64-459b-a538-e8eda23543d0,Tetravalency of carbon,49e91148-e1fa-4a47-a49b-1462be807a56,1
+27cbffbe-2baa-427e-b072-836046ed6aa6,Hybridization of carbon atoms,49e91148-e1fa-4a47-a49b-1462be807a56,2
+2aea318a-d46a-464b-92dd-37b35f673bb8,sp hybridization,49e91148-e1fa-4a47-a49b-1462be807a56,3
+7da381e0-cc46-4eb7-97d7-2f1c79e7b07b,sp² hybridization,49e91148-e1fa-4a47-a49b-1462be807a56,4
+ba8a985b-69ca-4494-8b67-2bc57ad974b7,sp³ hybridization,49e91148-e1fa-4a47-a49b-1462be807a56,5
+1354eb96-d867-4ca9-8e4f-a2e47f07bf53,Classification based on carbon skeleton,6c38983b-2929-42ac-8793-8cf55155415a,1
+ce313760-de91-4b1c-9615-cc13542fa2f1,Classification based on functional groups,6c38983b-2929-42ac-8793-8cf55155415a,2
+180b8bdf-058c-4b20-81f5-85203e403ecc,Organic compounds containing halogens,6c38983b-2929-42ac-8793-8cf55155415a,3
+23726acd-7e64-4d5e-93e6-307ce8ae426a,Organic compounds containing oxygen,6c38983b-2929-42ac-8793-8cf55155415a,4
+8a77a0f5-1763-4482-b890-63037e09e2d0,Organic compounds containing nitrogen,6c38983b-2929-42ac-8793-8cf55155415a,5
+a98e453c-0979-4a1b-a8d3-63bdedbf70c9,Organic compounds containing sulphur,6c38983b-2929-42ac-8793-8cf55155415a,6
+8a8f0e0e-3bc3-4779-a311-359a48d4e99c,Definition of homologous series,da16de67-7be6-4a98-858f-52ad376db9ba,1
+a54eb5d3-fd9e-48df-9f40-1c239974449c,Characteristics of homologous series,da16de67-7be6-4a98-858f-52ad376db9ba,2
+24e49982-bde6-48bc-92b8-27472eb21cde,Structural isomerism,af406304-1d74-40bf-b55c-102d6ffde8d5,1
+44f78a82-1d2d-4231-bd50-9d1649186f4c,Chain isomerism,af406304-1d74-40bf-b55c-102d6ffde8d5,2
+8afd65cc-2dbf-428b-9210-2ba6f3e56a6b,Position isomerism,af406304-1d74-40bf-b55c-102d6ffde8d5,3
+6fbf3fe2-023a-4f4d-b48e-1e17a19697cd,Functional isomerism,af406304-1d74-40bf-b55c-102d6ffde8d5,4
+5002d8d2-da21-432a-964c-8dd179093759,Metamerism,af406304-1d74-40bf-b55c-102d6ffde8d5,5
+38273150-af18-443c-b1fc-9d7b69021f0c,Tautomerism,af406304-1d74-40bf-b55c-102d6ffde8d5,6
+2f24a3b9-61a3-40a7-a28e-c63f2ae96414,Geometrical isomerism,79363516-a477-494e-a8f8-87b8aca56ccd,1
+d6b81b7d-948d-4d70-8b6f-8666da7ad2b7,Optical isomerism,79363516-a477-494e-a8f8-87b8aca56ccd,2
+ce2c5865-358c-4126-8334-01f8a359ce29,Trivial nomenclature,11e073ab-46c0-4376-8811-cbe3a00b0416,1
+d64ef84b-0ad3-42a2-870f-6f7862fb420c,IUPAC nomenclature rules,11e073ab-46c0-4376-8811-cbe3a00b0416,2
+e94c2009-a4dd-418f-b7d0-ef4b48250494,Nomenclature of alkanes,11e073ab-46c0-4376-8811-cbe3a00b0416,3
+a8a84145-31e3-46b5-9ef7-3747a5ea541e,Nomenclature of substituted hydrocarbons,11e073ab-46c0-4376-8811-cbe3a00b0416,4
+6f1aadc0-a88b-4abc-bf02-721985f09afd,Nomenclature of functional groups,11e073ab-46c0-4376-8811-cbe3a00b0416,5
+e87fba37-8911-40e3-a843-75060131e5c2,Homolytic bond fission,d3331a14-87fa-4c66-bcd5-bd1d464eac12,1
+a9cd7925-d3c2-45a9-a153-e19aeb88560f,Heterolytic bond fission,d3331a14-87fa-4c66-bcd5-bd1d464eac12,2
+427545a9-80dc-4bfc-86b4-6d85aa1f28f0,Free radicals,1b3dfc24-3b5e-4e1b-beee-ce683ff1cb17,1
+931f0e16-866b-4b41-9479-d9b5da377e78,Carbocations,1b3dfc24-3b5e-4e1b-beee-ce683ff1cb17,2
+72fc1021-e3c1-4686-bdaf-1e48b4ba5349,Carbanions,1b3dfc24-3b5e-4e1b-beee-ce683ff1cb17,3
+021cdc2f-c5ea-4992-8763-35613ae00697,Stability of carbocations,19cb6248-c89d-4ef2-983d-8a0c3bc200d7,1
+1dde2243-1339-4755-81a5-14bbebb1e855,Stability of free radicals,19cb6248-c89d-4ef2-983d-8a0c3bc200d7,2
+b53d9c9b-4daf-49be-ab08-7d8b7e1886fb,Definition of electrophiles,7613a456-781a-40fd-9562-afc41abaf71c,1
+597ed5a0-2359-4751-8c63-534908a3fd2e,Definition of nucleophiles,7613a456-781a-40fd-9562-afc41abaf71c,2
+2e06c35a-255c-4b79-98d3-21f0ff5555b7,Inductive effect,80a47ca6-01f7-4ee0-b997-169c43809123,1
+e56a907f-d1fc-465a-a43e-39cfb164c439,Electromeric effect,80a47ca6-01f7-4ee0-b997-169c43809123,2
+0e213a22-8deb-4f7c-a989-a08192e0f841,Resonance effect,80a47ca6-01f7-4ee0-b997-169c43809123,3
+cea923e0-5a26-4207-98cf-690087acad8b,Hyperconjugation,80a47ca6-01f7-4ee0-b997-169c43809123,4
+c3fa00e9-4481-411e-9496-dbf886d054fd,Substitution reactions,41431210-89b4-4f29-8145-dd1a2adcbdf3,1
+932d55ed-4da5-4f56-8ff0-063b3a2828ed,Addition reactions,41431210-89b4-4f29-8145-dd1a2adcbdf3,2
+2bde7e2f-9472-449e-8fc5-154f93cdbb64,Elimination reactions,41431210-89b4-4f29-8145-dd1a2adcbdf3,3
+60e7e3c3-ffbb-49b4-a5f1-1d888fd2a1fb,Rearrangement reactions,41431210-89b4-4f29-8145-dd1a2adcbdf3,4
+0ccef399-3c41-40ac-9b5b-b4fcfaff1753,Aliphatic hydrocarbons,6d504235-8546-4011-9676-2b0914a0820e,1
+cf7bc797-62ff-4bf8-9353-9d4aa37817e4,Alicyclic hydrocarbons,6d504235-8546-4011-9676-2b0914a0820e,2
+5a1b832d-613a-449e-9134-75745b50b8b9,Aromatic hydrocarbons,6d504235-8546-4011-9676-2b0914a0820e,3
+c2a511e8-1aaa-4d7d-bb4f-8e18986af132,Chain isomerism,a39b2169-102a-4bd8-b9ed-9e1f504da5df,1
+b1e0aee7-afef-43cb-9c83-c8373d4b46f5,Position isomerism,a39b2169-102a-4bd8-b9ed-9e1f504da5df,2
+f7d2e041-ca04-4718-925d-e8f9d75a7173,Geometrical isomerism,a39b2169-102a-4bd8-b9ed-9e1f504da5df,3
+c4268654-0e4b-4b07-960b-0c18493aeae1,Nomenclature of alkanes,94d4b11d-2ae4-4624-b239-479b719a25c7,1
+06fc43b0-823c-464f-8fe2-7e63fef5cd72,Nomenclature of alkenes,94d4b11d-2ae4-4624-b239-479b719a25c7,2
+2d1f682e-7145-4ca3-a5dc-1d7719038110,Nomenclature of alkynes,94d4b11d-2ae4-4624-b239-479b719a25c7,3
+62411442-4019-4935-8349-179cb8e0376f,Nomenclature of aromatic hydrocarbons,94d4b11d-2ae4-4624-b239-479b719a25c7,4
+536dfbbb-9836-4207-b043-bfbfaa34513f,Conformations of ethane,06e77ae3-cbf8-44a3-b0b8-dd1531134d93,1
+bb19d7e7-f872-42a8-940e-3306d06038aa,Sawhorse projection,06e77ae3-cbf8-44a3-b0b8-dd1531134d93,2
+f88f1348-6419-4334-80ea-cc232d5915f6,Newman projection,06e77ae3-cbf8-44a3-b0b8-dd1531134d93,3
+a97f9d3c-dd3a-4c0b-84f3-d372433db6c9,Wurtz reaction,ff43e8c1-fd44-4d8b-b4a0-e316b89e9606,1
+467dd296-9c9a-42c1-883e-7216f1d4908a,Decarboxylation reaction,ff43e8c1-fd44-4d8b-b4a0-e316b89e9606,2
+f04d7ab0-a6f4-4a9a-8d7b-ae6a8a62c48b,Kolbe electrolysis,ff43e8c1-fd44-4d8b-b4a0-e316b89e9606,3
+ba2f35cc-dc17-4255-866a-a736f785c731,Halogenation of alkanes,7852316a-5256-4b0b-86c1-02d93263783b,1
+64c28f50-2c42-4fba-aa30-de5c159cd796,Mechanism of free radical substitution,7852316a-5256-4b0b-86c1-02d93263783b,2
+e5dedd12-be9c-4f94-bbc3-b54dc18f0f9b,Dehydration of alcohols,f962166e-8f80-44d7-b0d5-12b7ed8829c8,1
+14492580-2669-4ba1-b593-822442bb15d7,Dehydrohalogenation of alkyl halides,f962166e-8f80-44d7-b0d5-12b7ed8829c8,2
+b1c3abec-d1c8-40a5-a3a5-e8edac4b0e98,Hydrogenation,5f581095-5c2b-4044-ba17-92d9dc0a390e,1
+7fe5cb43-1b8b-4cf5-89c4-c617afb3815e,Halogenation,5f581095-5c2b-4044-ba17-92d9dc0a390e,2
+778648d6-3fb7-4929-8242-148d2372c17b,Addition of hydrogen halides,5f581095-5c2b-4044-ba17-92d9dc0a390e,3
+bcbd1b5f-6072-4147-924a-2bd71f036bf2,Markovnikov rule,5f581095-5c2b-4044-ba17-92d9dc0a390e,4
+61761329-ab94-4bbf-9cbd-7123cc8e045b,Peroxide effect,5f581095-5c2b-4044-ba17-92d9dc0a390e,5
+132925a9-d9e1-4b57-8d7d-bac79bb4d32d,Hydration of alkenes,5f581095-5c2b-4044-ba17-92d9dc0a390e,6
+3f67d271-f9e9-4a66-9793-2a45523edc3f,Ozonolysis,fd930393-65c2-4973-8132-7f88a4416f3d,1
+d369a1ba-3e6b-441e-9e05-fcd433f59a35,Oxidation with KMnO₄,fd930393-65c2-4973-8132-7f88a4416f3d,2
+7124011e-2db9-4d3e-815f-ab43fe33091a,Addition polymerization,905e4a4b-93ba-4931-bd0c-750e59926ddb,1
+b62941cf-9876-48b0-a1e2-0d89f00c9772,Preparation from vicinal dihalides,4cc9e90e-6960-4230-94e2-e0c7ebe36cf4,1
+027b4c10-bb16-486e-89c5-779db6284ce1,Preparation from calcium carbide,4cc9e90e-6960-4230-94e2-e0c7ebe36cf4,2
+4a154118-3c3e-4f32-948f-719e92bbaa58,Hydrogenation of alkynes,5ff92d9d-54f6-4f7f-a6bc-4570a51de0f8,1
+e2963828-9196-4052-89f8-cc0e0deeab53,Halogenation of alkynes,5ff92d9d-54f6-4f7f-a6bc-4570a51de0f8,2
+3af7405c-86c9-4480-8886-fe49f1db5359,Addition of hydrogen halides,5ff92d9d-54f6-4f7f-a6bc-4570a51de0f8,3
+6bd5f7d8-5cc8-4718-bb1e-d9c2a0a27090,Hydration of alkynes,5ff92d9d-54f6-4f7f-a6bc-4570a51de0f8,4
+2cd92bbd-0764-425e-b830-74d4b978b4cc,Formation of metal acetylides,0f15cc0a-f721-40c8-aa67-3f695d7c0435,1
+78d0d3ab-a76f-43c5-a551-444434d494d8,Structure of benzene,f151b28a-9e77-4207-a68e-c07beca181aa,1
+8da8e0c1-a6d2-4e26-b27e-8cf9d9374019,Concept of aromaticity,f151b28a-9e77-4207-a68e-c07beca181aa,2
+32c678cf-0deb-4ff8-b2f5-d8ef9809b694,Halogenation of benzene,52ba4e6a-f0f0-4ae9-8567-6674357dcba4,1
+ec1d7e66-5f43-4a60-a316-42fd94965a95,Nitration of benzene,52ba4e6a-f0f0-4ae9-8567-6674357dcba4,2
+d38a8abf-2a7a-4128-9ebf-44d9080ecdcb,Sulphonation of benzene,52ba4e6a-f0f0-4ae9-8567-6674357dcba4,3
+13989b8f-7e43-4dbc-9701-180c21745a70,Friedel–Crafts alkylation,7a58768e-31a4-4fd8-8943-f87c7e6a7bc5,1
+31cb2138-13cd-46ac-af27-05dc3746e722,Friedel–Crafts acylation,7a58768e-31a4-4fd8-8943-f87c7e6a7bc5,2
+1e440997-23d3-45c1-bbed-94b9f6b6ec42,Ortho–para directing groups,985a13cd-44af-48fe-af18-7d8c90714ca7,1
+a84e69c5-5fdd-4fa0-9151-11710485ad73,Meta directing groups,985a13cd-44af-48fe-af18-7d8c90714ca7,2
+925868f7-307b-40d5-acb9-2a78da5e958e,Classification of haloalkanes,ffc9f8d9-c61b-40aa-b942-97375623a250,1
+78d7dad9-1bf1-4f26-894f-53cd9d581801,Classification of haloarenes,ffc9f8d9-c61b-40aa-b942-97375623a250,2
+f6d9bfcf-3dcc-492d-853b-71df8eb69231,IUPAC nomenclature of haloalkanes,ffc9f8d9-c61b-40aa-b942-97375623a250,3
+5a3bb1a3-92df-4b3b-b42e-4afaa4271356,IUPAC nomenclature of haloarenes,ffc9f8d9-c61b-40aa-b942-97375623a250,4
+f0992637-cfa4-4fdb-b2b5-fde303234839,Polarity of C–X bond,4105253d-d15e-4b3e-8163-c4339b7dcba0,1
+e16b71e3-d5ee-4e45-94a5-b2781701d163,Bond length and bond strength of C–X bond,4105253d-d15e-4b3e-8163-c4339b7dcba0,2
+6c2202d7-c7bd-4101-95d3-e192814d8f30,Preparation from alcohols,b989bf66-83b1-4f0c-b468-2d2b78edbe6b,1
+d2f8d6ac-ac2d-4406-b1ee-226daa8719a5,Preparation from hydrocarbons,b989bf66-83b1-4f0c-b468-2d2b78edbe6b,2
+ad315f66-330f-426a-877c-5146b6cc3771,Preparation by halogen exchange reactions,b989bf66-83b1-4f0c-b468-2d2b78edbe6b,3
+0047350f-2d59-4063-bf64-79cd4ffa8653,Preparation from benzene,5f5fcffc-84d3-4ab7-a79b-2009053c1b09,1
+0a9acf86-b508-473f-91b7-3e9a7f2440b4,Preparation from diazonium salts,5f5fcffc-84d3-4ab7-a79b-2009053c1b09,2
+77071676-2587-484e-a548-6cb3b8c37ff5,Nucleophilic substitution reactions of haloalkanes,5b471e75-59df-489b-be9b-b7483de9582a,1
+ec79af53-1c4b-4886-8faa-f39aec891fc6,SN1 reaction mechanism,5b471e75-59df-489b-be9b-b7483de9582a,2
+41e7b34e-1b94-433e-97cb-14b86c3e9927,SN2 reaction mechanism,5b471e75-59df-489b-be9b-b7483de9582a,3
+273c898f-193e-4890-ae8c-6e891fea2376,Dehydrohalogenation reactions,bf70209d-f557-4b4e-a5db-0dfee9f21b50,1
+a1909ae7-456d-4f64-a226-ae89ef7f4585,Formation of alkenes from haloalkanes,bf70209d-f557-4b4e-a5db-0dfee9f21b50,2
+51a44652-b6b3-40af-a4b0-d51684f35eb7,Electrophilic substitution reactions,1af1a31b-e880-41fa-8c85-c89656d91fc5,1
+a5a70ff4-899f-4c7c-a8fe-6ceb7f5bcb46,Nucleophilic substitution reactions,1af1a31b-e880-41fa-8c85-c89656d91fc5,2
+7ae6b7d5-e528-4489-ab75-a2000edb02c6,Uses and environmental effects of chloroform,260dbbde-1742-4bbb-a6eb-011a7f6ddb90,1
+e7b005f6-de18-4a45-8136-e5914b4bb0fd,Uses and environmental effects of iodoform,260dbbde-1742-4bbb-a6eb-011a7f6ddb90,2
+5d053f16-47d6-4dff-9959-f42685f2b565,Uses and environmental effects of freons,260dbbde-1742-4bbb-a6eb-011a7f6ddb90,3
+c6ac8624-9314-4f36-a1a7-7eedb45b3d80,Uses and environmental effects of DDT,260dbbde-1742-4bbb-a6eb-011a7f6ddb90,4
+d4e883cf-de10-4492-a2a2-296d891a77fe,Classification of alcohols,06453775-af7e-4a2d-8c68-a7b66439e28c,1
+4cadf778-d267-435a-94d8-b122244b906d,Nomenclature of alcohols,06453775-af7e-4a2d-8c68-a7b66439e28c,2
+3284d9a2-3ed7-4aac-8732-a33a6e33907c,Preparation of alcohols,06453775-af7e-4a2d-8c68-a7b66439e28c,3
+ff71e306-d578-41f2-a31a-9aa415384a3b,"Identification of primary, secondary and tertiary alcohols",06453775-af7e-4a2d-8c68-a7b66439e28c,4
+7bbb47fd-cee8-4fc7-99f6-ee63217de1d7,Dehydration of alcohols,ed0f52ce-1f50-4e90-9f7c-4cf28f17cd9f,1
+9db65d26-eab2-4dc9-85f7-9bb0e04cf198,Oxidation of alcohols,ed0f52ce-1f50-4e90-9f7c-4cf28f17cd9f,2
+1e613ba6-aac7-4b9f-ac40-d48968061313,Esterification reactions,ed0f52ce-1f50-4e90-9f7c-4cf28f17cd9f,3
+f038a26d-475a-4489-800e-ebac1a188bea,Nomenclature of phenols,5aed2a01-cea4-4b7d-9c56-e5d29bf44884,1
+7ea62884-cb06-4104-a895-63a4659f0553,Preparation of phenols,5aed2a01-cea4-4b7d-9c56-e5d29bf44884,2
+56ebe943-f718-4c65-a105-a93ab61eef2e,Acidic nature of phenols,5aed2a01-cea4-4b7d-9c56-e5d29bf44884,3
+26e1ef8b-1c77-4f48-bd3f-f02f6f34a8b1,Halogenation of phenols,02b8d22f-debe-47c1-b4b0-474d789cc730,1
+70ba5289-3733-43ee-a5b4-0f251c3a22fc,Nitration of phenols,02b8d22f-debe-47c1-b4b0-474d789cc730,2
+b4d6b444-96fa-4020-b164-08c0e58831fc,Sulphonation of phenols,02b8d22f-debe-47c1-b4b0-474d789cc730,3
+50de0099-4919-4299-b78f-5d03f1a526a8,Reimer–Tiemann reaction,02b8d22f-debe-47c1-b4b0-474d789cc730,4
+1a54b30e-cd42-4f7c-b4aa-09b9356e5848,Structure of ethers,55a4e5e3-b8cb-48cc-b00a-735f1636bffc,1
+b114d532-8fc7-47ec-8ac1-c78500438642,Nomenclature of ethers,55a4e5e3-b8cb-48cc-b00a-735f1636bffc,2
+be874d6c-e55e-4589-a86e-5ba4d9698d18,Preparation of ethers,55a4e5e3-b8cb-48cc-b00a-735f1636bffc,3
+18aa168f-f4cf-4922-974a-25fe592697ab,Chemical reactions of ethers,55a4e5e3-b8cb-48cc-b00a-735f1636bffc,4
+085e835d-ad73-40b6-879c-53c719baba5d,Structure of carbonyl group,c257da02-43fb-422f-99cf-1a91fbd76475,1
+e591d324-3c65-4100-b283-17f404b80e0f,Nomenclature of aldehydes and ketones,c257da02-43fb-422f-99cf-1a91fbd76475,2
+d8f498e2-ce7b-4000-9817-9e4aaf5e8fba,Addition of hydrogen cyanide (HCN),68350ace-de34-4319-bb91-1dc30c496be7,1
+0e667de9-7d98-426b-ad2b-a225a56bce95,Addition of ammonia and its derivatives,68350ace-de34-4319-bb91-1dc30c496be7,2
+13128096-412f-4b8b-ad27-1509833e25ee,Grignard reagent reactions,68350ace-de34-4319-bb91-1dc30c496be7,3
+65ee6c1a-ab40-475a-b727-c2f5edb501d0,Oxidation reactions of aldehydes and ketones,1a0074b9-bfc3-4493-b96a-9cd338eeae20,1
+c614bfa9-fa32-4569-a767-3fa9477f0d73,Reduction reactions of aldehydes and ketones,1a0074b9-bfc3-4493-b96a-9cd338eeae20,2
+475959ff-2557-4c20-bd63-73b735e214de,Clemmensen reduction,1a0074b9-bfc3-4493-b96a-9cd338eeae20,3
+0b7e64e4-855c-4489-b96b-c634923c3452,Wolff–Kishner reduction,1a0074b9-bfc3-4493-b96a-9cd338eeae20,4
+5ed8bb4d-af31-4c9a-82ad-32e50f35306a,Aldol condensation,44161862-bd25-4b93-a968-bed0c8fe0f76,1
+c86fd9fd-7a21-49ce-914e-38b2ebcd8e42,Cannizzaro reaction,44161862-bd25-4b93-a968-bed0c8fe0f76,2
+33262f6a-1111-428d-997f-8eacacff4e4b,Haloform reaction,44161862-bd25-4b93-a968-bed0c8fe0f76,3
+c87272ec-147a-47e1-9cf4-e7a25a430980,Tests to distinguish aldehydes and ketones,aa1776cd-4a3b-442f-9e12-1d1cb54cd41c,1
+35ee20c7-cbcc-4536-9602-a5a3a1bc6925,Nomenclature of carboxylic acids,f42c602d-3f7d-4e4b-b662-27fbf84fb4b3,1
+d0cfa092-a2c8-43f2-bc2e-79c17fb58edc,Factors affecting acidic strength,10e4d588-cbf4-4d4a-aa51-621dbfa25d4e,1
+ab3d65be-7a46-4d3f-8c30-48214173df8d,Formation of acid derivatives,5856e75a-6c10-4e05-b632-60b52f8e2058,1
+20e87c0a-8a53-48c7-bb39-68a504a83b01,Esterification reaction,5856e75a-6c10-4e05-b632-60b52f8e2058,2
+7132b1c7-15d9-41d7-a67f-ca4e99d0a65d,Classification of amines,b3615f54-addb-4d6c-b789-b5cb2c4e14e5,1
+dc180eb6-f47b-4736-8eaf-d80e6f5f7fc5,Nomenclature of amines,b3615f54-addb-4d6c-b789-b5cb2c4e14e5,2
+1e5db63a-ccda-443b-aa81-cb8fa8e1a338,Structure of amines,d092e1c9-a168-4adb-b801-aa0ac08929c8,1
+85c41b4a-03c2-4455-89ac-20667a0633af,Basic character of amines,d092e1c9-a168-4adb-b801-aa0ac08929c8,2
+4a5a97e7-a849-4a3c-b1ae-2d6c30de006b,Preparation from nitro compounds,271e83b8-f95a-444f-b956-3c17fddf4d87,1
+6f7bd111-74a8-4149-9219-ae622037150f,Preparation from amides,271e83b8-f95a-444f-b956-3c17fddf4d87,2
+0a9eec00-01df-4020-9e37-f60484bb7d2b,Preparation by reduction reactions,271e83b8-f95a-444f-b956-3c17fddf4d87,3
+531bf8ed-1a1e-47ac-9418-ae49e5651797,Alkylation reactions,bea9656a-c063-4093-8b33-b2f244024002,1
+0a2507c8-7ed1-444c-9cf9-20cd51641a77,Acylation reactions,bea9656a-c063-4093-8b33-b2f244024002,2
+f1d2ac96-5082-40aa-af11-fe3f15570d3f,Carbylamine reaction,bea9656a-c063-4093-8b33-b2f244024002,3
+202a3908-b14f-48df-9633-54a17d552817,Identification of primary amines,446e940a-2565-4950-bdc7-d42a4e621f2b,1
+683fbc9a-897f-49d1-b2df-e7737103819b,Identification of secondary amines,446e940a-2565-4950-bdc7-d42a4e621f2b,2
+1187d76b-1896-4e32-90ab-b0e95137c37d,Identification of tertiary amines,446e940a-2565-4950-bdc7-d42a4e621f2b,3
+ab1dc0cf-0da1-4614-bad5-03cce5f9b2be,Preparation of diazonium salts,7936c998-49d1-4d60-8eb8-0d645a42bca6,1
+3cf450e8-9e10-4f7e-86f6-7417b424ae21,Reactions of diazonium salts,7936c998-49d1-4d60-8eb8-0d645a42bca6,2
+10f29d8b-6e19-4025-8e83-b5d68203f34e,Importance in synthetic organic chemistry,7936c998-49d1-4d60-8eb8-0d645a42bca6,3
+91acd5c1-1cf1-4210-9f2e-bfa81b0600f9,Importance of biomolecules in living systems,74efb1e3-0235-4727-8e5b-08d8ec7898b1,1
+588e231b-fb50-444c-baa4-c2fd532de2e1,Monosaccharides,ff35472a-e597-4be8-8479-b71dc9f74d90,1
+a8116787-bd2b-462f-92a9-84467218bd9b,Oligosaccharides,ff35472a-e597-4be8-8479-b71dc9f74d90,2
+188f357c-7de3-4a74-a523-130c537c6ede,Polysaccharides,ff35472a-e597-4be8-8479-b71dc9f74d90,3
+0839ec8a-89e0-4709-ab7d-b36e8b9941e8,Glucose,065c77c1-54a7-4050-b410-20217f8ee8c9,1
+3d3cdc2d-262e-47c2-99bd-748a432611b2,Fructose,065c77c1-54a7-4050-b410-20217f8ee8c9,2
+12207ad4-94d8-45c5-8312-b09318e83631,Sucrose,2cc3780a-7d63-4797-94d3-26e178337e6f,1
+897f1013-cd86-4478-9637-5889092ceb13,Lactose,2cc3780a-7d63-4797-94d3-26e178337e6f,2
+1a80e7fb-c70c-4b06-bca0-0057d0a9ab65,Maltose,2cc3780a-7d63-4797-94d3-26e178337e6f,3
+5f3fcbb5-9cb9-40e8-adc6-a59cc89ae693,α-amino acids,be08936a-30d5-41dd-bbd4-a53992c1bff9,1
+66f9bdcb-fdb4-470a-a8a8-a0bd9625a040,Peptide bond,be08936a-30d5-41dd-bbd4-a53992c1bff9,2
+95fe4c6d-524c-441d-965e-f0de4ea1599a,Polypeptides,be08936a-30d5-41dd-bbd4-a53992c1bff9,3
+3f8a9e40-4f25-46d7-8e37-1d4d27d1d570,Primary structure,244d7b1f-6f10-4b4a-8f05-91a2f471b6fa,1
+e50852f1-113c-4d7c-a2ff-b6b8aa20bcd7,Secondary structure,244d7b1f-6f10-4b4a-8f05-91a2f471b6fa,2
+e0626724-fc2e-481a-a805-f8d864a874b6,Tertiary structure,244d7b1f-6f10-4b4a-8f05-91a2f471b6fa,3
+9d3812b3-299c-438b-95a7-fa2b88c134e4,Quaternary structure,244d7b1f-6f10-4b4a-8f05-91a2f471b6fa,4
+b77a75ff-1ef7-47ec-b6bf-319274021b3e,Denaturation of proteins,b9241d4a-0234-49c4-8993-256b091c2e58,1
+c01022ce-f9e9-4d3d-ad55-8c871249b670,Enzymes,b9241d4a-0234-49c4-8993-256b091c2e58,2
+c7e81a5a-732f-4e14-8abb-9905d95840f7,Fat soluble vitamins,af7f7303-6ea7-430a-a18a-af8a822def54,1
+5a9d2c11-d78c-4dcf-92bb-6e0836b0cf36,Water soluble vitamins,af7f7303-6ea7-430a-a18a-af8a822def54,2
+1c71edb7-5deb-4ce3-8969-422a32b4b159,Structure of DNA,97772c82-a887-48ea-ba4e-129d33496b6a,1
+a2ede9ab-a4dc-4c48-9cfd-67a9ecd40fe3,Structure of RNA,97772c82-a887-48ea-ba4e-129d33496b6a,2
+1cfb53f9-a1ed-4610-a947-75155111c236,Biological functions of nucleic acids,97772c82-a887-48ea-ba4e-129d33496b6a,3
+897e2505-0348-4911-8271-078c18ea0710,Introduction to hormones,6054d876-33bb-46c8-b964-e408959da9fa,1
+7d75c9aa-6584-4ae7-a6e2-754e15d9442b,Biological importance of hormones,6054d876-33bb-46c8-b964-e408959da9fa,2
+33146cf4-661f-488f-bd0e-342f79ac27e5,Detection of nitrogen in organic compounds,c8c6fbfa-8d51-4bcc-8d7f-1538585e9a28,1
+d7c12867-874a-41f8-8de5-d4e290ad0225,Detection of sulphur in organic compounds,c8c6fbfa-8d51-4bcc-8d7f-1538585e9a28,2
+f9673243-acac-4207-a9cb-fb660447c405,Detection of halogens in organic compounds,c8c6fbfa-8d51-4bcc-8d7f-1538585e9a28,3
+a87dfb85-2cc9-4a39-b66f-427dad7e433e,Detection of hydroxyl group in alcohols,ca90694a-babb-48a7-8225-612eeb2a0b2b,1
+afc518cd-2e1f-493a-a0cd-670c4587828d,Detection of hydroxyl group in phenols,ca90694a-babb-48a7-8225-612eeb2a0b2b,2
+f2923012-853b-40c9-95cd-e2ba0e85a547,Detection of carbonyl group in aldehydes,ca90694a-babb-48a7-8225-612eeb2a0b2b,3
+21a6b897-43a8-46d8-ac62-6a2eeec76fff,Detection of carbonyl group in ketones,ca90694a-babb-48a7-8225-612eeb2a0b2b,4
+780cf9bb-476f-48ce-83ca-0798896d35aa,Detection of carboxyl group in carboxylic acids,ca90694a-babb-48a7-8225-612eeb2a0b2b,5
+6060c2c3-613d-4a0b-978d-fb2806b437e7,Detection of amino group in amines,ca90694a-babb-48a7-8225-612eeb2a0b2b,6
+6991bec8-c89c-4b77-8b4d-a510036c79af,Preparation of Mohr’s salt,b0c97d5c-e5f8-49d0-9f84-911124b87176,1
+6da8f1c4-ceef-45ee-8167-94aa59f57773,Preparation of potash alum,b0c97d5c-e5f8-49d0-9f84-911124b87176,2
+cbf79e94-c7af-4940-9aa9-41137c218fbc,Preparation of acetanilide,227b9508-b506-43ad-a61c-3668b49ba61c,1
+13c875fd-108a-4ba2-96ce-7285522a3f64,Preparation of p-nitroacetanilide,227b9508-b506-43ad-a61c-3668b49ba61c,2
+686494d9-b673-44a4-9a9b-faadd556037e,Preparation of aniline yellow,227b9508-b506-43ad-a61c-3668b49ba61c,3
+3aaa845c-7e30-4247-a340-6fcd9cce56be,Preparation of iodoform,227b9508-b506-43ad-a61c-3668b49ba61c,4
+65b47714-c7a6-4165-a9b6-6959e1cf3f43,Acid–base titration,a57e40c5-92c1-4228-9b19-43df61150f81,1
+b98470e3-6a71-43df-8209-759cf1cdb54a,Use of indicators in titration,a57e40c5-92c1-4228-9b19-43df61150f81,2
+f8d6464d-0f5d-400d-9d27-7ed6d416f22f,Oxalic acid vs KMnO₄ titration,a57e40c5-92c1-4228-9b19-43df61150f81,3
+ee7b9ee7-d0a2-4cc7-befe-d45571480a88,Mohr’s salt vs KMnO₄ titration,a57e40c5-92c1-4228-9b19-43df61150f81,4
+ca6174a5-5cca-46e8-b531-0be3f96d3680,Pb²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,1
+61aef973-9a86-4d21-8c20-fc822a4fdd38,Cu²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,2
+42005a9d-09c6-496b-bf02-75f502cbf09e,Al³⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,3
+ce6e01f9-90fc-49d1-b397-c2c6070ed762,Fe³⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,4
+af201568-a7e8-4270-b5ae-c5a47f5e49a6,Zn²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,5
+70e3af29-f85e-4f86-86af-4aae06f222dd,Ni²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,6
+411d1203-d751-4497-b0da-9d93bbd2838c,Ca²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,7
+d7cf2701-e686-432a-ad88-f14a393e1b4e,Ba²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,8
+1ab52801-a239-4624-9f75-e0bbfb5cf236,Mg²⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,9
+efefc4ec-532f-4fad-bbfa-35c55519462d,NH₄⁺ detection,15e1f031-189d-4987-a13c-42f37500f835,10
+14a64742-ea96-4a75-8791-8a332556a6c7,Enthalpy of solution of CuSO₄,35f442b2-b249-4011-8148-ef1be0d0b2a1,1
+90172736-c9b1-4710-8762-60b6cb3ba35a,Enthalpy of neutralization of strong acid and strong base,35f442b2-b249-4011-8148-ef1be0d0b2a1,2
+cea711c6-a9e1-41be-8f09-dfb013c2f15f,Preparation of lyophilic sols,35f442b2-b249-4011-8148-ef1be0d0b2a1,3
+8ee1e8c5-c082-44f9-b7f8-0ee854c26db2,Preparation of lyophobic sols,35f442b2-b249-4011-8148-ef1be0d0b2a1,4
+f8db9376-0c7f-4ec5-a494-f1230920b9d3,Kinetic study of reaction between iodide ions and hydrogen peroxide,35f442b2-b249-4011-8148-ef1be0d0b2a1,5
+35189ab8-0f36-4bd0-889d-d8cf37134b63,Definition of a set,6437699a-d760-4a9a-9d29-02ad2349b31f,1
+38782f6d-d7f6-4a04-9a5e-dc20f4ddc03b,Representation of sets,6437699a-d760-4a9a-9d29-02ad2349b31f,2
+5dcd8344-a4ce-4e12-9f3f-93cb4fb5d8bd,Roster form of sets,6437699a-d760-4a9a-9d29-02ad2349b31f,3
+81e5c7e8-a22c-4399-85f7-e7b7f975f0c7,Set builder form,6437699a-d760-4a9a-9d29-02ad2349b31f,4
+ed6757ce-6b95-4659-ac5c-4d852787973f,Types of sets,6437699a-d760-4a9a-9d29-02ad2349b31f,5
+15404cf1-519a-49ff-a215-f39af8cd6be8,Finite and infinite sets,6437699a-d760-4a9a-9d29-02ad2349b31f,6
+04bde7fc-1c36-426e-bde5-42cd732e0e11,Empty set,6437699a-d760-4a9a-9d29-02ad2349b31f,7
+a203cd52-9a2b-4395-9348-e0d0e0b041b9,Subsets,6437699a-d760-4a9a-9d29-02ad2349b31f,8
+0da30eb7-b109-4513-856b-a9905ed6eada,Union of sets,019fe3d9-5095-484c-8971-35d6184b50d4,1
+2e5d19c6-258e-4b35-8018-68ca45524d00,Intersection of sets,019fe3d9-5095-484c-8971-35d6184b50d4,2
+b45549af-be13-4c11-b75c-321c5b60e0a8,Complement of sets,019fe3d9-5095-484c-8971-35d6184b50d4,3
+21bc99a5-5cc6-4e18-9f6c-34b1e900047f,Difference of sets,019fe3d9-5095-484c-8971-35d6184b50d4,4
+f7a9cdb8-854b-4179-a508-d6c5e8f144d7,Commutative laws,071e48a3-bb71-4cd0-a5ae-3c8613c8b35b,1
+d570f6a3-677c-451f-bb23-a3643eef9ffb,Associative laws,071e48a3-bb71-4cd0-a5ae-3c8613c8b35b,2
+8255cc0d-f177-47ee-813d-6554f1811c37,Distributive laws,071e48a3-bb71-4cd0-a5ae-3c8613c8b35b,3
+18cb0615-c510-46ef-a920-d4bf4d3ba21a,De Morgan’s laws,071e48a3-bb71-4cd0-a5ae-3c8613c8b35b,4
+d6355e58-757b-4075-b8e7-54cb8edbe92a,Definition of power set,066c8302-69df-4434-9060-079601c8d41b,1
+0229db67-5a44-4a18-86f4-d020362ad1d5,Number of subsets,066c8302-69df-4434-9060-079601c8d41b,2
+c064937d-97e9-419b-951e-562b253b61c3,Definition of relation,7c8e1ba6-a9dd-43c7-bc48-89af69a1848c,1
+4d9fb84c-b0a3-4072-8de0-20c775dd41e0,Domain and range,7c8e1ba6-a9dd-43c7-bc48-89af69a1848c,2
+dccedee3-57d2-4b19-9d9e-0b24e8472dc9,Reflexive relation,2c448cf0-0c05-4628-887c-005f00df0de8,1
+48e7b0c2-cb5e-42fc-801e-27af6981aa04,Symmetric relation,2c448cf0-0c05-4628-887c-005f00df0de8,2
+f8131b69-f851-4556-b785-724706e3bf80,Transitive relation,2c448cf0-0c05-4628-887c-005f00df0de8,3
+f2129770-0ccd-4962-8e3f-dfc4b445f8af,Definition of equivalence relation,58387315-33f8-4fec-8047-8d3e9ab62b01,1
+bef26ca5-9be3-448b-bab2-3ad3cd1695bd,Properties of equivalence relations,58387315-33f8-4fec-8047-8d3e9ab62b01,2
+a77af97d-126a-4743-b8e7-e71fe03ae5b0,Definition of function,21fadfce-3d1c-42c3-b0f3-a348edce5bfd,1
+3ffdf5db-c863-491b-b05c-08f158e17c2b,Domain and codomain,21fadfce-3d1c-42c3-b0f3-a348edce5bfd,2
+cc6a292c-0be3-41b6-bdf0-fd3262be6b3f,One-one function,538c16c3-0fdc-4288-9025-5a5657b8b726,1
+c0c1ed18-27a6-4522-914c-f6b9df38e531,Into function,538c16c3-0fdc-4288-9025-5a5657b8b726,2
+b499787c-527a-4e67-8b62-3d4e884b8441,Onto function,538c16c3-0fdc-4288-9025-5a5657b8b726,3
+d9a2c9bc-5220-4247-a1da-9cc497e1c4e8,One-one and onto function,538c16c3-0fdc-4288-9025-5a5657b8b726,4
+52976088-e920-4126-bd0a-f5e615101b16,Definition of composition,1053a2a6-52da-46b9-a3db-e8e04da6635b,1
+e20bf8b9-8f59-45d9-8b14-5d2ae26d6641,Properties of composition,1053a2a6-52da-46b9-a3db-e8e04da6635b,2
+6ff7895d-82ac-4fe3-a58b-248899b82d47,Definition of complex number,50f9ec18-2edb-488e-8ad6-7fdbc7ab4c4b,1
+97835e0a-cb37-4661-9c1e-c200cf06567a,Ordered pair representation,50f9ec18-2edb-488e-8ad6-7fdbc7ab4c4b,2
+a5eb254c-42c5-449a-80dd-68ecdd97a1a0,Representation as a+iba + iba+ib,4ab4eb8b-0865-4afa-9660-fed022e2afa6,1
+c2c02a51-2c37-4a98-b643-74f43b1a305b,Real part,4ab4eb8b-0865-4afa-9660-fed022e2afa6,2
+0cdcd732-454a-4d4a-af2a-a54d52728f50,Imaginary part,4ab4eb8b-0865-4afa-9660-fed022e2afa6,3
+0f9a4383-aba5-4f25-a7f6-440dc861bcc5,Geometrical representation,a1595828-f7d5-473f-b08f-8e067c488c05,1
+a984e2cc-30a2-4624-bc7b-5fe014b560bb,Complex plane,a1595828-f7d5-473f-b08f-8e067c488c05,2
+bc2ca37e-cf08-464c-9ab0-dbde2295fff4,Addition,66d43e73-497b-48cb-ad7f-4d5043f6e443,1
+9bac1cce-44e8-405b-91f6-a0cc7193ef33,Subtraction,66d43e73-497b-48cb-ad7f-4d5043f6e443,2
+6b0c6bad-f30c-429d-859a-7021f1cef975,Multiplication,66d43e73-497b-48cb-ad7f-4d5043f6e443,3
+69de5c42-2973-4adf-88c4-1c3a20f1120b,Division,66d43e73-497b-48cb-ad7f-4d5043f6e443,4
+19efb5b8-3833-4acf-846f-94166db2a038,Modulus of complex number,a5a39b47-e073-4b8c-adc4-7b8516b036e7,1
+967f89de-256e-4c8e-88b8-0e80f758c504,Argument (amplitude),a5a39b47-e073-4b8c-adc4-7b8516b036e7,2
+923ec0a4-df83-4f80-af34-f726ada91cd6,Quadratic equation in real numbers,91a5d578-e831-48ff-8160-962577a7cfbe,1
+a9b90427-c1d5-4c49-960d-9b736197dbe0,Quadratic equation in complex numbers,91a5d578-e831-48ff-8160-962577a7cfbe,2
+b8790736-9aea-491e-934d-f03a4a1c92a3,Real and distinct roots,30799b1d-a5c1-4c46-a5b4-891db9bc8172,1
+6847da82-0820-4f9b-8a87-44bcc91c1797,Equal roots,30799b1d-a5c1-4c46-a5b4-891db9bc8172,2
+3c773e90-2894-474f-b162-e38973e371ad,Complex roots,30799b1d-a5c1-4c46-a5b4-891db9bc8172,3
+24fb2184-1328-4133-9c1e-9f5698f791f9,Sum of roots,04a9ba62-c171-4de3-9bb6-cb621bc928de,1
+7de39608-4f0a-4aee-b46b-09da4282922e,Product of roots,04a9ba62-c171-4de3-9bb6-cb621bc928de,2
+f82fc6c0-7a39-4636-a4b8-215c4c247187,Quadratic equation with given roots,ab575270-6cc7-4aa9-a156-7d83bef97e4a,1
+4696fef5-3e1a-4cd7-8e4a-1cdcef0c0ee0,Definition of matrix,0d2e98c2-bf6f-463a-8950-c614d9dcc635,1
+41f29967-2c3e-416d-88ba-ab6e42608e0f,Order of matrix,0d2e98c2-bf6f-463a-8950-c614d9dcc635,2
+bd427fda-6cbb-4ce9-94e3-bbdb2ca86f95,Row matrix,f5014a08-26ae-4393-8b30-f91f298484a4,1
+fc255bff-8cb1-42b8-9036-177701371548,Column matrix,f5014a08-26ae-4393-8b30-f91f298484a4,2
+220cc048-f729-4ea6-a982-1e44ee8df89e,Square matrix,f5014a08-26ae-4393-8b30-f91f298484a4,3
+e1fbd46a-73ba-490b-afba-186e85225976,Zero matrix,f5014a08-26ae-4393-8b30-f91f298484a4,4
+24557988-0aae-492c-b786-228e908777bc,Identity matrix,f5014a08-26ae-4393-8b30-f91f298484a4,5
+f5997484-da08-43bc-b96f-baf67c27fc48,Addition of matrices,eb14f7dc-03b9-4cc3-a95b-f60ea1ed56bc,1
+0b227cb6-cd47-4d48-a865-2a3d6e43e535,Subtraction of matrices,eb14f7dc-03b9-4cc3-a95b-f60ea1ed56bc,2
+dd53d76f-ee6b-414f-bd2c-5ec406e9667a,Multiplication of matrices,eb14f7dc-03b9-4cc3-a95b-f60ea1ed56bc,3
+f1a15349-6ea4-4f10-8986-89d26689a41a,Determinant of order two,24d36525-aee3-4ea2-a0a9-4a234d7c3754,1
+4949cd9b-bd8f-4141-bf93-7fe429ed7459,Determinant of order three,24d36525-aee3-4ea2-a0a9-4a234d7c3754,2
+04842a72-9a7d-4382-b638-d6def5ff59a8,Expansion method,f279c6b7-636e-46a3-ba3c-106ef441014e,1
+d02e6d73-3e91-43d9-a2c2-c67b69715634,Properties of determinants,f279c6b7-636e-46a3-ba3c-106ef441014e,2
+6a0e8768-eeb3-4f36-991a-3ffcb51c75ca,Area of triangle using determinants,5a51b6ed-5873-4c99-9303-ea9fff1cd48f,1
+01d4250c-0b1d-4232-95aa-21bb0506bb29,Cofactors,f2953b93-0cf2-44a1-b0a2-d72f7ca84e4d,1
+22b8fc31-3fac-49fa-a146-b418db71db1b,Adjoint matrix,f2953b93-0cf2-44a1-b0a2-d72f7ca84e4d,2
+eefc9358-d6bc-487a-9d5e-5b6beec72bf7,Inverse using adjoint method,d499520d-1c0b-4148-94e4-fa6afd709229,1
+debf45de-05cf-4bf4-934e-7e1b5638c7ad,Test of consistency,76ad0fbb-7896-4695-a8c2-ecd30d5f87e9,1
+3d195350-2753-4881-81a1-dbef754aaff9,Solution using matrices,76ad0fbb-7896-4695-a8c2-ecd30d5f87e9,2
+87144865-0dc6-4d22-b81b-d556d7184595,Fundamental principle of counting,24054f93-a751-46ce-925e-45bd6bd91292,1
+842baa25-a5d5-4d59-85e1-c8c72af42f8f,Definition of permutation,78761aef-f4b7-4d4b-9073-c92128d95dbd,1
+80f92514-e97d-4a55-85ff-a30ba14209d4,"Formula P(n,r)P(n,r)P(n,r)",78761aef-f4b7-4d4b-9073-c92128d95dbd,2
+8a8e9f5f-c9e6-49d1-ab3a-b36095e05c50,Permutations of distinct objects,971028a3-b845-4f91-acda-436190236750,1
+ac28f4df-773c-4ac0-aada-1d6490b002a6,Permutations with repetition,971028a3-b845-4f91-acda-436190236750,2
+da161a0e-d297-4699-a982-20626de4d5c6,Definition of combination,f6748c60-ce20-41e6-a478-0bc80614696e,1
+6ba399b2-63fa-48b5-842d-9fb25b45ca34,"Formula C(n,r)C(n,r)C(n,r)",f6748c60-ce20-41e6-a478-0bc80614696e,2
+8661489e-5d75-41a2-a1d7-ffd7ea9fdccc,"Relation between P(n,r)P(n,r)P(n,r) and C(n,r)C(n,r)C(n,r)",6defc433-3cf1-4da1-8658-71b68aa3a91e,1
+748e80ae-06f7-4e8e-97a5-a790e8674615,Simple counting problems,ade0772c-13b0-4bf7-8fe6-9aa555b2870e,1
+8bcfff43-847a-43db-87d1-b93123e8e6d6,Definition of binomial expression,1b9b965f-ee5c-4f57-9a9a-00d15b91c296,1
+28bd73f5-e145-4fc5-ac7d-9815f57dcd72,Powers of binomial expressions,1b9b965f-ee5c-4f57-9a9a-00d15b91c296,2
+fb8922d0-145c-40cb-8ca4-82e1dbd785dc,Expansion of ((a+b)^n),1b9b965f-ee5c-4f57-9a9a-00d15b91c296,3
+a1f45597-fd34-4b0f-80d1-032e8f2acaa5,Statement of binomial theorem,76dc0b7d-51e1-48cd-93b6-4cf08bede310,1
+c9b50822-bbf3-4900-baa4-11546cb8078b,Expansion for positive integer powers,76dc0b7d-51e1-48cd-93b6-4cf08bede310,2
+286af886-0def-4c9a-978e-41d060691416,Structure of binomial expansion,76dc0b7d-51e1-48cd-93b6-4cf08bede310,3
+23be668b-110c-4333-bda0-8aa1fca25c08,Binomial coefficients,76dc0b7d-51e1-48cd-93b6-4cf08bede310,4
+6204b6ca-0a0c-4f83-bc77-fb28e46db343,Pascal triangle relation,76dc0b7d-51e1-48cd-93b6-4cf08bede310,5
+312d7cc4-9fc6-4cec-b703-c4484d1d704c,Definition of ( ^nC_r ),32182966-926a-49e2-a138-fa2e88f44b95,1
+ca013ce6-31da-4a96-ad60-62d70161134c,Properties of binomial coefficients,32182966-926a-49e2-a138-fa2e88f44b95,2
+4de4a9a1-a751-4e77-8433-0f6a40b7225c,( ^nC_r = ^nC_{n-r} ),32182966-926a-49e2-a138-fa2e88f44b95,3
+f00c5346-c38b-48e5-92d0-e4f35d17a632,( ^nC_r + ^nC_{r-1} = ^{n+1}C_r ),32182966-926a-49e2-a138-fa2e88f44b95,4
+6678b1d8-2cf5-4ab3-a7b8-982a5144cc9a,Summation identities,32182966-926a-49e2-a138-fa2e88f44b95,5
+fd305edd-991f-449a-bab4-5afe2ca2c9f7,Formula for general term (T_{r+1}),096b19d3-88d8-4e6a-9bf3-336ad360b9f8,1
+82a030cd-a938-42e7-b658-277154ca9c2c,Finding coefficient of specific term,096b19d3-88d8-4e6a-9bf3-336ad360b9f8,2
+173c3b20-0ab2-4cd8-9e52-0c7a1ec64587,Term independent of x,096b19d3-88d8-4e6a-9bf3-336ad360b9f8,3
+7b5afb73-529c-430b-a9d9-cfdb1bca61af,Constant term,096b19d3-88d8-4e6a-9bf3-336ad360b9f8,4
+999f83d5-0b7d-4eeb-87d7-ccda10e71767,Middle term(s),096b19d3-88d8-4e6a-9bf3-336ad360b9f8,5
+c5890575-cde7-4f66-96c3-ffec14fbd882,Middle term when power is even,5fbe8a13-4db3-41d1-ad62-47b7c9927cae,1
+7e58963d-49a6-47a7-b8b3-98268f15b850,Middle terms when power is odd,5fbe8a13-4db3-41d1-ad62-47b7c9927cae,2
+e9f73b0e-80b0-4ee8-9d3d-98b68d68e674,Expansion of ((1+x)^n),0202e858-cd13-48f4-96bf-025282abdf87,1
+237491d9-07ed-4ab4-9eae-5677c2db10af,Expansion of ((1-x)^n),0202e858-cd13-48f4-96bf-025282abdf87,2
+aece578f-a545-46fa-a266-949229f5fe63,Expansion of ((a+x)^n),0202e858-cd13-48f4-96bf-025282abdf87,3
+93387b91-bc68-4e10-86ca-5b78be2e329d,Approximating numbers using binomial expansion,70eedf01-11c5-46dd-b003-04c1e87b241f,1
+fc963727-8344-473a-baf2-d807091ef320,Applications in numerical estimation,70eedf01-11c5-46dd-b003-04c1e87b241f,2
+df30493f-7c71-428c-ab60-f60a91bfbc0c,Definition of sequence,01ce850e-1d32-4c7d-82bd-715b2e50178e,1
+2363beee-9cd5-410b-81c3-6425f6513e20,Finite sequence,01ce850e-1d32-4c7d-82bd-715b2e50178e,2
+050dfbe1-dbd8-49ae-a24d-65d41465c961,Infinite sequence,01ce850e-1d32-4c7d-82bd-715b2e50178e,3
+4f8a4569-89dc-4043-bebd-ef3c7b857055,General term (a_n),01ce850e-1d32-4c7d-82bd-715b2e50178e,4
+195ade51-5c81-4d45-91aa-93e280815a37,Recursive sequences,01ce850e-1d32-4c7d-82bd-715b2e50178e,5
+4eafc0af-62ff-412b-8b1e-dc6faf90505c,Definition of series,f26d0070-47e3-4e49-ac69-d3cfe17f628e,1
+a0f9fc0e-a351-4752-8d4f-6109448b6c27,Summation notation,f26d0070-47e3-4e49-ac69-d3cfe17f628e,2
+04619a82-6aa3-41fe-bdd6-aec23d33d4e4,Definition of AP,333e0e73-9a2d-4605-9695-e948be1885b8,1
+555b19f1-6d9f-4977-8455-b0043f66f362,First term,333e0e73-9a2d-4605-9695-e948be1885b8,2
+a2ca0f4f-a7f0-4a7a-9a52-cb89b9827689,Common difference,333e0e73-9a2d-4605-9695-e948be1885b8,3
+cc4b2c0c-69ee-448b-86de-c6d05318000d,nth term formula,333e0e73-9a2d-4605-9695-e948be1885b8,4
+2265b22a-9fcf-4242-a64b-4aa3e4e0d7e3,Sum of first n terms,333e0e73-9a2d-4605-9695-e948be1885b8,5
+51b51e4c-36fc-4dc4-b809-506a4a0bce6d,Arithmetic mean,9cce679b-3c5a-49ee-be27-8c74b33b86ea,1
+230adc4e-ecb7-48a1-9f67-e598d06c6d4e,Insertion of arithmetic means,9cce679b-3c5a-49ee-be27-8c74b33b86ea,2
+76518fb9-52b2-45da-9bb6-4581b6b5e7d7,Definition of GP,57ac62bf-13d5-48a7-b6ef-06205f250cf5,1
+cf84b8b6-f1d5-4a4f-b811-32eec129c21a,Common ratio,57ac62bf-13d5-48a7-b6ef-06205f250cf5,2
+1adf8843-09a1-4e27-87c5-ecc7cfa75a08,nth term of GP,57ac62bf-13d5-48a7-b6ef-06205f250cf5,3
+145b96a5-6cc8-4cea-a47e-81840f025e68,Sum of finite GP,57ac62bf-13d5-48a7-b6ef-06205f250cf5,4
+7b33b8e1-bdd0-4a81-955f-a52c3c8e82a3,Convergence of infinite GP,1cfa762a-eb36-463f-9017-c123edeeacf4,1
+3e1d749e-482b-4bc2-8d89-9c5757fa1cb0,Sum of infinite GP,1cfa762a-eb36-463f-9017-c123edeeacf4,2
+48ccdbad-07e3-46d0-953f-d5e0f77ac4d2,Insertion of geometric means,9f2daacc-82d7-40dd-87bc-e837d7afc30c,1
+997a941c-e1df-48a7-868a-f20419d43e41,Relationship with GP,9f2daacc-82d7-40dd-87bc-e837d7afc30c,2
+1e69467c-41ba-4219-a259-e86768baf357,Definition of HP,98bfd2dc-7b6e-4941-9f29-1dba6debc27e,1
+d4e1f5d1-d9ac-46be-b3d8-6597f8d145b4,Relation between AP and HP,98bfd2dc-7b6e-4941-9f29-1dba6debc27e,2
+1ef27e3b-810e-4ab3-821c-1540b54b7aac,Arithmetic mean (AM),6d547638-be5c-418c-962f-f034b04525ad,1
+181079f6-cfbe-427f-aadd-52c33aeaf1ee,Geometric mean (GM),6d547638-be5c-418c-962f-f034b04525ad,2
+d224de15-83ca-4d4c-899a-530aad7005a1,Harmonic mean (HM),6d547638-be5c-418c-962f-f034b04525ad,3
+4373c98a-3c2b-42a6-bf18-5c0bdcbc0921,AM ≥ GM ≥ HM,6d547638-be5c-418c-962f-f034b04525ad,4
+7750e29e-6df8-4aba-ab5d-ed9838b1825e,Concept of limit,8677e474-66ac-4efc-b8f3-173890305c38,1
+36d6851b-a399-4b59-a310-5de5b94802ee,Left-hand limit,8677e474-66ac-4efc-b8f3-173890305c38,2
+530a9cb8-2ae2-46b7-ba3f-b50b5af7ecbf,Right-hand limit,8677e474-66ac-4efc-b8f3-173890305c38,3
+e714c87f-d10a-4b4b-96b5-7495e9dbe7fc,Limit laws,8677e474-66ac-4efc-b8f3-173890305c38,4
+9713cf71-5e17-4da6-baa3-dd27f741c700,Indeterminate forms,8677e474-66ac-4efc-b8f3-173890305c38,5
+dd12217a-70b0-430d-9309-30d4be49d2a5,( \lim_{x→0} \frac{\sin x}{x} ),3efb349c-83ff-4be2-8d6b-45ad6bbb076d,1
+65b900ed-7665-4a59-816a-83c3ad9392d4,( \lim_{x→0} \frac{1-\cos x}{x^2} ),3efb349c-83ff-4be2-8d6b-45ad6bbb076d,2
+dd02a33f-ea1c-4d30-ae07-080f91f6e4f4,Limit of sum,c84552fd-3c4f-498c-92e5-daec968f5a7b,1
+d7313ba6-f666-4e53-8772-c9720055d0b0,Limit of difference,c84552fd-3c4f-498c-92e5-daec968f5a7b,2
+15433517-56d3-47c1-8bd7-091df20c5af3,Limit of product,c84552fd-3c4f-498c-92e5-daec968f5a7b,3
+ecf91dd2-f99f-49a7-b391-75ca509d0947,Limit of quotient,c84552fd-3c4f-498c-92e5-daec968f5a7b,4
+d5b20d91-376c-4dd7-afc5-07f877a1b384,Definition of continuity,fe3b80bb-a89a-414f-8f0e-e82d2bdf0eff,1
+230e942a-a3f9-46d2-816f-afc50c47b89f,Continuity at a point,fe3b80bb-a89a-414f-8f0e-e82d2bdf0eff,2
+1165015b-5dea-43f7-b0ee-2e8e8435eae2,Continuity in interval,fe3b80bb-a89a-414f-8f0e-e82d2bdf0eff,3
+533654fc-22bd-4a76-9a2e-7163da2f9d45,Removable discontinuity,56cb0d5a-aa47-42be-9015-952a1c867e8f,1
+2135bac5-c6f6-41e7-9dd1-bba31bbc538f,Jump discontinuity,56cb0d5a-aa47-42be-9015-952a1c867e8f,2
+e60aae00-a0d1-4372-a1d6-86b85b8a6231,Infinite discontinuity,56cb0d5a-aa47-42be-9015-952a1c867e8f,3
+31ee820f-afba-42d6-9e2d-6e78a8a1e440,Definition of derivative,592c5150-5964-4655-875a-3f0b2da99064,1
+dcff09e9-e9fd-47f8-acab-02b24e8437df,Derivative from first principles,592c5150-5964-4655-875a-3f0b2da99064,2
+f566d657-7175-49e0-980f-5b110cd1cfae,Derivative of polynomial functions,21c11478-56fb-4916-ab8a-1a9b54034feb,1
+a7e0351e-887d-4f3d-922e-bfa7e06d3a06,Derivative of trigonometric functions,21c11478-56fb-4916-ab8a-1a9b54034feb,2
+66dd49f3-7804-4c25-a231-180df5439683,Derivative of exponential functions,21c11478-56fb-4916-ab8a-1a9b54034feb,3
+5ff4937a-e992-4319-b1ac-f3e0b732a24b,Derivative of logarithmic functions,21c11478-56fb-4916-ab8a-1a9b54034feb,4
+4e4441ba-0ecf-411b-a4ba-69b8ec210525,Sum rule,d44b790a-c602-468c-8666-648ad8111112,1
+08bf24db-78c3-485c-902a-566bf93648b2,Difference rule,d44b790a-c602-468c-8666-648ad8111112,2
+1455cb4c-e132-41c0-b083-e45f0aed7659,Product rule,d44b790a-c602-468c-8666-648ad8111112,3
+1b457bdd-c439-4ef7-a80b-3bd26ea27b8f,Quotient rule,d44b790a-c602-468c-8666-648ad8111112,4
+dd96e0d2-aefb-4cdb-a352-92ddfbf19840,Differentiation of composite functions,d234fc31-de87-4973-b792-0202fb097b67,1
+f35c5002-5802-49de-b85b-5fb71f618e6c,Differentiating implicit functions,fd4f8096-702d-47c6-98c1-f7b8ddb3c43f,1
+bb312ece-28b5-41f2-8099-23ea3d628ef9,Second derivative,67983b73-bcbf-4fb7-aaec-0e711d4dfa51,1
+ff9541fa-3e30-4f4b-b91c-b4e5fc1fe089,nth derivative,67983b73-bcbf-4fb7-aaec-0e711d4dfa51,2
+39d6d36d-22d4-48dd-bee6-c30c4be31c08,Rate of change of quantities,d5fd4473-09e7-4a37-a9b5-561f5586cbe7,1
+8c9d0346-cf07-480a-8730-55c07d86da0c,Increasing functions,d5fd4473-09e7-4a37-a9b5-561f5586cbe7,2
+e9a82ec6-c87f-4d75-8bc3-fff62bd01b7d,Decreasing functions,d5fd4473-09e7-4a37-a9b5-561f5586cbe7,3
+2136981b-ba8d-4f4b-b70a-4b6d49b78ad3,Maxima and minima,d5fd4473-09e7-4a37-a9b5-561f5586cbe7,4
+0ce4d0f0-e9c7-4181-bbb9-0cc860fffe5e,Integral as anti-derivative,9ca8fa91-7e37-4daa-9a0b-2fa837092ef6,1
+6eb853b6-e827-47c3-a938-b1260d689676,Basic integration formulas,9ca8fa91-7e37-4daa-9a0b-2fa837092ef6,2
+3f505ca2-dea9-4c7e-848e-f571519ddaed,Integration of algebraic functions,070ca085-1e31-44dc-aebc-c271c2d4249d,1
+ef39e8af-8b62-4079-8572-114bbef55dad,Integration of trigonometric functions,070ca085-1e31-44dc-aebc-c271c2d4249d,2
+626d2643-d1ee-417b-ac50-8443fc0102e4,Integration of exponential functions,070ca085-1e31-44dc-aebc-c271c2d4249d,3
+4103df8e-a3ec-435f-8ce9-8dfdd632711a,Integration of logarithmic functions,070ca085-1e31-44dc-aebc-c271c2d4249d,4
+0748cb16-f157-478d-bfc9-266ee63c6d49,Substitution method,dc630e46-6ace-4061-b029-ff0542539fab,1
+2780e83a-e6d1-4af2-9b49-f902585934d4,Integration by parts,dc630e46-6ace-4061-b029-ff0542539fab,2
+4a895dd1-3442-4b8c-b319-fccd4ee4f847,Partial fractions,dc630e46-6ace-4061-b029-ff0542539fab,3
+4f31d1af-3c4d-4fe3-81c9-f2c247c9e966,Integration using trigonometric identities,5e49767c-b847-43c8-8434-b2fbf4c271e5,1
+57dfd9b8-45d1-49f1-b3fd-f0f65eef74ac,Integration of rational functions,5e49767c-b847-43c8-8434-b2fbf4c271e5,2
+31416e1f-c335-4773-be65-8941a1967a43,Definition of definite integral,e9914cb7-78c1-4ffa-939a-3d535cdd9323,1
+80ca8421-ce77-4aaf-a386-8b174611be0c,Properties of definite integrals,e9914cb7-78c1-4ffa-939a-3d535cdd9323,2
+f9f7903c-0737-4eb3-9457-e3d325df7d48,Relationship between derivative and integral,02a9fb7f-b6fe-48ae-8d3c-b6d031abd8c9,1
+46a9fb71-5a9e-46c4-a1c6-725f7c32d92d,Area under curve,d402edd9-1327-4046-a5ac-e4c4fe312b05,1
+62a6ffb3-657a-43b7-b5ba-e0cf00c73b5d,Area between curves,d402edd9-1327-4046-a5ac-e4c4fe312b05,2
+4c48128f-b44f-46a3-84b7-22ab71a0ed31,Definition,615f7d34-1f31-464a-b333-1700e344ec3f,1
+160410ae-4115-4c9d-8d34-b70ecc0cc432,Order of differential equation,615f7d34-1f31-464a-b333-1700e344ec3f,2
+7c44f74f-cf00-4d77-974d-2a85ab28289e,Degree of differential equation,615f7d34-1f31-464a-b333-1700e344ec3f,3
+f325c500-08f5-47e3-8e8d-8d81e1a4a18b,Differential equation from family of curves,ff0c0f66-49ab-4126-b807-f3338ee458c1,1
+0b1451fa-a9bc-4624-97eb-4ca25ac42129,Variable separable method,826bdaf7-14a6-4100-97b7-312965985254,1
+d790da67-7e23-4a6f-a54d-216b814693dc,Definition,8543253a-273c-4b02-bef8-109e3b83ec56,1
+1b140abf-c85d-446b-957f-16104dfaea48,Solution methods,8543253a-273c-4b02-bef8-109e3b83ec56,2
+f66d0b36-1f18-42d1-a74c-765edf06afd1,First order linear differential equations,35c220b9-c8fb-4b20-92c1-85ef9dcfd5c3,1
+d6d318df-5e01-4857-a46e-3b24f89f7bee,Coordinate axes,28970995-59dd-4f71-892a-369b5a409c1b,1
+84d2f0e5-5380-4f93-965d-a7bc7d11d421,Coordinates of point,28970995-59dd-4f71-892a-369b5a409c1b,2
+96e0c695-a875-4ede-9528-719d6db39859,Distance between two points,2ab43dd3-03c8-4c57-ba0c-2d629c2ad8ca,1
+cf9e78cf-b790-4f98-94e3-ebc77226e815,Internal division,639b0e78-1795-42d6-b7cc-99fcdf702c20,1
+80f6b075-1d25-4c89-aa11-6deffa72e581,External division,639b0e78-1795-42d6-b7cc-99fcdf702c20,2
+2b9a9fd9-fc87-4377-887a-8043965ae8ef,Slope of line,b29ae113-fccd-4f6f-b5b4-8a2f8fb9e97e,1
+0b478a97-e874-4d63-a7ef-f8821957bb3c,Equation of line,b29ae113-fccd-4f6f-b5b4-8a2f8fb9e97e,2
+92786795-148d-4bb6-af38-e185ae2d8802,Slope intercept form,f071bb5c-4051-450b-8ab9-e56230cd4da9,1
+8a102edc-c19a-4e02-8402-69e913eeb722,Point slope form,f071bb5c-4051-450b-8ab9-e56230cd4da9,2
+ad513010-596f-4fd9-b9cb-26b8d5914b9b,Two point form,f071bb5c-4051-450b-8ab9-e56230cd4da9,3
+041d1513-5902-4323-beb6-37460ab088ad,Intercept form,f071bb5c-4051-450b-8ab9-e56230cd4da9,4
+5a26c50b-ff5a-40bf-8f16-455723c25782,Formula for angle between lines,5c75df9f-9608-4f6b-a7f9-d3f468a35385,1
+3e0c5b53-054e-467e-b742-e3769abdab78,Perpendicular distance,44786828-d19e-4717-9821-ce719109f2fc,1
+01f70732-d1ba-44a0-b6c1-ff7b1de3834f,Combined equation of pair of lines,c4c9a6ee-e62d-4e18-b00a-71aaac7201c1,1
+5a9a6c52-5bb1-40ca-a5cc-7c67584f85be,Standard equation of circle,2836dae1-ef3e-4418-b354-44ce76e16aee,1
+371015c1-6546-45b5-b6b9-60ca290b2f76,General equation of circle,2836dae1-ef3e-4418-b354-44ce76e16aee,2
+6ca6524a-7c84-45fb-9f25-4ee16fb86f37,Parabola,f3cf9d21-5535-49b6-8306-5d4faeee60a7,1
+8c677a81-03b5-4ec8-93e9-86803174e5c4,Ellipse,f3cf9d21-5535-49b6-8306-5d4faeee60a7,2
+a30e6c72-863a-4735-b4ca-480ca4091e64,Hyperbola,f3cf9d21-5535-49b6-8306-5d4faeee60a7,3
+b8af2c93-3e31-48c7-a1e1-4d35eb5b0de5,Cartesian plane,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,1
+e6bf22df-9141-4a09-aa1f-31e80f452518,Coordinate axes,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,2
+6cfe9079-65af-4fe2-963a-7545477372e7,Origin,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,3
+683e17b5-d6df-44fc-add1-a6fd7e84d99b,Coordinates of a point,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,4
+ffafeaad-1860-4d2b-a6a4-bddf28322c0c,Quadrants,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,5
+67cba1eb-baf0-42a5-a3c3-4edacd6a975d,Sign convention in quadrants,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,6
+ee58cb6f-1600-4a7a-b630-05b7f1f2481c,Plotting points in plane,d1a33b3b-f3d4-4c9d-8105-6de0d668a032,7
+3510fb04-2c98-4253-bb78-4303ca9efe27,Distance formula,a46d4885-26a2-4a24-9e4d-1a596969c46e,1
+b88c72a2-f7c6-4286-accb-e1f32b55c349,Derivation using Pythagoras theorem,a46d4885-26a2-4a24-9e4d-1a596969c46e,2
+9799ceb7-8f30-4821-bca1-a4845bb1a9e5,Distance between point and origin,a46d4885-26a2-4a24-9e4d-1a596969c46e,3
+294ce1e9-c1db-484f-8d3f-f2eaffdb86dd,Applications in geometry problems,a46d4885-26a2-4a24-9e4d-1a596969c46e,4
+9de45d4b-1085-40b2-b93c-789dcabfb04f,Internal division of line segment,e01b7311-397c-4880-acff-3fe2fb0a76d4,1
+b9ee7d12-ff52-4c11-a151-55c2b9db3d0e,External division of line segment,e01b7311-397c-4880-acff-3fe2fb0a76d4,2
+1c74c455-7ce2-4279-a051-d72f1b9de540,Midpoint formula,e01b7311-397c-4880-acff-3fe2fb0a76d4,3
+c17f6030-4542-4ad7-aeaa-189647ad9bd2,Division ratio problems,e01b7311-397c-4880-acff-3fe2fb0a76d4,4
+78a045e7-55d4-49c4-99fc-c86c1fdc279b,Definition of locus,fee1e309-2e42-4902-a19c-648d9d38d92a,1
+80925238-bfac-46ed-9abc-f3daba566104,Equation of locus,fee1e309-2e42-4902-a19c-648d9d38d92a,2
+a3d0198e-bddd-4c40-99d1-5c4b739e034b,Translating geometric conditions into equations,fee1e309-2e42-4902-a19c-648d9d38d92a,3
+462a499b-0bdd-40bf-b840-8376c23afe32,Definition of slope,12a8fcc3-0df2-4b47-b06e-84f38e56856e,1
+6cc9cd48-f210-4dd3-9022-d724dc082854,Slope between two points,12a8fcc3-0df2-4b47-b06e-84f38e56856e,2
+162cc48b-8f84-4dd5-8fca-a1e6ea54a569,Positive slope,12a8fcc3-0df2-4b47-b06e-84f38e56856e,3
+1d61d3ee-ba9b-47ae-9557-85fe97f96bce,Negative slope,12a8fcc3-0df2-4b47-b06e-84f38e56856e,4
+cf1f6907-82f7-4f70-9414-e9454611e12a,Zero slope,12a8fcc3-0df2-4b47-b06e-84f38e56856e,5
+d10bb675-9b0c-4ccf-9735-eadd4d8e73bf,Infinite slope,12a8fcc3-0df2-4b47-b06e-84f38e56856e,6
+f6e1e0b8-1d34-4313-8344-792771da7977,Angle between two lines formula,fe8772a0-a19d-47e6-8418-a392835abc1e,1
+d87bf35c-7b0e-40fb-a5f1-8c5cd28f4b91,Parallel lines condition,fe8772a0-a19d-47e6-8418-a392835abc1e,2
+b3d295bd-f64f-489b-8f8d-26531a85a98c,Perpendicular lines condition,fe8772a0-a19d-47e6-8418-a392835abc1e,3
+10b6c550-84af-4f35-9de8-19ab343cbcf4,Slope-intercept form,f616c280-f043-46cb-97ce-6f16097732de,1
+11189010-6eec-4598-8ff9-14247096355a,Point-slope form,f616c280-f043-46cb-97ce-6f16097732de,2
+b50b417d-89c4-4767-af0a-81a6684e4028,Two-point form,f616c280-f043-46cb-97ce-6f16097732de,3
+191ff48b-02b6-4ac7-a0e6-0e66b10ac68e,Intercept form,f616c280-f043-46cb-97ce-6f16097732de,4
+127db65d-687c-4dd4-b7b1-1ffb8b12796c,General form,f616c280-f043-46cb-97ce-6f16097732de,5
+f4d997d8-b983-4824-816b-1e2bdcdc2fc6,Conversion between forms,f616c280-f043-46cb-97ce-6f16097732de,6
+980fb3eb-5a92-4a4e-ba4c-665ce7f0d7f5,Perpendicular distance formula,cf38b933-ced1-4e49-b718-6c450495c6ce,1
+62456fcb-eae9-480a-841c-e27a91e5bcf5,Foot of perpendicular,cf38b933-ced1-4e49-b718-6c450495c6ce,2
+0e1a56dc-5393-4387-be15-0faa6509c5bf,Point of intersection of two lines,10cf56f6-ab30-47ab-8e1a-4f628e70cc4a,1
+21c57e13-b28f-40ce-8c29-48a731f61430,Solving simultaneous equations,10cf56f6-ab30-47ab-8e1a-4f628e70cc4a,2
+563449ef-a317-4cc6-b2ef-586af28058f6,Condition for three lines to be concurrent,939d04db-a5dd-4e15-8f5a-c9113ff6b794,1
+4a3ef95e-0fd3-4e6a-9682-c432aa98d662,Centroid,31085350-ee4f-462b-9762-82991063643a,1
+1a83a7ac-b7a4-4526-9d04-344aff181d17,Orthocentre,31085350-ee4f-462b-9762-82991063643a,2
+6e886b78-a2d4-45b8-ba91-42eed1d4de5b,Circumcentre,31085350-ee4f-462b-9762-82991063643a,3
+221eb8ee-6700-4799-a906-b6a2fd311350,Coordinate formulas,31085350-ee4f-462b-9762-82991063643a,4
+ba3ed776-a0dd-44eb-b1d4-02940613cc8a,Standard equation of circle,f7bd1585-cac6-4240-8a65-bdbe11a14000,1
+59a4d0e3-692a-49c0-90e3-a7a2e4ca708a,Centre and radius,f7bd1585-cac6-4240-8a65-bdbe11a14000,2
+62bdaa18-6c7d-4392-8fe4-4f5615ea946a,Conversion from general to standard form,178e164a-d2b9-4773-8662-cb47d9ca6bd0,1
+1b29f86f-8c14-4774-af3a-3dbd557e396c,Equation using endpoints of diameter,7d6def32-6f47-4068-b050-9519a24a6a5a,1
+59b5e09f-0c24-4581-9076-2d14b657ea44,Finding intersection points,af5045ba-6ef2-4a9d-b7f2-fc6fe369cb88,1
+4bcdc67a-e096-4aec-8a06-0fb9f0dbc5b3,Tangent condition,af5045ba-6ef2-4a9d-b7f2-fc6fe369cb88,2
+12e98681-2351-4a9d-b09d-4dc1167b7eca,Standard equation,65399729-9beb-4869-90a8-d89011503646,1
+f9c588af-b377-4b7c-b40c-006b0163fa35,Focus and directrix,65399729-9beb-4869-90a8-d89011503646,2
+001ef9ea-e7a2-4888-b26f-41f60d1636a0,Axis,65399729-9beb-4869-90a8-d89011503646,3
+24bc94d4-af7e-4f36-9c6f-45e8cfebca7f,Latus rectum,65399729-9beb-4869-90a8-d89011503646,4
+dea3f8b5-c15c-48ae-9258-3d9c3652450d,Standard equation,0ae53b32-e32b-47d5-ae9a-29ecfbe2cfab,1
+c67166fe-bbfd-4c46-bb4a-900f6462f880,Major axis,0ae53b32-e32b-47d5-ae9a-29ecfbe2cfab,2
+228a2eb4-38e0-45f8-9269-b7f2568ff6b9,Minor axis,0ae53b32-e32b-47d5-ae9a-29ecfbe2cfab,3
+a2ef809a-38ad-45f8-a16f-5334c49a919f,Standard equation,62e65828-1b3c-48af-85a7-5c9b4c86d316,1
+db17d715-0805-4d80-bded-5bdb6c6fd5ac,Asymptotes,62e65828-1b3c-48af-85a7-5c9b4c86d316,2
+2ef40958-e493-409a-ac48-998a9614f568,Three dimensional Cartesian coordinate system,0925c556-f8d4-4579-8596-054a4b0a5a7a,1
+6857412f-bee9-40aa-94a6-68363278ca91,"Coordinate axes (X, Y, Z axes)",0925c556-f8d4-4579-8596-054a4b0a5a7a,2
+43e4da07-5c31-451a-9b07-85866a3a4cd4,Origin in space,0925c556-f8d4-4579-8596-054a4b0a5a7a,3
+c3cc0c88-315d-4521-8807-946b45e628d1,"Representation of a point in space (x, y, z)",0925c556-f8d4-4579-8596-054a4b0a5a7a,4
+f35ada0b-b09a-4d88-ae4b-069bef3f6dd1,Octants in 3D space,0925c556-f8d4-4579-8596-054a4b0a5a7a,5
+1f0ecd5c-377e-4fba-9fab-177f03436d61,Sign convention of coordinates in octants,0925c556-f8d4-4579-8596-054a4b0a5a7a,6
+76565593-33d6-4c6f-b45f-f19c2a4711d8,Projection of point on coordinate planes,0925c556-f8d4-4579-8596-054a4b0a5a7a,7
+453a968c-84db-4253-b40c-bc071107cb38,Distance of point from coordinate planes,0925c556-f8d4-4579-8596-054a4b0a5a7a,8
+f28550b6-29ed-4b73-ba58-ab2ba3722c76,Distance between two points in 3D,6f1e7aac-7fab-4d73-99b9-bfeb11fdcd46,1
+8efe3e57-0b46-4666-a511-6cef3db19232,Distance of point from origin,6f1e7aac-7fab-4d73-99b9-bfeb11fdcd46,2
+3aae15fc-0dda-447c-917a-9f237b29d4fd,Derivation using Pythagoras theorem,6f1e7aac-7fab-4d73-99b9-bfeb11fdcd46,3
+22cee839-71cc-4482-82ba-73818c5e082d,Application in geometric problems,6f1e7aac-7fab-4d73-99b9-bfeb11fdcd46,4
+7014b059-308e-4319-b203-fd89f90166b5,Internal division of line segment,107d43e9-4a22-4cef-baec-8b8d056cc2bf,1
+5a7c783f-8c43-40a6-bd64-64df4409ba1e,External division of line segment,107d43e9-4a22-4cef-baec-8b8d056cc2bf,2
+bdd78c41-3adc-439f-819d-e9eb390040d5,Midpoint formula,107d43e9-4a22-4cef-baec-8b8d056cc2bf,3
+fd5d72d4-89da-4ee4-8eb7-52617fcee42e,Coordinates of midpoint,107d43e9-4a22-4cef-baec-8b8d056cc2bf,4
+e8266109-2247-45fa-90c2-b6bdc9edb963,Ratio formula for division,107d43e9-4a22-4cef-baec-8b8d056cc2bf,5
+6927d88e-3b05-454d-8c1f-8460cce97286,Definition of direction ratios (DR),d90763ac-c92f-4815-bf7b-3df51b377701,1
+5ac5d1c9-49d4-49de-871f-d6717f053412,Direction ratios from two points,d90763ac-c92f-4815-bf7b-3df51b377701,2
+fe790292-3288-4c92-a39c-cc0e42de3a72,Proportional nature of DR,d90763ac-c92f-4815-bf7b-3df51b377701,3
+b09ebd15-8dbd-4d95-a2bb-8c66bb329238,Relation between slopes and DR,d90763ac-c92f-4815-bf7b-3df51b377701,4
+0f8493e1-3ab9-4ec6-9097-a5f95345614d,Definition of direction cosines (DC),06188686-ec2d-4fbe-9cd6-1a71380825e5,1
+fbbedfc6-48cb-4ee1-bddf-a45a9ca6ed2e,Relation between DC and DR,06188686-ec2d-4fbe-9cd6-1a71380825e5,2
+fbe74599-6193-4efb-826d-25395c7b6ae7,Identity,06188686-ec2d-4fbe-9cd6-1a71380825e5,3
+23604fac-27c1-439c-ba40-bb3350389cef,Finding DC from DR,06188686-ec2d-4fbe-9cd6-1a71380825e5,4
+e31256e3-6711-4ca5-a5b8-17e9191cc2c5,Formula for angle between two lines,b1b3be56-842e-45cd-8bc6-001e84794abd,1
+ad1d7efd-4e78-4c09-b709-c58815e0d282,Using direction ratios,b1b3be56-842e-45cd-8bc6-001e84794abd,2
+6151f745-2660-4140-9956-fcb05b83f7a4,Parallel lines condition,b1b3be56-842e-45cd-8bc6-001e84794abd,3
+0a5c62c4-62bb-49be-945f-58826fa95274,Perpendicular lines condition,b1b3be56-842e-45cd-8bc6-001e84794abd,4
+6b52197c-4910-4e18-a1c2-ae6befcc624e,Vector form of line equation,3237be50-593e-4776-b753-999784f04ead,1
+cc8268cb-3669-4405-8a4c-7fa234438d66,Parametric form of line equation,3237be50-593e-4776-b753-999784f04ead,2
+d5a2f317-490c-4ad9-8fbf-1f6d03a9c881,Cartesian form of line equation,3237be50-593e-4776-b753-999784f04ead,3
+4d21cf4f-25f7-4faa-8908-5f990b1bd744,Line through two points,3237be50-593e-4776-b753-999784f04ead,4
+8837beeb-4fdf-4ff6-91f9-2513ed988e8a,Line through a point parallel to vector,3237be50-593e-4776-b753-999784f04ead,5
+fe94dec2-7390-4e0f-8f4a-06f6a24fa2ab,Definition of skew lines,7e9a1e61-8722-4abc-b56c-6e473180ec61,1
+588a012d-47d5-45bf-979c-f50bb257bd55,Shortest distance between skew lines,7e9a1e61-8722-4abc-b56c-6e473180ec61,2
+34a779e8-1f1c-4fe1-aa79-df0e519b7342,Distance between parallel lines in space,7e9a1e61-8722-4abc-b56c-6e473180ec61,3
+5c22bd78-589f-43a2-ae85-7a3bf12ffc44,Definition of scalar quantities,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,1
+b184bbea-7d32-4f00-9c68-53eef30edb57,Definition of vector quantities,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,2
+e93a9777-4e3f-4099-b766-2deae7f0c471,mass,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,3
+ed87da86-cc1f-44c5-b6e9-79192bdc50a4,temperature,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,4
+908769cc-2674-4da5-beb1-80b1e24f6b5c,time,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,5
+bb022f44-6024-428c-8dfa-cbfcc53f1a86,velocity,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,6
+937608b0-235f-4b06-aa23-23572f4555ab,displacement,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,7
+e0d08665-36bd-40ba-9234-9e69dd476821,force,dbaf80e7-6e21-4a34-8c3e-6edcdbf5acd9,8
+33e2bb3c-d227-4abe-8a0d-1b293e20d0e4,Vector as directed line segment,e77a9c36-00c0-463d-a10e-3c1fa28801aa,1
+f865c959-1d57-45a4-b81e-38f5d5d02b18,Position vector,e77a9c36-00c0-463d-a10e-3c1fa28801aa,2
+63af58f5-fa6c-46a9-b5cc-e93e3e4ba085,Vector between two points,e77a9c36-00c0-463d-a10e-3c1fa28801aa,3
+f0ce2c4a-3373-4178-a79c-9c82b0e462c9,Magnitude of vector,e77a9c36-00c0-463d-a10e-3c1fa28801aa,4
+a5ef6ac3-5b43-4907-b6cf-47344f1e8e2b,Triangle law of vector addition,4add7bea-85f5-4701-a637-24461344c88a,1
+5dc6fa7a-3597-4116-8909-2452fa92233f,Parallelogram law of vector addition,4add7bea-85f5-4701-a637-24461344c88a,2
+f30e18a9-969b-44dd-b4ed-fa273fdd6bef,Polygon law of vectors,4add7bea-85f5-4701-a637-24461344c88a,3
+443e03cc-6c15-449a-b3b0-0ad2574af1a1,Resultant vector,4add7bea-85f5-4701-a637-24461344c88a,4
+d4f56982-a1b7-43a4-af16-9ceed6f94361,Negative of vector,ef5918ae-adc0-4ca1-98c2-c4ff39dafdbe,1
+4d484cf2-f39a-42ed-8477-bc9392eda739,Difference of vectors,ef5918ae-adc0-4ca1-98c2-c4ff39dafdbe,2
+2596b099-325a-4ae0-b0e6-ff7718c59d54,Multiplication of vector by scalar,a835d293-2496-481c-8419-3d0117bfc700,1
+f117b744-9f27-421a-8999-73f97f47e595,Scaling of magnitude,a835d293-2496-481c-8419-3d0117bfc700,2
+de974464-e822-443b-8c29-4e806c48b31a,Direction change,a835d293-2496-481c-8419-3d0117bfc700,3
+8921c18b-dd71-4424-9e45-f4afae551538,Unit vectors along coordinate axes,08b86c7e-f36c-4f47-b54a-67b926992b98,1
+84d6f946-e104-4fc7-96b0-7c1ce62d9d74,i unit vector,08b86c7e-f36c-4f47-b54a-67b926992b98,2
+75ba0265-f363-4d8d-b16c-ad7ede2e9135,j unit vector,08b86c7e-f36c-4f47-b54a-67b926992b98,3
+edc7472b-2a27-484d-a834-3db7b495294b,k unit vector,08b86c7e-f36c-4f47-b54a-67b926992b98,4
+920cfb2a-c8af-4da4-b9e9-42775febc8b1,Resolution of vector along axes,39200d1f-eaec-44a6-b837-11aa5596194d,1
+2bc19d7a-b17f-4dc4-a985-2bd4503befb6,Rectangular components,39200d1f-eaec-44a6-b837-11aa5596194d,2
+af7e93f1-2a25-46ed-ae17-e8b81e1a22d5,Definition of scalar product,91e7e8d6-c24a-4dcb-8dcc-2df1b404db68,1
+09605423-3067-4751-a4a5-ae9dec964d1a,Dot product formula,91e7e8d6-c24a-4dcb-8dcc-2df1b404db68,2
+9c8179de-a5c3-4c96-bde7-0f134243ffa5,Angle between vectors,91e7e8d6-c24a-4dcb-8dcc-2df1b404db68,3
+abb7350a-56bb-4533-a6ce-c567ca9465a3,Projection of vector,91e7e8d6-c24a-4dcb-8dcc-2df1b404db68,4
+554c2816-385c-48be-b650-684040d8e481,Work done by force,91e7e8d6-c24a-4dcb-8dcc-2df1b404db68,5
+8ef05846-1a4b-453c-a058-345cd580bc30,Definition of vector product,74d9cb66-a4cc-4757-98c3-d7ae6b011bc4,1
+31162eb4-e2a3-4936-bcb3-a9597cc16b5e,Right hand rule,74d9cb66-a4cc-4757-98c3-d7ae6b011bc4,2
+480856da-bc6c-4878-905a-43e2e936257f,Magnitude of cross product,74d9cb66-a4cc-4757-98c3-d7ae6b011bc4,3
+07d33cb4-c194-4697-a368-adc139d41ac3,Area of parallelogram,74d9cb66-a4cc-4757-98c3-d7ae6b011bc4,4
+72662539-7e58-4ea3-973d-bc8079f5be28,Area of triangle,74d9cb66-a4cc-4757-98c3-d7ae6b011bc4,5
+879d4557-04cc-4829-bc43-ffbc08f0bb45,Raw data,1a020ecf-8aa1-4c19-b836-8403b6dae4eb,1
+435f9552-40e3-40ea-b857-84f511f3c2a9,Frequency distribution,1a020ecf-8aa1-4c19-b836-8403b6dae4eb,2
+1b90332f-d88a-4e0a-b9e5-9688e969319d,Class intervals,1a020ecf-8aa1-4c19-b836-8403b6dae4eb,3
+c99d0a3c-e70f-46c0-b806-901a5e46ccf0,Class marks,1a020ecf-8aa1-4c19-b836-8403b6dae4eb,4
+ab81a20b-7619-4d1c-a1be-43dcfaddaab6,Arithmetic mean,a5aab3db-4a22-49d2-87e0-9fa8fde760b3,1
+aa68de09-7a8b-48ba-8b7b-3356c310331d,Median,a5aab3db-4a22-49d2-87e0-9fa8fde760b3,2
+64e8001f-97a7-4412-9904-f391867cc522,Mode,a5aab3db-4a22-49d2-87e0-9fa8fde760b3,3
+80b3740a-443d-46ac-9df5-6b5383702527,Direct method,28c979b9-816a-4f36-bf2a-030cd9185e51,1
+d110e8a6-8c64-4e46-ac22-d87f2a985339,Assumed mean method,28c979b9-816a-4f36-bf2a-030cd9185e51,2
+f00b5be0-4823-498c-a23a-5f830a6897ec,Step deviation method,28c979b9-816a-4f36-bf2a-030cd9185e51,3
+9a6539dd-a5b8-4327-8566-f0bdb722baf6,Range,d6178a68-0e48-43d6-b7bf-3dd4d3397231,1
+0221814b-b1b9-4f61-aa53-2745b8fb27e1,Mean deviation,d6178a68-0e48-43d6-b7bf-3dd4d3397231,2
+0f8d8b8b-21f6-4ffa-a378-65f001740ece,Definition of physical quantities,920c8290-93b0-4793-8caf-f122209fe2ca,1
+dcf3c5af-c742-4fe9-af9d-325220e40020,Classification of physical quantities,920c8290-93b0-4793-8caf-f122209fe2ca,2
+350b0b93-7600-424c-a99c-4c45e7d188e5,Fundamental quantities,920c8290-93b0-4793-8caf-f122209fe2ca,3
+030c9e37-6645-4376-978f-690fee7a0a16,Derived quantities,920c8290-93b0-4793-8caf-f122209fe2ca,4
+fb6155d5-8931-4389-8e41-76a699400a8e,Examples of fundamental quantities,920c8290-93b0-4793-8caf-f122209fe2ca,5
+c8e117bb-a41e-4c2b-bb76-51482ca1cfdd,Examples of derived quantities,920c8290-93b0-4793-8caf-f122209fe2ca,6
+c08e066a-ef92-4f56-9363-25d8ffbad154,Need for a system of units,38593c20-d6ad-4251-9e31-b7445c7bf688,1
+d1d4cf63-b131-4fb7-9641-79a336de8613,CGS system,38593c20-d6ad-4251-9e31-b7445c7bf688,2
+80f1c888-ab28-4b07-b5c8-0d6a913441ad,MKS system,38593c20-d6ad-4251-9e31-b7445c7bf688,3
+f20994c9-a952-425e-9467-b0496ce58647,FPS system,38593c20-d6ad-4251-9e31-b7445c7bf688,4
+fd3b241e-3779-48aa-98b4-0b046aa86715,SI system of units,38593c20-d6ad-4251-9e31-b7445c7bf688,5
+f7cff497-512e-4701-ae66-1deaa90110c4,Base units of SI,38593c20-d6ad-4251-9e31-b7445c7bf688,6
+18edc438-dee2-491f-9847-701ff035ad7c,Supplementary units,38593c20-d6ad-4251-9e31-b7445c7bf688,7
+9e642d6e-055e-4b54-881e-d071d77ba010,Derived units in SI,38593c20-d6ad-4251-9e31-b7445c7bf688,8
+8b78e4b7-32fc-4f0c-bf10-970255e6cf80,International standards of measurement,9d157c0f-6c4e-4926-ab4a-cb67d258f639,1
+2aa6fac6-fe8e-4e13-af75-f40966debe23,Standard units for length,9d157c0f-6c4e-4926-ab4a-cb67d258f639,2
+f9c7183f-c33c-42a6-876c-bf5718cee6eb,Standard units for mass,9d157c0f-6c4e-4926-ab4a-cb67d258f639,3
+3ea5d542-7ca4-43dd-b4ac-f04937d7f7af,Standard units for time,9d157c0f-6c4e-4926-ab4a-cb67d258f639,4
+9c864f4e-1c7f-48ae-8b77-1f25594eb68e,Measurement using metre scale,f599e372-2046-4463-a9dd-589690e1811d,1
+dac5e8f7-c232-46a9-9c50-8355593d8d14,Vernier calipers,f599e372-2046-4463-a9dd-589690e1811d,2
+902d7252-5425-41c8-b650-5ebd3c9d1804,Screw gauge,f599e372-2046-4463-a9dd-589690e1811d,3
+236b9762-a973-48f9-ac79-47ff13eb6fad,Definition of least count,4117af5f-249d-4e4b-af9b-c2907dc30556,1
+c0fc97a2-07be-4299-8876-31208f1916c3,Least count of vernier calipers,4117af5f-249d-4e4b-af9b-c2907dc30556,2
+67b2977c-e947-49ce-9402-2b9332999df2,Least count of screw gauge,4117af5f-249d-4e4b-af9b-c2907dc30556,3
+efc486a9-b16f-4fde-8f3a-8efb8f4088f9,Meaning of accuracy,f7739935-3d1b-4424-91ac-5f7d12975aea,1
+c0698de9-0d3e-42c0-9f5f-a55486981b2d,Meaning of precision,f7739935-3d1b-4424-91ac-5f7d12975aea,2
+c376cc8e-d7ee-41ce-a618-3cc7fb7fe99b,Difference between accuracy and precision,f7739935-3d1b-4424-91ac-5f7d12975aea,3
+faa5ea96-ad52-4ed0-a102-762fd4331057,Types of errors,d7f1ec77-c506-4b70-98f5-898988e83287,1
+86dbcef5-b07b-4c4a-ae97-ca792e2e3907,Systematic errors,d7f1ec77-c506-4b70-98f5-898988e83287,2
+c730e3fc-61a1-42d6-ae11-244e0b3ac635,Random errors,d7f1ec77-c506-4b70-98f5-898988e83287,3
+10ddcab7-12a1-49a9-a807-d894782f9941,Instrumental errors,d7f1ec77-c506-4b70-98f5-898988e83287,4
+a08390d7-7fec-453f-8b10-915bb5d62589,Personal errors,d7f1ec77-c506-4b70-98f5-898988e83287,5
+2ff1a7e4-0e8b-4831-ae2b-fb6fae1a85e6,Definition of absolute error,d474e98c-7805-4695-a194-c137f758a52e,1
+295f55a7-e037-45b5-9681-41876cffd5ee,Mean absolute error,d474e98c-7805-4695-a194-c137f758a52e,2
+1e2d147b-8829-4e79-9bb9-0a74c7bde9df,Definition of relative error,e76ddc0e-84d0-48e7-9460-8bbec39b1ebf,1
+9726cc0f-9baf-4e79-bafd-b160aa215a33,Calculation of percentage error,e48f14cc-4191-49b1-86c1-18afcf792b9e,1
+0bb6cfcf-4340-4734-b4e0-d61983d1e694,Rules for significant figures,65eceeec-baaa-49af-bc73-82b2120c823b,1
+e1115bad-3bc3-4397-a5cb-c3394ecdae4a,Rounding off numbers,65eceeec-baaa-49af-bc73-82b2120c823b,2
+aa2bc1ec-fb0d-4ae1-b0ac-eb35affd4807,Significant figures in calculations,65eceeec-baaa-49af-bc73-82b2120c823b,3
+7dee4a27-2a73-4968-9ede-d37fb58947be,Dimensions of physical quantities,b1242dfa-1bc2-42ca-afd9-c79a310627a9,1
+f7303417-389e-4201-9440-243c468a390a,Dimensional formula,b1242dfa-1bc2-42ca-afd9-c79a310627a9,2
+31605c2a-bc81-48d4-84cd-7877abe5eb22,Principle of dimensional homogeneity,b1242dfa-1bc2-42ca-afd9-c79a310627a9,3
+e8d3d324-bb00-40f0-a686-36d4383ffc08,Applications of dimensional analysis,b1242dfa-1bc2-42ca-afd9-c79a310627a9,4
+6401977d-edaa-46ba-8dd5-6c7d5fe9a4c6,Checking correctness of equations,feaa142d-1694-4ab7-841c-77ab15f03e6a,1
+d2491fbd-6655-47be-bad9-9e3abfa56487,Deriving relations between quantities,feaa142d-1694-4ab7-841c-77ab15f03e6a,2
+6e9d3f6a-acfb-40d4-b661-00954ac45225,Converting units,feaa142d-1694-4ab7-841c-77ab15f03e6a,3
+812eb397-0f56-4ee8-ac85-0147a23a4b67,Rest and motion,937f8c79-d999-4418-a118-a1bc37618562,1
+ee84c57c-881d-47b0-bdbc-dbd707125e03,Reference frame,937f8c79-d999-4418-a118-a1bc37618562,2
+c37f0221-abcd-41a9-9bee-8f29fb6ea30e,Types of reference frames,937f8c79-d999-4418-a118-a1bc37618562,3
+9b5ac83d-6522-42e8-aa48-5db52734787b,Distance,1580da97-79cb-4e5e-a525-9eedd30fee08,1
+3b92be9c-8085-4bfd-9c13-1f8ba9afe531,Displacement,1580da97-79cb-4e5e-a525-9eedd30fee08,2
+79f33d0c-3c48-4e8b-a5de-e6e39bd19676,Speed,1580da97-79cb-4e5e-a525-9eedd30fee08,3
+f1a2a29e-3f50-49cb-9709-590debf8c8f6,Velocity,1580da97-79cb-4e5e-a525-9eedd30fee08,4
+e9393a00-b0f9-4ebe-90fc-e8eca70a2206,Uniform motion,118a46c5-c5d3-4d99-a82f-aed4f8d6acaa,1
+d426badb-e541-4b3c-83b0-3efbe28de2cb,Non-uniform motion,118a46c5-c5d3-4d99-a82f-aed4f8d6acaa,2
+1303c078-7d33-42cf-8c2b-394b6b769cd0,Average speed,9b91f89c-623c-4f81-bcf0-ae62c8ebfdca,1
+fca09bfc-2518-4418-b532-c3702d411ca5,Average velocity,9b91f89c-623c-4f81-bcf0-ae62c8ebfdca,2
+c9ff733b-e3ea-44d2-b55d-afa1d58863a1,Instantaneous velocity,9b91f89c-623c-4f81-bcf0-ae62c8ebfdca,3
+07bdbfc3-cb31-4bfa-88ce-6ccff16f711a,Uniform acceleration,e34a8358-adcf-4f2e-a232-9e2af1aeb34f,1
+60948372-52d2-43a8-9344-d915c8a7787a,Non-uniform acceleration,e34a8358-adcf-4f2e-a232-9e2af1aeb34f,2
+e428fec8-1a44-4f61-b143-310c08bda6b1,First equation of motion,5ec9ed6b-cab5-43b9-98a3-fab5dfa27273,1
+ac5c8ba4-d882-4053-ac08-56b665ff9640,Second equation of motion,5ec9ed6b-cab5-43b9-98a3-fab5dfa27273,2
+f59c3cea-457d-4b11-b387-5bb4c3388f0d,Third equation of motion,5ec9ed6b-cab5-43b9-98a3-fab5dfa27273,3
+706c4b4e-66ca-4e03-b392-5bbf5ddf2e1e,Position–time graph,1c359aef-972a-431d-994b-0ed32f937edf,1
+bbbf72f5-1219-417d-859b-43ff5171e5ed,Velocity–time graph,1c359aef-972a-431d-994b-0ed32f937edf,2
+2467e0d6-2c5f-4b1b-99fc-b100565e5976,Acceleration–time graph,1c359aef-972a-431d-994b-0ed32f937edf,3
+5492760b-131b-4c61-93f9-4925dbda469c,Area under velocity–time graph,1c359aef-972a-431d-994b-0ed32f937edf,4
+712cbf23-75b1-436d-8674-6409603ce1ed,Relative motion concept,2cb05e66-5eda-4775-bce0-6e51237eebbd,1
+e8fb0eaf-a307-4acc-9d62-10b23399b2d6,Relative velocity in one dimension,2cb05e66-5eda-4775-bce0-6e51237eebbd,2
+05fa2572-7cca-4ef5-93ab-56f376102c9b,Relative velocity in two dimensions,2cb05e66-5eda-4775-bce0-6e51237eebbd,3
+85396965-03d1-4eb9-ba36-55d48c146c91,Vector representation of motion,a8755d17-65aa-4d7a-b9fd-21d07de7de77,1
+e941ff3a-3496-45cd-82c0-5b810fcc9e83,Position vector,a8755d17-65aa-4d7a-b9fd-21d07de7de77,2
+44aa704b-fc6c-4fbc-b312-697309d4213d,Velocity vector,a8755d17-65aa-4d7a-b9fd-21d07de7de77,3
+c093064f-6743-4395-99a3-5fd2655d1dfd,Acceleration vector,a8755d17-65aa-4d7a-b9fd-21d07de7de77,4
+1a9851c9-876a-4808-84ae-e08b59561441,Types of projectiles,76e81599-94a0-4e3f-b994-35efaeafcbb4,1
+9395d28c-deed-43ad-957b-2214a0760bfb,Horizontal projectile,76e81599-94a0-4e3f-b994-35efaeafcbb4,2
+540cb845-38e7-4683-892c-4bae2da32412,Oblique projectile,76e81599-94a0-4e3f-b994-35efaeafcbb4,3
+1c192603-a3e7-4d2f-b372-a3c2c8dc9deb,Time of flight,9bd6eb20-523c-434e-8004-e28a7edb643f,1
+541ad979-2863-428c-9779-85c816b7d468,Maximum height,9bd6eb20-523c-434e-8004-e28a7edb643f,2
+a7901b62-6763-4ab2-99cf-684dfcb1f592,Horizontal range,9bd6eb20-523c-434e-8004-e28a7edb643f,3
+e55ff868-eceb-4d7e-aac9-c928d97ed3a9,Angular velocity,031358fe-e2ef-4ea8-8dfc-011dc6c679f8,1
+a3158b0d-0890-4e32-aaf0-8bb8823c87b1,Angular displacement,031358fe-e2ef-4ea8-8dfc-011dc6c679f8,2
+2807511f-ee30-4be5-81bc-7ce036dd59ad,Centripetal acceleration,031358fe-e2ef-4ea8-8dfc-011dc6c679f8,3
+d12b3a6f-423f-4671-a82d-f55e58eb581e,Relation between linear and angular quantities,031358fe-e2ef-4ea8-8dfc-011dc6c679f8,4
+503a20c5-5160-445a-81a7-c74dad4d8eaf,Definition of force,ab28bf07-63dc-47db-bbf1-32b27a8c1b20,1
+90f6ea2f-a1b7-4aa9-9a56-42ce290974c1,Types of forces,ab28bf07-63dc-47db-bbf1-32b27a8c1b20,2
+27efb207-34ed-4683-a183-279debe3d7c7,Inertia of rest,c46f266f-a9a4-40df-86d1-42f5bfda98b5,1
+5c7ed22a-52c4-4aac-9d0c-6c7d85ee756f,Inertia of motion,c46f266f-a9a4-40df-86d1-42f5bfda98b5,2
+d06699b4-d89a-43d1-8db9-18dd82c4a021,Inertia of direction,c46f266f-a9a4-40df-86d1-42f5bfda98b5,3
+eed0fe24-6834-4bc2-99d7-6bf63d86e214,Statement of first law,75c8241e-b6aa-4d44-82e2-66fd27c94db5,1
+44f8ff6e-e2b9-4a1c-8a6f-aabba168c785,Concept of inertia,75c8241e-b6aa-4d44-82e2-66fd27c94db5,2
+6427e831-d27c-4be6-9eda-c756b1257ea7,Relation between force and momentum,771f9cef-43f0-401b-9a3e-eda3902f3d16,1
+64a2e04a-e7a5-442d-aae7-03319f5236d3,Mathematical expression of second law,771f9cef-43f0-401b-9a3e-eda3902f3d16,2
+32c3516f-6d40-4804-8977-2e1efabfd458,Linear momentum,2d5acdd2-2cf2-4bd6-8ad7-18b5636d9616,1
+a966dd69-423e-4aee-84fa-d78435569bcd,Rate of change of momentum,2d5acdd2-2cf2-4bd6-8ad7-18b5636d9616,2
+1c075034-d825-40d5-9214-77ac52e5e38c,Impulse–momentum theorem,76f7b3f7-e8e3-46b3-8c74-1cb3d7b6360a,1
+94364416-ef4f-4e50-b164-ad37459dcf7e,Action–reaction pairs,cf75a6f6-e0d3-4a1d-ae9d-91337ccc7a91,1
+d970c9ea-aae3-4317-a0da-1c728d7b6a23,Statement of conservation law,3acf7d58-7b5a-481d-a164-2018e6dc73b2,1
+f40d8935-789f-40dd-99cf-bf868b73c93c,Applications in collisions,3acf7d58-7b5a-481d-a164-2018e6dc73b2,2
+b42eb22a-98d7-4e1f-a77e-3bff848ea1a8,Conditions of equilibrium,1afbb091-bf9a-46fa-a79b-3df868d0b4d0,1
+8b3c5669-9f89-4410-9efc-50138fa5e54c,Free body diagram,1afbb091-bf9a-46fa-a79b-3df868d0b4d0,2
+666d5d3b-5a2e-46a2-967a-d03f38e4016e,Static friction,c63b4d20-b8fc-4310-879b-3b269cc07da9,1
+c02a8142-8bce-4736-baa1-47edca9aa1b6,Limiting friction,c63b4d20-b8fc-4310-879b-3b269cc07da9,2
+26eee696-321c-4ee4-a2de-9bcbb28af7f5,Kinetic friction,c63b4d20-b8fc-4310-879b-3b269cc07da9,3
+9dad1521-6a3a-45e3-9ea7-fa410ff190b2,Dependence on normal reaction,aaa520ca-ddab-4125-90ac-72573eebc5ab,1
+b7564854-0bae-49f1-937a-9766b398d01f,Independence from contact area,aaa520ca-ddab-4125-90ac-72573eebc5ab,2
+2a3585f5-6cc6-4153-963f-4e619a50e8dd,Rolling resistance,bd71424a-a5f8-4ac0-9e75-7f0c91e37da2,1
+8363f4f4-3fc8-434f-b862-2116e2fe2505,Centripetal force,ea84063f-a191-4df2-9ea3-a1e24640cf8f,1
+a3a9e561-124b-4049-80d3-9396d34a4b04,Vehicle on level circular road,e87b1d62-47d5-4d10-a17f-bc3df61ee051,1
+bf4e493a-4bd0-4861-a1a4-0f98bfb7d9db,Vehicle on banked road,e87b1d62-47d5-4d10-a17f-bc3df61ee051,2
+6d210b3f-76ed-4102-b7fc-cafafad6aa84,Definition of work,5a610355-b0c0-4952-af71-99b630e854d9,1
+82b179b8-d398-4666-b4f3-c00538973342,Work done by constant force,5a610355-b0c0-4952-af71-99b630e854d9,2
+f8e2c1d9-f968-47bd-834b-f7a86e6fd055,Work done by variable force,5a610355-b0c0-4952-af71-99b630e854d9,3
+380a4379-f527-4f3c-9ef0-c0700bac7132,Definition of energy,7f7af8af-c0e6-4c3f-8463-9a3d49a75522,1
+322f6d9b-451b-42bf-b426-1811f1a527ec,Types of mechanical energy,7f7af8af-c0e6-4c3f-8463-9a3d49a75522,2
+dd8ac866-d711-4881-a08e-1104c9714d9b,Expression for kinetic energy,ddcbb188-529c-42af-8d2a-31d88f04a01c,1
+9f6bae13-0c4b-4dbc-8988-8721d22be12b,Gravitational potential energy,1481ddfd-7aaf-4983-b199-473711081793,1
+b5a8111d-bf39-4d48-a8a7-d0fc5b51a418,Derivation and applications,8a736f28-48db-4e37-b0b6-2e172e3a19b9,1
+6e11d939-cc92-426e-ab41-e5bd30038a46,Average power,18f61938-bbe2-4614-b2c4-2c9873c32c99,1
+6a896aed-7f9c-48ce-8704-ade3ba26986b,Instantaneous power,18f61938-bbe2-4614-b2c4-2c9873c32c99,2
+6b557806-22ed-49a5-85f9-6eeb99c7e934,Potential energy of spring,02832c58-7a0c-4c9c-95a0-9f736071b2e0,1
+4c23e908-6fb1-4f14-a515-1bc02ff412d9,Conservative forces,e0f1308e-5e68-47a3-8d4a-cbc43b1ba399,1
+b7795467-d3b8-47de-96b8-7120a397ef2d,Non-conservative forces,e0f1308e-5e68-47a3-8d4a-cbc43b1ba399,2
+5b3abd9e-ac91-4dd4-9344-27428e76c988,Minimum velocity condition,3d2a8c17-7837-4bca-89e8-3b6cfd19970a,1
+bc7ab761-9b96-43d3-8e9e-774baeb8d0c7,Elastic collisions,928d81eb-45fe-4259-bd2a-e0fc0e4ba933,1
+b75de1d1-da1d-43ce-a529-30ba8465c091,Inelastic collisions,928d81eb-45fe-4259-bd2a-e0fc0e4ba933,2
+26247136-0ccf-48cd-8bd3-a8268af79839,One dimensional collisions,aa68ede6-9611-4d2e-b9d4-21aad72a152a,1
+3f363b8b-02c7-4df3-ab90-eec7ae5818f6,Two dimensional collisions,aa68ede6-9611-4d2e-b9d4-21aad72a152a,2
+ec6debd3-ec71-4900-b723-a1f473b3d375,Centre of mass of two particle system,268b4d5f-50d8-46ff-b872-d083733796e7,1
+08d619a8-3696-429f-9bec-60038bce9308,Centre of mass of rigid body,268b4d5f-50d8-46ff-b872-d083733796e7,2
+a755a6b2-11bc-4604-a2de-ea95f80da487,Angular displacement,91b01fc9-2252-4a0d-ba5e-9eb22b2abe08,1
+601f2b17-5a98-495a-98d0-9f45672235f8,Angular velocity,91b01fc9-2252-4a0d-ba5e-9eb22b2abe08,2
+ceb25c07-7cf1-406d-b65f-7727e53cfd70,Angular acceleration,91b01fc9-2252-4a0d-ba5e-9eb22b2abe08,3
+e593fd4a-57ee-4b12-8730-a647db7194c4,Moment of force,7087e189-6237-47ba-9fe8-75662634a977,1
+99e051fb-8147-40fc-97e0-da4eebd6ecf1,Relation between torque and angular momentum,7087e189-6237-47ba-9fe8-75662634a977,2
+877cba9c-2a49-47b5-878d-19640312cdbe,Definition of angular momentum,dd475505-b0c7-4914-b06a-34c9dde28f8b,1
+c8c98122-81e4-4d17-901f-14cb8ebe35f6,Conservation of angular momentum,dd475505-b0c7-4914-b06a-34c9dde28f8b,2
+0977746c-c150-4458-9b08-e136daca3677,Definition of moment of inertia,f2d7e646-491c-4a4f-b14a-9b01d3b97c03,1
+c8a2b4c5-c7a4-47bf-b8bf-f5add5d90a8a,Radius of gyration,f2d7e646-491c-4a4f-b14a-9b01d3b97c03,2
+d8c5ce0d-deff-496a-aae2-bded4478db8f,Rod,a7e58b15-422c-48a0-89f2-bd3fe08e94a9,1
+4b661cdf-0c02-4c28-ab74-ef3ac7365245,Ring,a7e58b15-422c-48a0-89f2-bd3fe08e94a9,2
+787d5726-506d-4158-b704-7cf1068db0ba,Disc,a7e58b15-422c-48a0-89f2-bd3fe08e94a9,3
+1500cd3c-8717-49ed-ba1f-20eb2cdfcfb8,Sphere,a7e58b15-422c-48a0-89f2-bd3fe08e94a9,4
+03eeb598-bd8b-49e9-869d-0ac0849d0f3d,Parallel axis theorem,d8e323dd-9181-44c7-b75d-eb77794fc8b1,1
+8a4ecd20-a8e7-4220-a856-0668abe947f5,Perpendicular axis theorem,d8e323dd-9181-44c7-b75d-eb77794fc8b1,2
+6414d29b-a2db-4ec8-94d2-845f6900877d,Rotational equations of motion,120b8159-dae9-473c-92cd-d6f73a3d4860,1
+c9eaa582-a140-4e15-8af8-8a0f70502f8d,Linear–rotational analogies,49489a81-a422-4902-94fa-3febc6ed8965,1
+d8ec3f7f-1524-4324-b68c-14670c43866a,Conditions of rotational equilibrium,7553d669-c84c-4b64-a96d-f0a42d765cee,1
+cc7dbb24-ce04-4254-b6a2-19a7789f0b41,Newton’s law of gravitation,247ee8c4-5298-468a-95e2-04c2253766d2,1
+a1d39f65-5d0a-43d2-8f7e-e846557e2645,Gravitational constant,247ee8c4-5298-468a-95e2-04c2253766d2,2
+380f9c4c-8e77-493d-ac5f-8962c6a72668,Gravitational field intensity,67805241-98c6-4829-90aa-08d380d8ce9c,1
+4ad36325-5088-4bfa-9563-2b1188bb860c,Variation with altitude,17741681-7e34-4e0d-966c-0c8d1dc69975,1
+a70025c2-fbf1-4a12-af75-d5a1d7721e5a,Variation with depth,17741681-7e34-4e0d-966c-0c8d1dc69975,2
+b3d54595-64ec-4597-87a9-833728123aea,Gravitational potential energy,983b384d-21df-40ec-b639-c74e9e8cf0a1,1
+2ba7cfec-5330-4213-a022-da786ba0dba0,Derivation of escape velocity,3e9dbfce-6b72-41dd-ae4c-9fcf969d2702,1
+4f22ed6d-7e46-4763-9f6b-7ebf964c8874,Orbital velocity,e9bd092d-175e-4401-a1c2-dbd25ceda1ae,1
+4f637c4d-aeb6-4f38-ba0c-7a5a5341eead,Time period of satellite,e9bd092d-175e-4401-a1c2-dbd25ceda1ae,2
+3ffc5009-78ef-4e41-ba55-8474399ce034,Energy of satellite,e9bd092d-175e-4401-a1c2-dbd25ceda1ae,3
+02490304-3b84-47d9-ac00-cd9a0b2e1a7b,First law,f4997794-3c02-4b5a-ae85-5fa55b3a882b,1
+932b0a56-9d50-4deb-aa34-a734d1d3c3e7,Second law,f4997794-3c02-4b5a-ae85-5fa55b3a882b,2
+b40645da-50b9-4e1b-be0c-342bdca4fd21,Third law,f4997794-3c02-4b5a-ae85-5fa55b3a882b,3
+1fe6644f-dbbf-495c-92b1-0026769e354a,Stress,4b673501-a824-4ed9-99f9-8d0528919779,1
+182bdf52-c41c-43ac-8116-bd933a1fa554,Strain,4b673501-a824-4ed9-99f9-8d0528919779,2
+4a85cc5f-01e0-40e1-a652-0a839ad0034d,Elastic limit,270da6a0-179a-4c29-91bf-d025b11caba1,1
+c8cc1f2d-3f8e-4976-b351-86df84b36339,Young’s modulus,bbc663e9-2895-428f-bd1d-c53f9d326895,1
+f2f86677-b999-432a-8831-ea1ecca8d2bf,Bulk modulus,bbc663e9-2895-428f-bd1d-c53f9d326895,2
+09859986-c114-4e7b-8873-dab4ddf10140,Modulus of rigidity,bbc663e9-2895-428f-bd1d-c53f9d326895,3
+48c79ca1-46c5-472c-b28d-a1272509c6ba,Pressure in liquids,4ef23dcd-22f2-446c-99f0-8375390b34b4,1
+d3ca0532-a46f-44db-a78c-2f77d6d79e64,Pressure due to fluid column,4ef23dcd-22f2-446c-99f0-8375390b34b4,2
+d2862bb9-df55-437d-bf5a-8e38a3f0cd7f,Hydraulic lift applications,884037db-ff3e-4434-af2f-756236694832,1
+3a18d5bc-e90e-4231-bbbc-4fd33d071e55,Streamline flow,531af4ef-bcbe-4ac7-90fd-c4a12e9eff05,1
+f748d4d3-d660-4d77-8ad4-53215dfc6db4,Turbulent flow,531af4ef-bcbe-4ac7-90fd-c4a12e9eff05,2
+87c9670d-6bef-40ad-98bd-b0a53f194514,Terminal velocity,f8e7fa86-dba4-4557-9499-1f86697ed595,1
+9cab4cba-82c6-45e8-898c-af6a2cc41006,Reynolds number,4b56d9b8-c54a-4209-af04-af90247110e2,1
+bfa026ed-2184-46fb-b3d3-c97a51e6ae47,Applications of Bernoulli principle,3939c762-ce93-40b4-bd8f-53d3c253d2be,1
+09a6b92a-b95a-4d2d-a0ae-dc6383907e07,Surface energy,84c51dfb-4d34-4c4b-b0fe-0dc0033ab34b,1
+f6a2986a-409c-45b7-9301-64e6bbe60723,Capillary rise,a492cd5a-32c6-4acd-954c-f6509a433c98,1
+ae8ce18f-a9db-4a32-a27a-0604247dd879,Drops,c5821d31-8ffe-4417-b13c-e4e1bf6c06a7,1
+b5392eed-e397-482e-bfa1-bf327c29735a,Bubbles,c5821d31-8ffe-4417-b13c-e4e1bf6c06a7,2
+7a15242c-6830-4acb-a4ac-2cf3a7c0e80e,Heat,51e3e19b-7c11-412b-8efb-94fd0ca11813,1
+42283eac-db34-4142-8fb7-0c5e81497949,Temperature,51e3e19b-7c11-412b-8efb-94fd0ca11813,2
+9cb06ce9-3e7d-4064-b2b3-0c4ca122d124,Linear expansion,a19c8e77-5f7c-44e8-8229-2870835860ad,1
+b6eab953-61f4-438f-b753-fd52df9a71e3,Area expansion,a19c8e77-5f7c-44e8-8229-2870835860ad,2
+14846543-780d-49f6-9a61-fd69f95a6371,Volume expansion,a19c8e77-5f7c-44e8-8229-2870835860ad,3
+1cd10f5a-ad5e-4926-a9f2-7dbb4f8c3dc5,Calorimetry,2a7cced0-7e0d-436b-9379-5774b62b0104,1
+d86671ae-6185-4448-8ffe-0a14751d216a,Latent heat,f3dba5f0-6ec5-4227-8dc8-92ddd26a0618,1
+f6102b84-e9f3-4dc5-ad75-9d465874e07e,Conduction,f8f02500-9113-42b7-bc91-c74556304f7c,1
+b87dc742-13ef-440e-bde4-bc9202d7e70c,Convection,f8f02500-9113-42b7-bc91-c74556304f7c,2
+b158e9f7-fffb-468d-8c66-7fa589a85a54,Radiation,f8f02500-9113-42b7-bc91-c74556304f7c,3
+e02b338d-b050-41dd-9c64-b0d53b1087bb,Concept of thermal equilibrium,0e74e908-6c2a-42d4-a4a8-39df2d99e483,1
+c11a5ac4-ddcf-47a5-a645-493aaa63cdf7,Temperature as a measure of thermal equilibrium,0e74e908-6c2a-42d4-a4a8-39df2d99e483,2
+4bb8b611-59bb-4237-a38a-f82b74f8c792,Zeroth law of thermodynamics,0e74e908-6c2a-42d4-a4a8-39df2d99e483,3
+7eb7029d-ea3c-4081-a2b5-e73a2bd5efc2,Thermodynamic systems and surroundings,0e74e908-6c2a-42d4-a4a8-39df2d99e483,4
+2b31ee42-5668-480d-96a2-81eb9ada32f3,Heat as energy transfer,0175884e-483b-4f2a-a6c6-b5170b10e998,1
+f1407dc8-76e4-48bc-835e-16d57df826de,Work done in thermodynamic processes,0175884e-483b-4f2a-a6c6-b5170b10e998,2
+163fbfa2-2741-47ac-a22c-d9e1e0675628,Sign convention for heat and work,0175884e-483b-4f2a-a6c6-b5170b10e998,3
+5e181304-e490-4612-a001-6d5c2626063f,Mechanical equivalent of heat,0175884e-483b-4f2a-a6c6-b5170b10e998,4
+c1635ab2-8d3a-4802-a87a-04bab3ae7c58,Definition of internal energy,c6200bda-0b61-4f42-be89-ff44821ade3d,1
+c7b44cfc-fce4-454d-b94a-61f89bd9a349,Change in internal energy,c6200bda-0b61-4f42-be89-ff44821ade3d,2
+06fc8416-9054-4940-92db-c8c746edb163,"Relation between heat, work and internal energy",c6200bda-0b61-4f42-be89-ff44821ade3d,3
+49c9abd2-cd3a-4dcc-a28e-037b157ea7ed,Statement of first law,4b1581ff-6761-465d-88b4-5402563d8481,1
+09f02a26-6fdc-4a92-891d-3b84cff3a2bd,Mathematical expression,4b1581ff-6761-465d-88b4-5402563d8481,2
+3ae5d2f1-3029-4dc0-ae3e-b27abf273477,Applications of first law,4b1581ff-6761-465d-88b4-5402563d8481,3
+0ea30c40-9d2c-4084-80f9-b2137f2602ab,Isothermal process,dc31dff2-6bbd-4d79-90bc-64a209b4243e,1
+85f8c98d-dde9-470a-9515-d8812824f5be,Adiabatic process,dc31dff2-6bbd-4d79-90bc-64a209b4243e,2
+c7bdf832-d489-41fc-9134-1c447008ecfc,Work done in isothermal process,dc31dff2-6bbd-4d79-90bc-64a209b4243e,3
+04308d2e-9ba1-4594-8968-fa6dc12c5e11,Work done in adiabatic process,dc31dff2-6bbd-4d79-90bc-64a209b4243e,4
+6513c990-339d-4985-824f-dc4102d4fb6c,Statement of second law,1e700312-4537-40ba-a6f9-cd6fd1e63436,1
+0c477963-1605-4798-af8a-f25df28f1b7e,Reversible processes,1e700312-4537-40ba-a6f9-cd6fd1e63436,2
+a55b049f-bae9-4a55-bb4b-da32bd6a80b8,Irreversible processes,1e700312-4537-40ba-a6f9-cd6fd1e63436,3
+5ca2f943-412a-4625-9947-8dc1ce460fa2,Limitations of first law,1e700312-4537-40ba-a6f9-cd6fd1e63436,4
+9211bf39-a557-4ad0-9950-d9a29af5e817,Ideal gas equation,05acb5d6-5191-428d-aa21-368622ac8a03,1
+47711599-71e3-4dbf-8adf-3eeb20a73034,"Relation between pressure, volume and temperature",05acb5d6-5191-428d-aa21-368622ac8a03,2
+d9bfcd2c-beb2-46fa-a259-1215a9fce658,Work done during compression,44137ebc-cafe-439d-98be-f62253314e81,1
+a4ff45d5-cc00-4cde-b0f4-26b8983dec8f,Work done during expansion,44137ebc-cafe-439d-98be-f62253314e81,2
+30631d30-c517-4c8e-b67e-1f26b9364912,Assumptions of kinetic theory,338ca08a-bdbf-4095-969f-7add42be058a,1
+cdd4acaa-ad98-4f7c-8f5b-c3cc9d0f7ec3,Molecular nature of gases,338ca08a-bdbf-4095-969f-7add42be058a,2
+d5869403-5a32-449e-a293-3b9a7d27af1a,Pressure of gas due to molecular motion,338ca08a-bdbf-4095-969f-7add42be058a,3
+822634e6-45b6-460b-b463-03369f5fe801,Relation between temperature and kinetic energy,1ad422a9-f419-473c-8a0a-9d22358724ca,1
+73f75e04-a114-403c-8751-cce4ab49ec01,RMS speed of gas molecules,06b7951f-2c13-45c9-84a2-057dee69a01a,1
+f6e68700-d1d0-4c65-89cd-d8252d552d93,Relation between RMS speed and temperature,06b7951f-2c13-45c9-84a2-057dee69a01a,2
+a8ebeeca-5efd-443e-bde2-12a05fc94293,Translational degrees of freedom,3dfdca73-1016-43d2-84d6-d9958c08e23a,1
+bcfe0e3f-e848-4785-b069-2d09e3b95289,Rotational degrees of freedom,3dfdca73-1016-43d2-84d6-d9958c08e23a,2
+1a66b997-3edf-44d1-9b94-8fd4e8bfdcfb,Vibrational degrees of freedom,3dfdca73-1016-43d2-84d6-d9958c08e23a,3
+d57c993c-fb60-4c87-b444-d5e807a16713,Equipartition theorem,7a2a142c-4537-4d48-880c-478e607bb0ff,1
+a2269b34-c957-418a-b3dc-c01a9e323af9,Application to specific heat capacities,7a2a142c-4537-4d48-880c-478e607bb0ff,2
+2f1ead01-699d-4f1c-bb2f-49f9c6282a5b,Molecular collisions,a6a816ff-1843-47c4-89a6-392d5ce736ba,1
+269fcc2f-7987-47e2-83d8-5b591c39c1b2,Mean free path of gas molecules,a6a816ff-1843-47c4-89a6-392d5ce736ba,2
+04f487b3-70de-4b0a-b52e-31d842163f90,Avogadro’s hypothesis,42032143-e359-411b-b512-6bf359ff6016,1
+27a354c0-a6e1-4f4c-8ccb-22861765f3aa,Applications in kinetic theory,42032143-e359-411b-b512-6bf359ff6016,2
+db496840-3d13-4641-96c3-62d5c11faf50,Definition of periodic motion,673af0ea-5171-4837-b17d-d08061bcc858,1
+c06e249e-1d6f-438b-976b-c118b2b1ff95,Time period,673af0ea-5171-4837-b17d-d08061bcc858,2
+cf068360-c6a3-463d-8546-2923db9b752c,Frequency,673af0ea-5171-4837-b17d-d08061bcc858,3
+b1140107-c3b5-46bf-979b-a3535d13c7bb,Angular frequency,673af0ea-5171-4837-b17d-d08061bcc858,4
+e534e62c-8dcd-4c5c-8d2e-25658a9736cc,Definition of SHM,5c201fa3-b328-449e-8ec3-58145ece176d,1
+2c00af38-0a45-4369-a969-90da180a0103,Equation of SHM,5c201fa3-b328-449e-8ec3-58145ece176d,2
+ab09bbcf-d41a-4410-8f13-3c609104db3c,Displacement as a function of time,5c201fa3-b328-449e-8ec3-58145ece176d,3
+3751491a-f8d9-4146-9cb9-31b0ab8f8f1a,Phase of oscillation,5c201fa3-b328-449e-8ec3-58145ece176d,4
+bcedfce5-739c-496b-8258-b4d0d1fc2958,Force constant,9f84afd9-53ba-4577-8fe3-7ab06ed676ad,1
+38d40aef-7593-46ec-b61f-e234f7b5c0c3,Relation between restoring force and displacement,9f84afd9-53ba-4577-8fe3-7ab06ed676ad,2
+5534fe90-663e-4f55-b31b-13a4056e4949,Spring mass system,cefb16f5-9ef6-4091-9955-77687c854d08,1
+11d05da5-d5fb-416c-b22e-d929ee58c45a,Time period of spring oscillator,cefb16f5-9ef6-4091-9955-77687c854d08,2
+f07d4816-6ef6-4613-b9b7-cb741f38dbf3,Kinetic energy in SHM,8a4d1bbf-d6d5-4890-8ba0-6344a75c0617,1
+6abb63c2-95b8-4354-beed-d82cedb138c0,Potential energy in SHM,8a4d1bbf-d6d5-4890-8ba0-6344a75c0617,2
+5a7f0eb0-b17c-4ffc-9d6c-8948c2e532f6,Total energy of SHM,8a4d1bbf-d6d5-4890-8ba0-6344a75c0617,3
+f4e2161a-f0b5-40f9-b581-12a897ddbdf0,Motion of simple pendulum,bf4a16db-921a-4b6d-840f-bc54ccb81e3f,1
+fe12c744-cab4-4284-87d7-31f26c34b0da,Derivation of time period,bf4a16db-921a-4b6d-840f-bc54ccb81e3f,2
+3ab40965-79a3-438d-966f-9f9eef568355,Mechanical waves,468b79b8-eff7-43c0-ad97-6422e5f28996,1
+bce6ec50-8ddd-4d85-9cd0-9a1684fa92ca,Longitudinal waves,468b79b8-eff7-43c0-ad97-6422e5f28996,2
+361f7f5f-d378-4bc5-a7f6-1ba5c28318fb,Transverse waves,468b79b8-eff7-43c0-ad97-6422e5f28996,3
+a5df8088-715c-4078-859a-e6e5be3a6f9d,Wavelength,34f4947f-725a-42d5-8696-98741967b36d,1
+9612b921-c596-4526-be1c-38ea849c6aec,Frequency,34f4947f-725a-42d5-8696-98741967b36d,2
+9ffd2eb9-1a9f-457a-84a3-72b12ac0f483,Wave speed,34f4947f-725a-42d5-8696-98741967b36d,3
+e6ac66b9-f9e1-4396-bc9c-3aaf274afddc,Displacement relation for progressive wave,e178271f-e7ac-4424-a8a0-5207422606bf,1
+bc4a4147-1dfa-4c68-a5b1-07c369d76ae3,Principle of superposition,f57a4fd3-76be-4219-af9c-860523c6c799,1
+e9bddb4d-d1fa-4340-8ef5-712ba9934886,Reflection at fixed end,5b13e0ad-7f46-43f4-a604-f41a1bc0e2ff,1
+c3535055-aea8-4e83-9bad-3aef2d48f054,Reflection at free end,5b13e0ad-7f46-43f4-a604-f41a1bc0e2ff,2
+31ecab8f-9b13-4f80-9011-e0e8ac0955c5,Standing waves in strings,00d99524-5012-4c92-9344-f06828db101b,1
+cb584b90-e610-427f-a0c3-43f8425d17fa,Standing waves in organ pipes,00d99524-5012-4c92-9344-f06828db101b,2
+4378295d-8c06-4ae0-b040-54532e9cc7e3,Fundamental frequency,ec51886a-cec3-4f3a-8643-dbd1c1ba5b67,1
+e6283685-ee10-4038-9421-912fdcae691c,Harmonics and overtones,ec51886a-cec3-4f3a-8643-dbd1c1ba5b67,2
+5463b2e0-d44b-4bf2-bbac-1024b347ff63,Formation of beats,576c2e74-9e1d-4c60-9846-36015cd5ca21,1
+370c63ee-7e2e-4efc-9f62-0b5baf305df6,Beat frequency,576c2e74-9e1d-4c60-9846-36015cd5ca21,2
+20d0d9d0-73f5-4cb2-b1e3-6d9daa5e4d26,Types of charges,1a7e2f0e-026f-469f-8df6-7589298f78ea,1
+8d7c3858-db77-4551-a54f-21d23e362450,Conservation of charge,1a7e2f0e-026f-469f-8df6-7589298f78ea,2
+f5b8b118-8dc7-43b6-8694-fd4cd9c59125,Force between two point charges,0a5fc83c-7735-4c97-ae1b-095bfd99b5a6,1
+df8e93ee-007f-403f-be6d-2e91c8a07470,Force between multiple charges,0a5fc83c-7735-4c97-ae1b-095bfd99b5a6,2
+b64efb7e-51e6-4859-9e13-811b89b483ad,Net force due to multiple charges,a33a0f0d-068d-48ea-8735-e8449984adb6,1
+0196941b-d94d-4001-b39d-5d1290cb6fed,Electric field due to point charge,79dfe618-9a4c-4787-b0e7-a63f3c44c172,1
+f548af27-5923-453c-a506-0f9daca1a881,Electric field lines,79dfe618-9a4c-4787-b0e7-a63f3c44c172,2
+e0fef6c6-036b-4558-8ed4-7fba4abceeb4,Electric dipole moment,b9863288-b5ad-4b96-8642-b20fe03af793,1
+fd944137-7f0f-4f2e-a926-a3635647c901,Electric field due to dipole,b9863288-b5ad-4b96-8642-b20fe03af793,2
+07f5fb7e-388d-4a40-8ea2-2cf7619ab578,Dipole in uniform electric field,c8fbf338-2c47-4632-9db6-03b9afc85f3c,1
+2026ed7d-ec23-4ca3-8f5a-61d401360d95,Definition of electric flux,6fbcfbbf-3964-4459-bf62-086673314019,1
+c5d8014a-f90a-495f-a1e0-b8ee00c02d48,Statement of Gauss’s law,a6318211-1323-4a86-8d92-424a6067ecf8,1
+3a7aa01b-6508-4f33-aa7d-2e7d483a58d5,Applications of Gauss law,a6318211-1323-4a86-8d92-424a6067ecf8,2
+402a314e-d45d-4427-8964-b0dbfdcdedca,Electric potential due to point charge,046936aa-5c65-47cc-ad45-79f3d9d56ca0,1
+a3d09984-ddab-47ed-a14b-4fd4a7543f85,Electric potential due to dipole,046936aa-5c65-47cc-ad45-79f3d9d56ca0,2
+94ef23fa-b712-49ab-aefb-1a3e3be69073,Potential due to system of charges,046936aa-5c65-47cc-ad45-79f3d9d56ca0,3
+d57cb610-96fe-4964-a534-371817974d46,Relation between electric field and potential,57232920-e556-4f29-892b-af30d53ad651,1
+348acbf8-6f67-44c0-b6cb-efc413831d99,Properties of equipotential surfaces,e271e3c0-3913-4b16-a69d-3b5d024eb997,1
+ab1ea7d4-1d84-4307-b388-b1b7db95b062,Energy of system of charges,05dad67d-ad7c-4965-8712-4c82b307f812,1
+e7673433-33a4-42a6-850f-61b5343351a0,Energy of dipole in electric field,05dad67d-ad7c-4965-8712-4c82b307f812,2
+ce585078-9fdb-42e8-8061-09b9b72ec16b,Electric properties of materials,da876e85-9778-4fe9-92ab-35af83070e92,1
+879462a1-093a-470a-b7a1-4c8161753e4f,Electric polarization,6c4e5b6e-4670-46b6-bb22-24f1072f313e,1
+ecda3a49-d7b8-49f8-b39f-1b5365bcc5e9,Capacitance,5878e437-3701-4b19-9317-e7298f3819df,1
+3edaacec-d68f-4fa9-8708-9cb7aec69ea6,Parallel plate capacitor,5878e437-3701-4b19-9317-e7298f3819df,2
+d549efef-54f5-45d4-88dd-fe9b3cec35da,Series combination,b3d21dda-4857-406f-a32b-5511812fd562,1
+b3c97202-59ea-4cf2-aed8-918f0dde8b2a,Parallel combination,b3d21dda-4857-406f-a32b-5511812fd562,2
+620aa81a-84d3-4264-922a-8d6c955fa028,Energy of charged capacitor,96eb5b87-79ba-439f-a069-5deb3022fe47,1
+a7855eba-76b5-478e-94f7-4483f02054ef,Definition of electric current,7f4dff2b-4704-4339-8b81-ca941b3d871a,1
+b581233e-87a9-4247-898f-b334a638a4ec,Motion of charge carriers,3269ee71-afa9-459c-a9bb-9cd1f5b72c10,1
+b3946938-e300-48c6-b011-1c94f982b9b7,Relation with current,3269ee71-afa9-459c-a9bb-9cd1f5b72c10,2
+592ba6c4-d201-48c2-8f3e-63df1b6364b1,Relation between drift velocity and electric field,4fb7682e-8684-43ba-964d-e0cf037a739d,1
+d68716b3-3966-413f-987b-63dcfccb121c,Statement of Ohm’s law,129187fe-0353-4680-8d79-0038e99a1e35,1
+86945989-1fef-49d3-b171-e59d51cfdc32,Factors affecting resistance,2c40c36d-2ee7-40bb-8558-61ac67880038,1
+b924d5c7-b6e9-43cb-9838-b4ce0a6073ad,Ohmic conductors,be7972b5-7095-43e7-98be-53c45fa01057,1
+9599418a-fd14-4a69-b50c-5005c847c452,Non-ohmic conductors,be7972b5-7095-43e7-98be-53c45fa01057,2
+f8304e90-e389-4033-be41-1614b718ba05,Power consumption,45c9a156-851a-45b7-ad7f-6302ea1c7587,1
+2797ec8d-791e-4a83-b093-405d3dcac12a,Relation between resistivity and conductivity,77c54e0a-f59d-411e-b993-4e94d7b16857,1
+6e82c5e3-5390-4697-a705-3260c084787b,Series combination,21b1fc26-c66b-4724-b16a-d8a7c774f5cd,1
+f86c6157-4bd8-4ccb-b9c1-80fea625eb3f,Parallel combination,21b1fc26-c66b-4724-b16a-d8a7c774f5cd,2
+80e87e86-fa25-46bd-8441-88091d39e786,Effect of temperature,7126e1ab-9da2-4f14-99dc-6dd1c87cb052,1
+df7b47ab-fa60-4652-b613-c8d18914cc5c,Internal resistance of cell,6ee36544-b352-4a54-81fb-41acd82c1013,1
+f4e3d686-2165-4940-857a-69ce1d94c206,Potential difference,6ee36544-b352-4a54-81fb-41acd82c1013,2
+1c1bbdf3-6569-4364-85cb-00a0614500e5,Series combination,88af90fb-09e3-4005-8d6b-167aa731732f,1
+f9db9a5f-c89a-48c4-9506-c0782d0fed48,Parallel combination,88af90fb-09e3-4005-8d6b-167aa731732f,2
+b3447e72-1c77-4d8c-bbef-f62838d4f71c,Kirchhoff’s junction rule,a241db11-281f-4b55-a8d1-c9e87f456e04,1
+4825cbcf-2cec-43be-b039-0b3970e25c06,Kirchhoff’s loop rule,a241db11-281f-4b55-a8d1-c9e87f456e04,2
+8ec96c40-5e20-4080-ac8d-6d1b6f8dc903,Principle and applications,19779b2a-866a-4155-9cc1-f587b43ba195,1
+54c5fdab-7905-47e5-a60c-ec44558803aa,Measurement of resistance,e05a34e5-4045-45da-a0e4-c7cbe0e9a89f,1
+694c77d0-b823-44c7-8ad2-309ccf82b347,Magnetic field due to current element,2db2b279-8d46-4843-8b20-ad3337843b7b,1
+28801e30-bc02-470b-84ab-ce7b5ad82168,Circular current loop,2db2b279-8d46-4843-8b20-ad3337843b7b,2
+9c339e49-8a74-493a-a291-b101b403d8dd,Magnetic field of long straight conductor,d071575d-a6be-4429-bc08-40eed9f186f5,1
+b0fedd9e-78b5-4252-8c0c-bd1248b6f075,Magnetic field of solenoid,d071575d-a6be-4429-bc08-40eed9f186f5,2
+89d7fa49-ad34-4af9-859e-80aba78180b7,Force on moving charge in electric and magnetic fields,f1265a69-b1d5-4a85-b329-555aba5db4cc,1
+75db7a73-f961-4aff-9598-0bb1fdc4b4fb,Magnetic force on conductor,37b9379e-26fe-471d-a7f4-adca3863d5e3,1
+d05eedb6-975a-4314-9ad4-a4bc61e2da7b,Definition of ampere,553b010b-20ea-45b2-8abb-ac153303a9d9,1
+1fd22338-c63f-48b0-8688-e062e1d35350,Moving coil galvanometer,5c25c133-e0f2-4404-8886-5723d8880d35,1
+3d737c68-34e7-4f5c-bb8f-13600a241611,Sensitivity of galvanometer,1c2b46c9-a1bf-4000-a69c-496b0978c2bd,1
+37802008-d98c-46bf-b12a-51f28fe9c9c6,Conversion to ammeter,1c2b46c9-a1bf-4000-a69c-496b0978c2bd,2
+47c09def-a6cc-41fc-a423-4e758bdebb31,Conversion to voltmeter,1c2b46c9-a1bf-4000-a69c-496b0978c2bd,3
+eea0ed37-b373-4681-9aad-5d0131c31aa8,Current loop as dipole,07094b1b-b40d-480f-8f45-09328681387d,1
+7f7be1db-ceef-4574-9067-5ba95b168957,Dipole moment,07094b1b-b40d-480f-8f45-09328681387d,2
+1c20a9f1-70f5-4354-9f38-bc573514f129,Bar magnet as equivalent solenoid,aa296b46-dd97-4b77-be1e-6c1bd67b1b5a,1
+178ed9e9-4bf2-4305-a814-1182be35710c,Magnetic field lines,aa296b46-dd97-4b77-be1e-6c1bd67b1b5a,2
+8188358f-2be4-442f-b749-af99c8548c48,Field along axis,1c612b64-8fa6-40d5-b6e6-60a8b61882db,1
+ad85d00f-20e5-47b7-855f-87291cbc47bd,Field along equatorial line,1c612b64-8fa6-40d5-b6e6-60a8b61882db,2
+c5b68eac-d362-45fc-ac3e-4486fe811841,Paramagnetic substances,7927b5bd-ab25-48ba-94b0-e8e39b3c7ef4,1
+95343060-9c64-48c2-a9ad-4cb5803cb3d0,Diamagnetic substances,7927b5bd-ab25-48ba-94b0-e8e39b3c7ef4,2
+f505505f-cfd6-42c3-b7b8-9421175d6933,Ferromagnetic substances,7927b5bd-ab25-48ba-94b0-e8e39b3c7ef4,3
+71da71cd-eeff-4ff2-ae72-92fa34881d6f,Curie temperature,031319aa-b7c2-4e0f-a7f2-dd37b8a6921c,1
+b077a126-e363-4e39-afc4-422870c6ecd1,Faraday’s laws,9c59fc18-70c5-4943-800d-c53f98fd5526,1
+e2b29cfd-7495-47ea-9a9c-9eaa8c2b31dc,Induced EMF,9c59fc18-70c5-4943-800d-c53f98fd5526,2
+3d45f71f-8448-40fe-938d-7b293613462f,Direction of induced current,655bfb98-277e-4699-82e8-8922b7b877a9,1
+c0f01e72-84e1-4c07-8aa8-c1c361eac107,Applications of eddy currents,e4df992e-601b-40ca-9151-afc8f8ef1c48,1
+0fa5abe5-66a3-45c4-8477-4408c52e3c95,Inductor,bcbb398e-b67b-44c2-86e2-807d53ef2446,1
+28c91339-20b1-4271-853a-3f197adeadea,Inductance between coils,de30f2b9-a0c9-4de9-b111-ba2198a81c55,1
+416e79ca-b25b-4ce2-b046-afa832cd918c,AC voltage and current,65e5894c-c227-495c-9392-bec16163adfb,1
+2a8c0aa9-b216-4cf5-a7f5-e609b6127951,RMS current,6a0bf362-c5c6-4e49-ac9b-3fa8dbf7bc84,1
+2527218b-ed11-43f7-b9e3-140bc71696ad,RMS voltage,6a0bf362-c5c6-4e49-ac9b-3fa8dbf7bc84,2
+ddcee577-615a-47c6-9480-0be35a235eae,Inductive reactance,6abdbf12-79c0-4676-bb53-dfe990f51c36,1
+760804a1-1ed3-4f38-8d68-b89c2b6b3d3e,Capacitive reactance,6abdbf12-79c0-4676-bb53-dfe990f51c36,2
+fe39168e-7cea-4594-9b37-c6b898915886,AC circuit impedance,e61921a6-bbe9-4092-a149-aa6daa74dff8,1
+780df41e-0f67-4abb-9415-14fd7a606797,Resonance in LCR circuit,bb75ddc4-16b3-484c-a41e-ba982df658f7,1
+f781a5f6-e787-4999-b47b-f4bf9a35257f,Power factor,f3b77f3c-e945-486d-8cbb-344ecf33da37,1
+b4d1952c-2c6a-4c4f-8193-0c36d93dca1d,Wattless current,f3b77f3c-e945-486d-8cbb-344ecf33da37,2
+6889c551-a5c9-4970-a1dc-161888e02568,Construction and working,b9af0016-fd46-4fd8-b445-ee49f7bfc497,1
+1b6acd98-9b81-4a25-ae2a-92591d63744a,Step-up transformer,0b6e70bf-ea18-4bfa-914c-7b3d8a4c4ea5,1
+e7ea483e-cfee-4ca7-808d-3d40a7ae180e,Step-down transformer,0b6e70bf-ea18-4bfa-914c-7b3d8a4c4ea5,2
+7d923499-568b-4592-b36d-069e0191c956,Maxwell’s concept of displacement current,488867eb-7523-49b6-b7e4-540fc3357744,1
+74e2e3c0-5796-4408-b51f-d8cd6420f8d2,Nature of EM waves,d9318ebc-5501-4c13-81f0-7dc1e0302f0f,1
+22d24ec5-4a28-4755-9958-76451b97c5ef,Transverse nature,d9318ebc-5501-4c13-81f0-7dc1e0302f0f,2
+2e90f885-0188-48b9-abce-ea2d789f7ff3,Radio waves,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,1
+7db29d54-ffd1-4060-8ca2-4a6c9e11b50f,Microwaves,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,2
+cfe4de85-6631-4a50-bb90-37de296c9da5,Infrared,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,3
+781518d0-1f55-4d97-a689-8d365beb8b6a,Visible light,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,4
+703a0d64-852c-4d6b-9422-c4fa442579f6,Ultraviolet,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,5
+e8f9c14f-6868-4e61-91ed-b08c6890d066,X-rays,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,6
+21d3630e-762a-40ce-b4dc-d05f689be479,Gamma rays,0ad13e3f-8966-48b3-8ffe-216837dd2cbb,7
+7c14e6aa-c2df-4e1e-8f92-5ac243be394c,Communication systems,65b608d7-dcd7-4333-b1eb-8d7106dd49ea,1
+67760a34-26e4-4a2d-959e-242db2dbc21d,Medical applications,65b608d7-dcd7-4333-b1eb-8d7106dd49ea,2
+12c1587d-e7ad-4f26-b14a-2410c20742eb,Laws of reflection,63c13332-3267-40ed-9a8e-96d6a5d3cf7d,1
+31911930-5fba-4341-aa83-f2223c89a6fc,Spherical mirrors,63c13332-3267-40ed-9a8e-96d6a5d3cf7d,2
+62478522-c4c2-4b90-8dc8-5c15e55116da,"Relation between object distance, image distance and focal length",53069dbc-3edc-4615-b7b5-d29e62d3640d,1
+f4ef0706-f424-4b7d-9009-6efb1314adad,Laws of refraction,7a1ce5fb-239c-46db-91b4-0e1387ed8f16,1
+203bd6f5-6ec8-47c5-9c64-2bad511a2325,Refractive index,7a1ce5fb-239c-46db-91b4-0e1387ed8f16,2
+1a2a3b21-a1e3-4568-bb96-eaaf072a3c5f,Lens formula,8d45d880-0d3a-4c64-af06-d964ca39d6c5,1
+775ea845-bd60-48e8-b90b-aa493ee9226d,Lens maker formula,af400275-586f-4550-979b-5efea68f43c0,1
+b3dcb285-172e-406d-930e-f89a0d8bd0f0,Power of lens,af400275-586f-4550-979b-5efea68f43c0,2
+33089e55-4e3e-4f31-ad60-c7d7d4b7908d,Lenses in contact,74e4b05b-1849-4239-858b-6d6832d952d0,1
+26eae754-a327-4fb5-9321-6373a1c2ce9f,Critical angle,03362f7f-d5ae-4809-b619-838a94cf5faf,1
+bfafb28d-7f70-4b2f-9006-a452014b5731,Optical fibres,03362f7f-d5ae-4809-b619-838a94cf5faf,2
+d86c04da-e146-4531-8c3e-9100f5f1c223,Refraction through prism,6bff04ae-317b-4d4a-a16d-5a5bb2bb5930,1
+1e3bd9f3-ecb4-4e99-899c-6beb32909076,Angle of deviation,6bff04ae-317b-4d4a-a16d-5a5bb2bb5930,2
+4ac250b1-9723-42ed-a41b-1283304ee141,Microscope,0496f3c9-0b88-4a2c-aa17-0cd3abdb05c4,1
+75512f6a-621d-49d0-bcad-d684297ffe4a,Astronomical telescope,0496f3c9-0b88-4a2c-aa17-0cd3abdb05c4,2
+95586c2b-3022-42e3-9223-c8c21fd1a106,Huygens principle,a1218d39-043b-4458-8487-43c3fcbfee4c,1
+58035f64-7e1e-4ef0-9cb8-c13b64014946,Young’s double slit experiment,177cb1fb-40f3-4bf3-9766-479a40ea5a43,1
+7eece290-9d02-4157-942a-f837709b205c,Fringe width,177cb1fb-40f3-4bf3-9766-479a40ea5a43,2
+dea05924-d5e6-4e54-998b-110292d7041c,Single slit diffraction,526716f8-0c69-448a-a6d6-fcdc5495632d,1
+8e5e2e4f-ca54-4492-99f1-b868ef0d14cf,Central maximum,526716f8-0c69-448a-a6d6-fcdc5495632d,2
+44f79294-a083-4ea0-bd06-df7cef2e13b9,Plane polarized light,7be18bca-7f09-439f-ac92-422e8ea56a72,1
+4e2e26ef-71fa-4b7e-83e7-8bff2ca934ca,Brewster’s law,7be18bca-7f09-439f-ac92-422e8ea56a72,2
+4af0b2e1-c4ac-4437-beda-2510301848be,Uses of polaroids,7be18bca-7f09-439f-ac92-422e8ea56a72,3
+a621bbc4-42d6-45de-8a39-7a2d4fcf20bc,Wave nature of light,778c8739-1e7e-4f2b-91e6-89ec5ec0e8dd,1
+418fb472-0284-446f-a270-12129f19bd3b,Particle nature of light,778c8739-1e7e-4f2b-91e6-89ec5ec0e8dd,2
+787b02df-00e5-4842-b9eb-8183ae5975f7,Hertz observations,7fae8819-4eec-4f19-87d5-23113158fb73,1
+95064c38-a7ec-49e5-b2c0-02f68dadbb30,Lenard experiments,7fae8819-4eec-4f19-87d5-23113158fb73,2
+2a5b8b0d-202a-4b6b-9062-eb94037ba6aa,Threshold frequency,69493e4e-8afd-403b-b248-6c1d05a74e84,1
+0fcbcfa7-f41c-4145-9a0f-44d9b82b19b0,Stopping potential,69493e4e-8afd-403b-b248-6c1d05a74e84,2
+19c914c9-4555-4855-beac-f79b77d5f0a1,Wave nature of particles,a4699c98-bbc6-4aeb-8831-f6bd40b6a375,1
+22c3439c-0e9c-417d-af9e-9931540f7ea7,de Broglie wavelength,4cccbeb0-607e-4e2d-bf8e-e9039169d28e,1
+4eb09884-97e4-423b-9976-6122466c228d,Alpha particle scattering experiment,e85bb7de-4cb5-4e9a-af4f-6444d10fadf6,1
+e094be64-0e42-4083-ade2-b73d97500db0,Energy levels,92577858-7be8-4160-b636-b33187600c85,1
+e947d954-5d0a-4ded-b2f8-46d57a779743,Hydrogen spectrum,92577858-7be8-4160-b636-b33187600c85,2
+afc7cf42-1258-43cb-a101-df3b12fbf597,Radius of orbit,4866d3a0-f625-4f46-ba7f-7a193cf25687,1
+e917ab5e-c5ed-4f34-9241-8edf250f492f,Energy of electron,4866d3a0-f625-4f46-ba7f-7a193cf25687,2
+bfa58154-0440-4028-ac0f-e4393dbb7338,Protons and neutrons,68e15c48-4a59-43f0-96cb-95f5367ef4f8,1
+a652ee72-013e-4a70-bade-71ae829225ed,Nuclear size,68e15c48-4a59-43f0-96cb-95f5367ef4f8,2
+41998c7d-4167-4433-920c-7fb74e709b95,Einstein mass-energy relation,7aa1380e-1a2b-49b2-a8ca-8e9486e2a4a6,1
+21e8c50c-0398-4ae8-84b1-789f00df6343,Mass defect,ada1dd5a-8474-4526-8b7f-37b0adb0ef76,1
+76305568-bf22-4bde-a142-2315c132c183,Binding energy per nucleon,ada1dd5a-8474-4526-8b7f-37b0adb0ef76,2
+a3f182c0-8efc-4ec3-9a8b-6811e9033cbb,Nuclear fission,e6ebafae-2143-44ba-9acc-0fd91a681a24,1
+d25247b3-d501-4085-a145-280fd50ef386,Nuclear fusion,e6ebafae-2143-44ba-9acc-0fd91a681a24,2
+9a289e8b-46b2-4122-970f-e1cee213e0eb,Intrinsic semiconductors,e6163b8e-5cd9-40a3-b9d2-ec6b60f6c01b,1
+b2613ae6-d21e-4260-9f5a-a8cde0941842,Extrinsic semiconductors,e6163b8e-5cd9-40a3-b9d2-ec6b60f6c01b,2
+c5765da5-acef-4e7c-bfd8-80d6ec165d91,Forward bias,9cad2658-a6ac-4c97-b709-233bca3c276b,1
+2439b47b-35a1-4ee9-a7f9-1b6f85960b45,Reverse bias,9cad2658-a6ac-4c97-b709-233bca3c276b,2
+ff64c1a3-a9e7-4f29-9fc7-a977b3b62f42,I–V characteristics,7fe0e8e4-b2c3-437d-828b-f857f56bdeb5,1
+a0f34119-c287-44f3-b6c2-5b8784fd055f,Diode as rectifier,a021ba27-425f-49c5-a204-dfb936724167,1
+12ed9be0-fd3b-4dbc-b9cb-01364b9ec5f3,LED,7e881f4b-3427-447b-8552-5291af9fbb05,1
+a42fd252-2e37-4e7e-80e8-204e2b12fd64,Photodiode,7e881f4b-3427-447b-8552-5291af9fbb05,2
+0698744c-fcc5-4166-acbd-631c6b91a42e,Solar cell,7e881f4b-3427-447b-8552-5291af9fbb05,3
+442da00f-4869-49d7-a637-b8a646780097,Breakdown voltage,74499e80-a6db-4f7f-9610-ee7343f155ee,1
+be384b5a-e399-40af-bb86-1c3d2f5bf96b,Voltage regulator,74499e80-a6db-4f7f-9610-ee7343f155ee,2
+9b12d06c-0981-4e98-b9ed-87ca40c522f4,OR gate,3939f9f1-5746-41e1-8b07-c561396f29d2,1
+44dc7371-8684-44d6-9e50-6f24780f8c57,AND gate,3939f9f1-5746-41e1-8b07-c561396f29d2,2
+360c225d-0393-4b28-a538-e8d5da484f38,NOT gate,3939f9f1-5746-41e1-8b07-c561396f29d2,3
+effed883-ec00-4a9a-a11b-a37152613ddc,NAND gate,3939f9f1-5746-41e1-8b07-c561396f29d2,4
+38e0f7f1-ec8f-46eb-b408-7be2933167d6,NOR gate,3939f9f1-5746-41e1-8b07-c561396f29d2,5
+b982f677-1d48-4c52-85f7-32d6a699c8ea,Vernier calipers measurements,a0aa242e-214b-4e94-9a00-5c3295503477,1
+46461895-92cf-41b1-aa6f-08c4add0f01a,Screw gauge measurements,a0aa242e-214b-4e94-9a00-5c3295503477,2
+39589713-f8af-482c-a50c-bb5cafe648ab,Simple pendulum experiment,343e7240-1e34-424f-9262-1bdd154b09ee,1
+c2cd6132-cd05-4c11-9f91-c8a4271ec857,Young’s modulus experiment,343e7240-1e34-424f-9262-1bdd154b09ee,2
+aa76d72e-54f2-4d5e-a881-bb7a16e89abc,Surface tension by capillary rise,ff9dd463-4dc9-451c-8f7f-3150d75ff5e8,1
+f6a08ceb-8f1f-4bef-95ac-63b101c22be8,Viscosity by terminal velocity,ff9dd463-4dc9-451c-8f7f-3150d75ff5e8,2
+1be5428b-d37a-40c7-94de-ef5f029a2d86,Speed of sound using resonance tube,32214430-4462-47e9-ac01-c160a43ca326,1
+0ea2ec8c-6bfd-41a2-8071-c2811f9e62a0,Specific heat capacity by method of mixtures,37edcbe9-84e1-4428-9503-8c28728e0aa2,1
+c3135ecb-2eda-46ea-b499-9808f9f88076,Resistivity using metre bridge,0ec70858-129c-4275-8030-468cbf884974,1
+b663f234-ce47-48c2-a62e-d7debdb7a123,Resistance using Ohm’s law,0ec70858-129c-4275-8030-468cbf884974,2
+807d7a04-8a5d-4156-a9d7-c7058d0bda42,Resistance and figure of merit using half deflection method,b135eb62-a122-46c6-ae14-bece8b4f55a0,1
+29d388d0-e68b-4bdd-9956-1b8952d54d6f,Focal length of mirrors and lens using parallax method,4c85c1b9-3a44-4904-bb2e-285d5a8ff77f,1
+00d5928d-f7a1-491f-8c49-74bca157a553,Prism deviation experiment,4c85c1b9-3a44-4904-bb2e-285d5a8ff77f,2
+93c9f76c-997b-45c8-80e8-3e15ba11b712,Refractive index of glass slab,4c85c1b9-3a44-4904-bb2e-285d5a8ff77f,3
+524858d1-e14f-4b83-ae60-2f359eb658bf,PN junction diode characteristics,5aea626b-6030-445d-871d-5c78301ceb8a,1
+915e7f14-864f-4539-9280-a52a69dec8a8,Zener diode characteristics,5aea626b-6030-445d-871d-5c78301ceb8a,2
+96d023c8-2f70-4ed4-af21-8f68b20d0ba8,Identification of resistor,7f3da6ca-c27e-4277-b588-c303449bc93f,1
+a66f9d9e-7ee3-49c3-b6e3-fdf9f7af69e1,Identification of capacitor,7f3da6ca-c27e-4277-b588-c303449bc93f,2
+39c4df27-5ae5-482d-9930-a84bc0c08ae0,Identification of diode,7f3da6ca-c27e-4277-b588-c303449bc93f,3
+40806dcc-d665-4500-bd14-1630603b17e9,Identification of LED,7f3da6ca-c27e-4277-b588-c303449bc93f,4

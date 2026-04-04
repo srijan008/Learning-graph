@@ -1,0 +1,17 @@
+{
+  "default_curriculum": "CBSE",
+  "curricula": {
+    "CBSE": {
+      "collection_name": "Learning_Grade1-5",
+      "embedding_dimension": 768
+    },
+    "NEET": {
+      "collection_name": "neet_chapter_combined",
+      "embedding_dimension": 384
+    },
+    "JEE": {
+      "collection_name": "jee_chapter_combined",
+      "embedding_dimension": 384      
+    }
+  }
+}

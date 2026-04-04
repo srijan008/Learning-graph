@@ -1,0 +1,1066 @@
+# Chapter 1: Set Theory
+
+## Topic 1: Basics of Sets
+
+- Definition of set
+- Representation of sets
+- Types of sets
+    - Empty set
+    - Finite and infinite sets
+    - Equal sets
+    - Equivalent sets
+
+## Topic 2: Operations on Sets
+
+- Union of sets
+- Intersection of sets
+- Difference of sets
+- Complement of sets
+
+## Topic 3: Laws of Sets
+
+- Commutative laws
+- Associative laws
+- Distributive laws
+- De Morgan’s laws
+
+## Topic 4: Venn Diagrams
+
+- Representation of sets using Venn diagrams
+- Applications of Venn diagrams
+
+---
+
+# Chapter 2: Relations and Functions
+
+## Topic 1: Relations
+
+- Ordered pairs
+- Cartesian product
+- Types of relations
+    - Reflexive
+    - Symmetric
+    - Transitive
+    - Equivalence relation
+
+## Topic 2: Functions
+
+- Definition of function
+- Domain and range
+- Types of functions
+    - One-one function
+    - Many-one function
+    - Onto function
+    - Into function
+
+## Topic 3: Composition of Functions
+
+- Composite functions
+- Inverse of a function
+
+---
+
+# Chapter 3: Complex Numbers
+
+## Topic 1: Basics
+
+- Definition of complex numbers
+- Real and imaginary parts
+
+## Topic 2: Algebra of Complex Numbers
+
+- Addition
+- Subtraction
+- Multiplication
+- Division
+
+## Topic 3: Modulus and Conjugate
+
+- Conjugate of complex numbers
+- Modulus
+
+## Topic 4: Polar Representation
+
+- Argand plane
+- Polar form
+
+---
+
+# Chapter 4: Binary Numbers
+
+## Topic 1: Number Systems
+
+- Decimal system
+- Binary system
+
+## Topic 2: Conversion of Numbers
+
+- Decimal to binary
+- Binary to decimal
+
+## Topic 3: Binary Operations
+
+- Binary addition
+- Binary subtraction
+- Binary multiplication
+
+---
+
+# Chapter 5: Sequences and Series
+
+## Topic 1: Sequences
+
+- Arithmetic sequence
+- Geometric sequence
+
+## Topic 2: Arithmetic Progression
+
+- nth term
+- Sum of n terms
+
+## Topic 3: Geometric Progression
+
+- nth term
+- Sum of GP
+
+## Topic 4: Special Series
+
+- Harmonic progression
+- Infinite GP
+
+---
+
+# Chapter 6: Quadratic Equations and Inequalities
+
+## Topic 1: Quadratic Equations
+
+- Standard form
+- Nature of roots
+- Discriminant
+
+## Topic 2: Relations Between Roots
+
+- Sum and product of roots
+
+## Topic 3: Solution Methods
+
+- Factorization
+- Completing square
+- Quadratic formula
+
+## Topic 4: Quadratic Inequalities
+
+- Solving inequalities
+- Graphical interpretation
+
+---
+
+# Chapter 7: Permutations and Combinations
+
+## Topic 1: Fundamental Counting Principle
+
+## Topic 2: Permutations
+
+- Linear permutations
+- Circular permutations
+
+## Topic 3: Combinations
+
+- Selection problems
+
+## Topic 4: Applications
+
+- Arrangements with restrictions
+
+# Chapter 8: Binomial Theorem
+
+## Topic 1: Binomial Expression and Expansion
+
+Subtopics
+
+- Definition of binomial expression
+- Expansion of (a+b)n(a+b)^n(a+b)n
+- Pattern of coefficients in expansion
+- Structure of binomial expansion
+
+## Topic 2: Binomial Theorem
+
+Subtopics
+
+- Statement of binomial theorem
+- Formula of expansion
+- Concept of factorials
+- Role of binomial coefficients
+
+## Topic 3: Binomial Coefficients
+
+Subtopics
+
+- Definition of nCrnCrnCr
+- Properties of binomial coefficients
+- Symmetry property
+- Pascal’s triangle
+- Sum of binomial coefficients
+
+## Topic 4: General Term
+
+Subtopics
+
+- Formula for general term Tr+1T_{r+1}Tr+1
+- Finding specific term in expansion
+- Term containing specific variable power
+
+## Topic 5: Middle Terms
+
+Subtopics
+
+- Middle term for even power expansions
+- Middle terms for odd power expansions
+- Identifying central terms
+
+## Topic 6: Applications
+
+Subtopics
+
+- Approximation using binomial theorem
+- Simplification problems
+- Finding numerical values
+
+---
+
+# Chapter 9: Logarithm
+
+## Topic 1: Basic Concept of Logarithm
+
+Subtopics
+
+- Definition of logarithm
+- Relation between exponent and logarithm
+- Base of logarithm
+
+## Topic 2: Laws of Logarithms
+
+Subtopics
+
+- Product law
+- Quotient law
+- Power law
+- Logarithm of reciprocal
+
+## Topic 3: Change of Base
+
+Subtopics
+
+- Change of base formula
+- Conversion between bases
+- Simplification using base change
+
+## Topic 4: Logarithmic Equations
+
+Subtopics
+
+- Solving logarithmic equations
+- Transforming exponential equations to logarithmic form
+- Simplification of logarithmic expressions
+
+## Topic 5: Applications of Logarithms
+
+Subtopics
+
+- Evaluation of expressions
+- Use in large number calculations
+
+---
+
+# Chapter 10: Matrices
+
+## Topic 1: Introduction to Matrices
+
+Subtopics
+
+- Definition of matrix
+- Order of matrix
+- Elements of matrix
+
+## Topic 2: Types of Matrices
+
+Subtopics
+
+- Row matrix
+- Column matrix
+- Square matrix
+- Zero matrix
+- Diagonal matrix
+- Identity matrix
+- Scalar matrix
+
+## Topic 3: Matrix Operations
+
+Subtopics
+
+- Addition of matrices
+- Subtraction of matrices
+- Scalar multiplication
+
+## Topic 4: Matrix Multiplication
+
+Subtopics
+
+- Conditions for multiplication
+- Multiplication rules
+- Properties of matrix multiplication
+
+## Topic 5: Transpose of Matrix
+
+Subtopics
+
+- Definition of transpose
+- Properties of transpose
+
+---
+
+# Chapter 11: Determinants
+
+## Topic 1: Determinant Concept
+
+Subtopics
+
+- Determinant of 2×2 matrix
+- Determinant of 3×3 matrix
+
+## Topic 2: Properties of Determinants
+
+Subtopics
+
+- Effect of row/column interchange
+- Multiplying rows or columns
+- Linear properties
+
+## Topic 3: Minors and Cofactors
+
+Subtopics
+
+- Minor of element
+- Cofactor of element
+- Cofactor matrix
+
+## Topic 4: Adjoint and Inverse
+
+Subtopics
+
+- Adjoint of matrix
+- Inverse of matrix
+- Conditions for inverse existence
+
+## Topic 5: Solving Linear Equations
+
+Subtopics
+
+- Cramer’s rule
+- Solution of simultaneous equations
+
+---
+
+# Chapter 12: Measurement of Angles and Trigonometric Ratios
+
+## Topic 1: Measurement of Angles
+
+Subtopics
+
+- Degree system
+- Radian system
+- Conversion between degree and radian
+
+## Topic 2: Trigonometric Ratios
+
+Subtopics
+
+- Sine
+- Cosine
+- Tangent
+- Cosecant
+- Secant
+- Cotangent
+
+## Topic 3: Trigonometric Identities
+
+Subtopics
+
+- Fundamental identities
+- Reciprocal identities
+- Pythagorean identities
+
+## Topic 4: Trigonometric Equations
+
+Subtopics
+
+- Solving basic trigonometric equations
+- Solutions in specific intervals
+
+---
+
+# Chapter 13: Inverse Trigonometric Functions
+
+## Topic 1: Concept of Inverse Trigonometry
+
+Subtopics
+
+- Definition of inverse trigonometric functions
+- Notation
+
+## Topic 2: Domains and Ranges
+
+Subtopics
+
+- Principal values
+- Restricted domains
+
+## Topic 3: Graphs of Inverse Trigonometric Functions
+
+## Topic 4: Identities
+
+Subtopics
+
+- Basic identities
+- Transformations involving inverse trig functions
+
+## Topic 5: Simplification Problems
+
+Subtopics
+
+- Evaluating inverse trig expressions
+
+---
+
+# Chapter 14: Height and Distance
+
+## Topic 1: Trigonometry Applications
+
+Subtopics
+
+- Practical applications of trigonometry
+- Angle measurement in real problems
+
+## Topic 2: Angle of Elevation
+
+Subtopics
+
+- Concept of angle of elevation
+- Problem solving
+
+## Topic 3: Angle of Depression
+
+Subtopics
+
+- Concept of angle of depression
+- Practical problems
+
+## Topic 4: Real-life Applications
+
+Subtopics
+
+- Tower and building problems
+- Distance measurement problems
+
+---
+
+# Chapter 15: Properties of Triangles
+
+## Topic 1: Basic Triangle Concepts
+
+Subtopics
+
+- Types of triangles
+- Triangle sides and angles
+
+## Topic 2: Sine Rule
+
+Subtopics
+
+- Statement of sine rule
+- Applications
+
+## Topic 3: Cosine Rule
+
+Subtopics
+
+- Statement of cosine rule
+- Finding sides and angles
+
+## Topic 4: Area of Triangle
+
+Subtopics
+
+- Area using sine formula
+- Heron’s formula
+
+## Topic 5: Radii of Triangle
+
+Subtopics
+
+- Circumradius
+- Inradius
+
+# Chapter 16: Coordinate System and Straight Lines
+
+## Topic 1: Cartesian Coordinate System
+
+Subtopics
+
+- Rectangular coordinate system
+- Cartesian plane and quadrants
+- Coordinates of a point
+- Distance between two points
+- Section formula
+- Midpoint formula
+
+## Topic 2: Area in Coordinate Geometry
+
+Subtopics
+
+- Area of triangle using coordinates
+- Collinearity of three points
+
+## Topic 3: Slope of a Line
+
+Subtopics
+
+- Definition of slope
+- Slope of line joining two points
+- Angle of inclination of a line
+- Relationship between slope and angle
+
+## Topic 4: Equation of Straight Line
+
+Subtopics
+
+- Slope–intercept form
+- Point–slope form
+- Two-point form
+- Intercept form
+- General form of straight line
+
+## Topic 5: Parallel and Perpendicular Lines
+
+Subtopics
+
+- Conditions for parallel lines
+- Conditions for perpendicular lines
+
+## Topic 6: Distance of Point from Line
+
+Subtopics
+
+- Formula for perpendicular distance
+- Applications in geometry problems
+
+---
+
+# Chapter 17: Circle
+
+## Topic 1: Basic Concepts of Circle
+
+Subtopics
+
+- Definition of circle
+- Radius and diameter
+- Centre of circle
+
+## Topic 2: Equation of Circle
+
+Subtopics
+
+- Standard equation of circle
+- General equation of circle
+
+## Topic 3: Circle with Given Conditions
+
+Subtopics
+
+- Circle with given centre and radius
+- Circle passing through a point
+
+## Topic 4: Tangent and Normal
+
+Subtopics
+
+- Equation of tangent to circle
+- Condition of tangency
+- Point of contact
+
+## Topic 5: Relative Position of Line and Circle
+
+Subtopics
+
+- Secant
+- Tangent
+- Non-intersecting line
+
+---
+
+# Chapter 18: Conic Sections
+
+## Topic 1: Introduction to Conic Sections
+
+Subtopics
+
+- Definition of conic sections
+- Focus and directrix
+
+## Topic 2: Parabola
+
+Subtopics
+
+- Standard equation of parabola
+- Vertex and focus
+- Axis of parabola
+- Latus rectum
+
+## Topic 3: Ellipse
+
+Subtopics
+
+- Standard equation of ellipse
+- Major and minor axes
+- Foci and eccentricity
+
+## Topic 4: Hyperbola
+
+Subtopics
+
+- Standard equation of hyperbola
+- Transverse and conjugate axes
+- Asymptotes
+
+---
+
+# Chapter 19: Three Dimensional Geometry
+
+## Topic 1: Basics of 3D Geometry
+
+Subtopics
+
+- Coordinate axes in space
+- Coordinates of a point in space
+
+## Topic 2: Distance Formula in 3D
+
+Subtopics
+
+- Distance between two points
+- Section formula in space
+
+## Topic 3: Direction Cosines and Ratios
+
+Subtopics
+
+- Definition of direction cosines
+- Direction ratios
+- Relationship between direction cosines
+
+## Topic 4: Equation of Line in Space
+
+Subtopics
+
+- Vector form of line
+- Cartesian form of line
+
+---
+
+# Chapter 20: Limits, Continuity and Differentiability
+
+## Topic 1: Concept of Limits
+
+Subtopics
+
+- Limit of function
+- Left-hand limit
+- Right-hand limit
+
+## Topic 2: Algebra of Limits
+
+Subtopics
+
+- Limit of sum and difference
+- Limit of product and quotient
+
+## Topic 3: Standard Limits
+
+Subtopics
+
+- Basic trigonometric limits
+- Exponential limits
+
+## Topic 4: Continuity
+
+Subtopics
+
+- Definition of continuity
+- Continuity at a point
+- Continuity in interval
+
+## Topic 5: Differentiability
+
+Subtopics
+
+- Definition of derivative
+- Relationship between continuity and differentiability
+
+---
+
+# Chapter 21: Differentiation
+
+## Topic 1: Derivative Concept
+
+Subtopics
+
+- Definition of derivative
+- Geometrical meaning of derivative
+
+## Topic 2: Derivatives of Functions
+
+Subtopics
+
+- Derivative of polynomial functions
+- Derivative of trigonometric functions
+- Derivative of exponential functions
+- Derivative of logarithmic functions
+
+## Topic 3: Rules of Differentiation
+
+Subtopics
+
+- Product rule
+- Quotient rule
+- Chain rule
+
+## Topic 4: Higher Order Derivatives
+
+Subtopics
+
+- Second derivative
+- nth derivative
+
+---
+
+# Chapter 22: Application of Derivatives
+
+## Topic 1: Increasing and Decreasing Functions
+
+Subtopics
+
+- First derivative test
+- Monotonic functions
+
+## Topic 2: Maxima and Minima
+
+Subtopics
+
+- Local maximum
+- Local minimum
+- Second derivative test
+
+## Topic 3: Tangent and Normal
+
+Subtopics
+
+- Equation of tangent
+- Equation of normal
+
+## Topic 4: Rate of Change
+
+Subtopics
+
+- Instantaneous rate of change
+- Applications in motion problems
+
+# Chapter 23: Indefinite Integrals
+
+## Topic 1: Concept of Integration
+
+Subtopics
+
+- Integration as inverse of differentiation
+- Integral notation
+- Integrand and variable of integration
+
+## Topic 2: Standard Integrals
+
+Subtopics
+
+- Basic algebraic integrals
+- Trigonometric integrals
+- Exponential integrals
+- Logarithmic integrals
+
+## Topic 3: Properties of Indefinite Integrals
+
+Subtopics
+
+- Linearity property
+- Constant of integration
+- Sum and difference rule
+
+## Topic 4: Methods of Integration
+
+Subtopics
+
+- Substitution method
+- Integration by parts
+- Integration using identities
+
+## Topic 5: Integration of Special Functions
+
+Subtopics
+
+- Rational functions
+- Trigonometric expressions
+- Exponential functions
+
+---
+
+# Chapter 24: Definite Integrals
+
+## Topic 1: Concept of Definite Integral
+
+Subtopics
+
+- Definition of definite integral
+- Upper and lower limits
+
+## Topic 2: Fundamental Properties
+
+Subtopics
+
+- Interchanging limits
+- Integral of symmetric functions
+- Splitting integrals
+
+## Topic 3: Evaluation of Definite Integrals
+
+Subtopics
+
+- Using substitution
+- Using symmetry properties
+
+## Topic 4: Fundamental Theorem of Calculus
+
+Subtopics
+
+- Relationship between derivative and integral
+- Evaluation using antiderivative
+
+---
+
+# Chapter 25: Areas Bounded by Regions
+
+## Topic 1: Area Under Curve
+
+Subtopics
+
+- Area between curve and x-axis
+- Area between curve and y-axis
+
+## Topic 2: Area Between Two Curves
+
+Subtopics
+
+- Area between two functions
+- Intersection of curves
+
+## Topic 3: Applications
+
+Subtopics
+
+- Finding area of regions
+- Geometrical applications
+
+---
+
+# Chapter 26: Differential Equations
+
+## Topic 1: Basic Concepts
+
+Subtopics
+
+- Definition of differential equation
+- Order of differential equation
+- Degree of differential equation
+
+## Topic 2: Formation of Differential Equations
+
+Subtopics
+
+- Forming differential equation by eliminating constants
+
+## Topic 3: Solution of Differential Equations
+
+Subtopics
+
+- Variable separable equations
+- Homogeneous equations
+
+## Topic 4: Particular and General Solutions
+
+Subtopics
+
+- General solution
+- Particular solution
+
+---
+
+# Chapter 27: Vector Algebra
+
+## Topic 1: Basics of Vectors
+
+Subtopics
+
+- Definition of vector
+- Magnitude of vector
+- Direction of vector
+
+## Topic 2: Types of Vectors
+
+Subtopics
+
+- Unit vector
+- Zero vector
+- Collinear vectors
+
+## Topic 3: Vector Operations
+
+Subtopics
+
+- Addition of vectors
+- Subtraction of vectors
+- Scalar multiplication
+
+## Topic 4: Scalar (Dot) Product
+
+Subtopics
+
+- Definition of dot product
+- Properties of dot product
+- Angle between vectors
+
+## Topic 5: Vector (Cross) Product
+
+Subtopics
+
+- Definition of cross product
+- Properties of cross product
+- Area using cross product
+
+---
+
+# Chapter 28: Statistics
+
+## Topic 1: Data and Classification
+
+Subtopics
+
+- Types of data
+- Frequency distribution
+
+## Topic 2: Measures of Central Tendency
+
+Subtopics
+
+- Arithmetic mean
+- Median
+- Mode
+
+## Topic 3: Measures of Dispersion
+
+Subtopics
+
+- Range
+- Variance
+- Standard deviation
+
+## Topic 4: Graphical Representation
+
+Subtopics
+
+- Histogram
+- Frequency polygon
+- Cumulative frequency curve
+
+---
+
+# Chapter 29: Probability
+
+## Topic 1: Basic Concepts
+
+Subtopics
+
+- Experiment and sample space
+- Events
+
+## Topic 2: Classical Probability
+
+Subtopics
+
+- Definition of probability
+- Equally likely events
+
+## Topic 3: Laws of Probability
+
+Subtopics
+
+- Addition theorem
+- Multiplication theorem
+
+## Topic 4: Conditional Probability
+
+Subtopics
+
+- Definition of conditional probability
+- Independent events
+
+## Topic 5: Bayes’ Theorem
+
+Subtopics
+
+- Concept of posterior probability
+- Applications
+
+---
+
+# Chapter 30: Miscellaneous (Mixed Mathematics)
+
+## Topic 1: Arithmetic Problems
+
+Subtopics
+
+- Ratio and proportion
+- Percentage
+- Profit and loss
+
+## Topic 2: Time and Work
+
+Subtopics
+
+- Work rate problems
+- Combined work
+
+## Topic 3: Time, Speed and Distance
+
+Subtopics
+
+- Relative speed
+- Average speed
+
+## Topic 4: Number System Applications
+
+Subtopics
+
+- Divisibility rules
+- Remainder problems
+
+## Topic 5: Mixed Quantitative Problems
+
+Subtopics
+
+- Logical quantitative problems
+- Multi-concept numerical problems

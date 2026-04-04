@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+neo4j
+python-dotenv
+asyncpg
+sqlalchemy
+greenlet
+qdrant-client
+redis
+arq
+google-genai
