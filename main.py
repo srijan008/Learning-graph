@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from fastapi.middleware.cors import CORSMiddleware
-from db.neo4j_client import verify_connectivity
+from fastapi.middleware.cors import CORSMiddleware
 from routers.graph import router as graph_router
 from routers.learning import router as learning_router
 from routers.practice import router as practice_router
@@ -20,24 +20,19 @@ from routers.journey import router as journey_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: verify Neo4j is reachable
-    verify_connectivity()
-    print("[OK] Neo4j connection verified.")
-    
     # Initialize PostgreSQL tables
     from db.postgres_client import init_db
     await init_db()
     print("[OK] PostgreSQL tables initialized.")
     yield
-    # Shutdown: nothing special needed (driver cleans up sessions)
+    # Shutdown: nothing special needed
 
 
 app = FastAPI(
     title="Learning Graph API",
     description=(
-        "Graph-based curriculum API powered by Neo4j. "
-        "Given a topic (and optional subtopic) returns immediate neighbour nodes: "
-        "prerequisites, subtopics, parent, and what this topic unlocks."
+        "Unified PostgreSQL-based curriculum API. "
+        "Returns curriculum hierarchy, topic neighbours, and textbook context."
     ),
     version="1.0.0",
     lifespan=lifespan,

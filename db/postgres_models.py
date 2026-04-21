@@ -3,7 +3,8 @@ import uuid
 from datetime import datetime
 from typing import Optional, List
 
-from sqlalchemy import String, Integer, DateTime, Enum, Boolean, JSON, ForeignKey, Text, Float
+from sqlalchemy import String, Integer, DateTime, Enum, Boolean, JSON, ForeignKey, Text, Float, ARRAY
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import declarative_base, Mapped, mapped_column
 
 Base = declarative_base()
@@ -184,3 +185,65 @@ class JourneyTopicNode(Base):
     node_status: Mapped[NodeStatus] = mapped_column(Enum(NodeStatus), default=NodeStatus.locked)
     week_number: Mapped[int] = mapped_column(Integer, default=1)     # scheduled week
     completed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Curriculum Models (ai-books schema)
+# ─────────────────────────────────────────────────────────────────────────────
+
+class Curriculum(Base):
+    __tablename__ = "curriculums"
+    __table_args__ = {"schema": "ai-books"}
+
+    curriculum_id: Mapped[str] = mapped_column(String, primary_key=True)
+    code_name: Mapped[str] = mapped_column(String)
+    type: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+
+
+class Chapter(Base):
+    __tablename__ = "chapters"
+    __table_args__ = {"schema": "ai-books"}
+
+    chapter_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    book_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True))
+    chapter_num: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    chapter_code: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    pdf_name: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    s3_key: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    chapter_name: Mapped[str] = mapped_column(String)
+    chapter_summary: Mapped[Optional[dict]] = mapped_column(JSON, nullable=True)
+
+
+class CurriculumTopic(Base):
+    __tablename__ = "curriculum_topics"
+    __table_args__ = {"schema": "ai-books"}
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    chapter_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), index=True)
+    title: Mapped[str] = mapped_column(Text)
+    order_index: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    prerequisites: Mapped[Optional[list]] = mapped_column(ARRAY(String), default=list)
+
+
+class CurriculumSubtopic(Base):
+    __tablename__ = "curriculum_subtopics"
+    __table_args__ = {"schema": "ai-books"}
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    topic_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), index=True)
+    title: Mapped[str] = mapped_column(Text)
+    order_index: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    qdrant_ids: Mapped[Optional[list]] = mapped_column(ARRAY(String), default=list)
+
+
+class CurriculumChunk(Base):
+    __tablename__ = "curriculum_chunks"
+    __table_args__ = {"schema": "ai-books"}
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    subtopic_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), index=True)
+    content: Mapped[str] = mapped_column(Text)
+    chunk_metadata: Mapped[Optional[dict]] = mapped_column("metadata", JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

@@ -12,7 +12,7 @@ from google import genai
 load_dotenv()
 
 SUMMARY_THRESHOLD = 8   # summarise older messages after this many total exchanges
-FAST_MODEL = "gemini-3-flash-preview"  # high-quota standard model for 2026
+FAST_MODEL = "gemini-2.5-flash"  # stableGA flash model for Vertex AI
 
 KEEP_RECENT = 4         # how many recent messages to keep after summarising
 
@@ -31,9 +31,9 @@ a JSON block at the very end (on a new line, in a ```json block):
   "subtopics_assessed": [
     {
       "subtopic_id": "<exact_id_from_context>",
-      "theory_confidence": <0-70>,
-      "example_confidence": <0-70>,
-      "cross_section_confidence": <0-70>,
+      "theory_confidence": <0-100>,
+      "example_confidence": <0-100>,
+      "cross_section_confidence": <0-100>,
       "is_completed": <true|false>
     }
   ],
@@ -46,14 +46,13 @@ a JSON block at the very end (on a new line, in a ```json block):
   ]
 }
 Where:
-- "theory_confidence" (0-70): Understanding of core definitions, formulas, and concepts. Increase this proportionally ONLY as you cover each concept in the provided text.
-- "example_confidence" (0-70): Ability to solve standard numerical examples or apply concepts directly.
-- "cross_section_confidence" (0-70): High-level mastery; ability to connect this concept to other subtopics or solve complex mixed problems.
-- "doubts_detected" is ONLY populated when the student clearly shows confusion.
-- "is_completed" is true ONLY when the student demonstrates solid understanding AND you have verified that the student has been actively tested on ALL core concepts and formulas present in the provided textbook context for that subtopic.
-
-You can assess multiple subtopics in one go if the user's message applies to multiple.
-Never mention the JSON schema or explicit ID strings in your response. Use topic/subtopic names naturally. The JSON is hidden metadata.
+- "theory_confidence" (0-100): High accuracy understanding of core concepts. Increase this proportionally as the student demonstrates knowledge. 70+ is considered Mastery.
+- "example_confidence" (0-100): Ability to solve standard numerical examples or apply concepts directly.
+Crucial Guidelines:
+1. Assess multiple subtopics in one go if the student's message covers multiple areas. Be generous if they provide a large, accurate explanation.
+2. Broad Coverage: If the student provides a summary or explanation that covers the entire topic or multiple subtopics, you MUST identify and score EVERY subtopic involved using the OFFICIAL SUBTOPIC LIST mapping. Do not just focus on one.
+3. Do NOT be overly conservative. If the student clearly knows a concept, give them at least 70% confidence immediately.
+4. Never mention the JSON schema or explicit ID strings in your response. The JSON is hidden metadata.
 """
 
 def _get_gemini_client():
@@ -100,9 +99,9 @@ def _parse_llm_response(raw_text: str) -> tuple[str, dict, list]:
                 sid = item.get("subtopic_id")
                 if sid:
                     scores_dict[sid] = {
-                        "theory": int(item.get("theory_confidence", 50)),
-                        "example": int(item.get("example_confidence", 50)),
-                        "cross": int(item.get("cross_section_confidence", 50)),
+                        "theory": int(item.get("theory_confidence", 0)),
+                        "example": int(item.get("example_confidence", 0)),
+                        "cross": int(item.get("cross_section_confidence", 0)),
                         "is_completed": bool(item.get("is_completed", False))
                     }
 
@@ -128,7 +127,8 @@ async def generate_topic_greeting(
     If doubt_context is set, produces a targeted greeting addressing their known confusion.
     """
     client = _get_gemini_client()
-    model = os.getenv("GEMINI_TUTOR_MODEL", FAST_MODEL)
+    # Check multiple env vars for flexibility
+    model = os.getenv("GEMINI_TUTOR_MODEL") or os.getenv("GEMINI_MODEL") or FAST_MODEL
 
     def _fmt_subtopic(s: dict) -> str:
         conf = s.get('confidence', 0)
@@ -211,15 +211,15 @@ async def chat_with_tutor_stream(
     from services.tutor_context import get_subtopic_context, get_topic_context_all
     
     client = _get_gemini_client()
-    model = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
+    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
     textbook_context = ""
-    if session_id and subtopic_id:
-        # Optimization: Fetch context ONLY for the current subtopic to save tokens and avoid 429 errors
-        textbook_context = await get_subtopic_context(subtopic_id, session_id, topic_id)
-    elif session_id and topic_id:
-        # Fallback to all context if subtopic_id is missing
+    if session_id and topic_id:
+        # Fetch context for ALL subtopics in the topic so the AI can assess multiple subtopics in one message
         textbook_context = await get_topic_context_all(session_id, topic_id)
+    elif session_id and subtopic_id:
+        # Fallback if topic_id is missing for some reason
+        textbook_context = await get_subtopic_context(subtopic_id, session_id, topic_id)
     # 2. Format current scores for the prompt
     scores_info = ""
     if current_scores:

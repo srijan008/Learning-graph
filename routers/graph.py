@@ -7,37 +7,54 @@ POST /graph/neighbours   → main neighbour lookup
 GET  /graph/topics       → list all topics (for autocomplete / debugging)
 GET  /graph/topic/{id}   → single topic detail
 """
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
+from typing import Optional, List
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.neo4j_client import get_session
+from db.postgres_client import engine, get_pg_session
+from db.postgres_models import Chapter, CurriculumTopic, CurriculumSubtopic, Curriculum
 from models.schemas import NeighboursRequest, NeighboursResponse, TopicNode, SequenceResponse
+from sqlalchemy import select, and_, or_, any_
 
 router = APIRouter(prefix="/graph", tags=["graph"])
 
 
 # ── Helpers ------------------------------------------------------------------
 
-def _row_to_topic(node) -> TopicNode | None:
-    """Convert a neo4j Node to a TopicNode. Returns None for None nodes."""
-    if node is None:
-        return None
+def _derive_metadata(pdf_name: str) -> dict:
+    """Derive subject, class, and curriculum from pdf_name."""
+    if not pdf_name:
+        return {"subject": "General", "class": "Other"}
     
-    # Neo4j Node objects can be converted to dict
-    node_data = dict(node)
+    name = pdf_name.lower()
+    # Class: l = 12, k = 11
+    class_level = "12" if name.startswith('l') else ("11" if name.startswith('k') else "Other")
     
-    # Topic and Chapter use 'name', Subtopic uses 'title'
-    name = node_data.get("name") or node_data.get("title") or ""
+    # Subject
+    subject = "Other"
+    if "physics" in name: subject = "Physics"
+    elif "chemistry" in name: subject = "Chemistry"
+    elif "biology" in name: subject = "Biology"
+    elif "zoology" in name: subject = "Zoology"
+    elif "botany" in name: subject = "Botany"
+    
+    return {"subject": subject, "class": class_level}
+
+
+def _model_to_topic(topic: CurriculumTopic, chapter: Chapter = None) -> TopicNode:
+    """Convert a CurriculumTopic model to a TopicNode schema."""
+    meta = _derive_metadata(chapter.pdf_name if chapter else "")
     
     return TopicNode(
-        topic_id=node_data.get("id") or node_data.get("topic_id") or "",
-        name=name,
-        level=node_data.get("level") or node_data.get("difficulty_level"),
-        subject=node_data.get("subject"),
-        chapter=node_data.get("chapter"),
-        difficulty=node_data.get("difficulty"),
-        estimated_hours=node_data.get("estimated_hours"),
-        description=node_data.get("description"),
-        order_index=node_data.get("order_index"),
+        topic_id=str(topic.id),
+        name=topic.title,
+        level=None, # TBD
+        subject=meta["subject"],
+        chapter=chapter.chapter_name if chapter else None,
+        difficulty=None,
+        estimated_hours=None,
+        description=None,
+        order_index=topic.order_index,
     )
 
 
@@ -127,81 +144,89 @@ def _fetch_neighbours(session, topic_id: str, include: list[str], limit: int) ->
 # ── Endpoints ----------------------------------------------------------------
 
 @router.post("/neighbours", response_model=NeighboursResponse)
-def get_neighbours(req: NeighboursRequest):
+async def get_neighbours(req: NeighboursRequest):
     """
-    Return the immediate graph neighbours of a topic (and optionally a subtopic).
-
-    - If only `topic` is given  → resolve that topic node and return its neighbours.
-    - If `subtopic` is also given → resolve the subtopic scoped to the topic's chapter,
-      then return *its* neighbours.
-
-    **Body parameters:**
-    | Field     | Type            | Default | Description |
-    |-----------|-----------------|---------|-------------|
-    | topic     | string          | —       | topic_id or human name (required) |
-    | subtopic  | string          | null    | optional subtopic_id or name |
-    | limit     | int (1–50)      | 10      | max nodes per neighbour list |
-    | include   | list of strings | all     | which types to return: `prerequisites`, `subtopics`, `parent`, `unlocks` |
+    Return the immediate graph neighbours of a topic via PostgreSQL.
     """
-    with get_session() as session:
-        # Step 1: resolve the primary topic
-        topic_node = _resolve_node(session, req.topic)
-        if topic_node is None:
-            raise HTTPException(
-                status_code=404,
-                detail=f"Topic '{req.topic}' not found. Use topic_id or name.",
+    async with engine.connect() as conn:
+        # Step 1: Resolve main topic
+        # Search by ID or title
+        stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+            or_(
+                CurriculumTopic.id == req.topic,
+                CurriculumTopic.title.ilike(req.topic)
             )
-
-        # Step 2: optionally resolve subtopic, scoped to same chapter/subject
-        if req.subtopic:
-            chapter = topic_node.get("chapter", "")
-            subject = topic_node.get("subject", "")
-
-            result = session.run(
-                """
-                MATCH (t:Topic)
-                WHERE (t.id = $sub OR t.topic_id = $sub OR toLower(t.name) = toLower($sub))
-                  AND (t.chapter = $chapter OR t.subject = $subject)
-                RETURN t
-                LIMIT 1
-                """,
-                sub=req.subtopic,
-                chapter=chapter,
-                subject=subject,
-            )
-            rec = result.single()
-
-            if rec is None:
-                sub_node = _resolve_node(session, req.subtopic)
-                if sub_node is None:
-                    raise HTTPException(
-                        status_code=404,
-                        detail=f"Subtopic '{req.subtopic}' not found.",
-                    )
-            else:
-                sub_node = rec["t"]
-
-            target_node = sub_node
-        else:
-            target_node = topic_node
-
-        # Step 3: fetch neighbours — only requested types, capped at limit
-        target_topic = _row_to_topic(target_node)
-        neighbours = _fetch_neighbours(
-            session,
-            target_topic.topic_id,
-            include=req.include,
-            limit=req.limit,
         )
+        res = await conn.execute(stmt)
+        row = res.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail=f"Topic '{req.topic}' not found.")
+        
+        main_topic, main_chapter = row
+        target_node = _model_to_topic(main_topic, main_chapter)
+
+        # Step 2: Fetch neighbours
+        want = set(req.include)
+        limit = req.limit or 10
+        
+        # Prerequisites
+        prerequisites = []
+        if "prerequisites" in want and main_topic.prerequisites:
+            pre_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+                CurriculumTopic.id.in_(main_topic.prerequisites)
+            ).limit(limit)
+            pre_res = await conn.execute(pre_stmt)
+            prerequisites = [_model_to_topic(t, c) for t, c in pre_res]
+
+        # Subtopics
+        subtopics = []
+        if "subtopics" in want:
+            sub_stmt = select(CurriculumSubtopic).where(
+                CurriculumSubtopic.topic_id == main_topic.id
+            ).order_by(CurriculumSubtopic.order_index).limit(limit)
+            sub_res = await conn.execute(sub_stmt)
+            subtopics = [TopicNode(topic_id=str(s.id), name=s.title, order_index=s.order_index) for s in sub_res.scalars()]
+
+        # Unlocks (topics that have THIS topic in their prerequisites array)
+        unlocks = []
+        if "unlocks" in want:
+            unl_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+                main_topic.id == any_(CurriculumTopic.prerequisites)
+            ).limit(limit)
+            unl_res = await conn.execute(unl_stmt)
+            unlocks = [_model_to_topic(t, c) for t, c in unl_res]
+
+        # Next/Prev in same chapter
+        next_nodes = []
+        if "next" in want:
+            nxt_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+                and_(
+                    CurriculumTopic.chapter_id == main_topic.chapter_id,
+                    CurriculumTopic.order_index > main_topic.order_index
+                )
+            ).order_by(CurriculumTopic.order_index).limit(limit)
+            nxt_res = await conn.execute(nxt_stmt)
+            next_nodes = [_model_to_topic(t, c) for t, c in nxt_res]
+
+        prev_nodes = []
+        if "previous" in want:
+            prv_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+                and_(
+                    CurriculumTopic.chapter_id == main_topic.chapter_id,
+                    CurriculumTopic.order_index < main_topic.order_index
+                )
+            ).order_by(CurriculumTopic.order_index.desc()).limit(limit)
+            prv_res = await conn.execute(prv_stmt)
+            prev_nodes = [_model_to_topic(t, c) for t, c in prv_res]
 
         return NeighboursResponse(
-            node=target_topic,
-            prerequisites=neighbours["prerequisites"],
-            subtopics=neighbours["subtopics"],
-            parent=neighbours["parent"],
-            unlocks=neighbours["unlocks"],
-            next=neighbours["next"],
-            previous=neighbours["previous"],
+            node=target_node,
+            prerequisites=prerequisites,
+            subtopics=subtopics,
+            parent=None, # Simplified for now
+            unlocks=unlocks,
+            next=next_nodes,
+            previous=prev_nodes,
         )
 
 
@@ -232,142 +257,159 @@ import logging
 logger = logging.getLogger(__name__)
 
 @router.get("/curriculum")
-async def get_curriculum():
+async def get_curriculum(curriculum: Optional[str] = "neet", db: AsyncSession = Depends(get_pg_session)):
     """
-    Return the full Curriculum → Subject → Chapter → Topic hierarchy from PostgreSQL.
+    Return filtered Curriculum → Subject → Class → Chapter → Topic hierarchy from PostgreSQL (ai-books).
+    Defaults to NEET for performance.
     """
-    async with engine.connect() as conn:
-        res_sub = await conn.execute(text('SELECT id, name FROM "neet-books".subjects ORDER BY name'))
-        subjects_data = res_sub.mappings().all()
+    # 1. Fetch Chapters and their Topics
+    # We filter by curriculum pattern in pdf_name
+    curr_pattern = f"%{curriculum.lower()}%" if curriculum else "%neet%"
+    
+    chapters_res = await db.execute(
+        select(Chapter)
+        .where(Chapter.pdf_name.ilike(curr_pattern))
+        .order_by(Chapter.chapter_num)
+    )
+    chapters_list = chapters_res.scalars().all()
+    # Store by string ID for the hierarchy builder
+    chapters = {str(c.chapter_id): c for c in chapters_list}
+    
+    # Use UUID objects for the database query
+    chapter_uuids = [c.chapter_id for c in chapters_list]
+    if not chapter_uuids:
+        return []
 
-        res_ch = await conn.execute(text('SELECT id, name, subject_id FROM "neet-books".chapters ORDER BY order_index, name'))
-        chapters_data = res_ch.mappings().all()
+    topics_res = await db.execute(
+        select(CurriculumTopic)
+        .where(CurriculumTopic.chapter_id.in_(chapter_uuids))
+        .order_by(CurriculumTopic.order_index)
+    )
+    topics = topics_res.scalars().all()
         
-        res_tp = await conn.execute(text('SELECT id, title AS name, chapter_id FROM "neet-books".topics ORDER BY title'))
-        topics_data = res_tp.mappings().all()
+    # 2. Derive hierarchy
+    hierarchy = {} # {curriculum: {subject: {class: {chapter: [topics]}}}}
+    
+    # Group topics by chapter
+    chapter_topics = {}
+    for tp in topics:
+        cid = str(tp.chapter_id)
+        if cid not in chapter_topics: chapter_topics[cid] = []
+        chapter_topics[cid].append({"id": str(tp.id), "name": tp.title})
         
-        # Track topics by chapter
-        chapter_topics = {}
-        for tp in topics_data:
-            cid = str(tp["chapter_id"])
-            if cid not in chapter_topics:
-                chapter_topics[cid] = []
-            chapter_topics[cid].append({"id": str(tp["id"]), "name": tp["name"]})
+    for cid, ch in chapters.items():
+        meta = _derive_metadata(ch.pdf_name)
+        curr_name = "NEET" # Default for now
+        sub_name = meta["subject"]
+        class_name = f"Class {meta['class']}"
+        
+        if curr_name not in hierarchy: hierarchy[curr_name] = {}
+        if sub_name not in hierarchy[curr_name]: hierarchy[curr_name][sub_name] = {}
+        if class_name not in hierarchy[curr_name][sub_name]: hierarchy[curr_name][sub_name][class_name] = []
+        
+        hierarchy[curr_name][sub_name][class_name].append({
+            "id": cid,
+            "name": ch.chapter_name,
+            "topics": chapter_topics.get(cid, [])
+        })
+
+    # 3. Format as nested list for frontend
+    result = []
+    for curr, subjects in hierarchy.items():
+        curr_node = {"id": curr, "name": f"{curr} Curriculum", "subjects": []}
+        for sub, classes in subjects.items():
+            # Combine all chapters from all classes (11 and 12) into one subject list
+            all_chapters = []
+            for cls_name, chapters_list in classes.items():
+                all_chapters.extend(chapters_list)
             
-        # Track chapters by subject
-        subject_chapters = {}
-        for ch in chapters_data:
-            sid = str(ch["subject_id"])
-            if sid not in subject_chapters:
-                subject_chapters[sid] = []
-            subject_chapters[sid].append({
-                "id": str(ch["id"]),
-                "name": ch["name"],
-                "topics": chapter_topics.get(str(ch["id"]), [])
-            })
+            # Sort chapters by name or number if needed
+            all_chapters.sort(key=lambda x: x.get("name", ""))
             
-        # Build subjects list
-        curriculum_subjects = []
-        for sub in subjects_data:
-            curriculum_subjects.append({
-                "id": str(sub["id"]),
-                "name": sub["name"],
-                "chapters": subject_chapters.get(str(sub["id"]), [])
-            })
-            
-        # Return as 4-level structure with dummy NEET curriculum at root
-        return [{
-            "id": "NEET",
-            "name": "NEET Curriculum",
-            "subjects": curriculum_subjects
-        }]
+            sub_node = {
+                "id": sub, 
+                "name": sub, 
+                "chapters": all_chapters
+            }
+            curr_node["subjects"].append(sub_node)
+        result.append(curr_node)
+        
+    return result
 
 @router.get("/topic/{topic_id}/subtopics")
-async def get_topic_subtopics(topic_id: str):
+async def get_topic_subtopics(topic_id: str, db: AsyncSession = Depends(get_pg_session)):
     """
-    Return subtopics for a given topic ID from PostgreSQL.
+    Return subtopics for a given topic ID from PostgreSQL (ai-books).
     """
-    try:
-        async with engine.connect() as conn:
-            # Query subtopics table
-            res = await conn.execute(
-                text('SELECT id, title FROM "neet-books".subtopics WHERE topic_id = :tid ORDER BY title'),
-                {"tid": topic_id}
-            )   
-            rows = res.mappings().all()
-            # Map 'title' to 'name' for frontend compatibility
-            subtopics = [{"id": str(r["id"]), "name": r["title"]} for r in rows]
-            
-            if not subtopics:
-                # Fallback: Check if topic_id is actually a topic
-                res_tp = await conn.execute(
-                    text('SELECT id, name FROM "neet-books".topics WHERE id = :tid'),
-                    {"tid": topic_id}
-                )
-                tp = res_tp.mappings().first()
-                if tp:
-                    subtopics = [{"id": str(tp["id"]), "name": tp["name"]}]
-            
-            return {"topic_id": topic_id, "subtopics": subtopics}
-    except Exception as e:
-        logger.error(f"Error in get_topic_subtopics: {e}")
-        # If subtopics table doesn't work, fallback to the ID itself
-        return {"topic_id": topic_id, "subtopics": [{"id": topic_id, "name": "Topic Content"}]}
+    res = await db.execute(
+        select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id == topic_id).order_by(CurriculumSubtopic.order_index)
+    )
+    rows = res.scalars().all()
+    subtopics = [{"id": str(r.id), "name": r.title} for r in rows]
+    return {"topic_id": topic_id, "subtopics": subtopics}
 
 @router.get("/topic/{topic_id}")
-async def get_topic(topic_id: str):
-    """Return a single Topic node by its ID from Postgres."""
-    async with engine.connect() as conn:
-        res = await conn.execute(
-            text('SELECT id, title AS name, chapter_id FROM "neet-books".topics WHERE id = :tid'),
-            {"tid": topic_id}
-        )
-        row = res.mappings().first()
-        if not row:
-            raise HTTPException(status_code=404, detail="Topic not found")
-        return {
-            "id": str(row["id"]),
-            "topic_id": str(row["id"]),
-            "name": row["name"],
-            "chapter_id": str(row["chapter_id"])
-        }
+async def get_topic(topic_id: str, db: AsyncSession = Depends(get_pg_session)):
+    """Return a single Topic node by its ID from Postgres (ai-books)."""
+    stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(CurriculumTopic.id == topic_id)
+    res = await db.execute(stmt)
+    row = res.fetchone()
+    if not row:
+        raise HTTPException(status_code=404, detail="Topic not found")
+    
+    topic, chapter = row
+    return {
+        "id": str(topic.id),
+        "topic_id": str(topic.id),
+        "name": topic.title,
+        "chapter_id": str(topic.chapter_id),
+        "chapter_name": chapter.chapter_name
+    }
 
 
 @router.get("/topic/{topic_id}/next", response_model=SequenceResponse)
-def get_next_topics(topic_id: str, count: int = 1):
-    """Return the next `count` topics in the sequence after the given topic_id."""
-    with get_session() as session:
-        node = _resolve_node(session, topic_id)
-        if node is None:
-            raise HTTPException(status_code=404, detail=f"Topic '{topic_id}' not found.")
-        
-        result = session.run(
-            """
-            MATCH (t:Topic {id: $tid})-[:NEXT*1..%d]->(next_t:Topic)
-            RETURN next_t
-            """ % min(count, 50), # cap at 50 to prevent huge queries
-            tid=topic_id
+async def get_next_topics(topic_id: str, count: int = 1, db: AsyncSession = Depends(get_pg_session)):
+    """Return the next `count` topics in the sequence après following topic_id (same chapter)."""
+    # Resolve main topic
+    main_res = await db.execute(select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(CurriculumTopic.id == topic_id))
+    main = main_res.fetchone()
+    if not main:
+        raise HTTPException(status_code=404, detail=f"Topic '{topic_id}' not found.")
+    
+    m_topic, m_chapter = main
+    
+    # Fetch sequence
+    seq_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+        and_(
+            CurriculumTopic.chapter_id == m_topic.chapter_id,
+            CurriculumTopic.order_index > m_topic.order_index
         )
-        
-        sequence = [_row_to_topic(record["next_t"]) for record in result]
-        return SequenceResponse(node=_row_to_topic(node), sequence=sequence)
+    ).order_by(CurriculumTopic.order_index).limit(count)
+    
+    seq_res = await db.execute(seq_stmt)
+    sequence = [_model_to_topic(t, c) for t, c in seq_res]
+    return SequenceResponse(node=_model_to_topic(m_topic, m_chapter), sequence=sequence)
 
 @router.get("/topic/{topic_id}/previous", response_model=SequenceResponse)
-def get_previous_topics(topic_id: str, count: int = 1):
-    """Return the previous `count` topics in the sequence before the given topic_id."""
-    with get_session() as session:
-        node = _resolve_node(session, topic_id)
-        if node is None:
-            raise HTTPException(status_code=404, detail=f"Topic '{topic_id}' not found.")
-        
-        result = session.run(
-            """
-            MATCH (t:Topic {id: $tid})-[:PREVIOUS*1..%d]->(prev_t:Topic)
-            RETURN prev_t
-            """ % min(count, 50),
-            tid=topic_id
+async def get_previous_topics(topic_id: str, count: int = 1, db: AsyncSession = Depends(get_pg_session)):
+    """Return the previous `count` topics in the sequence before topic_id (same chapter)."""
+    # Resolve main topic
+    main_res = await db.execute(select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(CurriculumTopic.id == topic_id))
+    main = main_res.fetchone()
+    if not main:
+        raise HTTPException(status_code=404, detail=f"Topic '{topic_id}' not found.")
+    
+    m_topic, m_chapter = main
+    
+    # Fetch sequence
+    seq_stmt = select(CurriculumTopic, Chapter).join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id).where(
+        and_(
+            CurriculumTopic.chapter_id == m_topic.chapter_id,
+            CurriculumTopic.order_index < m_topic.order_index
         )
-        
-        sequence = [_row_to_topic(record["prev_t"]) for record in result]
-        return SequenceResponse(node=_row_to_topic(node), sequence=sequence)
+    ).order_by(CurriculumTopic.order_index.desc()).limit(count)
+    
+    seq_res = await db.execute(seq_stmt)
+    sequence = [_model_to_topic(t, c) for t, c in seq_res]
+    return SequenceResponse(node=_model_to_topic(m_topic, m_chapter), sequence=sequence)
 

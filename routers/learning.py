@@ -9,7 +9,6 @@ from pydantic import BaseModel
 
 from db.postgres_client import get_pg_session
 from db.postgres_models import UserSubtopicProgress, SubtopicStatus, TutorChatSession
-from db.neo4j_client import get_session as get_neo4j_session
 from routers.graph import get_next_topics
 
 router = APIRouter(prefix="/learning", tags=["learning"])
@@ -57,9 +56,15 @@ async def _get_or_create_session(
     topic_id: str,
 ) -> TutorChatSession:
     session_id = f"{user_id}_{topic_id}"
+    
+    # 1. First try: Select
     result = await db.execute(select(TutorChatSession).where(TutorChatSession.id == session_id))
     session = result.scalars().first()
-    if not session:
+    if session:
+        return session
+    
+    # 2. Not found: Try to create (handle race condition)
+    try:
         session = TutorChatSession(
             id=session_id,
             user_id=user_id,
@@ -70,8 +75,17 @@ async def _get_or_create_session(
             subtopic_scores={},
         )
         db.add(session)
-        await db.flush()
-    return session
+        await db.flush() # Flush to DB, triggers constraints
+        return session
+    except Exception:
+        # 3. If IntegrityError (duplicate), roll back flush and re-query
+        await db.rollback()
+        result = await db.execute(select(TutorChatSession).where(TutorChatSession.id == session_id))
+        session = result.scalars().first()
+        if not session:
+            # Should theoretically never happen unless DB is disappearing
+            raise HTTPException(status_code=500, detail="Failed to create or retrieve session.")
+        return session
 
 
 

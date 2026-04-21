@@ -27,7 +27,7 @@ connect_setup = {
     "statement_cache_size": 0,
     "prepared_statement_cache_size": 0,
     "server_settings": {
-        "search_path": '"neet-books",public',
+        "search_path": '"ai-books",public',
         "jit": "off"
     }
 }

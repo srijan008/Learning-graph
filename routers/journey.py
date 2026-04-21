@@ -23,9 +23,8 @@ from sqlalchemy import text
 
 from db.postgres_client import engine
 from db.postgres_models import (
-    LearningJourney, JourneyTopicNode, NodeStatus, JourneyStatus
+    LearningJourney, JourneyTopicNode, NodeStatus, JourneyStatus, CurriculumTopic
 )
-from db.neo4j_client import get_session
 
 router = APIRouter(prefix="/journey", tags=["journey"])
 
@@ -102,44 +101,52 @@ async def _generate_journey_nodes(
     topics = []
 
     async with engine.connect() as conn:
-        # Fetch subjects with their names
-        res_sub = await conn.execute(
-            text('SELECT id, name FROM "neet-books".subjects WHERE id = ANY(:ids)'),
-            {"ids": subject_ids},
-        )
-        subject_map = {str(r["id"]): r["name"] for r in res_sub.mappings().all()}
-
+        # In ai-books, 'subjects' are derived from pdf_name or we can use Curryculum/Books
+        # Journey logic was using 'subject_ids' which might correspond to 'book_id' in ai-books chapters
+        
         # Fetch chapters ordered by curriculum sequence
         res_ch = await conn.execute(
             text(
-                'SELECT id, name, subject_id, order_index FROM "neet-books".chapters '
-                'WHERE subject_id = ANY(:ids) ORDER BY order_index ASC NULLS LAST, name'
+                'SELECT chapter_id, chapter_name, book_id, chapter_num FROM "ai-books".chapters '
+                'WHERE book_id = ANY(:ids) ORDER BY chapter_num ASC NULLS LAST, chapter_name'
             ),
-            {"ids": subject_ids},
+            {"ids": [uuid.UUID(sid) if isinstance(sid, str) else sid for sid in subject_ids]},
         )
         chapters = res_ch.mappings().all()
-        chapter_map = {str(c["id"]): c for c in chapters}
+        chapter_map = {str(c["chapter_id"]): c for c in chapters}
         # Build a chapter sort rank: lower = earlier in curriculum
-        chapter_rank = {str(c["id"]): i for i, c in enumerate(chapters)}
+        chapter_rank = {str(c["chapter_id"]): i for i, c in enumerate(chapters)}
 
         # Fetch topics for all chapters — ordered by chapter curriculum order
-        chapter_ids = [str(c["id"]) for c in chapters]
+        chapter_ids = [str(c["chapter_id"]) for c in chapters]
         if not chapter_ids:
             return [], {}
 
         res_tp = await conn.execute(
             text(
                 'SELECT t.id, t.title, t.chapter_id '
-                'FROM "neet-books".topics t '
-                'JOIN "neet-books".chapters c ON c.id = t.chapter_id '
+                'FROM "ai-books".curriculum_topics t '
+                'JOIN "ai-books".chapters c ON c.chapter_id = t.chapter_id '
                 'WHERE t.chapter_id = ANY(:cids) '
-                'ORDER BY c.order_index ASC NULLS LAST, t.title ASC'
+                'ORDER BY c.chapter_num ASC NULLS LAST, t.order_index ASC'
             ),
-            {"cids": chapter_ids},
+            {"cids": [uuid.UUID(cid) if isinstance(cid, str) else cid for cid in chapter_ids]},
         )
         for row_idx, tp in enumerate(res_tp.mappings().all()):
             ch = chapter_map.get(str(tp["chapter_id"]), {})
-            sub_id = str(ch.get("subject_id", "")) if ch else ""
+            sub_id = str(ch.get("book_id", "")) if ch else ""
+            meta = _derive_metadata(ch.get("pdf_name", "")) if ch else {"subject": "General"}
+            
+            multiplier = {"standard": 1.0, "accelerated": 0.7, "deep_dive": 1.5}.get(difficulty, 1.0)
+            topics.append({
+                "topic_id": str(tp["id"]),
+                "topic_name": tp["title"],
+                "subject_name": meta["subject"], # use derived subject name
+                "chapter_name": ch.get("chapter_name", "") if ch else "",
+                "estimated_hours": round(2.0 * multiplier, 1),
+                # curriculum_rank drives fallback ordering when no prereq edges
+                "curriculum_rank": chapter_rank.get(str(tp["chapter_id"]), 9999) * 10000 + row_idx,
+            })
             multiplier = {"standard": 1.0, "accelerated": 0.7, "deep_dive": 1.5}.get(difficulty, 1.0)
             topics.append({
                 "topic_id": str(tp["id"]),
@@ -151,28 +158,21 @@ async def _generate_journey_nodes(
                 "curriculum_rank": chapter_rank.get(str(tp["chapter_id"]), 9999) * 10000 + row_idx,
             })
 
-    # Fetch prerequisite edges from Neo4j
+    # Fetch prerequisite edges from PostgreSQL (ai-books schema)
     prereq_edges: dict[str, list[str]] = {}
-    topic_ids_in_journey = {t["topic_id"] for t in topics}
-
-    try:
-        with get_session() as session:
-            result = session.run(
-                """
-                MATCH (a:Topic)-[:REQUIRES]->(b:Topic)
-                WHERE a.id IN $ids AND b.id IN $ids
-                RETURN a.id AS from_id, b.id AS to_id
-                """,
-                ids=list(topic_ids_in_journey),
-            )
-            for record in result:
-                fid = record["from_id"]
-                tid_target = record["to_id"]
-                if fid not in prereq_edges:
-                    prereq_edges[fid] = []
-                prereq_edges[fid].append(tid_target)
-    except Exception:
-        pass  # Neo4j unavailable — curriculum order is still used
+    
+    async with engine.connect() as conn:
+        res = await conn.execute(
+            text('SELECT id, prerequisites FROM "ai-books".curriculum_topics WHERE id = ANY(:ids)'),
+            {"ids": list(topic_ids_in_journey)}
+        )
+        for row in res.mappings().all():
+            tid_source = str(row["id"])
+            # row["prerequisites"] is a list of topic IDs this topic REQUIRES
+            # journey logic expects: fid REQUIRES tid_target
+            prereqs = row["prerequisites"] or []
+            if prereqs:
+                prereq_edges[tid_source] = [str(p) for p in prereqs]
 
     return topics, prereq_edges
 
@@ -221,7 +221,7 @@ async def generate_journey(req: GenerateJourneyRequest):
                 text("""
                     SELECT DISTINCT s.topic_id::text
                     FROM user_subtopic_progress usp
-                    JOIN "neet-books".subtopics s ON s.id::text = usp.subtopic_id
+                    JOIN "ai-books".curriculum_subtopics s ON s.id::text = usp.subtopic_id
                     WHERE usp.user_id = :uid AND usp.status = 'completed'
                 """),
                 {"uid": req.user_id},
@@ -450,32 +450,29 @@ async def get_journey_graph(journey_id: str):
             },
         })
 
-    # Fetch prerequisite edges from Neo4j
-    topic_ids = [n["topic_id"] for n in db_nodes]
+    # Fetch prerequisite edges from PostgreSQL
     rf_edges = []
-    try:
-        with get_session() as session:
-            result = session.run(
-                """
-                MATCH (a:Topic)-[:REQUIRES]->(b:Topic)
-                WHERE a.id IN $ids AND b.id IN $ids
-                RETURN a.id AS source, b.id AS target
-                """,
-                ids=topic_ids,
-            )
-            for record in result:
-                rf_edges.append({
-                    "id": f"e-{record['source']}-{record['target']}",
-                    "source": record["source"],   # the topic that REQUIRES
-                    "target": record["target"],   # the prerequisite
-                    "type": "smoothstep",
-                    "animated": False,
-                    "style": {"stroke": "#6366f1", "strokeDasharray": "5,5"},
-                    "markerEnd": {"type": "arrowclosed", "color": "#6366f1"},
-                    "label": "needs first",
-                })
-    except Exception:
-        pass  # Neo4j unavailable — return nodes only
+    topic_ids = [n["id"] for n in rf_nodes] # topic_id was used as 'id' in rf_nodes
+    async with engine.connect() as conn:
+        res = await conn.execute(
+            text('SELECT id, prerequisites FROM "ai-books".curriculum_topics WHERE id = ANY(:ids)'),
+            {"ids": topic_ids}
+        )
+        for row in res.mappings().all():
+            source_topic_id = str(row["id"])
+            prereqs = row["prerequisites"] or []
+            for target_topic_id in prereqs:
+                if target_topic_id in topic_ids:
+                    rf_edges.append({
+                        "id": f"e-{source_topic_id}-{target_topic_id}",
+                        "source": source_topic_id,   # the topic that REQUIRES
+                        "target": target_topic_id,   # the prerequisite
+                        "type": "smoothstep",
+                        "animated": False,
+                        "style": {"stroke": "#6366f1", "strokeDasharray": "5,5"},
+                        "markerEnd": {"type": "arrowclosed", "color": "#6366f1"},
+                        "label": "needs first",
+                    })
 
     return {"nodes": rf_nodes, "edges": rf_edges}
 

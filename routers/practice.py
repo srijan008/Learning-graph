@@ -12,10 +12,11 @@ from pydantic import BaseModel, Field
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from db.qdrant_client import client as qdrant_client
-from qdrant_client import models
-
-from db.postgres_models import UserSubtopicProgress, SubtopicStatus, UserMistakeTracking, MistakeType, UserTestReport, UserTestAnswer
+from db.postgres_client import engine as main_engine
+from db.postgres_models import (
+    UserSubtopicProgress, SubtopicStatus, UserMistakeTracking, 
+    MistakeType, UserTestReport, UserTestAnswer, CurriculumChunk
+)
 
 logger = logging.getLogger(__name__)
 
@@ -347,127 +348,65 @@ async def resolve_topic_name(topic_id: str) -> str:
 @router.get("/questions/{curriculum}/{subtopic_id}", response_model=NeetPYQResponse)
 async def get_practice_questions(curriculum: str, subtopic_id: str, limit: int = 15, subject_id: Optional[str] = None, subtopic_name: Optional[str] = None):
     """
-    Get practice questions using Vector Search (Qdrant) based on subtopic name.
+    Get practice questions from PostgreSQL (ai-books.curriculum_chunks).
     """
     try:
-        # 1. Resolve Name
         questions = []
         seen_ids = set()
 
-        # 1. Try Postgres Fallback (Exact match for subtopic_id)
-        if pyq_engine:
-            try:
-                async with pyq_engine.connect() as conn:
-                    # Modular query: The user specifically wanted 'topic_id' search here
-                    res = await conn.execute(
-                        text("SELECT chunk_id, metadata, chunk_text FROM chunks WHERE topic_id = :sid LIMIT :limit"),
-                        {"sid": subtopic_id, "limit": limit}
-                    )
-                    rows = res.mappings().all()
-                    # print("rows",rows) # User's debug print
-                    for row in rows:
-                        qid = str(row["chunk_id"])
-                        if qid in seen_ids: continue
-                        
-                        meta = row["metadata"] or {}
-                        full_text = str(row["chunk_text"] or "")
-                        
-                        # Process content
-                        display_content = clean_img_placeholders(full_text)
-                        options_list = extract_options_util(full_text, meta)
-                        
-                        # Clean display content
-                        stop_markers = ["Solution:", "Explanation:", "Answer:", "Correct Answer:"]
-                        for marker in stop_markers:
-                            if marker in display_content:
-                                display_content = display_content.split(marker, 1)[0]
-                        if "Options:" in display_content:
-                            display_content = display_content.split("Options:", 1)[0]
-                        display_content = display_content.strip()
-                        if "Question:" in display_content:
-                            display_content = display_content.split("Question:", 1)[1].strip()
-
-                        # Years
-                        years = meta.get("question_data", {}).get("years_appeared", [])
-                        if not years: years = meta.get("years_appeared", [])
-                        if isinstance(years, str): years = [years]
-
-                        questions.append(NeetPYQQuestion(
-                            id=qid,
-                            question=display_content,
-                            options=options_list,
-                            years_appeared=years
-                        ))
-                        seen_ids.add(qid)
-            except Exception as e:
-                logger.error(f"Postgres question retrieval failed: {e}")
-
-        # 2. Vector Search Fallback (Modularised)
-        if len(questions) < limit:
-            try:
-                curriculum_upper = curriculum.upper()
-                collection_name = COLLECTION_MAP.get(curriculum_upper, "neet_chapter_combined")
-                # For questions, we use subtopic_name as primary query for vector search
-                query_text = subtopic_name or await resolve_topic_name(subtopic_id)
+        async with main_engine.connect() as conn:
+            # Search curriculum_chunks for questions matching the subtopic_id
+            # metadata->>'chunk_type' filter can be added if available
+            res = await conn.execute(
+                text("""
+                    SELECT id, metadata, content 
+                    FROM "ai-books".curriculum_chunks 
+                    WHERE subtopic_id = :sid 
+                    LIMIT :limit
+                """),
+                {"sid": subtopic_id, "limit": limit}
+            )
+            rows = res.mappings().all()
+            for row in rows:
+                qid = str(row["id"])
+                if qid in seen_ids: continue
                 
-                dim = 384 if curriculum_upper in ["NEET", "JEE"] else 768
-                vector = await get_embedding(query_text, dimension=dim)
+                meta = row["metadata"] or {}
+                full_text = str(row["content"] or "")
                 
-                if vector:
-                    # Modular Filter Logic
-                    actual_subject_id = subject_id
-                    
-                    must_conditions = []
-                    if actual_subject_id:
-                        must_conditions.append(models.FieldCondition(key="metadata.subject_id", match=models.MatchValue(value=actual_subject_id)))
-                        
-                    response = await qdrant_client.query_points(
-                        collection_name=collection_name,
-                        query=vector,
-                        query_filter=models.Filter(
-                            must=must_conditions,
-                            should=[
-                                models.FieldCondition(key="metadata.chunk_type", match=models.MatchValue(value="pyq")),
-                                models.FieldCondition(key="metadata.chunk_type", match=models.MatchValue(value="question")),
-                            ]
-                        ),
-                        limit=limit - len(questions)
-                    )
-                    
-                    for p in response.points:
-                        qid = str(p.id)
-                        if qid in seen_ids: continue
-                        
-                        payload = p.payload or {}
-                        meta = payload.get("metadata", {})
-                        text_content = payload.get("content", "")
-                        
-                        display_content = clean_img_placeholders(text_content)
-                        options_list = extract_options_util(text_content, meta)
-                        
-                        stop_markers = ["Solution:", "Explanation:", "Answer:", "Correct Answer:"]
-                        for marker in stop_markers:
-                            if marker in display_content:
-                                display_content = display_content.split(marker, 1)[0]
-                        if "Options:" in display_content:
-                            display_content = display_content.split("Options:", 1)[0]
-                        display_content = display_content.strip()
-                        if "Question:" in display_content:
-                            display_content = display_content.split("Question:", 1)[1].strip()
-                        
-                        years = meta.get("question_data", {}).get("years_appeared", [])
-                        if not years: years = meta.get("years_appeared", [])
-                        if isinstance(years, str): years = [years]
+                # Process content
+                display_content = clean_img_placeholders(full_text)
+                options_list = extract_options_util(full_text, meta)
+                
+                # Clean display content (Solution, Explanation, etc.)
+                stop_markers = ["Solution:", "Explanation:", "Answer:", "Correct Answer:"]
+                for marker in stop_markers:
+                    if marker in display_content:
+                        display_content = display_content.split(marker, 1)[0]
+                if "Options:" in display_content:
+                    display_content = display_content.split("Options:", 1)[0]
+                display_content = display_content.strip()
+                if "Question:" in display_content:
+                    display_content = display_content.split("Question:", 1)[1].strip()
 
-                        questions.append(NeetPYQQuestion(
-                            id=qid,
-                            question=display_content,
-                            options=options_list,
-                            years_appeared=years
-                        ))
-                        seen_ids.add(qid)
-            except Exception as e:
-                logger.error(f"Qdrant query_points fallback failed for questions: {e}")
+                # Extract years from metadata
+                years = meta.get("question_data", {}).get("years_appeared", [])
+                if not years: years = meta.get("years_appeared", [])
+                if isinstance(years, str): years = [years]
+
+                questions.append(NeetPYQQuestion(
+                    id=qid,
+                    question=display_content,
+                    options=options_list,
+                    years_appeared=years
+                ))
+                seen_ids.add(qid)
+
+        return NeetPYQResponse(status="success", count=len(questions), questions=questions)
+
+    except Exception as e:
+        logger.error(f"Postgres question retrieval failed: {e}")
+        return NeetPYQResponse(status="error", count=0, questions=[])
 
         return NeetPYQResponse(status="success", count=len(questions), questions=questions)
 
@@ -478,90 +417,44 @@ async def get_practice_questions(curriculum: str, subtopic_id: str, limit: int =
 @router.get("/content/{topic_id}")
 async def get_learning_content(topic_id: str, curriculum: str = "NEET", limit: int = 15, subject_id: Optional[str] = None, subtopic_name: Optional[str] = None):
     """
-    Highly robust learning content retrieval using Hybrid Search + Failover.
-    Modularized for CBSE and JEE/NEET.
+    Robust learning content retrieval from PostgreSQL (ai-books.curriculum_chunks).
     """
     try:
         curriculum_upper = curriculum.upper()
-        collection_name = COLLECTION_MAP.get(curriculum_upper, "neet_chapter_combined")
         query_text = subtopic_name or await resolve_topic_name(topic_id)
         
-        logger.info(f"Retrieving content: query='{query_text}', topic_id='{topic_id}', curriculum='{curriculum_upper}', subject_id='{subject_id}'")
-        
-        dim = 384 if curriculum_upper in ["NEET", "JEE"] else 768
-        vector = await get_embedding(query_text, dimension=dim)
-        
         chunks = []
+        async with main_engine.connect() as conn:
+            # Query by subtopic_id (if topic_id is subtopic) or topic_id
+            # For simplicity, we search curriculum_chunks where subtopic_id matches
+            res = await conn.execute(
+                text("""
+                    SELECT id, content, metadata 
+                    FROM "ai-books".curriculum_chunks 
+                    WHERE subtopic_id = :tid 
+                    LIMIT :limit
+                """),
+                {"tid": topic_id, "limit": limit}
+            )
+            rows = res.mappings().all()
+            for row in rows:
+                raw_content = row["content"] or ""
+                cleaned_content = clean_img_placeholders(raw_content)
+                chunks.append({
+                    "id": str(row["id"]),
+                    "content": cleaned_content,
+                    "metadata": row["metadata"] or {}
+                })
         
-        # 1. Modular Branching: CBSE vs others
-        if curriculum_upper == "CBSE":
-            # For CBSE, grade-based logic can be added here
-            actual_subject_id = subject_id
-        else:
-            # JEE / NEET Logic
-            actual_subject_id = subject_id
-
-        # 2. Vector Retrieval with strict filtering
-        if vector:
-            try:
-                must_conditions = []
-                if actual_subject_id:
-                    must_conditions.append(models.FieldCondition(key="metadata.subject_id", match=models.MatchValue(value=actual_subject_id)))
-                    
-                response = await qdrant_client.query_points(
-                    collection_name=collection_name,
-                    query=vector,
-                    query_filter=models.Filter(must=must_conditions) if must_conditions else None,
-                    limit=limit
-                )
-                
-                for p in response.points:
-                    payload = p.payload or {}
-                    raw_content = payload.get("content", "")
-                    cleaned_content = clean_img_placeholders(raw_content)
-                    chunks.append({
-                        "id": str(p.id),
-                        "content": cleaned_content,
-                        "metadata": payload.get("metadata", {})
-                    })
-            except Exception as e:
-                logger.error(f"Qdrant query_points failed for {curriculum_upper}: {e}")
+        llm_context = format_llm_context(chunks) if chunks else ""
         
-        # 3. Fallback to scroll if empty (identity-based match)
-        if not chunks:
-            try:
-                must_conditions = []
-                if actual_subject_id:
-                    must_conditions.append(models.FieldCondition(key="metadata.subject_id", match=models.MatchValue(value=actual_subject_id)))
-                
-                scroll_res = await qdrant_client.scroll(
-                    collection_name=collection_name,
-                    scroll_filter=models.Filter(
-                        must=must_conditions,
-                        should=[
-                            models.FieldCondition(key="metadata.subtopic_id", match=models.MatchValue(value=topic_id)),
-                            models.FieldCondition(key="metadata.topic_id", match=models.MatchValue(value=topic_id)),
-                            models.FieldCondition(key="metadata.chapter_id", match=models.MatchValue(value=topic_id)),
-                        ]
-                    ) if must_conditions else models.Filter(
-                        should=[
-                            models.FieldCondition(key="metadata.subtopic_id", match=models.MatchValue(value=topic_id)),
-                            models.FieldCondition(key="metadata.topic_id", match=models.MatchValue(value=topic_id)),
-                            models.FieldCondition(key="metadata.chapter_id", match=models.MatchValue(value=topic_id)),
-                        ]
-                    ),
-                    limit=limit
-                )
-                points, _ = scroll_res
-                for p in points:
-                    payload = p.payload or {}
-                    chunks.append({
-                        "id": str(p.id), 
-                        "content": clean_img_placeholders(payload.get("content", "")), 
-                        "metadata": payload.get("metadata", {})
-                    })
-            except Exception as e:
-                logger.error(f"Qdrant scroll fallback failed: {e}")
+        return {
+            "status": "success",
+            "query": query_text,
+            "chunks": chunks,
+            "llm_context": llm_context,
+            "curriculum": curriculum_upper
+        }
 
         # 4. Final response construction
         llm_context = format_llm_context(chunks) if chunks else ""
@@ -584,17 +477,17 @@ async def evaluate_answer(req: EvaluateAnswerRequest):
     Evaluate student answer.
     If MCQ (selected_option), check against Postgres.
     """
-    if req.selected_option and req.question_id and pyq_engine:
+    if req.selected_option and req.question_id:
         try:
-            async with pyq_engine.connect() as conn:
+            async with main_engine.connect() as conn:
                 res = await conn.execute(
-                    text("SELECT metadata, chunk_text FROM chunks WHERE chunk_id = :qid"),
+                    text('SELECT metadata, content FROM "ai-books".curriculum_chunks WHERE id = :qid'),
                     {"qid": req.question_id}
                 )
                 row = res.mappings().first()
                 if row:
                     meta = row["metadata"] or {}
-                    full_text = str(row["chunk_text"] or "")
+                    full_text = str(row["content"] or "")
                     
                     correct_answer = extract_correct_answer_util(full_text, meta)
                     
@@ -642,14 +535,14 @@ async def finish_practice_test(req: FinishTestRequest):
         from db.postgres_client import engine as main_engine
         
         # 1. Process evaluation and build result set
-        async with pyq_engine.connect() as pyq_conn:
+        async with main_engine.connect() as conn:
             # 1. Create Test Report ID
             report_id = str(uuid.uuid4())
             
             for ans in req.answers:
-                # Fetch question data from PYQ conn
-                res = await pyq_conn.execute(
-                    text("SELECT metadata, chunk_text, subtopic_id FROM chunks WHERE chunk_id = :qid"),
+                # Fetch question data from main consolidated engine
+                res = await conn.execute(
+                    text('SELECT metadata, content, subtopic_id FROM "ai-books".curriculum_chunks WHERE id = :qid'),
                     {"qid": ans.question_id}
                 )
                 row = res.mappings().first()
@@ -658,7 +551,7 @@ async def finish_practice_test(req: FinishTestRequest):
                     continue
                 
                 meta = row["metadata"] or {}
-                full_text = str(row["chunk_text"] or "")
+                full_text = str(row["content"] or "")
                 subtopic_id = row["subtopic_id"]
                 
                 # Extract options
@@ -749,12 +642,6 @@ async def finish_practice_test(req: FinishTestRequest):
                     }
                 )
                 
-                # Fetch subtopic_id for mistake tracking (still need to lookup since it's not in TestResultItem)
-                async with pyq_engine.connect() as pyq_conn:
-                     q_res = await pyq_conn.execute(text("SELECT subtopic_id FROM chunks WHERE chunk_id = :qid"), {"qid": res_item.question_id})
-                     q_row = q_res.mappings().first()
-                     subtopic_id = q_row["subtopic_id"] if q_row else None
-
                 if not res_item.is_correct and subtopic_id:
                     await conn.execute(
                         text("""

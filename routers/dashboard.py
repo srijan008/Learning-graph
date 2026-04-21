@@ -8,6 +8,8 @@ router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 
 from fastapi.responses import JSONResponse
 import traceback
+import uuid
+from typing import Optional, List, Any
 
 @router.get("/{user_id}/stats")
 async def get_dashboard_stats(user_id: str, db: AsyncSession = Depends(get_pg_session)):
@@ -57,7 +59,7 @@ async def get_dashboard_stats(user_id: str, db: AsyncSession = Depends(get_pg_se
 async def get_topic_metrics(user_id: str, db: AsyncSession = Depends(get_pg_session)):
     """
     Returns topic-level and subtopic-level progress metrics for the bar chart drilldown.
-    Joins Postgres TutorChatSession scores with Neo4j node names.
+    Joins Postgres TutorChatSession scores with PostgreSQL curriculum taxonomy.
     """
     try:
         # 1. Get all TutorChatSessions for this user
@@ -70,52 +72,59 @@ async def get_topic_metrics(user_id: str, db: AsyncSession = Depends(get_pg_sess
         topic_ids = [s.topic_id for s in sessions]
         session_map = {s.topic_id: s for s in sessions}
         
-        # 2. Get names from Neo4j
-        from db.neo4j_client import get_session as get_neo4j_session
+        # 2. Get names from PostgreSQL
+        from db.postgres_models import CurriculumTopic, CurriculumSubtopic
         
-        query = """
-        MATCH (t:Topic)
-        WHERE t.id IN $topic_ids
-        OPTIONAL MATCH (t)-[:HAS_SUBTOPIC]->(s:Subtopic)
-        RETURN t.id AS topic_id, t.name AS topic_name, 
-               collect({id: s.id, name: s.name}) AS subtopics
-        """
         response_topics = []
-        with get_neo4j_session() as driver_session:
-            records = driver_session.run(query, topic_ids=topic_ids).data()
-            
-            for r in records:
-                tid = r["topic_id"]
-                tname = r["topic_name"]
-                t_session = session_map.get(tid)
+        # Fetch topic and subtopic info for all involved topics
+        # This is a bit complex for a single query if we want nested structure, 
+        # so we fetch and reconstruct.
+        
+        for tid, t_session in session_map.items():
+            try:
+                # Get topic name
+                # Ensure tid is handled correctly as a UUID
+                tid_uuid = uuid.UUID(tid) if isinstance(tid, str) else tid
+                t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id == tid_uuid))
+                topic_record = t_res.scalars().first()
+                if not topic_record:
+                    logger.warning(f"Topic {tid} not found in curriculum_topics")
+                    continue
+                
+                # Get subtopics for this topic
+                s_res = await db.execute(select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id == tid_uuid))
+                subtopic_records = s_res.scalars().all()
+                
                 scores = t_session.subtopic_scores if t_session and t_session.subtopic_scores else {}
                 
                 subs = []
                 total_conf = 0
-                max_conf = len(r["subtopics"]) * 100 if r["subtopics"] else 100
+                max_conf = len(subtopic_records) * 100 if subtopic_records else 100
                 
-                for s in r["subtopics"]:
-                    if not s["id"]: continue
-                    raw_conf = scores.get(s["id"], 0)
+                for s in subtopic_records:
+                    raw_conf = scores.get(str(s.id), 0)
                     if isinstance(raw_conf, dict):
                         conf = (raw_conf.get("theory", 0) + raw_conf.get("example", 0) + raw_conf.get("cross", 0)) // 3
                     else:
                         conf = raw_conf
                     total_conf += conf
                     subs.append({
-                        "subtopic_id": s["id"],
-                        "subtopic_name": s["name"],
+                        "subtopic_id": str(s.id),
+                        "subtopic_name": s.title,
                         "confidence": conf
                     })
                 
                 avg_completion = round((total_conf / max_conf) * 100) if max_conf > 0 else 0
                 
                 response_topics.append({
-                    "topic_id": tid,
-                    "topic_name": tname,
+                    "topic_id": str(tid),
+                    "topic_name": topic_record.title,
                     "completion_percentage": avg_completion,
                     "subtopics": subs
                 })
+            except Exception as loop_e:
+                logger.error(f"Error processing topic metrics for {tid}: {loop_e}")
+                continue
                 
         # Sort by completion (lowest first) to highlight weak topics
         response_topics.sort(key=lambda x: x["completion_percentage"])
