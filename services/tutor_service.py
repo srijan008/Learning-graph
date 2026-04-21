@@ -12,7 +12,7 @@ from google import genai
 load_dotenv()
 
 SUMMARY_THRESHOLD = 8   # summarise older messages after this many total exchanges
-FAST_MODEL = "gemini-2.0-flash"  # low-latency model for greeting/summary
+FAST_MODEL = "gemini-3-flash-preview"  # high-quota standard model for 2026
 
 KEEP_RECENT = 4         # how many recent messages to keep after summarising
 
@@ -198,6 +198,7 @@ async def chat_with_tutor_stream(
     recent_messages: list,
     user_message: str,
     subtopics_context: str,
+    subtopic_id: str = None,
     current_scores: dict = None,
     session_id: str = None,
     topic_id: str = None,
@@ -206,14 +207,18 @@ async def chat_with_tutor_stream(
     Streams response from Gemini tutor chunk by chunk.
     Injects full topic textbook context and current scores for accurate multi-subtopic assessment.
     """
-    from services.tutor_context import get_topic_context_all
+    # 1. Fetch relevant textbook context
+    from services.tutor_context import get_subtopic_context, get_topic_context_all
     
     client = _get_gemini_client()
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
 
-    # 1. Fetch full textbook context for the topic
     textbook_context = ""
-    if session_id and topic_id:
+    if session_id and subtopic_id:
+        # Optimization: Fetch context ONLY for the current subtopic to save tokens and avoid 429 errors
+        textbook_context = await get_subtopic_context(subtopic_id, session_id, topic_id)
+    elif session_id and topic_id:
+        # Fallback to all context if subtopic_id is missing
         textbook_context = await get_topic_context_all(session_id, topic_id)
     # 2. Format current scores for the prompt
     scores_info = ""

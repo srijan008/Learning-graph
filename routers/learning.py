@@ -196,6 +196,7 @@ async def chat(
             recent_messages=list(session.recent_messages or []),
             user_message=req.user_message,
             subtopics_context=req.subtopics_context,
+            subtopic_id=req.subtopic_id,
             current_scores=session.subtopic_scores or {},
             session_id=session.id,
             topic_id=session.topic_id,
