@@ -9,7 +9,7 @@
  * This ensures backslashes in math (\frac, \pi, \text) are NEVER touched by
  * the markdown parser, which would mangle them.
  */
-import { useMemo } from 'react';
+import { useMemo, memo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import katex from 'katex';
@@ -89,24 +89,26 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-export default function RichText({ text, inline, className, style }: Props) {
+export default memo(function RichText({ text, inline, className, style }: Props) {
   if (!text) return null;
 
   const { processed, mathMap } = useMemo(() => extractMath(text), [text]);
 
-  const components: any = {
+  const components: any = useMemo(() => ({
     // Handling Images
     img: ({ src, alt }: any) => (
       <div style={{ margin: '20px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <img 
           src={src} 
           alt={alt} 
+          loading="lazy"
           style={{ 
             maxWidth: '100%', 
             maxHeight: '450px', 
             borderRadius: '12px', 
             boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
-            border: '1px solid rgba(255,255,255,0.1)'
+            border: '1px solid rgba(255,255,255,0.1)',
+            display: 'block'
           }} 
         />
         {alt && <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '8px' }}>{alt}</span>}
@@ -204,7 +206,7 @@ export default function RichText({ text, inline, className, style }: Props) {
     h1: ({ children }: any) => <h3 style={{ color: 'white', margin: '8px 0 4px' }}>{children}</h3>,
     h2: ({ children }: any) => <h4 style={{ color: 'white', margin: '8px 0 4px' }}>{children}</h4>,
     h3: ({ children }: any) => <h5 style={{ color: 'white', margin: '6px 0 4px' }}>{children}</h5>,
-  };
+  }), [mathMap]);
 
   const content = (
     <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
@@ -225,4 +227,4 @@ export default function RichText({ text, inline, className, style }: Props) {
       {content}
     </div>
   );
-}
+});

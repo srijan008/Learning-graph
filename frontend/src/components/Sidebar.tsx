@@ -92,7 +92,7 @@ export default function Sidebar() {
       </nav>
       
       <div style={{ marginTop: 'auto', padding: '16px', borderRadius: 'var(--border-radius-md)', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
-        <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>Active User: srija</p>
+        <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>Active User : Srijan</p>
         <div style={{ height: '4px', background: 'var(--border-color)', borderRadius: '2px', overflow: 'hidden' }}>
           <div style={{ width: '65%', height: '100%', background: 'var(--accent-primary)' }}></div>
         </div>

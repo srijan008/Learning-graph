@@ -21,6 +21,10 @@ async def verify():
         row = res.fetchone()
         if row:
             print(f"DB Match: {row.pdf_name} | {row.chapter_name} (ID: {row.chapter_id})")
+            from db.postgres_models import CurriculumTopic
+            res_tp = await conn.execute(select(CurriculumTopic).where(CurriculumTopic.chapter_id == row.chapter_id))
+            topics = res_tp.fetchall()
+            print(f"Found {len(topics)} topics for this chapter")
         else:
             print("No match found in DB for JSON pdf_name")
 

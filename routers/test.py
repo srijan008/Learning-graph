@@ -42,6 +42,7 @@ router = APIRouter(prefix="/test", tags=["test"])
 _QBANK: List[Dict] = []
 _QBANK_BY_SUBJECT: Dict[str, List[Dict]] = {}
 _QBANK_BY_CHAPTER: Dict[str, List[Dict]] = {}
+_TOPIC_CACHE: Dict[str, List[Dict]] = {}
 
 DIFFICULTIES = ["easy", "medium", "hard"]
 
@@ -331,28 +332,47 @@ async def get_subjects():
 
 @router.get("/chapters/{chapter_slug}/topics")
 async def get_chapter_topics(chapter_slug: str, db: AsyncSession = Depends(get_pg_session)):
-    """Return AI curriculum topics for a given chapter slug."""
-    from db.postgres_models import CurriculumTopic, CurriculumSubtopic
+    """Return AI curriculum topics for a given chapter slug using indexed QBANK metadata."""
+    global _TOPIC_CACHE
     
-    t_res = await db.execute(select(CurriculumTopic))
-    all_topics = t_res.scalars().all()
+    # 1. Check Cache
+    if chapter_slug in _TOPIC_CACHE:
+        return {"topics": _TOPIC_CACHE[chapter_slug]}
+        
+    _load_qbank()
     
-    chapter_clean = chapter_slug.replace("-", " ").lower()
-    matched_topic_id = None
+    # 2. Find chapter metadata from QBANK
+    q_list = _QBANK_BY_CHAPTER.get(chapter_slug)
+    if not q_list:
+        print(f"[DEBUG] No questions found for slug: {chapter_slug}")
+        return {"topics": []}
     
-    for t in all_topics:
-        title_cl = t.title.lower().replace("-", " ")
-        if chapter_clean in title_cl or title_cl in chapter_clean:
-            matched_topic_id = t.id
-            break
-            
-    if not matched_topic_id:
+    sample_q = q_list[0]
+    pdf_name = sample_q.get("pdf_name")
+    chapter_name = sample_q.get("chapter_name")
+    print(f"[DEBUG] Slug: {chapter_slug} -> PDF: {pdf_name}, Chapter: {chapter_name}")
+    
+    if not pdf_name or not chapter_name:
         return {"topics": []}
         
-    s_res = await db.execute(select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id == matched_topic_id))
-    subtopics = s_res.scalars().all()
+    # 3. Query Postgres for the chapter_id and its topics
+    from db.postgres_models import Chapter, CurriculumTopic
     
-    return {"topics": [{"id": str(s.id), "name": s.title} for s in subtopics]}
+    stmt = (
+        select(CurriculumTopic)
+        .join(Chapter, CurriculumTopic.chapter_id == Chapter.chapter_id)
+        .where(Chapter.pdf_name == pdf_name, Chapter.chapter_name == chapter_name)
+        .order_by(CurriculumTopic.order_index)
+    )
+    
+    res = await db.execute(stmt)
+    topics = res.scalars().all()
+    
+    formatted_topics = [{"id": str(t.id), "name": t.title} for t in topics]
+    
+    # 4. Cache and return
+    _TOPIC_CACHE[chapter_slug] = formatted_topics
+    return {"topics": formatted_topics}
 
 
 @router.post("/session/create")
