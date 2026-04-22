@@ -19,6 +19,7 @@ class SubtopicStatus(enum.Enum):
 class MistakeType(enum.Enum):
     conceptual = "conceptual"
     calculation = "calculation"
+    speed = "speed"
     reading_error = "reading_error"
     other = "other"
 
@@ -40,6 +41,11 @@ class NodeStatus(enum.Enum):
     in_progress = "in_progress"
     completed = "completed"
 
+
+class AIAnalysisStatus(enum.Enum):
+    pending = "pending"
+    ready = "ready"
+    failed = "failed"
 
 class UserGoal(Base):
     __tablename__ = "user_goals"
@@ -100,6 +106,71 @@ class UserTestAnswer(Base):
     correct_option: Mapped[Optional[str]] = mapped_column(String)
     is_correct: Mapped[bool] = mapped_column(Boolean)
     time_taken_seconds: Mapped[int] = mapped_column(Integer, default=0)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# New Test System Models
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestSession(Base):
+    """
+    Live test session: holds full question snapshot, timer, answers, and state.
+    """
+    __tablename__ = "test_sessions"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)  # UUID
+    user_id: Mapped[str] = mapped_column(String, index=True)
+    test_type: Mapped[str] = mapped_column(String)  # topic_quiz | chapter_mock | full_mock | practice_drill
+    status: Mapped[str] = mapped_column(String, default="active")  # active | completed | expired
+    config: Mapped[Optional[dict]] = mapped_column(JSON, default=dict)  # {subject, chapter, time_limit_mins, ...}
+    question_ids: Mapped[Optional[list]] = mapped_column(JSON, default=list)  # ordered IDs
+    question_snapshot: Mapped[Optional[list]] = mapped_column(JSON, default=list)  # full question data incl. answers
+    answers: Mapped[Optional[dict]] = mapped_column(JSON, default=dict)  # {qid: {selected_option, time_taken_ms, flagged}}
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    submitted_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    current_question_index: Mapped[int] = mapped_column(Integer, default=0)
+    total_time_taken_ms: Mapped[int] = mapped_column(Integer, default=0)
+
+
+class TestReport(Base):
+    """
+    Final test report with all analytics, generated on submission.
+    """
+    __tablename__ = "test_reports"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    session_id: Mapped[str] = mapped_column(String, index=True)
+    user_id: Mapped[str] = mapped_column(String, index=True)
+    test_type: Mapped[str] = mapped_column(String)
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    max_score: Mapped[int] = mapped_column(Integer, default=0)
+    accuracy_pct: Mapped[float] = mapped_column(Float, default=0.0)
+    total_questions: Mapped[int] = mapped_column(Integer, default=0)
+    correct: Mapped[int] = mapped_column(Integer, default=0)
+    wrong: Mapped[int] = mapped_column(Integer, default=0)
+    skipped: Mapped[int] = mapped_column(Integer, default=0)
+    subject_breakdown: Mapped[Optional[dict]] = mapped_column(JSON, default=dict)
+    chapter_breakdown: Mapped[Optional[dict]] = mapped_column(JSON, default=dict)
+    mistake_analysis: Mapped[Optional[dict]] = mapped_column(JSON, default=dict)
+    weak_topics: Mapped[Optional[list]] = mapped_column(JSON, default=list)
+    strong_topics: Mapped[Optional[list]] = mapped_column(JSON, default=list)
+    ai_feedback: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    ai_analysis_status: Mapped[str] = mapped_column(String, default="pending")  # pending | ready | failed
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class PracticeRecommendation(Base):
+    """
+    AI-generated practice recommendations based on test results.
+    """
+    __tablename__ = "practice_recommendations"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    user_id: Mapped[str] = mapped_column(String, index=True)
+    source_report_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    recommended_topics: Mapped[Optional[list]] = mapped_column(JSON, default=list)
+    generated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    status: Mapped[str] = mapped_column(String, default="pending")  # pending | in_progress | completed
 
 
 class TutorChatSession(Base):

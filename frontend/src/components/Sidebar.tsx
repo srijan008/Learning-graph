@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, BrainCircuit, Map } from 'lucide-react';
+import { LayoutDashboard, BookOpen, BrainCircuit, Map, BarChart2 } from 'lucide-react';
 
 export default function Sidebar() {
   const activeStyle = {
@@ -72,6 +72,14 @@ export default function Sidebar() {
         >
           <BrainCircuit size={20} />
           <span>Practice Lab</span>
+        </NavLink>
+
+        <NavLink 
+          to="/test"
+          style={({isActive}) => isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle}
+        >
+          <BarChart2 size={20} />
+          <span>Test Center</span>
         </NavLink>
 
         <NavLink 

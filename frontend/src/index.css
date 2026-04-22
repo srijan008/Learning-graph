@@ -223,11 +223,16 @@ button {
   color: var(--text-primary) !important;
 }
 
-/* KaTeX specific overrides to prevent black equations */
-.markdown-content .katex, 
-.markdown-content .katex * {
-  color: var(--accent-secondary) !important; /* using a nice violet accent for math */
-}
+/* KaTeX math rendering — clean on dark background */
+.katex { color: inherit !important; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.katex-display > .katex { color: #e2e8f0 !important; }
+
+/* Rich text container — questions + options */
+.rich-text { color: inherit; }
+.rich-text .katex, .rich-text .katex * { color: inherit !important; }
+.question-text .katex { color: white !important; }
+.question-text .katex-display > .katex { color: #e2e8f0 !important; }
 
 /* Dropdown select overrides — ensure options are visible on dark backgrounds */
 select {

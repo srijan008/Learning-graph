@@ -95,6 +95,36 @@ export default function LearningPage() {
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const lastDoubtRef = useRef<string | null>(null);
 
+  // ── Time Tracking via WebSocket
+  useEffect(() => {
+    let ws: WebSocket | null = null;
+    let hb: any = null;
+
+    if (screen === 'study' && selTopic && selSubtopic && sessionId) {
+      const wsUrl = `${API_URL.replace('http', 'ws')}/learning/ws/progress/${MOCK_USER}/${selSubtopic.id}`;
+      ws = new WebSocket(wsUrl);
+
+      ws.onopen = () => {
+        // Start heartbeat pinging every 10 seconds
+        hb = setInterval(() => {
+          if (ws?.readyState === WebSocket.OPEN && document.visibilityState === 'visible') {
+            ws.send(JSON.stringify({ type: 'heartbeat' }));
+          }
+        }, 10000); // 10 seconds
+      };
+      
+      ws.onerror = (e) => console.error('Time tracking WS error', e);
+    }
+
+    return () => {
+      if (hb) clearInterval(hb);
+      if (ws) {
+        // Send a final message or just close, closing triggers backend save logic for any partial minute
+        ws.close();
+      }
+    };
+  }, [screen, selTopic, selSubtopic, sessionId]);
+
   // ── Scroll to latest message
   useEffect(() => {
     if (messageContainerRef.current) {

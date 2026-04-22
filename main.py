@@ -16,6 +16,7 @@ from routers.practice import router as practice_router
 from routers.dashboard import router as dashboard_router
 from routers.doubts import router as doubts_router
 from routers.journey import router as journey_router
+from routers.test import router as test_router
 
 
 @asynccontextmanager
@@ -55,6 +56,7 @@ app.include_router(practice_router, prefix="/api/v1")
 app.include_router(dashboard_router, prefix="/api/v1")
 app.include_router(doubts_router, prefix="/api/v1")
 app.include_router(journey_router, prefix="/api/v1")
+app.include_router(test_router, prefix="/api/v1")
 
 
 @app.get("/", tags=["health"])

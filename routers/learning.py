@@ -1,7 +1,8 @@
 from datetime import datetime
 from typing import Optional, List, Dict, Any
 import json
-from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
+import asyncio
+from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -323,7 +324,7 @@ async def update_progress(req: ProgressRequest, db: AsyncSession = Depends(get_p
         scores_update = {"theory": 70, "example": 70, "cross": 70}
     
     # 1. Update UserSubtopicProgress table
-    await _mark_subtopic_progress(db, req.user_id, req.subtopic_id, req.status, scores_update)
+    await _mark_subtopic_progress(db, req.user_id, req.subtopic_id, req.status, scores_update, req.time_spent_minutes)
     
     # 2. Sync with TutorChatSession so the frontend sees the score update immediately
     session_id = f"{req.user_id}_{req.topic_id}"
@@ -384,9 +385,9 @@ async def get_topic_progress(
     }
 
 
-async def _mark_subtopic_progress(db: AsyncSession, user_id: str, subtopic_id: str, status: SubtopicStatus, sectional_scores: dict = None):
+async def _mark_subtopic_progress(db: AsyncSession, user_id: str, subtopic_id: str, status: SubtopicStatus, sectional_scores: dict = None, time_spent_minutes: int = 0):
     """
-    Upserts subtopic progress, optionally saving sectional scores from the AI.
+    Upserts subtopic progress, optionally saving sectional scores from the AI and accumulated time.
     """
     result = await db.execute(
         select(UserSubtopicProgress)
@@ -397,6 +398,8 @@ async def _mark_subtopic_progress(db: AsyncSession, user_id: str, subtopic_id: s
     if progress:
         progress.status = status
         progress.last_studied_at = datetime.utcnow()
+        if time_spent_minutes > 0:
+            progress.time_spent_minutes += time_spent_minutes
         if sectional_scores:
             progress.theory_score = max(progress.theory_score, sectional_scores.get("theory", 0))
             progress.example_score = max(progress.example_score, sectional_scores.get("example", 0))
@@ -406,6 +409,7 @@ async def _mark_subtopic_progress(db: AsyncSession, user_id: str, subtopic_id: s
             user_id=user_id,
             subtopic_id=subtopic_id,
             status=status,
+            time_spent_minutes=max(0, time_spent_minutes),
             theory_score=sectional_scores.get("theory", 0) if sectional_scores else 0,
             example_score=sectional_scores.get("example", 0) if sectional_scores else 0,
             cross_question_score=sectional_scores.get("cross", 0) if sectional_scores else 0,
@@ -427,3 +431,78 @@ async def get_next_recommended_topic(user_id: str, current_subtopic_id: str, sub
         return recommendation
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.websocket("/ws/progress/{user_id}/{subtopic_id}")
+async def progress_websocket(websocket: WebSocket, user_id: str, subtopic_id: str):
+    await websocket.accept()
+    from db.postgres_client import get_pg_session_direct
+    
+    last_update = datetime.utcnow()
+    accumulated_seconds = 0.0
+
+    try:
+        while True:
+            # Wait for heartbeat
+            data = await websocket.receive_json()
+            if data.get("type") == "heartbeat":
+                now = datetime.utcnow()
+                elapsed = (now - last_update).total_seconds()
+                accumulated_seconds += elapsed
+                last_update = now
+                
+                # If we've accumulated at least 60 seconds of ping time, log a minute to the db
+                if accumulated_seconds >= 60:
+                    mins_to_add = int(accumulated_seconds // 60)
+                    accumulated_seconds -= (mins_to_add * 60)
+                    
+                    async with await get_pg_session_direct() as db:
+                        res = await db.execute(select(UserSubtopicProgress).where(
+                            UserSubtopicProgress.user_id == user_id, 
+                            UserSubtopicProgress.subtopic_id == subtopic_id
+                        ))
+                        prog = res.scalars().first()
+                        if prog:
+                            prog.time_spent_minutes += mins_to_add
+                            prog.last_studied_at = datetime.utcnow()
+                            if prog.status == SubtopicStatus.not_started:
+                                prog.status = SubtopicStatus.in_progress
+                            await db.merge(prog)
+                        else:
+                            prog = UserSubtopicProgress(
+                                user_id=user_id,
+                                subtopic_id=subtopic_id,
+                                time_spent_minutes=mins_to_add,
+                                status=SubtopicStatus.in_progress,
+                            )
+                            db.add(prog)
+                        await db.commit()
+                        
+    except WebSocketDisconnect:
+        # Upon leaving the screen/disconnecting, if they had leftover seconds > 10, round up to 1 minute
+        if accumulated_seconds > 10:
+            try:
+                async with await get_pg_session_direct() as db:
+                    res = await db.execute(select(UserSubtopicProgress).where(
+                        UserSubtopicProgress.user_id == user_id, 
+                        UserSubtopicProgress.subtopic_id == subtopic_id
+                    ))
+                    prog = res.scalars().first()
+                    if prog:
+                        prog.time_spent_minutes += 1
+                        prog.last_studied_at = datetime.utcnow()
+                        if prog.status == SubtopicStatus.not_started:
+                            prog.status = SubtopicStatus.in_progress
+                        await db.merge(prog)
+                    else:
+                        prog = UserSubtopicProgress(
+                            user_id=user_id,
+                            subtopic_id=subtopic_id,
+                            time_spent_minutes=1,
+                            status=SubtopicStatus.in_progress,
+                        )
+                        db.add(prog)
+                    await db.commit()
+            except Exception:
+                pass
+

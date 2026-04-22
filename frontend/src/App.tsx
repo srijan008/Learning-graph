@@ -6,6 +6,9 @@ import PracticePage from './pages/PracticePage';
 import JourneySetupPage from './pages/JourneySetupPage';
 import JourneyPage from './pages/JourneyPage';
 import JourneyListPage from './pages/JourneyListPage';
+import TestLobbyPage from './pages/TestLobbyPage';
+import TestSessionPage from './pages/TestSessionPage';
+import TestResultsPage from './pages/TestResultsPage';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
             <Route path="/journey/list" element={<JourneyListPage />} />
             <Route path="/journey/new" element={<JourneySetupPage />} />
             <Route path="/journey/:journeyId" element={<JourneyPage />} />
+            <Route path="/test" element={<TestLobbyPage />} />
+            <Route path="/test/:sessionId" element={<TestSessionPage />} />
+            <Route path="/test/results/:reportId" element={<TestResultsPage />} />
           </Routes>
         </main>
       </div>
