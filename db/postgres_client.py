@@ -38,7 +38,9 @@ if ssl_mode and ssl_mode != "disable":
 engine = create_async_engine(
     db_url, 
     echo=False,
-    connect_args=connect_setup
+    connect_args=connect_setup,
+    pool_pre_ping=True,
+    pool_recycle=3600
 )
 
 async_session_maker = async_sessionmaker(

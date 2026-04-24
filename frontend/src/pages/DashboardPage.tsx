@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
-import { Map as MapIcon, Target, BookOpen, BarChart2, RotateCcw, ChevronLeft, ChevronRight, CheckCircle2, Clock, Brain, Trophy, TrendingDown, Zap, Lock, Play, X, TrendingUp, AlertTriangle, ChevronDown, ChevronUp, Calendar as CalendarIcon, Filter } from 'lucide-react';
+import { Map as MapIcon, Target, BookOpen, BarChart2, RotateCcw, ChevronLeft, ChevronRight, CheckCircle2, Clock, Brain, Trophy, TrendingDown, Zap, Lock, Play, X, TrendingUp, AlertTriangle, ChevronDown, ChevronUp, Calendar as CalendarIcon, Filter, MessageCircle, Headphones } from 'lucide-react';
 import TestAnalyticsSection from '../components/TestAnalyticsSection';
 import ChapterAnalysisModal from '../components/ChapterAnalysisModal';
 import RichText from '../components/RichText';

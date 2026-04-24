@@ -166,6 +166,7 @@ async def _generate_journey_nodes(
                 "topic_name": tp["title"],
                 "subject_name": subject_name,
                 "chapter_name": ch.get("chapter_name", ""),
+                "chapter_id": str(tp["chapter_id"]),
                 "estimated_hours": round(2.0 * multiplier, 1),
                 "curriculum_rank": chapter_rank.get(str(tp["chapter_id"]), 9999) * 10000 + row_idx,
             })
@@ -315,6 +316,7 @@ async def generate_journey(req: GenerateJourneyRequest):
                 "tname": topic["topic_name"],
                 "sname": topic.get("subject_name", ""),
                 "cname": topic.get("chapter_name", ""),
+                "cid": topic.get("chapter_id", ""),
                 "oidx": idx,
                 "eh": topic["estimated_hours"],
                 "prereqs": json.dumps(prereqs),
@@ -327,11 +329,11 @@ async def generate_journey(req: GenerateJourneyRequest):
             await conn.execute(
                 text("""
                     INSERT INTO journey_topic_nodes
-                      (id, journey_id, topic_id, topic_name, subject_name, chapter_name,
+                      (id, journey_id, topic_id, topic_name, subject_name, chapter_name, chapter_id,
                        order_index, estimated_hours, prerequisite_topic_ids,
                        node_status, week_number, completed_at)
                     VALUES
-                      (:id, :jid, :tid, :tname, :sname, :cname,
+                      (:id, :jid, :tid, :tname, :sname, :cname, :cid,
                        :oidx, :eh, CAST(:prereqs AS jsonb), :nstatus, :wnum,
                        :completed_at)
                 """),

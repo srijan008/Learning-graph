@@ -226,10 +226,12 @@ async def chat(
                 raw_meta = json.loads(chunk.replace("\n__METADATA__", ""))
                 scores_meta = raw_meta.get("scores", {})
                 doubts_meta = raw_meta.get("doubts", [])
+                escaped_chunk = chunk.replace("\n", "\\n")
+                yield f"data: {escaped_chunk}\n\n"
             else:
                 reply_accum += chunk
-                sse_chunk = chunk.replace("\n", "\\n")
-                yield f"data: {sse_chunk}\n\n"
+                escaped_chunk = chunk.replace("\n", "\\n")
+                yield f"data: {escaped_chunk}\n\n"
 
         # Flush SSE done
         yield "data: [DONE]\n\n"

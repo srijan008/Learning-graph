@@ -250,6 +250,7 @@ class JourneyTopicNode(Base):
     topic_name: Mapped[str] = mapped_column(String)
     subject_name: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     chapter_name: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    chapter_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     order_index: Mapped[int] = mapped_column(Integer, default=0)
     estimated_hours: Mapped[float] = mapped_column(Float, default=1.0)
     prerequisite_topic_ids: Mapped[Optional[dict]] = mapped_column(JSON, default=list)  # list of topic IDs

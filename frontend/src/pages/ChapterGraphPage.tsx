@@ -68,6 +68,7 @@ export default function ChapterGraphPage() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [subtopicScores, setSubtopicScores] = useState<Record<string, {theory: number, example: number, cross: number}>>({});
   const [showSubtopics, setShowSubtopics] = useState(false);
+  const [previewTopic, setPreviewTopic] = useState<Topic | null>(null);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const graphRef = useRef<HTMLDivElement>(null);
@@ -203,15 +204,35 @@ export default function ChapterGraphPage() {
           accumulatedRaw += chunk;
 
           // Strip __METADATA__ blocks (confidence scores / doubts) from display
-          const displayText = accumulatedRaw.replace(/__METADATA__[\s\S]*$/, '').trimEnd();
+          const metaMatch = accumulatedRaw.match(/__METADATA__\s*(\{[\s\S]*\})\s*$/);
+          let displayText = accumulatedRaw;
+          
+          if (metaMatch) {
+            displayText = accumulatedRaw.replace(/__METADATA__[\s\S]*$/, '').trimEnd();
+            try {
+              const metaData = JSON.parse(metaMatch[1]);
+              if (metaData.scores && Object.keys(metaData.scores).length > 0) {
+                 setSubtopicScores(prev => ({ 
+                   ...prev, 
+                   ...metaData.scores 
+                 }));
+              }
+            } catch (e) {
+              // partial JSON, ignore until complete
+            }
+          } else {
+            displayText = accumulatedRaw.replace(/__METADATA__[\s\S]*$/, '').trimEnd();
+          }
 
           setMessages(prev => {
+            if (prev.length === 0) return prev;
             const updated = [...prev];
             const last = updated[updated.length - 1];
             if (last && last.role === 'assistant') {
               last.content = displayText;
+              return updated;
             }
-            return [...updated];
+            return prev;
           });
         }
       }
@@ -346,7 +367,7 @@ export default function ChapterGraphPage() {
                   </div>
                   
                   <div className="topic-node-wrapper">
-                    <div className="topic-node" onClick={() => handleStartStudy(topic)}>
+                    <div className="topic-node" onClick={() => setPreviewTopic(topic)}>
                       <div className="topic-content">
                         <div className="topic-index">{index + 1}</div>
                         <div className="topic-text">
@@ -541,6 +562,75 @@ export default function ChapterGraphPage() {
           </div>
         )}
       </div>
+
+      {/* Preview Modal */}
+      {previewTopic && (
+        <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.85)', backdropFilter:'blur(12px)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000, padding:20 }}>
+          <div style={{ background:'#0f172a', border:'1px solid rgba(255,255,255,0.1)', borderRadius:32, maxWidth:550, width:'100%', overflow:'hidden', boxShadow:'0 25px 50px -12px rgba(0,0,0,0.5)' }}>
+            <div style={{ position:'relative', padding:32, background:'linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent)' }}>
+              <button onClick={() => setPreviewTopic(null)} style={{ position:'absolute', top:24, right:24, background:'rgba(255,255,255,0.05)', border:'none', color:'#94a3b8', borderRadius:'50%', padding:8, cursor:'pointer' }}><X size={20}/></button>
+              
+              <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:16 }}>
+                <div style={{ padding:10, borderRadius:12, background:'rgba(99,102,241,0.1)', color:'#6366f1' }}><BookOpen size={24}/></div>
+                <div>
+                  <h2 style={{ margin:0, fontSize:'1.5rem', fontWeight:800, color:'white' }}>{previewTopic.name}</h2>
+                  <div style={{ display:'flex', alignItems:'center', gap:12, marginTop:4 }}>
+                    <span style={{ fontSize:'0.85rem', color:'#64748b', display:'flex', alignItems:'center', gap:4 }}><Clock size={14}/> 45 min session</span>
+                    <span style={{ fontSize:'0.85rem', color:'#2dd4bf', display:'flex', alignItems:'center', gap:4 }}><Mic size={14}/> Voice Tutor Enabled</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:20, padding:20, border:'1px solid rgba(255,255,255,0.05)' }}>
+                <h3 style={{ margin:'0 0 16px 0', fontSize:'0.9rem', fontWeight:700, color:'#94a3b8', textTransform:'uppercase', letterSpacing:'0.05em' }}>Subtopics to be covered</h3>
+                <div style={{ display:'flex', flexDirection:'column', gap:12, maxHeight:200, overflowY:'auto', paddingRight:8, scrollbarWidth:'thin' }}>
+                  {(previewTopic.subtopics || []).map((s:any, i:number) => (
+                    <div key={i} style={{ display:'flex', gap:12, alignItems:'flex-start' }}>
+                      <div style={{ width:20, height:20, borderRadius:6, background:'rgba(99,102,241,0.1)', color:'#6366f1', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'0.7rem', fontWeight:800, flexShrink:0 }}>{i+1}</div>
+                      <span style={{ fontSize:'0.95rem', color:'white', lineHeight:1.4 }}>{s.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ marginTop:32, display:'flex', flexDirection:'column', gap:12 }}>
+                <button 
+                  onClick={() => {
+                    handleStartStudy(previewTopic);
+                    setPreviewTopic(null);
+                  }}
+                  style={{ width:'100%', padding:'16px', borderRadius:16, border:'none', background:'white', color:'black', fontWeight:800, fontSize:'1rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:10, transition:'all 0.2s' }}
+                >
+                  <Play size={18} fill="black" /> Start Study Session
+                </button>
+                
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
+                  <button 
+                    onClick={() => {
+                       // Doubt session just enters study mode for now or we can customize
+                       handleStartStudy(previewTopic);
+                       setPreviewTopic(null);
+                    }}
+                    style={{ padding:'14px', borderRadius:16, border:'1px solid rgba(99,102,241,0.2)', background:'rgba(99,102,241,0.05)', color:'#a5b4fc', fontWeight:700, fontSize:'0.9rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:8 }}
+                  >
+                    <Send size={18} /> Doubt Session
+                  </button>
+                  <button 
+                    disabled
+                    style={{ padding:'14px', borderRadius:16, border:'1px solid rgba(255,255,255,0.05)', background:'rgba(255,255,255,0.03)', color:'#475569', fontWeight:700, fontSize:'0.9rem', cursor:'not-allowed', display:'flex', alignItems:'center', justifyContent:'center', gap:8 }}
+                  >
+                    <Award size={18} /> Review Material
+                  </button>
+                </div>
+              </div>
+
+              <div style={{ marginTop:24, textAlign:'center', fontSize:'0.75rem', color:'#475569' }}>
+                Join the voice call to start interacting with your personalized AI tutor.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Diagnostic Popup */}
       {showDiagnostic && (
