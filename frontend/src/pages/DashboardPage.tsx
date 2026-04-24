@@ -10,7 +10,7 @@ import SketchpadVisualizer from '../components/SketchpadVisualizer';
 
 const API = 'http://127.0.0.1:8002/api/v1';
 const USER = 'user_123';
-const SUBJECT_COLORS: Record<string,string> = { physics:'#6366f1', chemistry:'#10b981', botany:'#84cc16', zoology:'#f59e0b' };
+const SUBJECT_COLORS: Record<string,string> = { physics:'#F37920', chemistry:'#10b981', botany:'#84cc16', zoology:'#f59e0b' };
 
 const fetchCurriculumData = async (goal: string = 'neet') => {
   try {
@@ -131,8 +131,8 @@ export default function DashboardPage() {
             }}
               style={{
                 display: 'flex', alignItems: 'center', gap: 8, padding: '24px 20px', border: 'none', background: 'none', cursor: t.active ? 'pointer' : 'default',
-                color: tab === t.id ? '#6366f1' : t.active ? '#94a3b8' : '#334155',
-                borderBottom: tab === t.id ? '2px solid #6366f1' : '2px solid transparent',
+                color: tab === t.id ? '#F37920' : t.active ? '#94a3b8' : '#334155',
+                borderBottom: tab === t.id ? '2px solid #F37920' : '2px solid transparent',
                 fontWeight: 700, fontSize: '0.875rem', transition: 'all 0.2s', whiteSpace: 'nowrap'
               }}>
               <t.icon size={16} />
@@ -142,7 +142,7 @@ export default function DashboardPage() {
           ))}
         </nav>
 
-        <div style={{ padding: '8px 16px', borderRadius: 8, background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.2)', fontSize: '0.8rem', color: '#a5b4fc', fontWeight: 700 }}>
+        <div style={{ padding: '8px 16px', borderRadius: 8, background: 'rgba(243, 121, 32, 0.1)', border: '1px solid rgba(243, 121, 32, 0.2)', fontSize: '0.8rem', color: '#ff9d52', fontWeight: 700 }}>
           Srijan · NEET 2025
         </div>
       </header>
@@ -208,7 +208,7 @@ function DashboardSidebar({ journey, weeklyStats, recentCompletions, nodes, sele
             <div style={{ fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Current Goal</div>
             <div style={{ fontWeight: 700, color: 'white' }}>{journey?.goal || 'No goal set'}</div>
           </div>
-          <button style={{ padding: 8, borderRadius: 8, background: 'rgba(59, 130, 246, 0.1)', border: 'none', color: '#3b82f6' }}><Zap size={16} /></button>
+          <button style={{ padding: 8, borderRadius: 8, background: 'rgba(59, 130, 246, 0.1)', border: 'none', color: '#F37920' }}><Zap size={16} /></button>
         </div>
         <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: 16 }}>
           Exam Year<br />
@@ -227,7 +227,7 @@ function DashboardSidebar({ journey, weeklyStats, recentCompletions, nodes, sele
           </div>
         </div>
         <div style={{ background: 'rgba(30, 41, 59, 0.4)', borderRadius: 20, padding: 16, border: '1px solid rgba(255,255,255,0.05)', display: 'flex', gap: 12, alignItems: 'center' }}>
-          <div style={{ color: '#3b82f6' }}><Clock size={20} /></div>
+          <div style={{ color: '#F37920' }}><Clock size={20} /></div>
           <div>
             <div style={{ fontSize: '0.9rem', fontWeight: 700 }}>{weeklyStats?.total_weekly_hours || 0}h</div>
             <div style={{ fontSize: '0.65rem', color: '#64748b' }}>Study this week</div>
@@ -268,10 +268,10 @@ function DashboardSidebar({ journey, weeklyStats, recentCompletions, nodes, sele
                 onClick={() => setSelectedDate(isSelected ? null : dateStr)}
                 style={{ 
                   aspectRatio: '1', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.7rem', fontWeight: 700, cursor: 'pointer',
-                  background: isToday ? '#6366f1' : (isSelected ? 'rgba(99, 102, 241, 0.4)' : (studyMins > 0 ? `rgba(99, 102, 241, ${Math.min(0.1 + studyMins/60, 0.4)})` : 'transparent')),
-                  color: isToday ? 'white' : (studyMins > 0 || isSelected ? '#a5b4fc' : '#64748b'),
+                  background: isToday ? '#F37920' : (isSelected ? 'rgba(243, 121, 32, 0.4)' : (studyMins > 0 ? `rgba(243, 121, 32, ${Math.min(0.1 + studyMins/60, 0.4)})` : 'transparent')),
+                  color: isToday ? 'white' : (studyMins > 0 || isSelected ? '#ff9d52' : '#64748b'),
                   position: 'relative',
-                  border: isSelected ? '2px solid #6366f1' : (hasDeadline ? '1px solid rgba(239, 68, 68, 0.3)' : 'none'),
+                  border: isSelected ? '2px solid #F37920' : (hasDeadline ? '1px solid rgba(239, 68, 68, 0.3)' : 'none'),
                   transition: 'all 0.2s'
                 }}>
                 {d}
@@ -362,7 +362,7 @@ function PlanTab({ journey, nodes, done, pct, weakTopics, setTab, selectedDate, 
                     {node.status === 'completed' && <CheckCircle2 size={18} color="#10b981" style={{ position:'absolute', top:24, right:24 }} />}
                     <h4 style={{ margin: '0 0 4px 0', color: 'white', fontSize: '1rem', paddingRight: 30 }}>{node.topic_name}</h4>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: '0.8rem', marginBottom: 20 }}>
-                       <span style={{ display:'flex', alignItems:'center', gap:4 }}><div style={{ width:8, height:8, borderRadius:'50%', background:SUBJECT_COLORS[node.subject_name.toLowerCase()] || '#818cf8' }}></div> {node.subject_name}</span>
+                       <span style={{ display:'flex', alignItems:'center', gap:4 }}><div style={{ width:8, height:8, borderRadius:'50%', background:SUBJECT_COLORS[node.subject_name.toLowerCase()] || '#F37920' }}></div> {node.subject_name}</span>
                     </div>
                     <button onClick={async () => {
                       try {
@@ -391,7 +391,7 @@ function PlanTab({ journey, nodes, done, pct, weakTopics, setTab, selectedDate, 
           {/* Large Progress Card */}
           <div style={{ background: 'linear-gradient(135deg, #1e1b4b, #312e81)', borderRadius: 24, padding: 32, border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'relative', zIndex: 2 }}>
-              <div style={{ fontSize: '0.8rem', color: '#a5b4fc', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Current Goal</div>
+              <div style={{ fontSize: '0.8rem', color: '#ff9d52', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Current Goal</div>
               <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white', margin: '0 0 4px 0' }}>{journey.goal}</h2>
               <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginBottom: 24 }}>{done}/{nodes.length} Topics Completed</div>
 
@@ -399,7 +399,7 @@ function PlanTab({ journey, nodes, done, pct, weakTopics, setTab, selectedDate, 
                 <div style={{ width: `${pct}%`, height: '100%', background: 'white', borderRadius: 12, transition: 'width 1s ease-out' }}></div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.875rem', color: '#a5b4fc', fontWeight: 600 }}>Progress</span>
+                <span style={{ fontSize: '0.875rem', color: '#ff9d52', fontWeight: 600 }}>Progress</span>
                 <span style={{ fontSize: '0.875rem', color: 'white', fontWeight: 700 }}>{pct}%</span>
               </div>
             </div>
@@ -421,7 +421,7 @@ function PlanTab({ journey, nodes, done, pct, weakTopics, setTab, selectedDate, 
                  <div key={i} style={{ width: 300, flexShrink: 0, background: 'rgba(30, 41, 59, 0.4)', borderRadius: 20, padding: 24, border: '1px solid rgba(255,255,255,0.05)' }}>
                     <h4 style={{ margin: '0 0 4px 0', color: 'white', fontSize: '1rem', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{node.topic_name}</h4>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: '0.8rem', marginBottom: 20 }}>
-                       <span style={{ display:'flex', alignItems:'center', gap:4 }}><div style={{ width:8, height:8, borderRadius:'50%', background:SUBJECT_COLORS[node.subject_name.toLowerCase()] || '#818cf8' }}></div> {node.subject_name}</span>
+                       <span style={{ display:'flex', alignItems:'center', gap:4 }}><div style={{ width:8, height:8, borderRadius:'50%', background:SUBJECT_COLORS[node.subject_name.toLowerCase()] || '#F37920' }}></div> {node.subject_name}</span>
                     </div>
                     <button onClick={async () => {
                       try {
@@ -471,7 +471,7 @@ function PlanTab({ journey, nodes, done, pct, weakTopics, setTab, selectedDate, 
 function PracticeTab() {
   const navigate = useNavigate();
   const TEST_CARDS = [
-    { type:'topic_quiz', label:'Topic Quiz', desc:'10–30 Qs on one chapter', icon:Zap, color:'#6366f1', time:'30 min' },
+    { type:'topic_quiz', label:'Topic Quiz', desc:'10–30 Qs on one chapter', icon:Zap, color:'#F37920', time:'30 min' },
     { type:'chapter_mock', label:'Chapter Mock', desc:'Full chapter, all topics', icon:BookOpen, color:'#10b981', time:'45 min' },
     { type:'full_mock', label:'Full NEET Mock', desc:'180 Qs · NEET standard', icon:Trophy, color:'#f59e0b', time:'3h 20m' },
     { type:'practice_drill', label:'Targeted Drill', desc:'AI picks your weak spots', icon:Target, color:'#ec4899', time:'Flexible' },
@@ -514,7 +514,7 @@ const STATUS_FILTERS = [
   { id: 'in_progress', label: 'In Progress', icon: TrendingUp, color: '#f59e0b' },
   { id: 'weak', label: 'Weak Areas', icon: AlertTriangle, color: '#ef4444' },
   { id: 'overdue', label: 'Overdue', icon: Clock, color: '#ec4899' },
-  { id: 'no_quiz', label: 'Missing Quiz', icon: Zap, color: '#8b5cf6' },
+  { id: 'no_quiz', label: 'Missing Quiz', icon: Zap, color: '#F37920' },
 ];
 
 function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, setSelectedDate }: any) {
@@ -597,7 +597,7 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
             {(['all','11','12'] as const).map(cls => (
               <button key={cls} onClick={()=>setClassFilter(cls)}
                 style={{ padding:'7px 16px', borderRadius:20, border:'none', cursor:'pointer', fontWeight:700, fontSize:'0.8rem',
-                  background: classFilter===cls ? 'linear-gradient(135deg,#6366f1,#8b5cf6)' : 'rgba(255,255,255,0.06)',
+                  background: classFilter===cls ? 'linear-gradient(135deg,#F37920,#F37920)' : 'rgba(255,255,255,0.06)',
                   color: classFilter===cls ? 'white' : '#94a3b8' }}>
                 {cls === 'all' ? 'All Classes' : `Class ${cls}`}
               </button>
@@ -626,24 +626,24 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
       {!selectedDate && (
         <div key="learn-insights" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:32 }}>
           {/* Tutor Insights */}
-          <div style={{ padding:16, borderRadius:14, background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)' }}>
+          <div style={{ padding:16, borderRadius:14, background:'rgba(243,121,32,0.08)', border:'1px solid rgba(243,121,32,0.2)' }}>
             <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:10 }}>
-              <Brain size={14} color="#6366f1" />
-              <span style={{ fontWeight:700, fontSize:'0.8rem', color:'#a5b4fc' }}>Tutor Insights</span>
+              <Brain size={14} color="#F37920" />
+              <span style={{ fontWeight:700, fontSize:'0.8rem', color:'#ff9d52' }}>Tutor Insights</span>
             </div>
             {topicMetrics.length > 0 ? (
               <div style={{ display:'flex', flexDirection:'column', gap:6 }}>
                 {topicMetrics.slice(0, showAllTutorInsights ? undefined : 3).map((t:any,i:number) => (
                   <div key={i} style={{ display:'flex', alignItems:'center', gap:10 }}>
                     <div style={{ flex:1, height:4, background:'rgba(255,255,255,0.06)', borderRadius:4, overflow:'hidden' }}>
-                      <div style={{ height:'100%', width:`${t.completion_percentage}%`, background:'#6366f1', borderRadius:4 }} />
+                      <div style={{ height:'100%', width:`${t.completion_percentage}%`, background:'#F37920', borderRadius:4 }} />
                     </div>
                     <span style={{ fontSize:'0.72rem', color:'#94a3b8', minWidth:80, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{t.topic_name}</span>
-                    <span style={{ fontSize:'0.72rem', color:'#818cf8', fontWeight:700, minWidth:30 }}>{t.completion_percentage}%</span>
+                    <span style={{ fontSize:'0.72rem', color:'#F37920', fontWeight:700, minWidth:30 }}>{t.completion_percentage}%</span>
                   </div>
                 ))}
                 {topicMetrics.length > 3 && (
-                  <button onClick={() => setShowAllTutorInsights(!showAllTutorInsights)} style={{ background:'none', border:'none', fontSize:'0.7rem', color:'#818cf8', cursor:'pointer', textAlign:'left', padding:0, marginTop:4, display:'flex', alignItems:'center', gap:4 }}>
+                  <button onClick={() => setShowAllTutorInsights(!showAllTutorInsights)} style={{ background:'none', border:'none', fontSize:'0.7rem', color:'#F37920', cursor:'pointer', textAlign:'left', padding:0, marginTop:4, display:'flex', alignItems:'center', gap:4 }}>
                     {showAllTutorInsights ? <><ChevronUp size={12}/> Show less</> : <><ChevronDown size={12}/> +{topicMetrics.length-3} more topics tracked</>}
                   </button>
                 )}
@@ -680,14 +680,14 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
       {selectedDate && (
         <section style={{ marginBottom: 40 }}>
           <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:20 }}>
-             <CalendarIcon size={18} color="#6366f1" />
+             <CalendarIcon size={18} color="#F37920" />
              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0 }}>Daily Goals — {new Date(selectedDate).toLocaleDateString(undefined, { day:'numeric', month:'short' })}</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
              {nodes.filter((n: any) => n.planned_date === selectedDate).map((node: any, i: number) => (
-                <div key={i} style={{ background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6))', borderRadius: 20, padding: 24, border: '1px solid rgba(99, 102, 241, 0.2)', position:'relative', display:'flex', flexDirection:'column', gap:12 }}>
+                <div key={i} style={{ background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6))', borderRadius: 20, padding: 24, border: '1px solid rgba(243, 121, 32, 0.2)', position:'relative', display:'flex', flexDirection:'column', gap:12 }}>
                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
-                      <span style={{ fontSize:'0.7rem', color:'#6366f1', fontWeight:800, textTransform:'uppercase' }}>Target Topic</span>
+                      <span style={{ fontSize:'0.7rem', color:'#F37920', fontWeight:800, textTransform:'uppercase' }}>Target Topic</span>
                       {node.node_status === 'completed' && <CheckCircle2 size={16} color="#10b981" />}
                    </div>
                    <h4 style={{ margin: 0, color: 'white', fontSize: '1rem', fontWeight: 700 }}>{node.topic_name}</h4>
@@ -715,7 +715,7 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
       {filteredCurriculum.length > 0 ? filteredCurriculum.map((curr: any) => (
         <div key={curr.id}>
           {(curr.subjects || []).map((subj: any) => {
-            const color = SUBJECT_COLORS[subj.name?.toLowerCase()] || '#6366f1';
+            const color = SUBJECT_COLORS[subj.name?.toLowerCase()] || '#F37920';
             const chapters = subj.chapters || [];
             
             return (
@@ -751,7 +751,7 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
                           <div style={{ display: 'flex', gap: 4 }}>
                             {isWeak && <AlertTriangle size={12} color="#ef4444" />}
                             {isOverdue && <Clock size={12} color="#ec4899" />}
-                            {missingQuiz && <Zap size={12} color="#8b5cf6" />}
+                            {missingQuiz && <Zap size={12} color="#F37920" />}
                             {isCompleted && <CheckCircle2 size={12} color="#10b981" />}
                           </div>
                         </div>
@@ -780,7 +780,7 @@ function LearnTab({ curriculum, topicMetrics, weakTopics, nodes, selectedDate, s
         <div style={{ textAlign: 'center', padding: 60, background: 'rgba(255,255,255,0.02)', borderRadius: 24, border: '1px dashed rgba(255,255,255,0.1)' }}>
           <Filter size={32} color="#334155" style={{ marginBottom: 16 }} />
           <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#94a3b8' }}>No chapters planned for this date</h3>
-          <button onClick={() => { setSelectedDate(null); }} style={{ marginTop: 12, background: 'none', border: 'none', color: '#6366f1', fontWeight: 700, cursor: 'pointer' }}>Show all chapters</button>
+          <button onClick={() => { setSelectedDate(null); }} style={{ marginTop: 12, background: 'none', border: 'none', color: '#F37920', fontWeight: 700, cursor: 'pointer' }}>Show all chapters</button>
         </div>
       )}
     </div>
@@ -833,10 +833,10 @@ function AnalyzeTab() {
       {/* Summary Cards */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:14 }}>
         {[
-          { label:'Study Time', val:`${stats?.total_time_spent_minutes||0} min`, icon:Clock, color:'#6366f1', key:'study_time' },
+          { label:'Study Time', val:`${stats?.total_time_spent_minutes||0} min`, icon:Clock, color:'#F37920', key:'study_time' },
           { label:'Mastered', val:prog.completed||0, icon:Trophy, color:'#10b981', key:'mastered' },
           { label:'In Progress', val:prog.in_progress||0, icon:TrendingDown, color:'#f59e0b', key:'in_progress' },
-          { label:'Active Doubts', val:doubts.filter((d:any)=>d.status==='active').length, icon:Brain, color:'#8b5cf6', key:'doubts' },
+          { label:'Active Doubts', val:doubts.filter((d:any)=>d.status==='active').length, icon:Brain, color:'#F37920', key:'doubts' },
         ].map(s => (
           <button key={s.label} onClick={() => openPopup(s.key)}
             style={{ padding:18, borderRadius:16, background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', display:'flex', alignItems:'center', gap:14, cursor:'pointer', transition:'all 0.2s', textAlign:'left' }}
@@ -873,7 +873,7 @@ function AnalyzeTab() {
                   : Object.entries(popup.data).map(([subj, mins]:any) => (
                     <div key={subj} style={{ display:'flex', justifyContent:'space-between', padding:'10px 14px', borderRadius:10, background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.06)' }}>
                       <span style={{ textTransform:'capitalize', fontWeight:600 }}>{subj}</span>
-                      <span style={{ color:'#6366f1', fontWeight:700 }}>{mins} min</span>
+                      <span style={{ color:'#F37920', fontWeight:700 }}>{mins} min</span>
                     </div>
                   ))}
               </div>
@@ -911,7 +911,7 @@ function AnalyzeTab() {
                 return acc;
               }, {})
             ).map(([subject, subChapters]: [string, any]) => {
-              const color = SUBJECT_COLORS[subject.toLowerCase()] || '#6366f1';
+              const color = SUBJECT_COLORS[subject.toLowerCase()] || '#F37920';
               return (
                 <div key={subject}>
                    <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:12 }}>
@@ -964,11 +964,11 @@ function AnalyzeTab() {
 }
 
 const REVISE_MODES = [
-  { id: 'summary', label: '📋 Summary', color: '#6366f1' },
+  { id: 'summary', label: '📋 Summary', color: '#F37920' },
   { id: 'formulas', label: '🧮 Formulas', color: '#10b981' },
   { id: 'mnemonics', label: '🧠 Mnemonics', color: '#f59e0b' },
   { id: 'flashcards', label: '🃏 Flashcards', color: '#ec4899' },
-  { id: 'mindmap', label: '🕸️ Mindmap', color: '#a855f7' },
+  { id: 'mindmap', label: '🕸️ Mindmap', color: '#F37920' },
   { id: 'sketchpad', label: '🎨 Sketchpad', color: '#f43f5e' },
 ];
 
@@ -988,7 +988,7 @@ function ReviseTab() {
     if (cached) {
       const data = JSON.parse(cached);
       const chs: any[] = [];
-      data.forEach((curr:any) => (curr.subjects||[]).forEach((subj:any) => (subj.chapters||[]).forEach((ch:any) => chs.push({ ...ch, subject:subj.name, color: SUBJECT_COLORS[subj.name?.toLowerCase()]||'#6366f1' }))));
+      data.forEach((curr:any) => (curr.subjects||[]).forEach((subj:any) => (subj.chapters||[]).forEach((ch:any) => chs.push({ ...ch, subject:subj.name, color: SUBJECT_COLORS[subj.name?.toLowerCase()]||'#F37920' }))));
       setAllChapters(chs);
     }
   }, []);
@@ -1037,9 +1037,9 @@ function ReviseTab() {
           ) : loadingContent ? (
             <div style={{ textAlign:'center', padding:60, color:'#475569', display:'flex', flexDirection:'column', alignItems:'center', gap:16 }}>
               <div style={{ display: 'flex', gap: 6, padding: '16px 24px', background: 'rgba(30, 41, 59, 0.4)', borderRadius: 20, width: 'fit-content' }}>
-                <div style={{ width: 8, height: 8, background: '#818cf8', borderRadius: '50%', animation: 'pulse 1s infinite' }} />
-                <div style={{ width: 8, height: 8, background: '#818cf8', borderRadius: '50%', animation: 'pulse 1s infinite', animationDelay: '0.2s' }} />
-                <div style={{ width: 8, height: 8, background: '#818cf8', borderRadius: '50%', animation: 'pulse 1s infinite', animationDelay: '0.4s' }} />
+                <div style={{ width: 8, height: 8, background: '#F37920', borderRadius: '50%', animation: 'pulse 1s infinite' }} />
+                <div style={{ width: 8, height: 8, background: '#F37920', borderRadius: '50%', animation: 'pulse 1s infinite', animationDelay: '0.2s' }} />
+                <div style={{ width: 8, height: 8, background: '#F37920', borderRadius: '50%', animation: 'pulse 1s infinite', animationDelay: '0.4s' }} />
               </div>
               <div>Generating AI {mode}...</div>
             </div>
@@ -1064,9 +1064,9 @@ function ReviseTab() {
                   {content.cards.map((card:any, i:number) => (
                     <div key={i} onClick={() => setFlippedCard(flippedCard===i?null:i)}
                       style={{ height:150, borderRadius:12, cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', padding:16, textAlign:'center', flexDirection:'column', gap:8, transition:'all 0.3s',
-                        background:flippedCard===i?'rgba(99,102,241,0.15)':'rgba(255,255,255,0.04)',
-                        border:`1px solid ${flippedCard===i?'rgba(99,102,241,0.4)':'rgba(255,255,255,0.07)'}` }}>
-                      <div style={{ fontWeight:600, fontSize:'0.85rem', color:flippedCard===i?'#a5b4fc':'white' }}>
+                        background:flippedCard===i?'rgba(243,121,32,0.15)':'rgba(255,255,255,0.04)',
+                        border:`1px solid ${flippedCard===i?'rgba(243,121,32,0.4)':'rgba(255,255,255,0.07)'}` }}>
+                      <div style={{ fontWeight:600, fontSize:'0.85rem', color:flippedCard===i?'#ff9d52':'white' }}>
                         {flippedCard===i ? card.answer : card.question}
                       </div>
                       <div style={{ fontSize:'0.65rem', color:'#334155' }}>{flippedCard===i?'tap to flip back':'tap to reveal'}</div>
@@ -1089,8 +1089,8 @@ function Loading({ text }: { text: string }) {
 function Empty({ icon:Icon, title, desc, children }: any) {
   return (
     <div style={{ textAlign:'center', padding:80 }}>
-      <div style={{ width:72, height:72, borderRadius:20, background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.2)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 20px' }}>
-        <Icon size={28} color="#6366f1" />
+      <div style={{ width:72, height:72, borderRadius:20, background:'rgba(243,121,32,0.1)', border:'1px solid rgba(243,121,32,0.2)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 20px' }}>
+        <Icon size={28} color="#F37920" />
       </div>
       <h2 style={{ fontSize:'1.5rem', fontWeight:800, marginBottom:8 }}>{title}</h2>
       <p style={{ color:'#64748b', marginBottom:24 }}>{desc}</p>

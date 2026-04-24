@@ -13,7 +13,7 @@ import 'katex/dist/katex.min.css';
 
 import { fetchCurriculum } from '../utils/api_cache';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const MOCK_USER = 'user_123';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -38,7 +38,7 @@ type Screen = 'picker' | 'study';
 // ─────────────────────────────────────────────────────────────────────────────
 const confidenceColor = (score: number) => {
   if (score >= 80) return '#10b981';
-  if (score >= 50) return '#6366f1';
+  if (score >= 50) return '#F37920';
   if (score > 0)   return '#f59e0b';
   return '#64748b';
 };
@@ -53,7 +53,7 @@ const statusDot = (score: number | any, status: string) => {
   const anyProgress = theory > 0 || example > 0 || cross > 0;
 
   if (status === 'completed' || allMastered) return { icon: '✅', color: '#10b981' };
-  if (status === 'in_progress' || anyProgress) return { icon: '🔵', color: '#6366f1' };
+  if (status === 'in_progress' || anyProgress) return { icon: '🟠', color: '#F37920' };
   return { icon: '⚪', color: '#64748b' };
 };
 
@@ -530,7 +530,7 @@ export default function LearningPage() {
             {sidebarOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
           <button
-            style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 16px', borderRadius:10, background:'linear-gradient(135deg, #6366f1, #8b5cf6)', border:'none', color:'white', cursor:'pointer', fontSize:'0.85rem', fontWeight:900, boxShadow: '0 4px 12px rgba(99,102,241,0.3)' }}
+            style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 16px', borderRadius:10, background:'linear-gradient(135deg, #F37920, #ff9d52)', border:'none', color:'white', cursor:'pointer', fontSize:'0.85rem', fontWeight:900, boxShadow: '0 4px 12px rgba(243, 121, 32, 0.3)' }}
           >
             <Mic size={16} fill="white" /> Start Session
           </button>
@@ -553,7 +553,7 @@ export default function LearningPage() {
                 <span style={{ color: doneCount > 0 ? '#10b981' : 'white', fontSize: '0.8rem', fontWeight: 700 }}>{doneCount}/{totalCount} <span style={{ fontWeight: 400, fontSize: '0.68rem', color: 'var(--text-secondary)' }}>mastered</span></span>
               </div>
               <div style={{ height: '8px', background: 'rgba(255,255,255,0.08)', borderRadius: '4px', overflow: 'hidden' }}>
-                <div style={{ height: '100%', width: `${progressPct}%`, background: doneCount === totalCount && totalCount > 0 ? '#10b981' : 'linear-gradient(90deg, #6366f1, #10b981)', borderRadius: '4px', transition: 'width 0.6s ease' }} />
+                <div style={{ height: '100%', width: `${progressPct}%`, background: doneCount === totalCount && totalCount > 0 ? '#10b981' : 'linear-gradient(90deg, #F37920, #10b981)', borderRadius: '4px', transition: 'width 0.6s ease' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px' }}>
                 <span style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>≥70% = mastered</span>
@@ -588,7 +588,7 @@ export default function LearningPage() {
                 style={{
                   width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
                   padding: '10px 12px', borderRadius: '8px', fontSize: '0.83rem', fontWeight: 600, cursor: canPractice ? 'pointer' : 'not-allowed',
-                  background: canPractice ? 'linear-gradient(135deg, #6366f1, #10b981)' : 'rgba(255,255,255,0.05)',
+                  background: canPractice ? 'linear-gradient(135deg, #F37920, #10b981)' : 'rgba(255,255,255,0.05)',
                   border: canPractice ? 'none' : '1px solid rgba(255,255,255,0.1)',
                   color: canPractice ? 'white' : 'var(--text-secondary)',
                   transition: 'all 0.2s',
@@ -618,7 +618,7 @@ export default function LearningPage() {
                 const isActive = selSubtopic?.id === st.id;
                 
                 return (
-                  <div key={st.id} style={{ flexShrink: 0, borderRadius: '8px', overflow: 'hidden', border: isActive ? '1px solid var(--accent-primary)' : '1px solid transparent', background: isActive ? 'rgba(99,102,241,0.1)' : 'transparent', transition: 'all 0.15s', marginBottom: '4px' }}>
+                  <div key={st.id} style={{ flexShrink: 0, borderRadius: '8px', overflow: 'hidden', border: isActive ? '1px solid var(--accent-primary)' : '1px solid transparent', background: isActive ? 'rgba(243, 121, 32, 0.1)' : 'transparent', transition: 'all 0.15s', marginBottom: '4px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '8px 10px 0' }}>
                       <button onClick={() => selectSubtopic(st)} style={{ flex: 1, textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', color: isActive ? 'var(--accent-primary)' : 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: 1.4, display: 'flex', alignItems: 'flex-start', gap: '8px', padding: 0 }}>
                         <span style={{ fontSize: '0.7rem', marginTop: '2px', flexShrink: 0 }}>{dot.icon}</span>
@@ -689,13 +689,13 @@ export default function LearningPage() {
             {messages.map((msg, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '10px', flexDirection: msg.role === 'user' ? 'row-reverse' : 'row', alignItems: 'flex-start' }}>
                 {msg.role === 'assistant' && (
-                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #F37920, #ff9d52)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <GraduationCap size={16} color="white" />
                   </div>
                 )}
                 <div style={{
                   maxWidth: '70%', padding: '12px 16px', borderRadius: msg.role === 'user' ? '16px 4px 16px 16px' : '4px 16px 16px 16px',
-                  background: msg.role === 'user' ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'rgba(255,255,255,0.06)',
+                  background: msg.role === 'user' ? 'linear-gradient(135deg, #F37920, #ff9d52)' : 'rgba(255,255,255,0.06)',
                   border: msg.role === 'assistant' ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   color: 'white', fontSize: '0.9rem', lineHeight: 1.7,
                 }}>
@@ -704,7 +704,7 @@ export default function LearningPage() {
                       <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}
                         components={{
                           strong: ({ children }) => <strong style={{ color: 'var(--accent-secondary)' }}>{children}</strong>,
-                          code: ({ children }) => <code style={{ background: 'rgba(99,102,241,0.2)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.85em' }}>{children}</code>,
+                          code: ({ children }) => <code style={{ background: 'rgba(243, 121, 32, 0.2)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.85em' }}>{children}</code>,
                         }}
                       >{msg.content}</ReactMarkdown>
                     </div>
@@ -715,12 +715,12 @@ export default function LearningPage() {
 
             {sending && (
               <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #F37920, #ff9d52)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <GraduationCap size={16} color="white" />
                 </div>
                 <div style={{ padding: '12px 16px', borderRadius: '4px 16px 16px 16px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <span style={{ display: 'flex', gap: '4px' }}>
-                    {[0,1,2].map(i => <span key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#6366f1', display: 'inline-block', animation: `bounce 1s ease ${i * 0.2}s infinite` }} />)}
+                    {[0,1,2].map(i => <span key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#F37920', display: 'inline-block', animation: `bounce 1s ease ${i * 0.2}s infinite` }} />)}
                   </span>
                 </div>
               </div>
@@ -743,7 +743,7 @@ export default function LearningPage() {
                   resize: 'none', outline: 'none', lineHeight: 1.5,
                   transition: 'border-color 0.2s',
                 }}
-                onFocus={e => e.target.style.borderColor = '#6366f1'}
+                onFocus={e => e.target.style.borderColor = '#F37920'}
                 onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'}
                 disabled={sending || greeting || !sessionId}
               />
@@ -752,7 +752,7 @@ export default function LearningPage() {
                 disabled={!inputText.trim() || sending || greeting || !sessionId}
                 style={{
                   width: '44px', height: '44px', borderRadius: '12px', border: 'none', cursor: 'pointer',
-                  background: inputText.trim() && !sending ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'rgba(255,255,255,0.08)',
+                  background: inputText.trim() && !sending ? 'linear-gradient(135deg, #F37920, #ff9d52)' : 'rgba(255,255,255,0.08)',
                   color: inputText.trim() && !sending ? 'white' : '#64748b',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.2s', flexShrink: 0,

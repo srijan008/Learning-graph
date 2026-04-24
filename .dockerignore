@@ -1,0 +1,30 @@
+# Git and IDEs
+.git
+.gitignore
+.vscode
+.idea
+__pycache__
+*.pyc
+
+# Virtual Environments and Modules
+venv/
+node_modules/
+frontend/node_modules/
+
+# Build artifacts
+frontend/dist/
+*.log
+tmp/
+
+# Data and large files (needed for qbank)
+# neet_examside_data_mapped_v6.json
+CUET/
+NDA/
+output/
+outputv1/
+outputv1_processed/
+mapping_pipeline/
+
+# Env
+.env
+# service-account.json (needed for backend)

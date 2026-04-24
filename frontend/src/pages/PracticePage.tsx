@@ -10,7 +10,7 @@ import {
   BookOpen, Layers, Target, ChevronDown, Sparkles, FileText
 } from 'lucide-react';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const DEFAULT_DURATION = 30 * 60; // 30 minutes in seconds
 
 interface CurriculumNode { id: string; name: string; subjects: SubjectNode[]; }
@@ -65,16 +65,16 @@ export default function PracticePage() {
         const savedStr = localStorage.getItem('practice_selections');
         const savedSel = savedStr ? JSON.parse(savedStr) : {};
         
-        let c = data.find(x => x.id === savedSel.curriculumId) || data[0];
+        let c = data.find((x: CurriculumNode) => x.id === savedSel.curriculumId) || data[0];
         setSelCurriculum(c);
         
-        let s = c?.subjects?.find(x => x.id === savedSel.subjectId) || c?.subjects?.[0] || null;
+        let s = c?.subjects?.find((x: SubjectNode) => x.id === savedSel.subjectId) || c?.subjects?.[0] || null;
         setSelSubject(s);
         
-        let ch = s?.chapters?.find(x => x.id === savedSel.chapterId) || s?.chapters?.[0] || null;
+        let ch = s?.chapters?.find((x: ChapterNode) => x.id === savedSel.chapterId) || s?.chapters?.[0] || null;
         setSelChapter(ch);
         
-        let t = ch?.topics?.find(x => x.id === savedSel.topicId) || ch?.topics?.[0] || null;
+        let t = ch?.topics?.find((x: TopicNode) => x.id === savedSel.topicId) || ch?.topics?.[0] || null;
         setSelTopic(t);
       }
       setLoadingCurriculum(false);
@@ -239,11 +239,11 @@ export default function PracticePage() {
 
   const statusColors: Record<QuestionStatus, string> = {
     unattempted: '#475569',
-    answered: '#3b82f6',
+    answered: '#F37920',
     reviewing: '#f59e0b',
     correct: '#10b981',
     wrong: '#ef4444',
-    grading: '#8b5cf6',
+    grading: '#F37920',
   };
 
   const timerColor = timeLeft < 300 ? '#ef4444' : timeLeft < 600 ? '#f59e0b' : '#10b981';
@@ -286,7 +286,7 @@ export default function PracticePage() {
                       style={{
                         textAlign: 'left', padding: '10px 12px', borderRadius: '8px', cursor: 'pointer', fontSize: '0.875rem',
                         border: '1px solid ' + (selCurriculum?.id === c.id ? 'var(--accent-primary)' : 'transparent'),
-                        background: selCurriculum?.id === c.id ? 'rgba(99,102,241,0.15)' : 'transparent',
+                        background: selCurriculum?.id === c.id ? 'rgba(243,121,32,0.15)' : 'transparent',
                         color: selCurriculum?.id === c.id ? 'white' : 'var(--text-secondary)',
                         transition: 'all 0.15s'
                       }}>
@@ -303,7 +303,7 @@ export default function PracticePage() {
                       style={{
                         textAlign: 'left', padding: '10px 12px', borderRadius: '8px', cursor: 'pointer', fontSize: '0.875rem',
                         border: '1px solid ' + (selSubject?.id === s.id ? 'var(--accent-primary)' : 'transparent'),
-                        background: selSubject?.id === s.id ? 'rgba(99,102,241,0.15)' : 'transparent',
+                        background: selSubject?.id === s.id ? 'rgba(243,121,32,0.15)' : 'transparent',
                         color: selSubject?.id === s.id ? 'white' : 'var(--text-secondary)',
                         transition: 'all 0.15s'
                       }}>
@@ -356,7 +356,7 @@ export default function PracticePage() {
               </div>
 
               {selTopic ? (
-                <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '16px' }}>
+                <div style={{ background: 'rgba(243,121,32,0.1)', border: '1px solid rgba(243,121,32,0.3)', borderRadius: '12px', padding: '16px' }}>
                   <p style={{ margin: 0, color: 'var(--accent-secondary)', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '4px' }}>Ready to start</p>
                   <p style={{ margin: 0, color: 'white', fontWeight: 600, fontSize: '1.05rem', lineHeight: 1.4 }}>{selTopic.name}</p>
                 </div>
@@ -394,7 +394,7 @@ export default function PracticePage() {
                 style={{ 
                   marginTop: 'auto', padding: '16px', fontSize: '1.1rem', fontWeight: 700, 
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
-                  boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.3)',
+                  boxShadow: '0 10px 15px -3px rgba(243, 121, 32, 0.3)',
                 }}
               >
                 {loading ? 'Generating Test...' : <><Play size={20} fill="currentColor" /> ENTER LAB</>}
@@ -509,7 +509,7 @@ export default function PracticePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {[
                 { c: '#475569', l: 'Not Seen' },
-                { c: '#3b82f6', l: 'Answered' },
+                { c: '#F37920', l: 'Answered' },
                 { c: '#f59e0b', l: 'Review' },
                 { c: '#10b981', l: 'Graded' },
               ].map(({c, l}) => (
@@ -611,10 +611,10 @@ export default function PracticePage() {
                             textAlign: 'left', padding: '16px 24px', borderRadius: '16px', cursor: 'pointer',
                             fontSize: '1.05rem', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 
                             display: 'flex', alignItems: 'center', gap: '16px',
-                            background: isSelected ? 'rgba(99, 102, 241, 0.2)' : 'rgba(255, 255, 255, 0.03)',
+                            background: isSelected ? 'rgba(243, 121, 32, 0.2)' : 'rgba(255, 255, 255, 0.03)',
                             border: isSelected ? '2px solid var(--accent-primary)' : '1px solid rgba(255,255,255,0.1)',
                             color: isSelected ? 'white' : 'var(--text-secondary)',
-                            boxShadow: isSelected ? '0 0 20px rgba(99, 102, 241, 0.2)' : 'none',
+                            boxShadow: isSelected ? '0 0 20px rgba(243, 121, 32, 0.2)' : 'none',
                             transform: isSelected ? 'translateX(8px)' : 'none'
                           }}
                         >
@@ -624,7 +624,7 @@ export default function PracticePage() {
                             fontSize: '0.9rem', fontWeight: 900,
                             background: isSelected ? 'var(--accent-primary)' : 'rgba(255,255,255,0.1)',
                             color: 'white',
-                            boxShadow: isSelected ? '0 4px 10px rgba(99, 102, 241, 0.4)' : 'none',
+                            boxShadow: isSelected ? '0 4px 10px rgba(243, 121, 32, 0.4)' : 'none',
                             transition: 'all 0.2s', flexShrink: 0
                           }}>
                             {letter}
@@ -699,7 +699,7 @@ export default function PracticePage() {
             {/* Final Test Report Summary */}
             {submitted && testResult && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                <div className="glass-panel slide-up" style={{ padding: '30px', borderRadius: '20px', background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1))', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="glass-panel slide-up" style={{ padding: '30px', borderRadius: '20px', background: 'linear-gradient(135deg, rgba(243,121,32,0.1), rgba(168,85,247,0.1))', border: '1px solid rgba(255,255,255,0.1)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <Trophy size={32} color="#fbbf24" />

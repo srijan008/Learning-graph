@@ -9,11 +9,12 @@ import TestSessionPage from './pages/TestSessionPage';
 import TestResultsPage from './pages/TestResultsPage';
 import OnboardingPage from './pages/OnboardingPage';
 import ChapterGraphPage from './pages/ChapterGraphPage';
+import LandingPage from './pages/LandingPage';
 
 function AppContent() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/onboarding" replace />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/onboarding" element={<OnboardingPage />} />
       {/* Sidebar-free full page routes */}
       <Route path="/journey/new" element={<JourneySetupPage />} />

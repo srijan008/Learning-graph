@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { TrendingUp, Plus, Trash2, ChevronRight, Loader2, Map as MapIcon } from 'lucide-react';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const MOCK_USER = 'user_123';
 
 export default function JourneyListPage() {
@@ -30,7 +30,7 @@ export default function JourneyListPage() {
   };
 
   const difficultyBadge: Record<string, { label: string; color: string }> = {
-    standard: { label: '📈 Standard', color: '#6366f1' },
+    standard: { label: '📈 Standard', color: '#F37920' },
     accelerated: { label: '⚡ Accelerated', color: '#f59e0b' },
     deep_dive: { label: '🔬 Deep Dive', color: '#10b981' },
   };
@@ -40,7 +40,7 @@ export default function JourneyListPage() {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <MapIcon size={28} color="#6366f1" />
+          <MapIcon size={28} color="#F37920" />
           <div>
             <h1 className="page-title" style={{ margin: 0 }}>My Learning Journeys</h1>
             <p style={{ color: 'var(--text-secondary)', margin: '2px 0 0', fontSize: '0.85rem' }}>
@@ -60,7 +60,7 @@ export default function JourneyListPage() {
         </div>
       ) : journeys.length === 0 ? (
         <div className="glass-panel" style={{ textAlign: 'center', padding: '60px 40px' }}>
-          <TrendingUp size={48} color="#6366f1" style={{ marginBottom: '16px', opacity: 0.5 }} />
+          <TrendingUp size={48} color="#F37920" style={{ marginBottom: '16px', opacity: 0.5 }} />
           <h2 style={{ color: 'white', margin: '0 0 8px' }}>No journeys yet</h2>
           <p style={{ color: 'var(--text-secondary)', margin: '0 0 24px' }}>
             Create your first personalized learning journey to get started.
@@ -79,7 +79,7 @@ export default function JourneyListPage() {
                 onClick={() => navigate(`/journey/${j.id}`)}
                 className="glass-panel"
                 style={{ padding: '20px 24px', cursor: 'pointer', transition: 'border-color 0.2s, transform 0.1s', borderColor: 'rgba(255,255,255,0.08)' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = '#6366f1'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = '#F37920'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.08)'; (e.currentTarget as HTMLDivElement).style.transform = 'none'; }}
               >
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
@@ -97,7 +97,7 @@ export default function JourneyListPage() {
                     {/* Progress bar */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                       <div style={{ flex: 1, height: '5px', background: 'rgba(255,255,255,0.07)', borderRadius: '3px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${j.progress_pct}%`, background: j.progress_pct === 100 ? '#10b981' : 'linear-gradient(90deg, #6366f1, #10b981)', borderRadius: '3px', transition: 'width 0.6s ease' }} />
+                        <div style={{ height: '100%', width: `${j.progress_pct}%`, background: j.progress_pct === 100 ? '#10b981' : 'linear-gradient(90deg, #F37920, #10b981)', borderRadius: '3px', transition: 'width 0.6s ease' }} />
                       </div>
                       <span style={{ color: j.progress_pct > 0 ? '#10b981' : 'var(--text-secondary)', fontSize: '0.72rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
                         {j.completed_topics}/{j.total_topics} ({j.progress_pct}%)
@@ -121,7 +121,7 @@ export default function JourneyListPage() {
                     >
                       <Trash2 size={14} />
                     </button>
-                    <ChevronRight size={18} color="#6366f1" />
+                    <ChevronRight size={18} color="#F37920" />
                   </div>
                 </div>
               </div>

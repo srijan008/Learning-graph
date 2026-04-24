@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import RichText from '../components/RichText';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const MOCK_USER = 'user_123';
 
 interface Subtopic {
@@ -433,15 +433,15 @@ export default function ChapterGraphPage() {
                   <button
                     onClick={() => {
                       if (selTopic) {
-                        window.open(`/test?prefill_subject=${encodeURIComponent(subjectName.toLowerCase())}&prefill_chapter=${encodeURIComponent(chapterId)}&prefill_topic=${encodeURIComponent(selTopic.id)}&prefill_type=topic_quiz`, '_blank');
+                        window.open(`/test?prefill_subject=${encodeURIComponent(subjectName.toLowerCase())}&prefill_chapter=${encodeURIComponent(chapterId || '')}&prefill_topic=${encodeURIComponent(selTopic.id)}&prefill_type=topic_quiz`, '_blank');
                       }
                     }}
-                    style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 12px', borderRadius:8, background:'linear-gradient(135deg,rgba(99,102,241,0.2),rgba(16,185,129,0.2))', border:'1px solid rgba(99,102,241,0.3)', color:'#a5b4fc', cursor:'pointer', fontSize:'0.78rem', fontWeight:700, whiteSpace:'nowrap' }}>
+                    style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 12px', borderRadius:8, background:'linear-gradient(135deg,rgba(243,121,32,0.2),rgba(16,185,129,0.2))', border:'1px solid rgba(243,121,32,0.3)', color:'#ff9d52', cursor:'pointer', fontSize:'0.78rem', fontWeight:700, whiteSpace:'nowrap' }}>
                     📝 Quiz Me
                   </button>
                 </div>
                 <button
-                  style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 16px', borderRadius:10, background:'linear-gradient(135deg, #6366f1, #8b5cf6)', border:'none', color:'white', cursor:'pointer', fontSize:'0.82rem', fontWeight:900, boxShadow: '0 4px 12px rgba(99,102,241,0.3)' }}
+                  style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 16px', borderRadius:10, background:'linear-gradient(135deg, #F37920, #ff9d52)', border:'none', color:'white', cursor:'pointer', fontSize:'0.82rem', fontWeight:900, boxShadow: '0 4px 12px rgba(243, 121, 32, 0.3)' }}
                 >
                   <Mic size={16} fill="white" /> Start Session
                 </button>
@@ -488,16 +488,16 @@ export default function ChapterGraphPage() {
                           <div className="subtopic-conf-bar-row" style={{ marginBottom: 4 }}>
                             <div style={{ width: 45, fontSize: '0.65rem', color: '#94a3b8' }}>Theory</div>
                             <div className="subtopic-conf-bar">
-                              <div className="subtopic-conf-fill" style={{ width: `${scores.theory}%`, background: scores.theory >= 70 ? '#10b981' : scores.theory > 0 ? '#6366f1' : '#334155' }} />
+                              <div className="subtopic-conf-fill" style={{ width: `${scores.theory}%`, background: scores.theory >= 70 ? '#10b981' : scores.theory > 0 ? '#F37920' : '#334155' }} />
                             </div>
-                            <span className="subtopic-pct" style={{ color: scores.theory > 0 ? '#818cf8' : '#475569' }}>{scores.theory}%</span>
+                            <span className="subtopic-pct" style={{ color: scores.theory > 0 ? '#F37920' : '#475569' }}>{scores.theory}%</span>
                           </div>
 
                           {/* Example Bar */}
                           <div className="subtopic-conf-bar-row" style={{ marginBottom: 4 }}>
                             <div style={{ width: 45, fontSize: '0.65rem', color: '#94a3b8' }}>Example</div>
                             <div className="subtopic-conf-bar">
-                              <div className="subtopic-conf-fill" style={{ width: `${scores.example}%`, background: scores.example >= 70 ? '#10b981' : scores.example > 0 ? '#8b5cf6' : '#334155' }} />
+                              <div className="subtopic-conf-fill" style={{ width: `${scores.example}%`, background: scores.example >= 70 ? '#10b981' : scores.example > 0 ? '#F37920' : '#334155' }} />
                             </div>
                             <span className="subtopic-pct" style={{ color: scores.example > 0 ? '#c084fc' : '#475569' }}>{scores.example}%</span>
                           </div>
@@ -567,11 +567,11 @@ export default function ChapterGraphPage() {
       {previewTopic && (
         <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.85)', backdropFilter:'blur(12px)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000, padding:20 }}>
           <div style={{ background:'#0f172a', border:'1px solid rgba(255,255,255,0.1)', borderRadius:32, maxWidth:550, width:'100%', overflow:'hidden', boxShadow:'0 25px 50px -12px rgba(0,0,0,0.5)' }}>
-            <div style={{ position:'relative', padding:32, background:'linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent)' }}>
+            <div style={{ position:'relative', padding:32, background:'linear-gradient(135deg, rgba(243, 121, 32, 0.1), transparent)' }}>
               <button onClick={() => setPreviewTopic(null)} style={{ position:'absolute', top:24, right:24, background:'rgba(255,255,255,0.05)', border:'none', color:'#94a3b8', borderRadius:'50%', padding:8, cursor:'pointer' }}><X size={20}/></button>
               
               <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:16 }}>
-                <div style={{ padding:10, borderRadius:12, background:'rgba(99,102,241,0.1)', color:'#6366f1' }}><BookOpen size={24}/></div>
+                <div style={{ padding:10, borderRadius:12, background:'rgba(243,121,32,0.1)', color:'#F37920' }}><BookOpen size={24}/></div>
                 <div>
                   <h2 style={{ margin:0, fontSize:'1.5rem', fontWeight:800, color:'white' }}>{previewTopic.name}</h2>
                   <div style={{ display:'flex', alignItems:'center', gap:12, marginTop:4 }}>
@@ -586,7 +586,7 @@ export default function ChapterGraphPage() {
                 <div style={{ display:'flex', flexDirection:'column', gap:12, maxHeight:200, overflowY:'auto', paddingRight:8, scrollbarWidth:'thin' }}>
                   {(previewTopic.subtopics || []).map((s:any, i:number) => (
                     <div key={i} style={{ display:'flex', gap:12, alignItems:'flex-start' }}>
-                      <div style={{ width:20, height:20, borderRadius:6, background:'rgba(99,102,241,0.1)', color:'#6366f1', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'0.7rem', fontWeight:800, flexShrink:0 }}>{i+1}</div>
+                      <div style={{ width:20, height:20, borderRadius:6, background:'rgba(243,121,32,0.1)', color:'#F37920', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'0.7rem', fontWeight:800, flexShrink:0 }}>{i+1}</div>
                       <span style={{ fontSize:'0.95rem', color:'white', lineHeight:1.4 }}>{s.name}</span>
                     </div>
                   ))}
@@ -599,19 +599,18 @@ export default function ChapterGraphPage() {
                     handleStartStudy(previewTopic);
                     setPreviewTopic(null);
                   }}
-                  style={{ width:'100%', padding:'16px', borderRadius:16, border:'none', background:'white', color:'black', fontWeight:800, fontSize:'1rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:10, transition:'all 0.2s' }}
+                  style={{ width:'100%', padding:'16px', borderRadius:16, border:'none', background:'#F37920', color:'white', fontWeight:800, fontSize:'1rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:10, transition:'all 0.2s', boxShadow: '0 8px 24px rgba(243, 121, 32, 0.3)' }}
                 >
-                  <Play size={18} fill="black" /> Start Study Session
+                  <Play size={18} fill="white" /> Start Study Session
                 </button>
                 
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
-                  <button 
+                   <button 
                     onClick={() => {
-                       // Doubt session just enters study mode for now or we can customize
                        handleStartStudy(previewTopic);
                        setPreviewTopic(null);
                     }}
-                    style={{ padding:'14px', borderRadius:16, border:'1px solid rgba(99,102,241,0.2)', background:'rgba(99,102,241,0.05)', color:'#a5b4fc', fontWeight:700, fontSize:'0.9rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:8 }}
+                    style={{ padding:'14px', borderRadius:16, border:'1px solid rgba(243, 121, 32, 0.2)', background:'rgba(243, 121, 32, 0.05)', color:'#ff9d52', fontWeight:700, fontSize:'0.9rem', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:8 }}
                   >
                     <Send size={18} /> Doubt Session
                   </button>
@@ -741,7 +740,7 @@ export default function ChapterGraphPage() {
         .back-btn:hover, .fullscreen-btn:hover {
           background: rgba(255, 255, 255, 0.08);
           color: white;
-          border-color: rgba(99, 102, 241, 0.5);
+          border-color: rgba(243, 121, 32, 0.5);
           transform: translateY(-1px);
         }
 
@@ -749,7 +748,7 @@ export default function ChapterGraphPage() {
           display: flex;
           align-items: center;
           gap: 10px;
-          color: #818cf8;
+          color: #F37920;
           font-weight: 600;
           font-size: 0.9375rem;
         }
@@ -763,7 +762,7 @@ export default function ChapterGraphPage() {
         .graph-column {
           overflow-y: auto;
           background-image: 
-            radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+            radial-gradient(circle at 20% 30%, rgba(243, 121, 32, 0.05) 0%, transparent 40%),
             radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.03) 0%, transparent 40%);
           /* No width transition — prevents topic list from re-ordering visually on click */
           scrollbar-width: none;
@@ -792,7 +791,7 @@ export default function ChapterGraphPage() {
         .back-to-graph {
           background: none;
           border: none;
-          color: #6366f1;
+          color: #F37920;
           font-size: 0.8125rem;
           font-weight: 600;
           cursor: pointer;
@@ -803,7 +802,7 @@ export default function ChapterGraphPage() {
           transition: all 0.2s;
         }
 
-        .back-to-graph:hover { color: #818cf8; transform: translateX(-4px); }
+        .back-to-graph:hover { color: #F37920; transform: translateX(-4px); }
 
         .sidebar-title {
           font-size: 1.25rem;
@@ -839,14 +838,14 @@ export default function ChapterGraphPage() {
         .node-icon.main {
           width: 96px;
           height: 96px;
-          background: linear-gradient(135deg, #6366f1, #a855f7);
+          background: linear-gradient(135deg, #F37920, #F37920);
           border-radius: 32px;
           display: flex;
           align-items: center;
           justify-content: center;
           margin: 0 auto 28px;
           box-shadow: 
-            0 20px 40px -10px rgba(99, 102, 241, 0.5),
+            0 20px 40px -10px rgba(243, 121, 32, 0.5),
             inset 0 2px 4px rgba(255, 255, 255, 0.2);
           position: relative;
         }
@@ -856,7 +855,7 @@ export default function ChapterGraphPage() {
           position: absolute;
           inset: -4px;
           border-radius: 36px;
-          border: 2px solid rgba(99, 102, 241, 0.3);
+          border: 2px solid rgba(243, 121, 32, 0.3);
           animation: pulse 2s infinite;
         }
 
@@ -900,9 +899,9 @@ export default function ChapterGraphPage() {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
-          color: #a5b4fc;
+          background: rgba(243, 121, 32, 0.1);
+          border: 1px solid rgba(243, 121, 32, 0.2);
+          color: #ff9d52;
           padding: 8px 16px;
           border-radius: 12px;
           font-size: 0.8125rem;
@@ -915,7 +914,7 @@ export default function ChapterGraphPage() {
         .sidebar .re-diagnostic-btn { margin: 0; }
 
         .re-diagnostic-btn:hover {
-          background: rgba(99, 102, 241, 0.2);
+          background: rgba(243, 121, 32, 0.2);
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
@@ -945,13 +944,13 @@ export default function ChapterGraphPage() {
         .path-vertical {
           position: absolute;
           left: 0; top: 0; bottom: 0; width: 2px;
-          background: linear-gradient(to bottom, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.05));
+          background: linear-gradient(to bottom, rgba(243, 121, 32, 0.3), rgba(243, 121, 32, 0.05));
         }
 
         .path-horizontal {
           position: absolute;
           left: 0; bottom: 0; width: 60px; height: 2px;
-          background: rgba(99, 102, 241, 0.15);
+          background: rgba(243, 121, 32, 0.15);
         }
 
         .sidebar .path-horizontal { width: 24px; }
@@ -973,15 +972,15 @@ export default function ChapterGraphPage() {
         .sidebar .topic-node { padding: 16px 20px; border-radius: 16px; }
 
         .topic-branch.active .topic-node {
-          border-color: #6366f1;
-          background: rgba(99, 102, 241, 0.12);
-          box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+          border-color: #F37920;
+          background: rgba(243, 121, 32, 0.12);
+          box-shadow: 0 0 30px rgba(243, 121, 32, 0.15);
           transform: scale(1.02);
         }
 
         .topic-node:hover {
           background: rgba(30, 41, 59, 0.7);
-          border-color: rgba(99, 102, 241, 0.4);
+          border-color: rgba(243, 121, 32, 0.4);
           transform: translateY(-4px) scale(1.01);
         }
 
@@ -990,11 +989,11 @@ export default function ChapterGraphPage() {
 
         .topic-index {
           width: 48px; height: 48px;
-          background: rgba(99, 102, 241, 0.1);
-          border: 1px solid rgba(99, 102, 241, 0.2);
+          background: rgba(243, 121, 32, 0.1);
+          border: 1px solid rgba(243, 121, 32, 0.2);
           border-radius: 16px;
           display: flex; align-items: center; justify-content: center;
-          color: #818cf8; font-weight: 800; font-size: 1.125rem; flex-shrink: 0;
+          color: #F37920; font-weight: 800; font-size: 1.125rem; flex-shrink: 0;
         }
 
         .sidebar .topic-index { width: 36px; height: 36px; font-size: 0.9rem; border-radius: 10px; }
@@ -1011,7 +1010,7 @@ export default function ChapterGraphPage() {
         }
 
         .topic-node:hover .topic-action, .topic-branch.active .topic-action {
-          background: #6366f1; color: white; transform: rotate(90deg);
+          background: #F37920; color: white; transform: rotate(90deg);
         }
 
         .subtopics-list {
@@ -1045,9 +1044,9 @@ export default function ChapterGraphPage() {
 
         .tutor-avatar {
           width: 48px; height: 48px;
-          background: linear-gradient(135deg, #6366f1, #ec4899);
+          background: linear-gradient(135deg, #F37920, #ec4899);
           border-radius: 14px; display: flex; align-items: center; justify-content: center;
-          color: white; box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+          color: white; box-shadow: 0 10px 20px -5px rgba(243, 121, 32, 0.4);
         }
 
         .tutor-name { font-weight: 800; font-size: 1.125rem; color: white; }
@@ -1098,11 +1097,11 @@ export default function ChapterGraphPage() {
           justify-content: center; flex-shrink: 0; color: #94a3b8;
         }
 
-        .assistant .message-icon { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+        .assistant .message-icon { background: rgba(243, 121, 32, 0.15); color: #F37920; }
 
         .message-bubble { padding: 16px 24px; border-radius: 20px; font-size: 1rem; line-height: 1.7; }
         .assistant .message-bubble { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); color: #e2e8f0; }
-        .user .message-bubble { background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; border-bottom-right-radius: 4px; }
+        .user .message-bubble { background: linear-gradient(135deg, #F37920, #4f46e5); color: white; border-bottom-right-radius: 4px; }
 
         .chat-input-area { padding: 32px; background: linear-gradient(to top, #020617, transparent); }
 
@@ -1113,10 +1112,10 @@ export default function ChapterGraphPage() {
           backdrop-filter: blur(10px); transition: all 0.3s;
         }
 
-        .input-container:focus-within { border-color: rgba(99, 102, 241, 0.5); background: rgba(30, 41, 59, 0.8); }
+        .input-container:focus-within { border-color: rgba(243, 121, 32, 0.5); background: rgba(30, 41, 59, 0.8); }
 
         .input-container input { flex: 1; background: none; border: none; color: white; font-size: 1rem; padding: 12px 0; outline: none; }
-        .send-btn { width: 48px; height: 48px; background: #6366f1; color: white; border: none; border-radius: 14px; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .send-btn { width: 48px; height: 48px; background: #F37920; color: white; border: none; border-radius: 14px; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .send-btn:hover:not(.disabled) { background: #4f46e5; transform: scale(1.1) rotate(-5deg); }
 
         .typing-indicator {
@@ -1125,7 +1124,7 @@ export default function ChapterGraphPage() {
           border-radius: 20px; width: fit-content; margin-left: 56px;
         }
         .typing-indicator span {
-          width: 8px; height: 8px; background: #818cf8; border-radius: 50%;
+          width: 8px; height: 8px; background: #F37920; border-radius: 50%;
           animation: bounce 1.4s infinite ease-in-out both;
         }
         .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
@@ -1155,7 +1154,7 @@ export default function ChapterGraphPage() {
 
         .modal-glow {
           position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-          background: radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+          background: radial-gradient(circle at center, rgba(243, 121, 32, 0.08) 0%, transparent 40%);
           pointer-events: none;
         }
 
@@ -1165,14 +1164,14 @@ export default function ChapterGraphPage() {
 
         .modal-icon {
           position: relative; width: 100%; height: 100%;
-          background: linear-gradient(135deg, #6366f1, #a855f7);
+          background: linear-gradient(135deg, #F37920, #F37920);
           border-radius: 30px; display: flex; align-items: center;
           justify-content: center; color: white; z-index: 2;
-          box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.4);
+          box-shadow: 0 15px 30px -5px rgba(243, 121, 32, 0.4);
         }
 
         .icon-rings .ring {
-          position: absolute; inset: -10px; border: 1px solid rgba(99, 102, 241, 0.2);
+          position: absolute; inset: -10px; border: 1px solid rgba(243, 121, 32, 0.2);
           border-radius: 40px; animation: orbit 4s linear infinite;
         }
 
@@ -1195,11 +1194,11 @@ export default function ChapterGraphPage() {
           align-items: center; gap: 12px; transition: all 0.3s;
         }
 
-        .feature-item:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.3); }
+        .feature-item:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-4px); border-color: rgba(243, 121, 32, 0.3); }
 
         .feature-icon {
-          width: 36px; height: 36px; background: rgba(99, 102, 241, 0.1);
-          border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #818cf8;
+          width: 36px; height: 36px; background: rgba(243, 121, 32, 0.1);
+          border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #F37920;
         }
 
         .feature-text { display: flex; flex-direction: column; gap: 2px; }
@@ -1217,14 +1216,14 @@ export default function ChapterGraphPage() {
         .btn-skip:hover { background: rgba(255, 255, 255, 0.08); color: white; }
 
         .btn-start {
-          flex: 2; background: linear-gradient(135deg, #6366f1, #4f46e5); border: none;
+          flex: 2; background: linear-gradient(135deg, #F37920, #4f46e5); border: none;
           color: white; padding: 16px; border-radius: 16px; font-weight: 800;
           display: flex; align-items: center; justify-content: center; gap: 10px;
           cursor: pointer; transition: all 0.3s;
-          box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.5);
+          box-shadow: 0 10px 20px -5px rgba(243, 121, 32, 0.5);
         }
 
-        .btn-start:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6); }
+        .btn-start:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(243, 121, 32, 0.6); }
 
         .close-modal {
           position: absolute; top: 24px; right: 24px; background: none; border: none;

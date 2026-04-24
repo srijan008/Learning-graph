@@ -14,8 +14,8 @@ const USER = 'user_123';
 
 type Tab = 'overview' | 'review' | 'analysis';
 
-const SUBJECT_COLORS: Record<string, string> = { physics: '#6366f1', chemistry: '#10b981', botany: '#84cc16', zoology: '#f59e0b' };
-const SUBJECT_BG: Record<string, string> = { physics: 'rgba(99,102,241,0.15)', chemistry: 'rgba(16,185,129,0.15)', botany: 'rgba(132,204,22,0.15)', zoology: 'rgba(245,158,11,0.15)' };
+const SUBJECT_COLORS: Record<string, string> = { physics: '#F37920', chemistry: '#10b981', botany: '#84cc16', zoology: '#f59e0b' };
+const SUBJECT_BG: Record<string, string> = { physics: 'rgba(243,121,32,0.15)', chemistry: 'rgba(16,185,129,0.15)', botany: 'rgba(132,204,22,0.15)', zoology: 'rgba(245,158,11,0.15)' };
 
 interface ResultData {
   report_id: string; test_type: string; score: number; max_score: number;
@@ -121,7 +121,7 @@ export default function TestResultsPage() {
         {(['overview', 'review', 'analysis'] as Tab[]).map(t => (
           <button key={t} onClick={() => setTab(t)} style={{
             flex: 1, padding: '8px', borderRadius: '7px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem',
-            background: tab === t ? 'rgba(99,102,241,0.8)' : 'transparent',
+            background: tab === t ? 'rgba(243,121,32,0.8)' : 'transparent',
             color: tab === t ? 'white' : 'var(--text-secondary)', transition: 'all 0.2s',
           }}>
             {t.charAt(0).toUpperCase() + t.slice(1)}
@@ -212,7 +212,7 @@ export default function TestResultsPage() {
             {data.chapter_id ? (
               <button 
                 onClick={() => navigate(`/learning/chapter/${data.chapter_id}/graph`)} 
-                style={{ flex: 2, padding: '12px', borderRadius: '8px', border: 'none', background: 'linear-gradient(135deg, #6366f1, #a855f7)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, boxShadow: '0 4px 15px rgba(99, 102, 241, 0.4)' }}
+                 style={{ flex: 2, padding: '12px', borderRadius: '8px', border: 'none', background: 'linear-gradient(135deg, #F37920, #ff9d52)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, boxShadow: '0 4px 15px rgba(243, 121, 32, 0.4)' }}
               >
                 <BookOpen size={16} /> Start Learning Path <ArrowRight size={14} />
               </button>
@@ -273,7 +273,7 @@ export default function TestResultsPage() {
                     </div>
                     {r.solution && (
                       <div style={{ padding: '12px 16px', borderRadius: '8px', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
-                        <div style={{ fontSize: '0.72rem', color: 'var(--accent-primary)', fontWeight: 700, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Solution</div>
+                        <div style={{ fontSize: '0.72rem', color: '#ff9d52', fontWeight: 700, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Solution</div>
                         <p className="question-text" style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.82rem', lineHeight: 1.8 }}>
                           <MathText text={r.solution} />
                         </p>
@@ -299,7 +299,7 @@ export default function TestResultsPage() {
               {[
                 { key: 'conceptual', label: 'Conceptual Errors', color: '#ef4444', icon: Brain, desc: 'Core theory gaps' },
                 { key: 'calculation', label: 'Calculation Errors', color: '#f59e0b', icon: Target, desc: 'Solve-time mistakes' },
-                { key: 'speed', label: 'Speed Errors', color: '#6366f1', icon: Zap, desc: 'Rushed & got wrong' },
+                { key: 'speed', label: 'Speed Errors', color: '#F37920', icon: Zap, desc: 'Rushed & got wrong' },
               ].map(mt => {
                 const count = (data.mistake_analysis?.[mt.key as keyof typeof data.mistake_analysis] || []).length;
                 return (

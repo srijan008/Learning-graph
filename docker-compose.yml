@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: yolearn-backend
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env
+    # Optional: mount local code for development reloads
+    # volumes:
+    #   - .:/app
+    restart: always
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: yolearn-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+# Tip: Use 'docker-compose up --build' to start the full application

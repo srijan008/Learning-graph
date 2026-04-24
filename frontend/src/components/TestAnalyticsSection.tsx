@@ -15,15 +15,15 @@ import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis,
 } from 'recharts';
 import {
-  Trophy, TrendingUp, TrendingDown, Brain, Zap, Target,
-  BookOpen, ChevronRight, AlertTriangle, CheckCircle2, Clock,
-  BarChart2, Layers
+  Trophy, TrendingUp, TrendingDown, Target,
+  ChevronRight, AlertTriangle, CheckCircle2, Clock,
+  BarChart2, Zap
 } from 'lucide-react';
 
 const API = 'http://127.0.0.1:8002/api/v1';
 
 const SUBJECT_COLORS: Record<string, string> = {
-  physics: '#6366f1', chemistry: '#10b981', botany: '#84cc16', zoology: '#f59e0b'
+  physics: '#F37920', chemistry: '#10b981', botany: '#84cc16', zoology: '#f59e0b'
 };
 
 interface TestReport {
@@ -39,7 +39,7 @@ const TYPE_LABELS: Record<string, string> = {
   full_mock: 'Full Mock', practice_drill: 'Practice',
 };
 const TYPE_COLORS: Record<string, string> = {
-  topic_quiz: '#6366f1', chapter_mock: '#10b981', full_mock: '#f59e0b', practice_drill: '#ec4899',
+  topic_quiz: '#F37920', chapter_mock: '#10b981', full_mock: '#f59e0b', practice_drill: '#ec4899',
 };
 
 function ScoreBar({ value, max, color }: { value: number; max: number; color: string }) {
@@ -115,7 +115,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
   const mistakeData = [
     { name: 'Conceptual', value: mistakeCounts.conceptual, color: '#ef4444' },
     { name: 'Calculation', value: mistakeCounts.calculation, color: '#f59e0b' },
-    { name: 'Speed', value: mistakeCounts.speed, color: '#6366f1' },
+    { name: 'Speed', value: mistakeCounts.speed, color: '#F37920' },
   ].filter(m => m.value > 0);
 
   // Subject accuracy radar from latest full test
@@ -155,7 +155,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
       {/* ── Summary Cards ── */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '14px' }}>
         {[
-          { label: 'Avg Accuracy', val: `${avgAcc}%`, icon: Target, color: '#6366f1' },
+          { label: 'Avg Accuracy', val: `${avgAcc}%`, icon: Target, color: '#F37920' },
           { label: 'Best Accuracy', val: `${bestAcc}%`, icon: Trophy, color: '#f59e0b' },
           { label: 'Total Correct', val: totalCorrect.toString(), icon: CheckCircle2, color: '#10b981' },
           { label: 'Total Attempted', val: totalAttempted.toString(), icon: Zap, color: '#ec4899' },
@@ -185,10 +185,10 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
                 <YAxis stroke="var(--text-secondary)" domain={[0, 100]} tick={{ fontSize: 10 }} unit="%" />
                 <Tooltip
                   contentStyle={{ background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '0.8rem' }}
-                  formatter={(val: any, name: string) => [`${val}%`, 'Accuracy']}
+                  formatter={(val: any, name?: string) => [`${val}%`, 'Accuracy']}
                   labelFormatter={(label, payload) => payload?.[0]?.payload?.type ? `${payload[0].payload.type} (${label})` : label}
                 />
-                <Line type="monotone" dataKey="accuracy" stroke="#6366f1" strokeWidth={2.5} dot={{ fill: '#6366f1', r: 4 }} activeDot={{ r: 6 }} />
+                <Line type="monotone" dataKey="accuracy" stroke="#F37920" strokeWidth={2.5} dot={{ fill: '#F37920', r: 4 }} activeDot={{ r: 6 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -212,7 +212,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
                   </div>
                 </div>
               ))}
-              <div style={{ marginTop: '8px', padding: '10px', borderRadius: '8px', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
+              <div style={{ marginTop: '8px', padding: '10px', borderRadius: '8px', background: 'rgba(243,121,32,0.08)', border: '1px solid rgba(243,121,32,0.15)' }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
                   Most common: <strong style={{ color: 'white' }}>
                     {mistakeData.sort((a, b) => b.value - a.value)[0]?.name}
@@ -237,7 +237,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
               <RadarChart data={radarData}>
                 <PolarGrid stroke="rgba(255,255,255,0.08)" />
                 <PolarAngleAxis dataKey="subject" tick={{ fill: 'var(--text-secondary)', fontSize: 11 }} />
-                <Radar name="Accuracy" dataKey="accuracy" stroke="#6366f1" fill="#6366f1" fillOpacity={0.25} strokeWidth={2} />
+                <Radar name="Accuracy" dataKey="accuracy" stroke="#F37920" fill="#F37920" fillOpacity={0.25} strokeWidth={2} />
                 <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '0.8rem' }} formatter={(v: any) => [`${v}%`, 'Accuracy']} />
               </RadarChart>
             </ResponsiveContainer>
@@ -312,7 +312,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {reports.slice(0, 10).map(r => {
-            const typeColor = TYPE_COLORS[r.test_type] || '#6366f1';
+            const typeColor = TYPE_COLORS[r.test_type] || '#F37920';
             const acc = r.accuracy_pct;
             const accColor = acc >= 70 ? '#10b981' : acc >= 40 ? '#f59e0b' : '#ef4444';
             const isOpen = expandedReport === r.id;
@@ -352,7 +352,7 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
                     </div>
                     <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px' }}>
                       {r.ai_feedback && (
-                        <div style={{ maxWidth: '280px', padding: '8px 12px', borderRadius: '8px', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)', fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        <div style={{ maxWidth: '280px', padding: '8px 12px', borderRadius: '8px', background: 'rgba(243,121,32,0.08)', border: '1px solid rgba(243,121,32,0.15)', fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                           {r.ai_feedback.slice(0, 150)}{r.ai_feedback.length > 150 ? '...' : ''}
                         </div>
                       )}

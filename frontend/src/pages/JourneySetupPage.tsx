@@ -6,7 +6,7 @@ import {
   ChevronRight, Loader2, TrendingUp, Calendar,
 } from 'lucide-react';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const MOCK_USER = 'user_123';
 
 import { fetchCurriculum } from '../utils/api_cache';
@@ -122,15 +122,15 @@ export default function JourneySetupPage() {
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: '12px',
-          background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(16,185,129,0.15))',
-          border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '10px 20px', marginBottom: '20px',
+          background: 'linear-gradient(135deg, rgba(243,121,32,0.15), rgba(16,185,129,0.15))',
+          border: '1px solid rgba(243,121,32,0.3)', borderRadius: '16px', padding: '10px 20px', marginBottom: '20px',
         }}>
-          <TrendingUp size={20} color="#6366f1" />
-          <span style={{ color: '#6366f1', fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.04em' }}>
+          <TrendingUp size={20} color="#F37920" />
+          <span style={{ color: '#F37920', fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.04em' }}>
             LEARNING JOURNEY
           </span>
         </div>
-        <h1 className="page-title" style={{ margin: '0 0 8px', fontSize: '2.2rem', background: 'linear-gradient(135deg, #fff, #6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <h1 className="page-title" style={{ margin: '0 0 8px', fontSize: '2.2rem', background: 'linear-gradient(135deg, #fff, #F37920)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           Design Your Path to Mastery
         </h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', margin: '0 0 16px' }}>
@@ -151,7 +151,7 @@ export default function JourneySetupPage() {
                 display: 'flex', alignItems: 'center', gap: '6px',
                 padding: '7px 14px', borderRadius: '20px', border: 'none', cursor: s.num <= step ? 'pointer' : 'default',
                 background: step === s.num
-                  ? 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+                  ? 'linear-gradient(135deg, #F37920, #ff9d52)'
                   : step > s.num ? 'rgba(16,185,129,0.2)' : 'rgba(255,255,255,0.06)',
                 color: step === s.num ? 'white' : step > s.num ? '#10b981' : 'var(--text-secondary)',
                 fontSize: '0.8rem', fontWeight: 600, transition: 'all 0.2s',
@@ -177,8 +177,8 @@ export default function JourneySetupPage() {
       {step === 1 && (
         <div className="glass-panel animate-fade-in" style={{ padding: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(99,102,241,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Target size={18} color="#6366f1" />
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(243,121,32,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Target size={18} color="#F37920" />
             </div>
             <div>
               <h2 style={{ margin: 0, fontSize: '1.1rem', color: 'white' }}>What's your goal?</h2>
@@ -197,7 +197,7 @@ export default function JourneySetupPage() {
               resize: 'none', outline: 'none', boxSizing: 'border-box', lineHeight: 1.6,
               transition: 'border-color 0.2s',
             }}
-            onFocus={e => e.target.style.borderColor = '#6366f1'}
+            onFocus={e => e.target.style.borderColor = '#F37920'}
             onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'}
           />
 
@@ -205,8 +205,8 @@ export default function JourneySetupPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '28px' }}>
             {goalExamples.map(ex => (
               <button key={ex} onClick={() => setGoal(ex)} style={{
-                padding: '5px 12px', borderRadius: '20px', border: '1px solid rgba(99,102,241,0.3)',
-                background: 'rgba(99,102,241,0.08)', color: '#a5b4fc', fontSize: '0.78rem',
+                padding: '5px 12px', borderRadius: '20px', border: '1px solid rgba(243,121,32,0.3)',
+                background: 'rgba(243,121,32,0.08)', color: '#ff9d52', fontSize: '0.78rem',
                 cursor: 'pointer', transition: 'all 0.15s',
               }}>
                 {ex}
@@ -228,8 +228,8 @@ export default function JourneySetupPage() {
       {step === 2 && (
         <div className="glass-panel animate-fade-in" style={{ padding: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(99,102,241,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <BookOpen size={18} color="#6366f1" />
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(243,121,32,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <BookOpen size={18} color="#F37920" />
             </div>
             <div>
               <h2 style={{ margin: 0, fontSize: '1.1rem', color: 'white' }}>Select subjects</h2>
@@ -245,7 +245,7 @@ export default function JourneySetupPage() {
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '12px', marginBottom: '28px' }}>
               {subjects.map((sub, i) => {
-                const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#0ea5e9'];
+                const colors = ['#F37920', '#10b981', '#f59e0b', '#ec4899', '#0ea5e9'];
                 const color = colors[i % colors.length];
                 const isSelected = selectedSubjects.includes(sub.id);
                 return (
@@ -295,8 +295,8 @@ export default function JourneySetupPage() {
       {step === 3 && (
         <div className="glass-panel animate-fade-in" style={{ padding: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(99,102,241,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Calendar size={18} color="#6366f1" />
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(243,121,32,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Calendar size={18} color="#F37920" />
             </div>
             <div>
               <h2 style={{ margin: 0, fontSize: '1.1rem', color: 'white' }}>Study preferences</h2>
@@ -314,9 +314,9 @@ export default function JourneySetupPage() {
                   onClick={() => setStudySpan(opt.value as any)}
                   style={{
                     flex: 1, padding: '14px 8px', borderRadius: '12px', cursor: 'pointer', textAlign: 'center',
-                    border: studySpan === opt.value ? '1.5px solid #6366f1' : '1px solid rgba(255,255,255,0.1)',
-                    background: studySpan === opt.value ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.04)',
-                    color: studySpan === opt.value ? '#a5b4fc' : 'var(--text-secondary)',
+                    border: studySpan === opt.value ? '1.5px solid #F37920' : '1px solid rgba(255,255,255,0.1)',
+                    background: studySpan === opt.value ? 'rgba(243,121,32,0.15)' : 'rgba(255,255,255,0.04)',
+                    color: studySpan === opt.value ? '#ff9d52' : 'var(--text-secondary)',
                     transition: 'all 0.2s',
                   }}
                 >
@@ -337,8 +337,8 @@ export default function JourneySetupPage() {
                   onClick={() => setDifficulty(opt.value as any)}
                   style={{
                     padding: '12px 16px', borderRadius: '12px', cursor: 'pointer', textAlign: 'left',
-                    border: difficulty === opt.value ? '1.5px solid #6366f1' : '1px solid rgba(255,255,255,0.08)',
-                    background: difficulty === opt.value ? 'rgba(99,102,241,0.12)' : 'rgba(255,255,255,0.03)',
+                    border: difficulty === opt.value ? '1.5px solid #F37920' : '1px solid rgba(255,255,255,0.08)',
+                    background: difficulty === opt.value ? 'rgba(243,121,32,0.12)' : 'rgba(255,255,255,0.03)',
                     color: 'white', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '12px',
                   }}
                 >
@@ -347,7 +347,7 @@ export default function JourneySetupPage() {
                     <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{opt.label}</div>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.75rem' }}>{opt.desc}</div>
                   </div>
-                  {difficulty === opt.value && <div style={{ marginLeft: 'auto', color: '#6366f1', fontSize: '1.1rem' }}>✓</div>}
+                  {difficulty === opt.value && <div style={{ marginLeft: 'auto', color: '#F37920', fontSize: '1.1rem' }}>✓</div>}
                 </button>
               ))}
             </div>
@@ -358,13 +358,13 @@ export default function JourneySetupPage() {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Session Duration</span>
-                <span style={{ color: '#6366f1', fontWeight: 700, fontSize: '0.9rem' }}>
+                <span style={{ color: '#F37920', fontWeight: 700, fontSize: '0.9rem' }}>
                   {sessionMinutes >= 60 ? `${sessionMinutes / 60}h` : `${sessionMinutes}m`}
                 </span>
               </div>
               <input type="range" min={15} max={240} step={15} value={sessionMinutes}
                 onChange={e => setSessionMinutes(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#6366f1' }} />
+                style={{ width: '100%', accentColor: '#F37920' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
                 <span>15m</span><span>4h</span>
               </div>
@@ -372,11 +372,11 @@ export default function JourneySetupPage() {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Weekly Study Hours</span>
-                <span style={{ color: '#6366f1', fontWeight: 700, fontSize: '0.9rem' }}>{weeklyHours}h</span>
+                <span style={{ color: '#F37920', fontWeight: 700, fontSize: '0.9rem' }}>{weeklyHours}h</span>
               </div>
               <input type="range" min={1} max={50} step={1} value={weeklyHours}
                 onChange={e => setWeeklyHours(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#6366f1' }} />
+                style={{ width: '100%', accentColor: '#F37920' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
                 <span>1h</span><span>50h</span>
               </div>
@@ -436,10 +436,10 @@ export default function JourneySetupPage() {
               disabled={generating}
               style={{
                 flex: 1, padding: '16px', borderRadius: '12px', border: 'none', cursor: generating ? 'wait' : 'pointer',
-                background: generating ? 'rgba(16,185,129,0.1)' : 'linear-gradient(135deg, #10b981, #6366f1)',
+                background: generating ? 'rgba(16,185,129,0.1)' : 'linear-gradient(135deg, #10b981, #F37920)',
                 color: 'white', fontWeight: 700, fontSize: '1rem',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
-                boxShadow: generating ? 'none' : '0 8px 20px rgba(99,102,241,0.4)',
+                boxShadow: generating ? 'none' : '0 8px 20px rgba(243, 121, 32, 0.4)',
                 transition: 'all 0.3s',
               }}
             >

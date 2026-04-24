@@ -12,12 +12,12 @@ import {
   Loader2, Lock, Circle, Clock, BookOpen, TrendingUp, Zap,
 } from 'lucide-react';
 
-const API_URL = 'http://127.0.0.1:8002/api/v1';
+import API_URL from '../api_config';
 const MOCK_USER = 'user_123';
 
 // ── Subject colours ───────────────────────────────────────────────────────────
 const SUBJECT_COLORS: Record<string, string> = {
-  physics: '#6366f1',
+  physics: '#F37920',
   chemistry: '#10b981',
   biology: '#f59e0b',
   mathematics: '#ec4899',
@@ -205,8 +205,8 @@ export default function JourneyPage() {
         // Style Neo4j edges nicely
         rawEdges = rawEdges.map(e => ({
           ...e,
-          style: { stroke: '#6366f1', strokeWidth: 2 },
-          markerEnd: { type: 'arrowclosed', color: '#6366f1', width: 16, height: 16 },
+          style: { stroke: '#F37920', strokeWidth: 2 },
+          markerEnd: { type: 'arrowclosed', color: '#F37920', width: 16, height: 16 },
           label: '⚡ requires',
           labelStyle: { fontSize: 10, fill: '#a5b4fc' },
           labelBgStyle: { fill: 'rgba(15,23,42,0.8)' },
@@ -301,7 +301,7 @@ export default function JourneyPage() {
             <ArrowLeft size={15} /> Back
           </button>
           <div style={{ width: 1, height: 18, background: 'var(--border-color)' }} />
-          <TrendingUp size={15} color="#6366f1" />
+          <TrendingUp size={15} color="#F37920" />
           <span style={{ color: 'white', fontWeight: 600, fontSize: '0.9rem', maxWidth: 320, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {journey?.goal}
           </span>
@@ -311,7 +311,7 @@ export default function JourneyPage() {
               { icon: <Clock size={11} />, label: `~${Math.round(journey?.estimated_total_hours || 0)}h` },
               { icon: <Zap size={11} />, label: diffLabels[journey?.difficulty] || '' },
             ].map(chip => (
-              <span key={chip.label} style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '3px 9px', borderRadius: 20, background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.2)', color: '#a5b4fc', fontSize: '0.68rem', fontWeight: 500 }}>
+              <span key={chip.label} style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '3px 9px', borderRadius: 20, background: 'rgba(243,121,32,0.12)', border: '1px solid rgba(243,121,32,0.2)', color: '#ff9d52', fontSize: '0.68rem', fontWeight: 500 }}>
                 {chip.icon} {chip.label}
               </span>
             ))}
@@ -321,7 +321,7 @@ export default function JourneyPage() {
         {/* Progress bar */}
         <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{ flex: 1, height: 5, background: 'rgba(255,255,255,0.07)', borderRadius: 3, overflow: 'hidden' }}>
-            <div style={{ height: '100%', width: `${progressPct}%`, background: 'linear-gradient(90deg,#6366f1,#10b981)', borderRadius: 3, transition: 'width 0.6s ease' }} />
+            <div style={{ height: '100%', width: `${progressPct}%`, background: 'linear-gradient(90deg,#F37920,#10b981)', borderRadius: 3, transition: 'width 0.6s ease' }} />
           </div>
           <span style={{ color: progressPct > 0 ? '#10b981' : 'var(--text-secondary)', fontSize: '0.7rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
             {journey?.completed_topics}/{journey?.total_topics} ({progressPct}%)
@@ -341,9 +341,9 @@ export default function JourneyPage() {
               style={{
                 display: 'flex', alignItems: 'center', gap: 5,
                 padding: '6px 14px', borderRadius: '8px 8px 0 0', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 500,
-                background: activeTab === tab.key ? 'rgba(99,102,241,0.18)' : 'transparent',
-                color: activeTab === tab.key ? '#a5b4fc' : 'var(--text-secondary)',
-                borderBottom: activeTab === tab.key ? '2px solid #6366f1' : '2px solid transparent',
+                background: activeTab === tab.key ? 'rgba(243,121,32,0.18)' : 'transparent',
+                color: activeTab === tab.key ? '#ff9d52' : 'var(--text-secondary)',
+                borderBottom: activeTab === tab.key ? '2px solid #F37920' : '2px solid transparent',
               }}
             >
               {tab.icon} {tab.label}
@@ -393,7 +393,7 @@ export default function JourneyPage() {
                   <p style={{ color: 'white', fontWeight: 600, fontSize: '0.72rem', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Status</p>
                   {[
                     { icon: '🔒', label: 'Locked', color: '#334155' },
-                    { icon: '📖', label: 'Available', color: '#6366f1' },
+                    { icon: '📖', label: 'Available', color: '#F37920' },
                     { icon: '⚡', label: 'In Progress', color: '#d97706' },
                     { icon: '✅', label: 'Done', color: '#10b981' },
                   ].map(l => (
@@ -419,7 +419,7 @@ export default function JourneyPage() {
           {Object.entries(nodesByWeek).map(([week, wNodes]) => (
             <div key={week} style={{ marginBottom: 28 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                <div style={{ padding: '3px 12px', borderRadius: 20, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)', color: '#a5b4fc', fontSize: '0.72rem', fontWeight: 600 }}>
+                <div style={{ padding: '3px 12px', borderRadius: 20, background: 'rgba(243,121,32,0.15)', border: '1px solid rgba(243,121,32,0.3)', color: '#ff9d52', fontSize: '0.72rem', fontWeight: 600 }}>
                   Week {week}
                 </div>
                 <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
@@ -480,7 +480,7 @@ export default function JourneyPage() {
         <div style={{ flex: 1, overflowY: 'auto', padding: 24 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 14, marginBottom: 28 }}>
             {[
-              { label: 'Total Topics', value: journey?.total_topics, color: '#6366f1', icon: '📚' },
+              { label: 'Total Topics', value: journey?.total_topics, color: '#F37920', icon: '📚' },
               { label: 'Total Hours', value: `${Math.round(journey?.estimated_total_hours || 0)}h`, color: '#10b981', icon: '⏱️' },
               { label: 'Weekly Hours', value: `${journey?.weekly_hours}h/week`, color: '#f59e0b', icon: '📅' },
               { label: 'Session', value: journey?.session_minutes >= 60 ? `${journey.session_minutes / 60}h` : `${journey?.session_minutes}m`, color: '#ec4899', icon: '⌛' },

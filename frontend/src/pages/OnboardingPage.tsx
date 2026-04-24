@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 
 const GOALS = [
-  { id: 'jee', name: 'Jee Prep', icon: Binary, color: '#3b82f6', available: false, description: 'Crack JEE with strong PCM fundamentals' },
-  { id: 'neet', name: 'NEET Prep', icon: Microscope, color: '#ef4444', available: true, description: 'Master Biology with NEET-focused prep' },
-  { id: 'boards', name: 'Board Exams', icon: BookOpen, color: '#8b5cf6', available: false, description: 'Score higher with focused revision' },
+  { id: 'jee', name: 'Jee Prep', icon: Binary, color: '#F37920', available: false, description: 'Crack JEE with strong PCM fundamentals' },
+  { id: 'neet', name: 'NEET Prep', icon: Microscope, color: '#F37920', available: true, description: 'Master Biology with NEET-focused prep' },
+  { id: 'boards', name: 'Board Exams', icon: BookOpen, color: '#F37920', available: false, description: 'Score higher with focused revision' },
 ];
 
 const TUTORS = [
@@ -53,7 +53,7 @@ export default function OnboardingPage() {
             <div className="powered-badge">Powered by YoLearn.ai</div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24, color: '#94a3b8' }}>
-             <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ color:'#fbbf24' }}>🟡</span> 5321 Credits</div>
+             <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ color:'#F37920' }}>🟠</span> 5321 Credits</div>
              <div>Refer 🔗</div>
              <div>🔔</div>
              <div style={{ width:32, height:32, borderRadius:'50%', background:'#1e293b' }}></div>
@@ -63,20 +63,19 @@ export default function OnboardingPage() {
         <div className="hero-section">
           <div className="hero-text">
             <div style={{ color: '#94a3b8', fontSize: '1rem', marginBottom: 8 }}>Hello Kirti Prakash</div>
-            <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#2dd4bf', margin: '0 0 8px 0' }}>Crack Your Goal</h1>
+            <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#F37920', margin: '0 0 8px 0' }}>Crack Your Goal</h1>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'white', margin: 0 }}>with a Structured Plan</h2>
             <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginTop: 24, maxWidth: 600 }}>
               Choose your Goal, follow a clear roadmap, and improve daily with the right tutors and tools
             </p>
           </div>
           <div className="hero-image">
-             {/* Mock visual element */}
-             <div style={{ width: '100%', height: 300, borderRadius: 24, background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(16,185,129,0.2))', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: 300, borderRadius: 24, background: 'linear-gradient(135deg, rgba(243,121,32,0.2), rgba(16,185,129,0.2))', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', bottom: 20, left: 20, background: 'rgba(15,23,42,0.8)', padding: 16, borderRadius: 16, border: '1px solid rgba(255,255,255,0.1)' }}>
                    <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>NEET Target 2025</div>
                    <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'white' }}>8/32 Topics Completed</div>
                    <div style={{ width: 150, height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 3, marginTop: 8 }}>
-                      <div style={{ width: '54%', height: '100%', background: '#2dd4bf', borderRadius: 3 }}></div>
+                      <div style={{ width: '54%', height: '100%', background: '#F37920', borderRadius: 3 }}></div>
                    </div>
                 </div>
              </div>
@@ -120,7 +119,7 @@ export default function OnboardingPage() {
                    <p style={{ margin:'4px 0 16px', color:'#64748b', fontSize:'0.75rem' }}>{tutor.subject}</p>
                    <div style={{ display:'flex', gap:8 }}>
                       <button className="tutor-btn-secondary">Study Now</button>
-                      <button className="tutor-btn-primary">Start Session</button>
+                      <button className="tutor-btn-primary" style={{ background: '#F37920', color: 'white' }}>Start Session</button>
                    </div>
                 </div>
               </div>
@@ -132,7 +131,7 @@ export default function OnboardingPage() {
           <h3 className="section-title">Tools</h3>
           <div className="tools-grid">
             {TOOLS.map((tool, idx) => (
-              <div key={idx} className="tool-card">
+              <div key={idx} className="tool-card" style={{ transition: 'all 0.3s' }}>
                  <span style={{ fontSize:'1.5rem' }}>{tool.icon}</span>
                  <span style={{ color:'white', fontWeight:600, fontSize:'0.9rem' }}>{tool.name}</span>
               </div>
@@ -150,7 +149,7 @@ export default function OnboardingPage() {
           align-items: center;
           padding: 0;
           overflow-y: auto;
-          font-family: 'Inter', sans-serif;
+          font-family: 'Outfit', sans-serif;
         }
 
         .onboarding-content {
@@ -168,12 +167,12 @@ export default function OnboardingPage() {
         }
 
         .powered-badge {
-          background: rgba(45, 212, 191, 0.1);
-          color: #2dd4bf;
+          background: rgba(243, 121, 32, 0.1);
+          color: #F37920;
           font-size: 0.7rem;
           padding: 4px 10px;
           border-radius: 99px;
-          border: 1px solid rgba(45, 212, 191, 0.2);
+          border: 1px solid rgba(243, 121, 32, 0.2);
           font-weight: 700;
         }
 
@@ -218,6 +217,7 @@ export default function OnboardingPage() {
         .goal-card:hover:not(.disabled) {
           background: rgba(30, 41, 59, 0.6);
           transform: translateY(-2px);
+          border-color: rgba(243, 121, 32, 0.4);
         }
 
         .goal-card.disabled {
@@ -226,8 +226,8 @@ export default function OnboardingPage() {
         }
 
         .goal-card.selected {
-          border-color: #2dd4bf !important;
-          background: rgba(45, 212, 191, 0.05);
+          border-color: #F37920 !important;
+          background: rgba(243, 121, 32, 0.05);
         }
 
         .goal-icon-wrapper {
@@ -285,14 +285,20 @@ export default function OnboardingPage() {
 
         .tutor-btn-primary {
           flex: 1;
-          background: white;
-          color: black;
+          background: #F37920;
+          color: white;
           border: none;
           padding: 8px;
           border-radius: 10px;
           font-weight: 700;
           font-size: 0.8rem;
           cursor: pointer;
+          transition: all 0.2s;
+        }
+        
+        .tutor-btn-primary:hover {
+          background: #ff9d52;
+          transform: translateY(-2px);
         }
 
         .tutor-btn-secondary {
@@ -321,6 +327,13 @@ export default function OnboardingPage() {
           display: flex;
           align-items: center;
           gap: 12px;
+          cursor: pointer;
+        }
+        
+        .tool-card:hover {
+          background: rgba(243, 121, 32, 0.1);
+          border-color: rgba(243, 121, 32, 0.3);
+          transform: translateY(-4px);
         }
 
         @keyframes slideUp {
