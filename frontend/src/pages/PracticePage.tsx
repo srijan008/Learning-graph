@@ -18,6 +18,8 @@ interface SubjectNode { id: string; name: string; chapters: ChapterNode[]; }
 interface ChapterNode  { id: string; name: string; topics: TopicNode[]; }
 interface TopicNode    { id: string; name: string; }
 
+import { fetchCurriculum } from '../utils/api_cache';
+
 type QuestionStatus = 'unattempted' | 'answered' | 'reviewing' | 'correct' | 'wrong' | 'grading';
 interface QuestionState {
   status: QuestionStatus;
@@ -57,29 +59,29 @@ export default function PracticePage() {
   // Load curriculum hierarchy
   useEffect(() => {
     setLoadingCurriculum(true);
-    axios.get(`${API_URL}/graph/curriculum`)
-      .then(res => {
-        const data: CurriculumNode[] = res.data || [];
-        setCurriculums(data);
-        if (data.length > 0) {
-          const savedStr = localStorage.getItem('practice_selections');
-          const savedSel = savedStr ? JSON.parse(savedStr) : {};
-          
-          let c = data.find(x => x.id === savedSel.curriculumId) || data[0];
-          setSelCurriculum(c);
-          
-          let s = c?.subjects?.find(x => x.id === savedSel.subjectId) || c?.subjects?.[0] || null;
-          setSelSubject(s);
-          
-          let ch = s?.chapters?.find(x => x.id === savedSel.chapterId) || s?.chapters?.[0] || null;
-          setSelChapter(ch);
-          
-          let t = ch?.topics?.find(x => x.id === savedSel.topicId) || ch?.topics?.[0] || null;
-          setSelTopic(t);
-        }
-      })
-      .catch(e => setError(e.message))
-      .finally(() => setLoadingCurriculum(false));
+    fetchCurriculum().then(data => {
+      setCurriculums(data);
+      if (data.length > 0) {
+        const savedStr = localStorage.getItem('practice_selections');
+        const savedSel = savedStr ? JSON.parse(savedStr) : {};
+        
+        let c = data.find(x => x.id === savedSel.curriculumId) || data[0];
+        setSelCurriculum(c);
+        
+        let s = c?.subjects?.find(x => x.id === savedSel.subjectId) || c?.subjects?.[0] || null;
+        setSelSubject(s);
+        
+        let ch = s?.chapters?.find(x => x.id === savedSel.chapterId) || s?.chapters?.[0] || null;
+        setSelChapter(ch);
+        
+        let t = ch?.topics?.find(x => x.id === savedSel.topicId) || ch?.topics?.[0] || null;
+        setSelTopic(t);
+      }
+      setLoadingCurriculum(false);
+    }).catch(e => {
+      setError(e.message);
+      setLoadingCurriculum(false);
+    });
   }, []);
 
   // Cascading auto-select & clear

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, BrainCircuit, Map, BarChart2 } from 'lucide-react';
+import { LayoutDashboard, BookOpen, BrainCircuit, Map as MapIcon, BarChart2 } from 'lucide-react';
 
 export default function Sidebar() {
   const activeStyle = {
@@ -37,16 +37,13 @@ export default function Sidebar() {
       top: 0
     }}>
       <div style={{ marginBottom: '40px', padding: '0 8px' }}>
-        <h1 style={{ 
-          fontSize: '1.5rem', 
-          background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          margin: 0
-        }}>
-          YoLearn.Ai
-        </h1>
-        <p style={{ color: 'var(--text-disabled)', fontSize: '0.8rem', marginTop: '4px' }}>Autonomous System</p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <img src="https://yolearn-assets.s3.us-west-2.amazonaws.com/yo.png" alt="Logo" style={{ width: 32, height: 32, borderRadius: 8 }} />
+          <div>
+            <span style={{ fontSize: '1.5rem', fontWeight: 900, color: 'white', display: 'block', lineHeight: 1.1 }}>Arihant</span>
+            <div className="powered-badge" style={{ fontSize: '0.6rem', marginTop: 4 }}>Powered by YoLearn.ai</div>
+          </div>
+        </div>
       </div>
 
       <nav style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -86,7 +83,7 @@ export default function Sidebar() {
           to="/journey/list"
           style={({isActive}) => isActive ? { ...navItemStyle, ...activeStyle } : navItemStyle}
         >
-          <Map size={20} />
+          <MapIcon size={20} />
           <span>My Journeys</span>
         </NavLink>
       </nav>

@@ -7,6 +7,7 @@ import {
   Trophy, AlertTriangle, Zap, RotateCcw, ArrowRight
 } from 'lucide-react';
 import MathText from '../components/MathText';
+import RichText from '../components/RichText';
 
 const API = 'http://127.0.0.1:8002/api/v1';
 const USER = 'user_123';
@@ -23,6 +24,7 @@ interface ResultData {
   mistake_analysis: { conceptual: any[]; calculation: any[]; speed: any[] };
   weak_topics: any[]; strong_topics: any[]; ai_feedback: string | null;
   ai_analysis_status: string; results: any[];
+  chapter_id?: string; chapter_name?: string;
 }
 
 const ScoreRing = ({ score, max, color }: { score: number; max: number; color: string }) => {
@@ -192,7 +194,9 @@ export default function TestResultsPage() {
               {data.ai_analysis_status === 'ready' && <span style={{ marginLeft: 'auto', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '20px', background: 'rgba(16,185,129,0.15)', color: '#10b981' }}>✓ Ready</span>}
             </h3>
             {data.ai_feedback ? (
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: '0.88rem' }}>{data.ai_feedback}</p>
+              <div style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: '0.88rem', background: 'rgba(15,23,42,0.4)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <RichText content={data.ai_feedback} />
+              </div>
             ) : (
               <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', padding: '12px', borderRadius: '8px', background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.15)' }}>
                 🔬 We're preparing your detailed AI analysis report. We'll notify you once it's ready — check back shortly or stay on this page.
@@ -205,9 +209,18 @@ export default function TestResultsPage() {
             <button onClick={() => navigate('/test')} style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.04)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 600 }}>
               <RotateCcw size={16} /> New Test
             </button>
-            <button onClick={() => setTab('analysis')} style={{ flex: 2, padding: '12px', borderRadius: '8px', border: 'none', background: 'var(--accent-primary)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 600 }}>
-              <BarChart2 size={16} /> Full Analysis Dashboard <ArrowRight size={14} />
-            </button>
+            {data.chapter_id ? (
+              <button 
+                onClick={() => navigate(`/learning/chapter/${data.chapter_id}/graph`)} 
+                style={{ flex: 2, padding: '12px', borderRadius: '8px', border: 'none', background: 'linear-gradient(135deg, #6366f1, #a855f7)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 700, boxShadow: '0 4px 15px rgba(99, 102, 241, 0.4)' }}
+              >
+                <BookOpen size={16} /> Start Learning Path <ArrowRight size={14} />
+              </button>
+            ) : (
+              <button onClick={() => setTab('analysis')} style={{ flex: 2, padding: '12px', borderRadius: '8px', border: 'none', background: 'var(--accent-primary)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontWeight: 600 }}>
+                <BarChart2 size={16} /> Full Analysis Dashboard <ArrowRight size={14} />
+              </button>
+            )}
           </div>
         </div>
       )}

@@ -71,3 +71,7 @@ class SequenceResponse(BaseModel):
     node: TopicNode
     sequence: list[TopicNode] = []
 
+
+class InfographicRequest(BaseModel):
+    query: str
+

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { TrendingUp, Plus, Trash2, ChevronRight, Loader2, Map } from 'lucide-react';
+import { TrendingUp, Plus, Trash2, ChevronRight, Loader2, Map as MapIcon } from 'lucide-react';
 
 const API_URL = 'http://127.0.0.1:8002/api/v1';
 const MOCK_USER = 'user_123';
@@ -40,7 +40,7 @@ export default function JourneyListPage() {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <Map size={28} color="#6366f1" />
+          <MapIcon size={28} color="#6366f1" />
           <div>
             <h1 className="page-title" style={{ margin: 0 }}>My Learning Journeys</h1>
             <p style={{ color: 'var(--text-secondary)', margin: '2px 0 0', fontSize: '0.85rem' }}>

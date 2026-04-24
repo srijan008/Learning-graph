@@ -9,6 +9,8 @@ import {
 const API_URL = 'http://127.0.0.1:8002/api/v1';
 const MOCK_USER = 'user_123';
 
+import { fetchCurriculum } from '../utils/api_cache';
+
 interface Subject {
   id: string;
   name: string;
@@ -22,8 +24,12 @@ export default function JourneySetupPage() {
   const [error, setError] = useState('');
   const [alreadyDone, setAlreadyDone] = useState<number | null>(null);
 
-  // Form state
-  const [goal, setGoal] = useState('');
+  const [goal, setGoal] = useState(() => {
+    const g = localStorage.getItem('selected_goal');
+    if (g === 'neet') return 'Prepare for NEET 2025';
+    if (g === 'jee') return 'Prepare for JEE 2025';
+    return '';
+  });
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
   const [studySpan, setStudySpan] = useState<2 | 6 | 10>(6);
   const [weeklyHours, setWeeklyHours] = useState(10);
@@ -34,19 +40,19 @@ export default function JourneySetupPage() {
   // Load subjects
   useEffect(() => {
     setLoading(true);
-    axios.get(`${API_URL}/graph/curriculum`)
-      .then(res => {
-        const data = res.data || [];
-        const unique: Subject[] = [];
-        for (const curr of data) {
-          for (const sub of curr.subjects || []) {
-            if (!unique.find(s => s.id === sub.id)) unique.push({ id: sub.id, name: sub.name });
-          }
+    fetchCurriculum().then(data => {
+      const unique: Subject[] = [];
+      for (const curr of data) {
+        for (const sub of curr.subjects || []) {
+          if (!unique.find(s => s.id === sub.id)) unique.push({ id: sub.id, name: sub.name });
         }
-        setSubjects(unique);
-      })
-      .catch(() => setError('Failed to load subjects'))
-      .finally(() => setLoading(false));
+      }
+      setSubjects(unique);
+      setLoading(false);
+    }).catch(() => {
+      setError('Failed to load subjects');
+      setLoading(false);
+    });
   }, []);
 
   const toggleSubject = (id: string) => {
@@ -73,8 +79,8 @@ export default function JourneySetupPage() {
       });
       const { journey_id, already_completed } = res.data;
       setAlreadyDone(already_completed || 0);
-      // Brief delay so user sees the count before navigating
-      setTimeout(() => navigate(`/journey/${journey_id}`), 1200);
+      // Redirect to dashboard after brief success state
+      setTimeout(() => navigate('/dashboard'), 1200);
     } catch (e: any) {
       setError(e.response?.data?.detail || 'Failed to generate journey. Please try again.');
     } finally {
@@ -110,7 +116,8 @@ export default function JourneySetupPage() {
   ];
 
   return (
-    <div className="animate-fade-in" style={{ maxWidth: '760px', margin: '0 auto', paddingBottom: '60px' }}>
+    <div style={{ minHeight:'100vh', background:'#020617', padding:'40px 20px', overflowY:'auto' }}>
+    <div className="animate-fade-in" style={{ maxWidth: '760px', margin: '0 auto', paddingBottom: '60px', paddingTop: '40px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <div style={{
@@ -126,9 +133,12 @@ export default function JourneySetupPage() {
         <h1 className="page-title" style={{ margin: '0 0 8px', fontSize: '2.2rem', background: 'linear-gradient(135deg, #fff, #6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           Design Your Path to Mastery
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', margin: 0 }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', margin: '0 0 16px' }}>
           Tell us your goal — we'll build a personalized, prerequisite-ordered study journey.
         </p>
+        <button onClick={() => navigate('/dashboard')} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '8px', color: '#64748b', padding: '6px 16px', cursor: 'pointer', fontSize: '0.8rem' }}>
+          Skip for now →
+        </button>
       </div>
 
       {/* Step Progress */}
@@ -448,6 +458,7 @@ export default function JourneySetupPage() {
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
       `}</style>
+    </div>
     </div>
   );
 }

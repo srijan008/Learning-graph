@@ -94,7 +94,11 @@ def filter_questions(
     if subject:
         pool = [q for q in pool if q.get("subject", "").lower() == subject.lower()]
     if chapter:
-        pool = [q for q in pool if q.get("chapter", "").lower() == chapter.lower()]
+        pool = [
+            q for q in pool 
+            if q.get("chapter", "").lower() == chapter.lower() or 
+               q.get("chapter_name", "").lower() == chapter.lower()
+        ]
     if difficulty:
         pool = [q for q in pool if q.get("difficulty") == difficulty]
     if exclude_ids:
@@ -131,9 +135,11 @@ class CreateSessionRequest(BaseModel):
     test_type: str  # "topic_quiz" | "chapter_mock" | "full_mock" | "practice_drill"
     subject: Optional[str] = None
     chapter: Optional[str] = None
+    chapter_id: Optional[str] = None
     topic_id: Optional[str] = None
     question_count: int = 20
     time_limit_mins: int = 30
+    weak_chapters: Optional[List[str]] = None
     weak_chapters: Optional[List[str]] = None
 
 
@@ -284,6 +290,27 @@ def _identify_weak_topics(chapter_breakdown: Dict) -> List[Dict]:
     return weak
 
 
+def _identify_strong_topics(chapter_breakdown: Dict) -> List[Dict]:
+    """Identify strong topics sorted by accuracy."""
+    strong = []
+    for ch, stats in chapter_breakdown.items():
+        total_attempted = stats["correct"] + stats["wrong"]
+        if total_attempted == 0:
+            continue
+        accuracy = round(stats["correct"] / total_attempted * 100, 1)
+        if accuracy >= 70:
+            strong.append({
+                "chapter": ch,
+                "chapter_name": stats.get("chapter_name", ch),
+                "subject": stats.get("subject", ""),
+                "accuracy": accuracy,
+                "correct": stats["correct"],
+                "wrong": stats["wrong"],
+            })
+    strong.sort(key=lambda x: x["accuracy"], reverse=True)
+    return strong
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Endpoints
 # ─────────────────────────────────────────────────────────────────────────────
@@ -429,6 +456,7 @@ async def create_session(
         config={
             "subject": subject,
             "chapter": chapter,
+            "chapter_id": req.chapter_id,
             "question_count": len(qs),
             "time_limit_mins": req.time_limit_mins,
         },
@@ -534,7 +562,6 @@ async def save_answer(
     await db.commit()
     return {"status": "saved"}
 
-
 @router.post("/session/{session_id}/submit")
 async def submit_test(
     session_id: str,
@@ -566,6 +593,7 @@ async def submit_test(
     instant = _compute_instant_results(session)
     mistake_analysis = _classify_mistakes(instant["wrong_questions"], session.answers or {})
     weak_topics = _identify_weak_topics(instant["chapter_breakdown"])
+    strong_topics = _identify_strong_topics(instant["chapter_breakdown"])
 
     # Save initial report (no AI analysis yet)
     report_id = str(uuid.uuid4())
@@ -585,7 +613,7 @@ async def submit_test(
         chapter_breakdown=instant["chapter_breakdown"],
         mistake_analysis=mistake_analysis,
         weak_topics=weak_topics,
-        strong_topics=[],
+        strong_topics=strong_topics,
         ai_feedback=None,  # Will be filled by background task
         ai_analysis_status="pending",
         created_at=datetime.utcnow(),
@@ -628,6 +656,8 @@ async def get_results(report_id: str, db: AsyncSession = Depends(get_pg_session)
     return {
         "report_id": report_id,
         "test_type": report.test_type,
+        "chapter_id": session.config.get("chapter_id") if session else None,
+        "chapter_name": session.config.get("chapter") if session else None,
         "score": report.score,
         "max_score": report.max_score,
         "accuracy_pct": report.accuracy_pct,
@@ -638,6 +668,7 @@ async def get_results(report_id: str, db: AsyncSession = Depends(get_pg_session)
         "chapter_breakdown": report.chapter_breakdown,
         "mistake_analysis": report.mistake_analysis,
         "weak_topics": report.weak_topics,
+        "strong_topics": report.strong_topics or [],
         "ai_analysis_status": report.ai_analysis_status,
         "ai_feedback": report.ai_feedback,
         "results": instant.get("results", []),
@@ -912,13 +943,16 @@ Subject-wise Performance:
 Top Weak Areas (chapters with >30% error rate):
 {weak_summary}
 
-Write a concise, personalized analysis (5-7 sentences) that:
-1. Highlights what the student did well
-2. Identifies the 2-3 most critical areas to improve
-3. Gives specific actionable advice (e.g., "Focus on revising Newton's laws numericals")
-4. Ends with an encouraging note
+Write a **comprehensive analysis** of the student's performance. 
+Format your response STRICTLY as a Markdown bulleted list (pointer format). 
 
-Be direct, specific and helpful. Do NOT include JSON."""
+Include the following sections clearly labeled with bold headers:
+- **What Went Well**: Highlight specific conceptual strengths based on correct answers and subjects.
+- **Areas of Concern**: Detail specific conceptual weaknesses or error patterns (e.g., calculation errors, pacing issues, weak topics).
+- **Actionable Advice**: Provide 2-3 highly specific, actionable study recommendations to fix the identified weak areas.
+
+Ensure your response is detailed, professional, and uses Markdown bullet points (`- `) for all pointers. Do NOT include JSON.
+"""
 
         response = client.models.generate_content(model=model, contents=prompt)
         ai_feedback = response.text.strip()

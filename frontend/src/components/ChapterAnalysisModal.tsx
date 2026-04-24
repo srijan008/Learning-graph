@@ -285,7 +285,7 @@ export default function ChapterAnalysisModal({ chapter, chapterName, subject = '
                     <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-secondary)' }}>
                       <Brain size={32} style={{ marginBottom: '10px', opacity: 0.4 }} />
                       <p>No learning session data yet. Start studying this chapter!</p>
-                      <button onClick={() => navigate('/learning')} style={{ marginTop: '12px', padding: '8px 20px', borderRadius: '8px', background: subjColor, border: 'none', color: 'white', cursor: 'pointer', fontWeight: 600 }}>
+                      <button onClick={() => navigate(`/learning/chapter/${chapter}/graph`)} style={{ marginTop: '12px', padding: '8px 20px', borderRadius: '8px', background: subjColor, border: 'none', color: 'white', cursor: 'pointer', fontWeight: 600 }}>
                         Start Learning
                       </button>
                     </div>
@@ -408,7 +408,7 @@ export default function ChapterAnalysisModal({ chapter, chapterName, subject = '
                                 <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{rec.reason}</p>
                               </div>
                               {rec.type === 're_study' && (
-                                <button onClick={() => navigate('/learning')} style={{ padding: '5px 12px', borderRadius: '7px', border: 'none', background: pColor, color: 'white', cursor: 'pointer', fontSize: '0.72rem', fontWeight: 600, flexShrink: 0 }}>
+                                <button onClick={() => navigate(`/learning/chapter/${chapter}/graph?autoStudy=1`)} style={{ padding: '5px 12px', borderRadius: '7px', border: 'none', background: pColor, color: 'white', cursor: 'pointer', fontSize: '0.72rem', fontWeight: 600, flexShrink: 0 }}>
                                   Study
                                 </button>
                               )}

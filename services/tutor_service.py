@@ -12,9 +12,13 @@ from google import genai
 load_dotenv()
 
 SUMMARY_THRESHOLD = 8   # summarise older messages after this many total exchanges
-FAST_MODEL = "gemini-2.5-flash"  # stableGA flash model for Vertex AI
+FAST_MODEL = "gemini-1.5-flash"  # stableGA flash model for Vertex AI
 
 KEEP_RECENT = 4         # how many recent messages to keep after summarising
+
+# In-memory context cache: {session_id: {"context": str, "expires_at": float}}
+# Avoids re-fetching Qdrant/Postgres on every chat message (huge latency reduction)
+_CONTEXT_CACHE: dict = {}
 
 SYSTEM_TUTOR_PROMPT = """\
 You are an expert AI tutor specializing in NEET-level science education.
@@ -170,14 +174,14 @@ Write a SHORT, warm greeting (3-5 sentences max) that:
 If all are at 0%, just welcome them and list 3 suggested questions to start with.
 Be concise and motivating. Do NOT include JSON."""
 
-    response = client.models.generate_content(model=model, contents=prompt)
+    response = await client.aio.models.generate_content(model=model, contents=prompt)
     return response.text.strip()
 
 
 async def generate_summary(messages: list) -> str:
     """Compress old messages into a compact paragraph for the rolling summary."""
     client = _get_gemini_client()
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.getenv("GEMINI_MODEL", FAST_MODEL)
     
     history = "\n".join([f"{m['role'].upper()}: {m['content']}" for m in messages])
     prompt = f"""Summarise the following tutoring conversation into a single compact paragraph.
@@ -189,7 +193,7 @@ async def generate_summary(messages: list) -> str:
 
         SUMMARY:"""
             
-    response = client.models.generate_content(model=model, contents=prompt)
+    response = await client.aio.models.generate_content(model=model, contents=prompt)
     return response.text.strip()
 
 
@@ -211,15 +215,19 @@ async def chat_with_tutor_stream(
     from services.tutor_context import get_subtopic_context, get_topic_context_all
     
     client = _get_gemini_client()
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.getenv("GEMINI_MODEL", FAST_MODEL)
 
     textbook_context = ""
-    if session_id and topic_id:
-        # Fetch context for ALL subtopics in the topic so the AI can assess multiple subtopics in one message
+    _now = __import__("time").time()
+    _cached = _CONTEXT_CACHE.get(session_id or "")
+    if _cached and _cached["expires_at"] > _now:
+        textbook_context = _cached["context"]
+    elif session_id and topic_id:
         textbook_context = await get_topic_context_all(session_id, topic_id)
+        _CONTEXT_CACHE[session_id] = {"context": textbook_context, "expires_at": _now + 3600}
     elif session_id and subtopic_id:
-        # Fallback if topic_id is missing for some reason
         textbook_context = await get_subtopic_context(subtopic_id, session_id, topic_id)
+        _CONTEXT_CACHE[session_id] = {"context": textbook_context, "expires_at": _now + 3600}
     # 2. Format current scores for the prompt
     scores_info = ""
     if current_scores:
@@ -307,3 +315,114 @@ async def chat_with_tutor_stream(
     if has_signal:
         # yield flat JSON format for frontend compatibility if needed, or structured
         yield f"\n__METADATA__{json.dumps({'scores': scores_dict, 'doubts': doubts_list})}"
+
+
+async def generate_chapter_formulas(chapter_name: str) -> str:
+    """
+    Dynamically generates a comprehensive, Markdown-formatted formula sheet 
+    for the given chapter name using Gemini. 
+    """
+    client = _get_gemini_client()
+    model = os.getenv("GEMINI_MODEL", FAST_MODEL)
+    
+    prompt = f"""You are an expert NEET/JEE science tutor. 
+Please generate a comprehensive formula sheet for the chapter: "{chapter_name}".
+
+Format your response strictly in Markdown:
+1. Use ## for main sections.
+2. Use bullet points for individual formulas.
+3. Use proper LaTeX math blocks ($$ for block math and $ for inline math).
+4. Include a brief (1 sentence) description of what each formula calculates or when to use it.
+5. If the chapter does not typically have mathematical formulas (e.g. Biological classification), provide key conceptual rules, laws, or mnemonics instead.
+
+Do not include any conversational filler, just the formula sheet.
+"""
+    try:
+        response = await client.aio.models.generate_content(model=model, contents=prompt)
+        return response.text.strip()
+    except Exception as e:
+        print(f"Error generating formulas for {chapter_name}: {e}")
+        return f"Failed to generate formulas for {chapter_name}. Please try again later."
+
+
+async def generate_ai_sketch(topic_name: str, chapter_name: str) -> list:
+    """Generates a structured list of drawing commands for a scientific sketch."""
+    client = _get_gemini_client()
+    model = os.getenv("GEMINI_MODEL", FAST_MODEL)
+    
+    prompt = f"""
+    Generate a structured scientific sketch for the topic '{topic_name}' in the chapter '{chapter_name}'.
+    The sketch should be educational, clear, and include labels.
+    
+    Return ONLY a JSON list of drawing commands. No other text.
+    Commands can be:
+    - {{"type": "line", "x1": int, "y1": int, "x2": int, "y2": int, "color": "string"}}
+    - {{"type": "circle", "x": int, "y": int, "r": int, "color": "string", "fill": bool}}
+    - {{"type": "rect", "x": int, "y": int, "w": int, "h": int, "color": "string", "fill": bool}}
+    - {{"type": "text", "x": int, "y": int, "text": "string", "color": "string", "size": int}}
+    
+    Canvas size is 1600x1000. Use colors like '#6366f1', '#10b981', '#f59e0b', '#ec4899', 'white'.
+    Keep it minimalist and hand-drawn style.
+    """
+    
+    try:
+        response = await client.aio.models.generate_content(
+            model=model,
+            contents=prompt,
+            config={
+                "response_mime_type": "application/json",
+            }
+        )
+        data = json.loads(response.text)
+        return data if isinstance(data, list) else []
+    except Exception as e:
+        print(f"Error generating AI sketch for {topic_name}: {e}")
+        return []
+
+
+async def generate_infographic_sketch(query: str) -> list:
+    """Generates a high-density infographic sketch for a user-provided concept."""
+    client = _get_gemini_client()
+    model = os.getenv("GEMINI_MODEL", FAST_MODEL)
+    
+    prompt = f"""
+    Create a professional, high-fidelity scientific infographic for: '{query}'.
+    
+    LAYOUT RULES (Canvas 1600x1000):
+    1. Title: Large bold text at the top center (y=80).
+    2. Central Visual: A complex, multi-part diagram in the center area (x:500-1100, y:200-800). Use multiple circles, connecting lines, and shapes to represent the concept visually.
+    3. Info Cards: 4 distinct rectangular "cards" placed in the corners. Each card MUST have a semi-transparent background rect and 3-4 lines of text.
+    4. No Overlap: DO NOT place text or cards over the central visual. Keep them separated.
+    5. Aesthetics: Use a "Modern Dark" palette.
+       - Backgrounds: 'rgba(255, 255, 255, 0.05)'
+       - Accents: '#818cf8' (Indigo), '#34d399' (Emerald), '#fbbf24' (Amber)
+       - Text: 'white' for headers, '#94a3b8' for details.
+    
+    Card Positioning (Strict):
+    - Top-Left Card: x:50, y:150, w:380, h:280
+    - Top-Right Card: x:1170, y:150, w:380, h:280
+    - Bottom-Left Card: x:50, y:670, w:380, h:280
+    - Bottom-Right Card: x:1170, y:670, w:380, h:280
+    
+    Return ONLY a JSON list of drawing commands:
+    - {{"type": "line", "x1", "y1", "x2", "y2", "color"}}
+    - {{"type": "circle", "x", "y", "r", "color", "fill"}}
+    - {{"type": "rect", "x", "y", "w", "h", "color", "fill"}}
+    - {{"type": "text", "x", "y", "text", "color", "size"}}
+    
+    Aim for 70-100 commands. Make it look organized, premium, and scientific.
+    """
+    
+    try:
+        response = await client.aio.models.generate_content(
+            model=model,
+            contents=prompt,
+            config={
+                "response_mime_type": "application/json",
+            }
+        )
+        data = json.loads(response.text)
+        return data if isinstance(data, list) else []
+    except Exception as e:
+        print(f"Error generating Infographic for {query}: {e}")
+        return []

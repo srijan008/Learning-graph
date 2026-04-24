@@ -4,12 +4,14 @@ import axios from 'axios';
 import {
   BookOpen, Sparkles, ChevronRight, ChevronLeft, Menu, X,
   Maximize2, Minimize2, Send, GraduationCap, CheckCircle2,
-  Circle, Loader2, PlayCircle, Lock,
+  Circle, Loader2, PlayCircle, Lock, Mic,
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+
+import { fetchCurriculum } from '../utils/api_cache';
 
 const API_URL = 'http://127.0.0.1:8002/api/v1';
 const MOCK_USER = 'user_123';
@@ -134,45 +136,42 @@ export default function LearningPage() {
 
   // ── Load curriculum, then auto-enter study if URL params present
   useEffect(() => {
+    const goal = localStorage.getItem('selected_goal') || 'neet';
     setLoading(true);
-    axios.get(`${API_URL}/graph/curriculum`)
-      .then(res => {
-        const data: CurriculumNode[] = res.data || [];
-        setCurriculums(data);
-        if (data.length > 0) {
-          const saved = JSON.parse(localStorage.getItem('learning_selections') || '{}');
-          const c  = data.find(x => x.id === saved.curriculumId) || data[0];
-          const s  = c?.subjects?.find(x => x.id === saved.subjectId) || c?.subjects?.[0] || null;
-          const ch = s?.chapters?.find(x => x.id === saved.chapterId) || s?.chapters?.[0] || null;
 
-          // If topicId path param is present, find and select that topic
-          const autoTopicId = topicId || searchParams.get('topicId');
-          let t: TopicNode | null = null;
-          if (autoTopicId) {
-            // Search all chapters in all subjects
-            outer: for (const sub of c?.subjects || []) {
-              for (const chapter of sub.chapters || []) {
-                const found = chapter.topics?.find(tp => tp.id === autoTopicId);
-                if (found) { t = found; break outer; }
-              }
+    fetchCurriculum(goal).then(data => {
+      if (data.length > 0) {
+        const saved = JSON.parse(localStorage.getItem('learning_selections') || '{}');
+        const c  = data.find((x:any) => x.id === saved.curriculumId) || data[0];
+        const s  = c?.subjects?.find((x:any) => x.id === saved.subjectId) || c?.subjects?.[0] || null;
+        const ch = s?.chapters?.find((x:any) => x.id === saved.chapterId) || s?.chapters?.[0] || null;
+
+        const autoTopicId = topicId || searchParams.get('topicId');
+        let t: TopicNode | null = null;
+        if (autoTopicId) {
+          outer: for (const sub of c?.subjects || []) {
+            for (const chapter of sub.chapters || []) {
+              const found = chapter.topics?.find((tp:any) => tp.id === autoTopicId);
+              if (found) { t = found; break outer; }
             }
           }
-          if (!t) t = ch?.topics?.find(x => x.id === saved.topicId) || ch?.topics?.[0] || null;
-
-          setSelCurriculum(c); setSelSubject(s); setSelChapter(ch); setSelTopic(t);
-
-          // Auto-enter study if we are on the specific topic route
-          if ((topicId || searchParams.get('autoStudy') === '1') && t) {
-            const doubtCtx = searchParams.get('doubtCtx') || undefined;
-            // Slight delay to allow state to settle
-            setTimeout(() => triggerAutoStudy(t!, doubtCtx), 200);
-          }
         }
-      })
-      .catch(e => setError(e.message))
-      .finally(() => setLoading(false));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        if (!t) t = ch?.topics?.find((x:any) => x.id === saved.topicId) || ch?.topics?.[0] || null;
+
+        setSelCurriculum(c); setSelSubject(s); setSelChapter(ch); setSelTopic(t);
+        setCurriculums(data);
+
+        if ((topicId || searchParams.get('autoStudy') === '1') && t) {
+          const doubtCtx = searchParams.get('doubtCtx') || undefined;
+          setTimeout(() => triggerAutoStudy(t!, doubtCtx), 200);
+        }
+      }
+      setLoading(false);
+    }).catch(e => {
+      setError(e.message);
+      setLoading(false);
+    });
+  }, [topicId, searchParams, navigate]);
 
   // ── Cascading auto-select
   useEffect(() => {
@@ -458,8 +457,9 @@ export default function LearningPage() {
             <BookOpen size={32} color="var(--accent-primary)" />
             <h1 className="page-title" style={{ margin: 0 }}>Learning Path</h1>
           </div>
-          <p style={{ color: 'var(--text-secondary)' }}>Select your subject, chapter and topic to begin studying</p>
+          <p style={{ color: 'var(--text-secondary)' }}>Select your subject and chapter to explore the learning graph</p>
         </div>
+
 
         {loading && (
           <div style={{ textAlign: 'center', padding: '60px', color: 'var(--text-secondary)' }}>
@@ -469,30 +469,19 @@ export default function LearningPage() {
         )}
 
         {!loading && curriculums.length > 0 && (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '16px', marginBottom: '28px' }}>
-            {/* Curriculum */}
-            <PickerPanel title="Curriculum" items={curriculums} selected={selCurriculum} onSelect={setSelCurriculum} color="var(--accent-primary)" />
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '28px' }}>
             {/* Subject */}
             <PickerPanel title="Subject" items={selCurriculum?.subjects || []} selected={selSubject} onSelect={setSelSubject} color="var(--accent-primary)" />
             {/* Chapter */}
-            <PickerPanel title="Chapter" items={selSubject?.chapters || []} selected={selChapter} onSelect={setSelChapter} color="var(--accent-secondary)" scrollable />
-            {/* Topic */}
-            <PickerPanel title="Topic" items={selChapter?.topics || []} selected={selTopic} onSelect={setSelTopic} color="#10b981" scrollable />
+            <PickerPanel title="Chapter" items={selSubject?.chapters || []} selected={selChapter} onSelect={(ch) => {
+              setSelChapter(ch);
+              navigate(`/learning/chapter/${ch.id}/graph`);
+            }} color="var(--accent-secondary)" scrollable />
           </div>
         )}
 
-        {selTopic && (
-          <div className="glass-panel" style={{ padding: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.25)' }}>
-            <div>
-              <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Selected Topic</p>
-              <p style={{ margin: '4px 0 0', color: 'white', fontWeight: 600, fontSize: '1.1rem' }}>{selTopic.name}</p>
-              <p style={{ margin: '2px 0 0', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{selSubject?.name} › {selChapter?.name}</p>
-            </div>
-            <button onClick={enterStudy} className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 28px', fontSize: '1rem' }}>
-              Start with AI Tutor <GraduationCap size={18} />
-            </button>
-          </div>
-        )}
+
+
 
         {error && <div style={{ marginTop: '16px', padding: '12px', background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '8px', color: '#fca5a5' }}>⚠️ {error}</div>}
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
@@ -517,6 +506,9 @@ export default function LearningPage() {
   const totalCount = subtopics.length;
   const progressPct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
 
+  // ── Quiz Recommendation Logic
+  const showQuizRecommendation = canPractice && progressPct >= 70;
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: isFullscreen ? '100vh' : 'calc(100vh - 80px)', background: isFullscreen ? '#0f172a' : undefined, overflow: 'hidden' }}>
 
@@ -537,6 +529,11 @@ export default function LearningPage() {
           <button onClick={() => setSidebarOpen(o => !o)} style={{ background: 'none', border: '1px solid var(--border-color)', padding: '4px 8px', borderRadius: '6px', color: 'var(--text-secondary)', cursor: 'pointer' }}>
             {sidebarOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
+          <button
+            style={{ display:'flex', alignItems:'center', gap:6, padding:'6px 16px', borderRadius:10, background:'linear-gradient(135deg, #6366f1, #8b5cf6)', border:'none', color:'white', cursor:'pointer', fontSize:'0.85rem', fontWeight:900, boxShadow: '0 4px 12px rgba(99,102,241,0.3)' }}
+          >
+            <Mic size={16} fill="white" /> Start Session
+          </button>
           <button onClick={toggleFullscreen} style={{ background: 'none', border: '1px solid var(--border-color)', padding: '4px 8px', borderRadius: '6px', color: 'var(--text-secondary)', cursor: 'pointer' }}>
             {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
           </button>
@@ -548,7 +545,7 @@ export default function LearningPage() {
 
         {/* SIDEBAR */}
         {sidebarOpen && (
-          <div style={{ width: '260px', flexShrink: 0, background: 'rgba(15,23,42,0.85)', borderRight: '1px solid var(--border-color)', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', overflow: 'hidden' }}>
+          <div style={{ width: '260px', flexShrink: 0, background: 'rgba(15,23,42,0.85)', borderRight: '1px solid var(--border-color)', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative' }}>
             {/* Progress bar */}
             <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '10px', padding: '10px 12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', alignItems: 'baseline' }}>
@@ -564,23 +561,43 @@ export default function LearningPage() {
               </div>
             </div>
 
-            {/* Start Practice button */}
-            <button
-              onClick={startPractice}
-              disabled={!canPractice}
-              title={canPractice ? 'Start practice session' : 'Score ≥60% on all subtopics to unlock'}
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                padding: '10px 12px', borderRadius: '8px', fontSize: '0.83rem', fontWeight: 600, cursor: canPractice ? 'pointer' : 'not-allowed',
-                background: canPractice ? 'linear-gradient(135deg, #6366f1, #10b981)' : 'rgba(255,255,255,0.05)',
-                border: canPractice ? 'none' : '1px solid rgba(255,255,255,0.1)',
-                color: canPractice ? 'white' : 'var(--text-secondary)',
-                transition: 'all 0.2s',
-              }}
-            >
-              {canPractice ? <PlayCircle size={15} /> : <Lock size={14} />}
-              {canPractice ? 'Start Practice' : 'Practice Locked'}
-            </button>
+            {/* Start Practice button with Recommendation */}
+            <div style={{ position: 'relative' }}>
+              {showQuizRecommendation && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 10px)', left: '10px', right: '10px',
+                  background: 'white', color: '#1e293b', borderRadius: '12px', padding: '10px 12px',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)',
+                  zIndex: 100, display: 'flex', gap: '10px', alignItems: 'center',
+                  animation: 'bounceIn 0.5s ease-out'
+                }}>
+                  <img src="https://yolearn-assets.s3.us-west-2.amazonaws.com/yo.png" alt="Yo" style={{ width: 24, height: 24, borderRadius: '50%' }} />
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, lineHeight: 1.2 }}>
+                    I think you are ready to take a quiz! 🚀
+                  </div>
+                  <div style={{
+                    position: 'absolute', bottom: '100%', left: '30px',
+                    width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderBottom: '8px solid white'
+                  }} />
+                </div>
+              )}
+              <button
+                onClick={startPractice}
+                disabled={!canPractice}
+                title={canPractice ? 'Start practice session' : 'Score ≥60% on all subtopics to unlock'}
+                style={{
+                  width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                  padding: '10px 12px', borderRadius: '8px', fontSize: '0.83rem', fontWeight: 600, cursor: canPractice ? 'pointer' : 'not-allowed',
+                  background: canPractice ? 'linear-gradient(135deg, #6366f1, #10b981)' : 'rgba(255,255,255,0.05)',
+                  border: canPractice ? 'none' : '1px solid rgba(255,255,255,0.1)',
+                  color: canPractice ? 'white' : 'var(--text-secondary)',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {canPractice ? <PlayCircle size={15} /> : <Lock size={14} />}
+                {canPractice ? 'Start Practice' : 'Practice Locked'}
+              </button>
+            </div>
 
             {/* Subtopic list */}
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
@@ -602,10 +619,17 @@ export default function LearningPage() {
                 
                 return (
                   <div key={st.id} style={{ flexShrink: 0, borderRadius: '8px', overflow: 'hidden', border: isActive ? '1px solid var(--accent-primary)' : '1px solid transparent', background: isActive ? 'rgba(99,102,241,0.1)' : 'transparent', transition: 'all 0.15s', marginBottom: '4px' }}>
-                    <button onClick={() => selectSubtopic(st)} style={{ width: '100%', textAlign: 'left', padding: '8px 10px', background: 'none', border: 'none', cursor: 'pointer', color: isActive ? 'var(--accent-primary)' : 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: 1.4, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                      <span style={{ fontSize: '0.7rem', marginTop: '2px', flexShrink: 0 }}>{dot.icon}</span>
-                      <span>{st.name}</span>
-                    </button>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '8px 10px 0' }}>
+                      <button onClick={() => selectSubtopic(st)} style={{ flex: 1, textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', color: isActive ? 'var(--accent-primary)' : 'var(--text-secondary)', fontSize: '0.82rem', lineHeight: 1.4, display: 'flex', alignItems: 'flex-start', gap: '8px', padding: 0 }}>
+                        <span style={{ fontSize: '0.7rem', marginTop: '2px', flexShrink: 0 }}>{dot.icon}</span>
+                        <span>{st.name}</span>
+                      </button>
+                      {status !== 'completed' && !allMastered && (
+                        <button onClick={(e) => { e.stopPropagation(); markDone(st.id); }} style={{ flexShrink: 0, padding: '2px 6px', borderRadius: '4px', background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)', color: '#10b981', fontSize: '0.65rem', fontWeight: 700, cursor: 'pointer' }}>
+                          DONE
+                        </button>
+                      )}
+                    </div>
                     <div style={{ padding: '0 10px 8px' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           {/* Theory */}
@@ -634,12 +658,7 @@ export default function LearningPage() {
                           </div>
                         </div>
                     </div>
-                    {/* Mark done */}
-                    {status !== 'completed' && !allMastered && (
-                      <button onClick={() => markDone(st.id)} style={{ fontSize: '0.68rem', color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer', padding: '0 10px 8px', opacity: 0.6 }}>
-                        ✓ Mark done
-                      </button>
-                    )}
+
                   </div>
                 );
               })}
@@ -758,6 +777,10 @@ export default function LearningPage() {
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+        @keyframes bounceIn {
+          from { opacity: 0; transform: scale(0.9) translateY(10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
       `}</style>
     </div>
   );
@@ -780,8 +803,15 @@ function PickerPanel({ title, items, selected, onSelect, color, scrollable }: {
             background: selected?.id === item.id ? `${color}22` : 'transparent',
             color: selected?.id === item.id ? color : 'var(--text-secondary)',
             transition: 'all 0.15s',
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center'
           }}>
-            {item.name}
+            <span>{item.name}</span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+               <div style={{ width: 40, height: 4, background: 'rgba(255,255,255,0.1)', borderRadius: 2, overflow: 'hidden' }}>
+                  <div style={{ width: `${Math.floor(Math.random() * 100)}%`, height: '100%', background: color }} />
+               </div>
+               <span style={{ fontSize: '0.6rem', opacity: 0.6 }}>Level {Math.floor(Math.random() * 5) + 1}</span>
+            </div>
           </button>
         ))}
       </div>

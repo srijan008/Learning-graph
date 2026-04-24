@@ -12,8 +12,8 @@ from typing import Optional, List
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.postgres_client import engine, get_pg_session
-from db.postgres_models import Chapter, CurriculumTopic, CurriculumSubtopic, Curriculum
-from models.schemas import NeighboursRequest, NeighboursResponse, TopicNode, SequenceResponse
+from db.postgres_models import Chapter, CurriculumTopic, CurriculumSubtopic, Curriculum, UserTopicSketch
+from models.schemas import NeighboursRequest, NeighboursResponse, TopicNode, SequenceResponse, InfographicRequest
 from sqlalchemy import select, and_, or_, any_
 
 router = APIRouter(prefix="/graph", tags=["graph"])
@@ -256,12 +256,20 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+from functools import lru_cache
+
+# Simple global cache to avoid redundant DB queries for the static curriculum
+CURRICULUM_CACHE = {}
+
 @router.get("/curriculum")
 async def get_curriculum(curriculum: Optional[str] = "neet", db: AsyncSession = Depends(get_pg_session)):
     """
     Return filtered Curriculum → Subject → Class → Chapter → Topic hierarchy from PostgreSQL (ai-books).
     Defaults to NEET for performance.
     """
+    curr_key = curriculum.lower() if curriculum else "neet"
+    if curr_key in CURRICULUM_CACHE:
+        return CURRICULUM_CACHE[curr_key]
     # 1. Fetch Chapters and their Topics
     # We filter by curriculum pattern in pdf_name
     curr_pattern = f"%{curriculum.lower()}%" if curriculum else "%neet%"
@@ -310,6 +318,8 @@ async def get_curriculum(curriculum: Optional[str] = "neet", db: AsyncSession = 
         hierarchy[curr_name][sub_name][class_name].append({
             "id": cid,
             "name": ch.chapter_name,
+            "pdf_name": ch.pdf_name or "",
+            "class_level": meta["class"],
             "topics": chapter_topics.get(cid, [])
         })
 
@@ -334,6 +344,7 @@ async def get_curriculum(curriculum: Optional[str] = "neet", db: AsyncSession = 
             curr_node["subjects"].append(sub_node)
         result.append(curr_node)
         
+    CURRICULUM_CACHE[curr_key] = result
     return result
 
 @router.get("/topic/{topic_id}/subtopics")
@@ -347,6 +358,76 @@ async def get_topic_subtopics(topic_id: str, db: AsyncSession = Depends(get_pg_s
     rows = res.scalars().all()
     subtopics = [{"id": str(r.id), "name": r.title} for r in rows]
     return {"topic_id": topic_id, "subtopics": subtopics}
+
+@router.get("/chapter/{chapter_id}/graph")
+async def get_chapter_graph(chapter_id: str, db: AsyncSession = Depends(get_pg_session)):
+    """
+    Return all topics and their subtopics for a given chapter, formatted for a graph UI.
+    Includes chapter and subject metadata for faster frontend rendering.
+    """
+    # 1. Fetch Chapter Metadata
+    chapter_res = await db.execute(
+        select(Chapter).where(Chapter.chapter_id == chapter_id)
+    )
+    chapter = chapter_res.scalars().first()
+    if not chapter:
+        raise HTTPException(status_code=404, detail="Chapter not found")
+
+    meta = _derive_metadata(chapter.pdf_name)
+
+    # 2. Fetch topics for the chapter
+    topics_res = await db.execute(
+        select(CurriculumTopic)
+        .where(CurriculumTopic.chapter_id == chapter_id)
+        .order_by(CurriculumTopic.order_index)
+    )
+    topics = topics_res.scalars().all()
+    
+    if not topics:
+        return {
+            "chapter_id": chapter_id,
+            "chapter_name": chapter.chapter_name,
+            "subject": meta["subject"],
+            "topics": []
+        }
+    
+    # 3. Fetch subtopics for all these topics
+    topic_ids = [t.id for t in topics]
+    subtopics_res = await db.execute(
+        select(CurriculumSubtopic)
+        .where(CurriculumSubtopic.topic_id.in_(topic_ids))
+        .order_by(CurriculumSubtopic.topic_id, CurriculumSubtopic.order_index)
+    )
+    subtopics = subtopics_res.scalars().all()
+    
+    # Group subtopics by topic_id
+    subtopics_by_topic = {}
+    for st in subtopics:
+        tid = str(st.topic_id)
+        if tid not in subtopics_by_topic: subtopics_by_topic[tid] = []
+        subtopics_by_topic[tid].append({
+            "id": str(st.id),
+            "name": st.title,
+            "order_index": st.order_index
+        })
+        
+    # 4. Combine
+    result_topics = []
+    for t in topics:
+        tid = str(t.id)
+        result_topics.append({
+            "id": tid,
+            "name": t.title,
+            "order_index": t.order_index,
+            "subtopics": subtopics_by_topic.get(tid, [])
+        })
+        
+    return {
+        "chapter_id": chapter_id,
+        "chapter_name": chapter.chapter_name,
+        "subject": meta["subject"],
+        "topics": result_topics
+    }
 
 @router.get("/topic/{topic_id}")
 async def get_topic(topic_id: str, db: AsyncSession = Depends(get_pg_session)):
@@ -412,4 +493,243 @@ async def get_previous_topics(topic_id: str, count: int = 1, db: AsyncSession = 
     seq_res = await db.execute(seq_stmt)
     sequence = [_model_to_topic(t, c) for t, c in seq_res]
     return SequenceResponse(node=_model_to_topic(m_topic, m_chapter), sequence=sequence)
+
+
+@router.get("/chapter/{chapter_id}/revision")
+async def get_chapter_revision(chapter_id: str, mode: str = "summary", db: AsyncSession = Depends(get_pg_session)):
+    """
+    Return revision content for a chapter.
+    mode: summary | formulas | mnemonics | flashcards | mindmap | sketchpad
+    """
+    from db.postgres_models import CurriculumChunk
+    import uuid
+    
+    # Ensure chapter_id is a UUID object for consistent DB querying
+    try:
+        ch_uuid = uuid.UUID(chapter_id) if isinstance(chapter_id, str) else chapter_id
+    except Exception:
+        ch_uuid = chapter_id
+
+    # Get topics for this chapter
+    topics_res = await db.execute(
+        select(CurriculumTopic).where(CurriculumTopic.chapter_id == ch_uuid).order_by(CurriculumTopic.order_index)
+    )
+    topics = topics_res.scalars().all()
+    topic_ids = [t.id for t in topics]
+    topic_names = [t.title for t in topics]
+
+    if not topic_ids:
+        raise HTTPException(status_code=404, detail="No topics found for this chapter")
+
+    if mode == "summary":
+        # Fetch from chapters table
+        ch_res = await db.execute(select(Chapter).where(Chapter.chapter_id == ch_uuid))
+        ch = ch_res.scalars().first()
+        if ch and ch.chapter_summary:
+            summary_dict = ch.chapter_summary
+            lines = [f"# {ch.chapter_name or 'Chapter Summary'}"]
+            if summary_dict.get('scope'):
+                lines.append(f"**Scope**: {summary_dict['scope']}\n")
+            if summary_dict.get('chapter_summary'):
+                lines.append(f"{summary_dict['chapter_summary']}\n")
+            if summary_dict.get('key_concepts'):
+                lines.append("## Key Concepts")
+                for kc in summary_dict['key_concepts']:
+                    lines.append(f"- {kc}")
+            if summary_dict.get('learning_objectives'):
+                lines.append("\n## Learning Objectives")
+                for lo in summary_dict['learning_objectives']:
+                    lines.append(f"- {lo}")
+            return {"mode": "summary", "text": "\n".join(lines)}
+        else:
+            return {"mode": "summary", "text": "Summary not available from database."}
+
+    elif mode == "formulas":
+        # Use LLM to generate formulas dynamically
+        from services.tutor_service import generate_chapter_formulas
+        ch_res = await db.execute(select(Chapter).where(Chapter.chapter_id == ch_uuid))
+        ch = ch_res.scalars().first()
+        ch_name = ch.chapter_name if ch else "this topic"
+        try:
+            formulas = await generate_chapter_formulas(ch_name)
+            return {"mode": "formulas", "text": formulas}
+        except Exception as e:
+            print("Formula generation error:", e)
+            return {"mode": "formulas", "text": "Failed to generate formula sheet. Please try again later."}
+
+    elif mode == "mnemonics":
+        # Build simple mnemonic hints from topic names
+        lines = [f"To remember topics in this chapter:"]
+        if topic_names:
+            initials = "".join(n[0].upper() for n in topic_names[:8] if n)
+            lines.append(f"\nFirst-letter mnemonic: **{initials}**")
+            for i, name in enumerate(topic_names[:8]):
+                lines.append(f"  {name[0].upper()} → {name}")
+        return {"mode": "mnemonics", "text": "\n".join(lines)}
+
+    elif mode == "flashcards":
+        sub_res = await db.execute(
+            select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id.in_(topic_ids)).limit(30)
+        )
+        subtopics = sub_res.scalars().all()
+        cards = []
+        for tp in topics[:10]:
+            tp_subs = [s for s in subtopics if str(s.topic_id) == str(tp.id)]
+            for s in tp_subs[:3]:
+                cards.append({
+                    "question": f"What is '{s.title}'?",
+                    "answer": f"A subtopic of {tp.title}. Study it in the Learning Agent for full details."
+                })
+            if not tp_subs:
+                cards.append({
+                    "question": f"Explain: {tp.title}",
+                    "answer": f"A key topic in this chapter. Open the AI Tutor to get a full explanation."
+                })
+        return {"mode": "flashcards", "cards": cards[:20]}
+
+    elif mode == "mindmap":
+        # Fetch chapter info
+        ch_res = await db.execute(select(Chapter).where(Chapter.chapter_id == ch_uuid))
+        ch = ch_res.scalars().first()
+        ch_name = ch.chapter_name if ch else "Chapter"
+
+        # Fetch all subtopics for these topics
+        sub_res = await db.execute(
+            select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id.in_(topic_ids))
+        )
+        all_subtopics = sub_res.scalars().all()
+
+        nodes = []
+        edges = []
+
+        # Root Node
+        nodes.append({"id": "root", "label": ch_name, "type": "root"})
+
+        for tp in topics:
+            t_id = f"topic_{tp.id}"
+            nodes.append({"id": t_id, "label": tp.title, "type": "topic"})
+            edges.append({"id": f"edge_root_{t_id}", "source": "root", "target": t_id})
+
+            tp_subs = [s for s in all_subtopics if str(s.topic_id) == str(tp.id)]
+            for s in tp_subs:
+                s_id = f"sub_{s.id}"
+                nodes.append({"id": s_id, "label": s.title, "type": "subtopic"})
+                edges.append({"id": f"edge_{t_id}_{s_id}", "source": t_id, "target": s_id})
+
+        return {"mode": "mindmap", "nodes": nodes, "edges": edges}
+
+    elif mode == "sketchpad":
+        # Return topics for selection
+        ch_res = await db.execute(select(Chapter).where(Chapter.chapter_id == ch_uuid))
+        ch = ch_res.scalars().first()
+        ch_name = ch.chapter_name if ch else "Chapter"
+        
+        return {
+            "mode": "sketchpad",
+            "topics": [
+                {
+                    "id": str(t.id),
+                    "title": t.title,
+                    "description": f"Master the concepts of {t.title} through visual sketching.",
+                    "image_prompt": f"Detailed scientific diagram of {t.title} for {ch_name}, minimalist, line art, educational"
+                }
+                for t in topics
+            ]
+        }
+
+    raise HTTPException(status_code=400, detail="Invalid mode. Use: summary | formulas | mnemonics | flashcards | mindmap | sketchpad")
+
+
+@router.get("/topic/{topic_id}/ai-sketch")
+async def get_topic_ai_sketch(topic_id: str, db: AsyncSession = Depends(get_pg_session)):
+    """Generates an AI-powered interactive sketch for a specific topic."""
+    from services.tutor_service import generate_ai_sketch
+    import uuid
+    
+    try:
+        tid_uuid = uuid.UUID(topic_id) if isinstance(topic_id, str) else topic_id
+        t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id == tid_uuid))
+        topic = t_res.scalars().first()
+        if not topic:
+            raise HTTPException(status_code=404, detail="Topic not found")
+            
+        # Get chapter name for context
+        ch_res = await db.execute(select(Chapter).where(Chapter.chapter_id == topic.chapter_id))
+        ch = ch_res.scalars().first()
+        ch_name = ch.chapter_name if ch else "NEET Biology"
+        
+        commands = await generate_ai_sketch(topic.title, ch_name)
+        print(f"DEBUG: Generated {len(commands)} commands for topic {topic.title}")
+        return {"topic_id": topic_id, "topic_name": topic.title, "commands": commands}
+    except Exception as e:
+        import traceback
+        print(traceback.format_exc())
+        return {"topic_id": topic_id, "commands": [], "error": str(e)}
+        
+
+@router.post("/ai-infographic")
+async def generate_concept_infographic(req: InfographicRequest):
+    """Generates an AI-powered infographic for a custom user query."""
+    from services.tutor_service import generate_infographic_sketch
+    from models.schemas import InfographicRequest
+    
+    try:
+        commands = await generate_infographic_sketch(req.query)
+        print(f"DEBUG: Generated {len(commands)} infographic commands for query: {req.query}")
+        return {"query": req.query, "commands": commands}
+    except Exception as e:
+        return {"query": req.query, "commands": [], "error": str(e)}
+        
+
+@router.post("/topic/{topic_id}/sketch")
+async def save_user_sketch(topic_id: str, payload: dict, db: AsyncSession = Depends(get_pg_session)):
+    """Saves a user sketch (AI commands + user strokes) to the database."""
+    import uuid
+    try:
+        user_id = payload.get("user_id", "user_123")
+        sketch_name = payload.get("name", "My Sketch")
+        sketch_data = payload.get("data", {})
+        
+        tid_uuid = uuid.UUID(topic_id) if isinstance(topic_id, str) else topic_id
+        
+        new_sketch = UserTopicSketch(
+            id=uuid.uuid4(),
+            user_id=user_id,
+            topic_id=tid_uuid,
+            sketch_name=sketch_name,
+            data=sketch_data
+        )
+        db.add(new_sketch)
+        await db.commit()
+        return {"status": "success", "id": str(new_sketch.id)}
+    except Exception as e:
+        await db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/topic/{topic_id}/sketches")
+async def get_user_sketches(topic_id: str, user_id: str = "user_123", db: AsyncSession = Depends(get_pg_session)):
+    """Retrieves all saved sketches for a topic and user."""
+    import uuid
+    try:
+        tid_uuid = uuid.UUID(topic_id) if isinstance(topic_id, str) else topic_id
+        res = await db.execute(
+            select(UserTopicSketch)
+            .where(and_(UserTopicSketch.topic_id == tid_uuid, UserTopicSketch.user_id == user_id))
+            .order_by(UserTopicSketch.created_at.desc())
+        )
+        sketches = res.scalars().all()
+        return {
+            "sketches": [
+                {
+                    "id": str(s.id),
+                    "name": s.sketch_name,
+                    "created_at": s.created_at.isoformat(),
+                    "data": s.data
+                }
+                for s in sketches
+            ]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 

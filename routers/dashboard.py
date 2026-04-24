@@ -71,54 +71,66 @@ async def get_topic_metrics(user_id: str, db: AsyncSession = Depends(get_pg_sess
         if not sessions:
             return {"topics": []}
             
-        topic_ids = [s.topic_id for s in sessions]
-        session_map = {s.topic_id: s for s in sessions}
+        topic_ids = [s.topic_id for s in sessions if s.topic_id]
+        session_map = {str(s.topic_id): s for s in sessions}
         
         # 2. Get names from PostgreSQL
         from db.postgres_models import CurriculumTopic, CurriculumSubtopic
         
-        response_topics = []
-        for tid, t_session in session_map.items():
+        topic_uuids = []
+        for tid in topic_ids:
             try:
-                tid_uuid = uuid.UUID(tid) if isinstance(tid, str) else tid
-                t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id == tid_uuid))
-                topic_record = t_res.scalars().first()
-                if not topic_record:
-                    continue
-                
-                s_res = await db.execute(select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id == tid_uuid))
-                subtopic_records = s_res.scalars().all()
-                
-                scores = t_session.subtopic_scores if t_session and t_session.subtopic_scores else {}
-                
-                subs = []
-                total_conf = 0
-                max_conf = len(subtopic_records) * 100 if subtopic_records else 100
-                
-                for s in subtopic_records:
-                    raw_conf = scores.get(str(s.id), 0)
-                    if isinstance(raw_conf, dict):
-                        conf = (raw_conf.get("theory", 0) + raw_conf.get("example", 0) + raw_conf.get("cross", 0)) // 3
-                    else:
-                        conf = raw_conf
-                    total_conf += conf
-                    subs.append({
-                        "subtopic_id": str(s.id),
-                        "subtopic_name": s.title,
-                        "confidence": conf
-                    })
-                
-                avg_completion = round((total_conf / max_conf) * 100) if max_conf > 0 else 0
-                
-                response_topics.append({
-                    "topic_id": str(tid),
-                    "topic_name": topic_record.title,
-                    "completion_percentage": avg_completion,
-                    "subtopics": subs
-                })
-            except Exception as loop_e:
-                logger.error(f"Error processing topic metrics for {tid}: {loop_e}")
+                topic_uuids.append(uuid.UUID(tid) if isinstance(tid, str) else tid)
+            except:
+                pass
+
+        if not topic_uuids:
+            return {"topics": []}
+
+        t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id.in_(topic_uuids)))
+        topics_db = {str(t.id): t for t in t_res.scalars().all()}
+        
+        s_res = await db.execute(select(CurriculumSubtopic).where(CurriculumSubtopic.topic_id.in_(topic_uuids)))
+        all_subs = s_res.scalars().all()
+        subs_by_topic = {}
+        for sub in all_subs:
+            tid_str = str(sub.topic_id)
+            subs_by_topic.setdefault(tid_str, []).append(sub)
+
+        response_topics = []
+        for tid_str, t_session in session_map.items():
+            topic_record = topics_db.get(tid_str)
+            if not topic_record:
                 continue
+            
+            subtopic_records = subs_by_topic.get(tid_str, [])
+            scores = t_session.subtopic_scores if t_session and t_session.subtopic_scores else {}
+            
+            subs = []
+            total_conf = 0
+            max_conf = len(subtopic_records) * 100 if subtopic_records else 100
+            
+            for s in subtopic_records:
+                raw_conf = scores.get(str(s.id), 0)
+                if isinstance(raw_conf, dict):
+                    conf = (raw_conf.get("theory", 0) + raw_conf.get("example", 0) + raw_conf.get("cross", 0)) // 3
+                else:
+                    conf = raw_conf
+                total_conf += conf
+                subs.append({
+                    "subtopic_id": str(s.id),
+                    "subtopic_name": s.title,
+                    "confidence": conf
+                })
+            
+            avg_completion = round((total_conf / max_conf) * 100) if max_conf > 0 else 0
+            
+            response_topics.append({
+                "topic_id": tid_str,
+                "topic_name": topic_record.title,
+                "completion_percentage": avg_completion,
+                "subtopics": subs
+            })
                 
         response_topics.sort(key=lambda x: x["completion_percentage"])
         return {"topics": response_topics}
@@ -163,11 +175,21 @@ async def get_studied_chapters(user_id: str, db: AsyncSession = Depends(get_pg_s
             select(TutorChatSession).where(TutorChatSession.user_id == user_id)
         )
         sessions = sessions_result.scalars().all()
-        for s in sessions:
+        topic_ids = [s.topic_id for s in sessions if s.topic_id]
+        
+        topic_uuids = []
+        for tid in topic_ids:
             try:
-                tid_uuid = uuid.UUID(s.topic_id) if isinstance(s.topic_id, str) else s.topic_id
-                t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id == tid_uuid))
-                topic = t_res.scalars().first()
+                topic_uuids.append(uuid.UUID(tid) if isinstance(tid, str) else tid)
+            except:
+                pass
+                
+        if topic_uuids:
+            t_res = await db.execute(select(CurriculumTopic).where(CurriculumTopic.id.in_(topic_uuids)))
+            topics_db = {str(t.id): t for t in t_res.scalars().all()}
+            
+            for s in sessions:
+                topic = topics_db.get(str(s.topic_id))
                 if topic:
                     ch_key = topic.title.lower().replace(" ", "_")
                     if ch_key not in chapters:
@@ -182,8 +204,6 @@ async def get_studied_chapters(user_id: str, db: AsyncSession = Depends(get_pg_s
                     else:
                         chapters[ch_key]["has_learning_data"] = True
                         chapters[ch_key]["topic_id"] = str(s.topic_id)
-            except Exception:
-                pass
     except Exception:
         pass
 
@@ -423,3 +443,84 @@ async def get_chapter_detail(
     result["recommendations"] = recs
 
     return result
+@router.get("/{user_id}/weekly-activity")
+async def get_weekly_activity(user_id: str, db: AsyncSession = Depends(get_pg_session)):
+    """
+    Returns study minutes per day for the last 7 days and the current streak.
+    """
+    from datetime import datetime, timedelta, date
+    now = datetime.utcnow()
+    last_week = now - timedelta(days=7)
+    
+    try:
+        # 1. Daily study minutes
+        # In a real app, we'd have a 'study_sessions' table. 
+        # Here we use UserSubtopicProgress.last_studied_at as a proxy.
+        # This is limited but works for demonstration.
+        result = await db.execute(
+            select(func.date(UserSubtopicProgress.last_studied_at), func.sum(UserSubtopicProgress.time_spent_minutes))
+            .where(UserSubtopicProgress.user_id == user_id)
+            .where(UserSubtopicProgress.last_studied_at >= last_week)
+            .group_by(func.date(UserSubtopicProgress.last_studied_at))
+        )
+        
+        daily_stats = {str(row[0]): row[1] for row in result.all()}
+        
+        # 2. Current Streak
+        # Count consecutive days with activity starting from today/yesterday
+        streak = 0
+        check_date = now.date()
+        while True:
+            res = await db.execute(
+                select(func.count(UserSubtopicProgress.id))
+                .where(UserSubtopicProgress.user_id == user_id)
+                .where(func.date(UserSubtopicProgress.last_studied_at) == check_date)
+            )
+            if res.scalar() > 0:
+                streak += 1
+                check_date -= timedelta(days=1)
+            else:
+                # If no activity today, check yesterday to continue streak
+                if check_date == now.date():
+                    check_date -= timedelta(days=1)
+                    continue
+                break
+        
+        return {
+            "daily_minutes": daily_stats,
+            "current_streak": streak,
+            "total_weekly_hours": round(sum(daily_stats.values()) / 60, 1)
+        }
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"detail": str(e)})
+
+@router.get("/{user_id}/recent-completions")
+async def get_recent_completions(user_id: str, db: AsyncSession = Depends(get_pg_session)):
+    """
+    Lists the last 5 completed subtopics.
+    """
+    from db.postgres_models import CurriculumSubtopic
+    from sqlalchemy import cast, String
+    try:
+        result = await db.execute(
+            select(UserSubtopicProgress, CurriculumSubtopic.title)
+            .join(CurriculumSubtopic, cast(CurriculumSubtopic.id, String) == UserSubtopicProgress.subtopic_id)
+            .where(UserSubtopicProgress.user_id == user_id)
+            .where(UserSubtopicProgress.status == 'completed')
+            .order_by(desc(UserSubtopicProgress.last_studied_at))
+            .limit(5)
+        )
+        
+        items = []
+        for row in result.all():
+            prog, title = row
+            items.append({
+                "subtopic_id": prog.subtopic_id,
+                "subtopic_name": title,
+                "completed_at": prog.last_studied_at.isoformat(),
+                "time_spent": prog.time_spent_minutes
+            })
+            
+        return {"completions": items}
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"detail": str(e)})

@@ -8,7 +8,7 @@ import ReactFlow, {
 import dagre from '@dagrejs/dagre';
 import 'reactflow/dist/style.css';
 import {
-  Map, List, Calendar, ArrowLeft, CheckCircle2,
+  Map as MapIcon, List, Calendar, ArrowLeft, CheckCircle2,
   Loader2, Lock, Circle, Clock, BookOpen, TrendingUp, Zap,
 } from 'lucide-react';
 
@@ -331,7 +331,7 @@ export default function JourneyPage() {
         {/* Tabs */}
         <div style={{ display: 'flex', gap: 2, marginTop: 10 }}>
           {([
-            { key: 'graph', label: 'Graph', icon: <Map size={13} /> },
+            { key: 'graph', label: 'Graph', icon: <MapIcon size={13} /> },
             { key: 'roadmap', label: 'Roadmap', icon: <List size={13} /> },
             { key: 'schedule', label: 'Schedule', icon: <Calendar size={13} /> },
           ] as const).map(tab => (

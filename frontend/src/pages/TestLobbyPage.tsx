@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { BookOpen, Zap, GraduationCap, Target, Clock, ChevronRight, List, BarChart2, Layers } from 'lucide-react';
 
@@ -68,9 +68,35 @@ export default function TestLobbyPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
-    axios.get(`${API}/test/subjects`).then(r => setSubjects(r.data)).catch(() => {});
-  }, []);
+    axios.get(`${API}/test/subjects`).then(r => {
+      setSubjects(r.data);
+      
+      const prefillType = searchParams.get('prefill_type') as TestType;
+      const prefillSubject = searchParams.get('prefill_subject');
+      const prefillChapter = searchParams.get('prefill_chapter');
+      const prefillTopic = searchParams.get('prefill_topic');
+
+      if (prefillType) {
+        setSelectedType(prefillType);
+        
+        if (prefillSubject) {
+          const actualSubject = Object.keys(r.data).find(s => s.toLowerCase() === prefillSubject.toLowerCase());
+          if (actualSubject) setSelSubject(actualSubject);
+        }
+        if (prefillChapter) setSelChapter(prefillChapter);
+        if (prefillTopic) setSelTopic(prefillTopic);
+        
+        if (prefillType === 'full_mock' || prefillType === 'practice_drill') {
+          setStep('ready');
+        } else {
+          setStep('config');
+        }
+      }
+    }).catch(() => {});
+  }, [searchParams]);
 
   // Fetch topics whenever a chapter is selected and type is topic_quiz
   useEffect(() => {
@@ -78,7 +104,11 @@ export default function TestLobbyPage() {
       axios.get(`${API}/test/chapters/${selChapter}/topics`)
         .then(r => {
           setTopics(r.data.topics || []);
-          setSelTopic('');
+          // Only clear if the current selTopic is NOT in the newly fetched topics
+          setSelTopic(prev => {
+            if (prev && r.data.topics?.some((t:any) => t.id === prev)) return prev;
+            return '';
+          });
         })
         .catch(() => setTopics([]));
     } else {
@@ -111,7 +141,7 @@ export default function TestLobbyPage() {
         test_type: selectedType,
         subject: selSubject || null,
         chapter: selChapter || null,
-        topic_id: selTopic || null,
+        topic_id: selTopic || searchParams.get('prefill_topic') || null,
         question_count: qCount,
         time_limit_mins: timeMins,
       };

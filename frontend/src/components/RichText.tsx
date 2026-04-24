@@ -83,16 +83,21 @@ function renderMath(src: string, display: boolean): string {
 }
 
 interface Props {
-  text: string;
+  text?: string;
+  content?: string;
   inline?: boolean;
   className?: string;
   style?: React.CSSProperties;
 }
 
-export default memo(function RichText({ text, inline, className, style }: Props) {
-  if (!text) return null;
+export default memo(function RichText({ text, content, inline, className, style }: Props) {
+  let finalRaw = text || content || '';
+  if (typeof finalRaw === 'string') {
+    finalRaw = finalRaw.replace(/\\n/g, '\n');
+  }
+  if (!finalRaw) return null;
 
-  const { processed, mathMap } = useMemo(() => extractMath(text), [text]);
+  const { processed, mathMap } = useMemo(() => extractMath(finalRaw), [finalRaw]);
 
   const components: any = useMemo(() => ({
     // Handling Images
@@ -208,7 +213,7 @@ export default memo(function RichText({ text, inline, className, style }: Props)
     h3: ({ children }: any) => <h5 style={{ color: 'white', margin: '6px 0 4px' }}>{children}</h5>,
   }), [mathMap]);
 
-  const content = (
+  const renderedMarkdown = (
     <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
       {processed}
     </ReactMarkdown>
@@ -217,14 +222,14 @@ export default memo(function RichText({ text, inline, className, style }: Props)
   if (inline) {
     return (
       <span className={`rich-text ${className || ''}`} style={{ lineHeight: 1.85, ...style }}>
-        {content}
+        {renderedMarkdown}
       </span>
     );
   }
 
   return (
     <div className={`rich-text ${className || ''}`} style={style}>
-      {content}
+      {renderedMarkdown}
     </div>
   );
 });

@@ -287,7 +287,13 @@ export default function TestAnalyticsSection({ userId }: { userId: string }) {
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.68rem' }}>{w.total_attempts} Q</div>
                   </div>
                   <button
-                    onClick={() => navigate('/test', { state: { prefill: { type: 'practice_drill', subject: w.subject, chapter: w.chapter } } })}
+                    onClick={() => {
+                      const params = new URLSearchParams();
+                      params.set('prefill_type', 'practice_drill');
+                      params.set('prefill_subject', w.subject || '');
+                      params.set('prefill_chapter', w.chapter || '');
+                      navigate(`/test?${params.toString()}`);
+                    }}
                     style={{ padding: '4px 10px', borderRadius: '6px', border: `1px solid ${color}`, background: `${color}12`, color, cursor: 'pointer', fontSize: '0.68rem', fontWeight: 600, flexShrink: 0 }}
                   >
                     Drill

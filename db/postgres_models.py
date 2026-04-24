@@ -318,3 +318,15 @@ class CurriculumChunk(Base):
     content: Mapped[str] = mapped_column(Text)
     chunk_metadata: Mapped[Optional[dict]] = mapped_column("metadata", JSON, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class UserTopicSketch(Base):
+    __tablename__ = "user_topic_sketches"
+    __table_args__ = {"schema": "ai-books"}
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    user_id: Mapped[str] = mapped_column(String, index=True)
+    topic_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), index=True)
+    sketch_name: Mapped[str] = mapped_column(String)
+    data: Mapped[dict] = mapped_column(JSON)  # Stores drawing commands and user strokes
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

@@ -86,96 +86,107 @@ def _topological_sort(nodes: list[dict], edges: dict[str, list[str]]) -> list[di
     return [node_map[tid] for tid in sorted_ids if tid in node_map]
 
 
-# ── Journey generation --------------------------------------------------------
+# ── Journey generation -------------------------
+def _derive_subject(pdf_name: str) -> str:
+    """Derive subject name from pdf_name."""
+    if not pdf_name:
+        return "General"
+    name = pdf_name.lower()
+    if "physics" in name: return "Physics"
+    if "chemistry" in name: return "Chemistry"
+    if "zoology" in name: return "Zoology"
+    if "botany" in name: return "Botany"
+    if "biology" in name: return "Biology"
+    return "General"
+
+def _derive_class(pdf_name: str) -> str:
+    """Derive class level (11/12) from pdf_name."""
+    if not pdf_name: return "Other"
+    name = pdf_name.lower()
+    if name.startswith('l'): return "12"
+    if name.startswith('k'): return "11"
+    if "class 11" in name or "_11" in name: return "11"
+    if "class 12" in name or "_12" in name: return "12"
+    return "Other"
+
 
 async def _generate_journey_nodes(
     subject_ids: List[str],
     difficulty: str,
 ) -> tuple[list[dict], dict[str, list[str]]]:
     """
-    Fetch all topics for the given subjects from PostgreSQL,
-    sorted by chapter.order_index (curriculum sequence),
-    then fetch prerequisite edges from Neo4j.
-    Returns (topic_list, prereq_edges).
+    Fetch all topics for the given subjects from PostgreSQL.
+    subject_ids are subject NAMES (e.g. "Physics", "Chemistry") — matched
+    against pdf_name via ILIKE. Returns (topic_list, prereq_edges).
     """
     topics = []
 
     async with engine.connect() as conn:
-        # In ai-books, 'subjects' are derived from pdf_name or we can use Curryculum/Books
-        # Journey logic was using 'subject_ids' which might correspond to 'book_id' in ai-books chapters
-        
-        # Fetch chapters ordered by curriculum sequence
+        # Build WHERE clause: match any subject name against pdf_name
+        # subject_ids are names like "Physics", "Chemistry", etc.
+        like_clauses = " OR ".join(
+            [f"LOWER(pdf_name) LIKE :sub{i}" for i in range(len(subject_ids))]
+        )
+        params: dict = {f"sub{i}": f"%{sid.lower()}%" for i, sid in enumerate(subject_ids)}
+
         res_ch = await conn.execute(
             text(
-                'SELECT chapter_id, chapter_name, book_id, chapter_num FROM "ai-books".chapters '
-                'WHERE book_id = ANY(:ids) ORDER BY chapter_num ASC NULLS LAST, chapter_name'
+                f'SELECT chapter_id, chapter_name, pdf_name, chapter_num '
+                f'FROM "ai-books".chapters '
+                f'WHERE {like_clauses} '
+                f'ORDER BY chapter_num ASC NULLS LAST, chapter_name'
             ),
-            {"ids": [uuid.UUID(sid) if isinstance(sid, str) else sid for sid in subject_ids]},
+            params,
         )
-        chapters = res_ch.mappings().all()
-        chapter_map = {str(c["chapter_id"]): c for c in chapters}
-        # Build a chapter sort rank: lower = earlier in curriculum
-        chapter_rank = {str(c["chapter_id"]): i for i, c in enumerate(chapters)}
+        chapters_rows = res_ch.mappings().all()
+        chapter_map = {str(c["chapter_id"]): dict(c) for c in chapters_rows}
+        chapter_rank = {str(c["chapter_id"]): i for i, c in enumerate(chapters_rows)}
 
-        # Fetch topics for all chapters — ordered by chapter curriculum order
-        chapter_ids = [str(c["chapter_id"]) for c in chapters]
+        chapter_ids = list(chapter_map.keys())
         if not chapter_ids:
             return [], {}
 
         res_tp = await conn.execute(
             text(
-                'SELECT t.id, t.title, t.chapter_id '
+                'SELECT t.id, t.title, t.chapter_id, t.order_index '
                 'FROM "ai-books".curriculum_topics t '
                 'JOIN "ai-books".chapters c ON c.chapter_id = t.chapter_id '
                 'WHERE t.chapter_id = ANY(:cids) '
                 'ORDER BY c.chapter_num ASC NULLS LAST, t.order_index ASC'
             ),
-            {"cids": [uuid.UUID(cid) if isinstance(cid, str) else cid for cid in chapter_ids]},
+            {"cids": [uuid.UUID(cid) for cid in chapter_ids]},
         )
+
+        multiplier = {"standard": 1.0, "accelerated": 0.7, "deep_dive": 1.5}.get(difficulty, 1.0)
         for row_idx, tp in enumerate(res_tp.mappings().all()):
             ch = chapter_map.get(str(tp["chapter_id"]), {})
-            sub_id = str(ch.get("book_id", "")) if ch else ""
-            meta = _derive_metadata(ch.get("pdf_name", "")) if ch else {"subject": "General"}
-            
-            multiplier = {"standard": 1.0, "accelerated": 0.7, "deep_dive": 1.5}.get(difficulty, 1.0)
+            subject_name = _derive_subject(ch.get("pdf_name", ""))
             topics.append({
                 "topic_id": str(tp["id"]),
                 "topic_name": tp["title"],
-                "subject_name": meta["subject"], # use derived subject name
-                "chapter_name": ch.get("chapter_name", "") if ch else "",
+                "subject_name": subject_name,
+                "chapter_name": ch.get("chapter_name", ""),
                 "estimated_hours": round(2.0 * multiplier, 1),
-                # curriculum_rank drives fallback ordering when no prereq edges
-                "curriculum_rank": chapter_rank.get(str(tp["chapter_id"]), 9999) * 10000 + row_idx,
-            })
-            multiplier = {"standard": 1.0, "accelerated": 0.7, "deep_dive": 1.5}.get(difficulty, 1.0)
-            topics.append({
-                "topic_id": str(tp["id"]),
-                "topic_name": tp["title"],
-                "subject_name": subject_map.get(sub_id, ""),
-                "chapter_name": ch.get("name", "") if ch else "",
-                "estimated_hours": round(2.0 * multiplier, 1),
-                # curriculum_rank drives fallback ordering when no prereq edges
                 "curriculum_rank": chapter_rank.get(str(tp["chapter_id"]), 9999) * 10000 + row_idx,
             })
 
-    # Fetch prerequisite edges from PostgreSQL (ai-books schema)
+    # Fetch prerequisite edges
     prereq_edges: dict[str, list[str]] = {}
-    
-    async with engine.connect() as conn:
-        res = await conn.execute(
-            text('SELECT id, prerequisites FROM "ai-books".curriculum_topics WHERE id = ANY(:ids)'),
-            {"ids": list(topic_ids_in_journey)}
-        )
-        for row in res.mappings().all():
-            tid_source = str(row["id"])
-            # row["prerequisites"] is a list of topic IDs this topic REQUIRES
-            # journey logic expects: fid REQUIRES tid_target
-            prereqs = row["prerequisites"] or []
-            if prereqs:
-                prereq_edges[tid_source] = [str(p) for p in prereqs]
+    topic_ids_in_journey = {t["topic_id"] for t in topics}
+
+    if topic_ids_in_journey:
+        async with engine.connect() as conn:
+            res = await conn.execute(
+                text('SELECT id, prerequisites FROM "ai-books".curriculum_topics WHERE id = ANY(:ids)'),
+                {"ids": [uuid.UUID(tid) for tid in topic_ids_in_journey]}
+            )
+            for row in res.mappings().all():
+                tid_source = str(row["id"])
+                prereqs = row["prerequisites"] or []
+                if prereqs:
+                    prereq_edges[tid_source] = [str(p) for p in prereqs]
 
     return topics, prereq_edges
-
 
 
 # ── Endpoints -----------------------------------------------------------------
@@ -291,14 +302,30 @@ async def generate_journey(req: GenerateJourneyRequest):
             },
         )
 
+        node_params = []
         for idx, topic in enumerate(sorted_topics):
             week_num = (idx // topics_per_week) + 1
             prereqs = prereq_edges.get(topic["topic_id"], [])
             node_status = _initial_status(topic["topic_id"], idx)
-            completed_ts = "now()" if node_status == "completed" else "NULL"
 
+            node_params.append({
+                "id": str(uuid.uuid4()),
+                "jid": journey_id,
+                "tid": topic["topic_id"],
+                "tname": topic["topic_name"],
+                "sname": topic.get("subject_name", ""),
+                "cname": topic.get("chapter_name", ""),
+                "oidx": idx,
+                "eh": topic["estimated_hours"],
+                "prereqs": json.dumps(prereqs),
+                "nstatus": node_status,
+                "wnum": week_num,
+                "completed_at": datetime.utcnow() if node_status == "completed" else None
+            })
+
+        if node_params:
             await conn.execute(
-                text(f"""
+                text("""
                     INSERT INTO journey_topic_nodes
                       (id, journey_id, topic_id, topic_name, subject_name, chapter_name,
                        order_index, estimated_hours, prerequisite_topic_ids,
@@ -306,21 +333,9 @@ async def generate_journey(req: GenerateJourneyRequest):
                     VALUES
                       (:id, :jid, :tid, :tname, :sname, :cname,
                        :oidx, :eh, CAST(:prereqs AS jsonb), :nstatus, :wnum,
-                       {completed_ts})
+                       :completed_at)
                 """),
-                {
-                    "id": str(uuid.uuid4()),
-                    "jid": journey_id,
-                    "tid": topic["topic_id"],
-                    "tname": topic["topic_name"],
-                    "sname": topic.get("subject_name", ""),
-                    "cname": topic.get("chapter_name", ""),
-                    "oidx": idx,
-                    "eh": topic["estimated_hours"],
-                    "prereqs": json.dumps(prereqs),
-                    "nstatus": node_status,
-                    "wnum": week_num,
-                },
+                node_params
             )
 
     progress_pct = round((pre_completed_count / len(sorted_topics)) * 100) if sorted_topics else 0
@@ -376,7 +391,7 @@ async def get_journey(journey_id: str):
 
         res_nodes = await conn.execute(
             text("""
-                SELECT id, topic_id, topic_name, subject_name, chapter_name,
+                SELECT id, topic_id, topic_name, subject_name, chapter_name, chapter_id,
                        order_index, estimated_hours, prerequisite_topic_ids,
                        node_status, week_number, completed_at
                 FROM journey_topic_nodes
